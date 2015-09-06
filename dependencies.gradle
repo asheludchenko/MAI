@@ -3,6 +3,9 @@ ext {
     kotlinLibVersion = '0.12.1230'
     ankoVersion = '0.6.2-15s'
     rxVersion = '1.0.14'
+    mortarVersion = '0.19'
+    daggerSupportVersion = '0.17'
+    flowVersion = '0.12'
     daggerVersion = '1.2.2'
     retrofitVersion = '2.0.0-beta1'
     frescoVersion = '0.7.0'
@@ -17,6 +20,10 @@ ext {
             design: "com.android.support:design:$appCompatVersion",
             recycler: "com.android.support:recyclerview-v7:$appCompatVersion",
             rxJava: "io.reactivex:rxjava:$rxVersion",
+            mortar: "com.squareup.mortar:mortar:$mortarVersion",
+            daggerSupport: "com.squareup.mortar:dagger1support:$daggerSupportVersion",
+            flow: "com.squareup.flow:flow:$flowVersion",
+            flowPath: "com.squareup.flow:flow-path:$flowVersion",
             dagger: "com.squareup.dagger:dagger:$daggerVersion",
             daggerCompiler: "com.squareup.dagger:dagger-compiler:${daggerVersion}",
             fresco: "com.facebook.fresco:fresco:$frescoVersion",

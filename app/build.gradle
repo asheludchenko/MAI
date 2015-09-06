@@ -30,6 +30,10 @@ dependencies {
     compile appDeps.design
     compile appDeps.recycler
     compile appDeps.rxJava
+    compile appDeps.mortar
+    compile appDeps.daggerSupport
+    compile appDeps.flow
+    compile appDeps.flowPath
     compile appDeps.dagger
     provided appDeps.daggerCompiler
     compile appDeps.fresco
