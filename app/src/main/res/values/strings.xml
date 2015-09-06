@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">МАИ</string>
+    <string name="lower_week">Нижняя неделя</string>
+    <string name="faculties">Факультеты</string>
+    <string name="session">Сессия</string>
+    <string name="practics">Практика</string>
+    <string name="scholarships">Стипендии</string>
+    <string name="libraries">Библиотеки</string>
+    <string name="canteens">Столовые</string>
+    <string name="dotations">Дотации и материальная помощь</string>
+    <string name="military_institute">Военный институт</string>
+    <string name="secondary_education">Второе высшее образование</string>
+    <string name="magistracy">Магистратура</string>
+    <string name="courses">Курсы</string>
+    <string name="academic_mobility">Академическая мобильность</string>
+    <string name="employment_center">Центр трудоустройства МАИ</string>
+    <string name="science">Научная деятельность</string>
+    <string name="dormitories">Студгородок</string>
+    <string name="sanatorium">Санаторий-профилакторий</string>
+    <string name="recreation_centers">Базы отдыха</string>
+    <string name="sport_sections">Спортивные секции</string>
+    <string name="dk">Дворец культуры и техники МАИ</string>
+    <string name="dosaaf">Спортивно-технические клубы (ДОСААФ МАИ)</string>
+    <string name="debating_club">Клуб Дебаты МАИ</string>
+    <string name="maisky_vzlet">Фестиваль "МАЙский взлёт"</string>
+    <string name="profkom">Профком студентов и аспирантов МАИ</string>
+    <string name="somol">Союз молодёжи</string>
+    <string name="press">Маёвские СМИ и интернет-ресурсы</string>
+    <string name="media">Медиа</string>
+    <string name="history">История МАИ</string>
+    <string name="life">Жизнь маёвца</string>
+    <string name="help">В помощь студенту</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>

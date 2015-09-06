@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "oleg.osipenko.mai"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    def appDeps = rootProject.ext.appDeps
+    compile appDeps.appcompat
+    compile appDeps.kotlinLib
+    compile appDeps.anko
+    compile appDeps.design
+    compile appDeps.recycler
+    compile appDeps.rxJava
+    compile appDeps.dagger
+    provided appDeps.daggerCompiler
+    compile appDeps.fresco
+    compile appDeps.retrofit
+    compile appDeps.gson
+    compile appDeps.butter
+    debugCompile appDeps.canary
+}
+
+
+buildscript {
+    ext.kotlin_version = '0.12.1230'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+
+    }
+}
