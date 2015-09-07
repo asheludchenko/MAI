@@ -24,7 +24,5 @@ public abstract class MaiPresenter<V extends View, T> extends ViewPresenter<V> {
         }
     }
 
-    protected void unsubscribe() {
-        if (!subscriber.isUnsubscribed()) subscriber.unsubscribe();
-    }
+    protected abstract void unsubscribe();
 }

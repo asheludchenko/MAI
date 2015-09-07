@@ -2,6 +2,7 @@ package oleg.osipenko.mai.domain;
 
 import android.util.Log;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -17,13 +18,11 @@ import oleg.osipenko.mai.domain.executors.UIThread;
  */
 @Module(
         library = true,
-        includes = DataModule.class
+        includes = DataModule.class,
+        complete = false
 )
 public class DomainModule {
 
-    public DomainModule() {
-        Log.d("mai", "domain constructor");
-    }
 
     @Provides
     @Singleton

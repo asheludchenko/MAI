@@ -3,6 +3,7 @@ package oleg.osipenko.mai.presentation.screens;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -26,6 +27,7 @@ import oleg.osipenko.mai.presentation.mf_boilerplate.Layout;
 import oleg.osipenko.mai.presentation.mf_boilerplate.WithModule;
 import oleg.osipenko.mai.presentation.views.ListContentView;
 import rx.Subscriber;
+import rx.observers.Subscribers;
 import timber.log.Timber;
 
 /**
@@ -65,32 +67,43 @@ public class ListContentScreen extends Path {
 
         @Inject
         Interactor<ListContentSpecification, List<ListContent>> interactor;
+        List<ListContent> contents;
 
         public Presenter() {
+            contents = Collections.emptyList();
         }
 
-        private Subscriber<List<ListContent>> subscriber = new Subscriber<List<ListContent>>() {
-            @Override
-            public void onCompleted() {
-                unsubscribe();
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                Timber.e(e.getMessage());
-            }
-
-            @Override
-            public void onNext(List<ListContent> contents) {
-                getView().showText(contents);
-            }
-        };
+        private Subscriber<List<ListContent>> subscriber = Subscribers.empty();
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
+            subscriber = new Subscriber<List<ListContent>>() {
+                @Override
+                public void onCompleted() {
+                    Log.d("mai", "completed");
+                    subscriber = Subscribers.empty();
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                    Timber.e(e.getMessage());
+                    subscriber = Subscribers.empty();
+                }
+
+                @Override
+                public void onNext(List<ListContent> contents) {
+                    if (!hasView()) return;
+                    getView().showText(contents);
+                }
+            };
             interactor.execute(subscriber);
+        }
+
+        @Override
+        protected void unsubscribe() {
+            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
         }
     }
 }

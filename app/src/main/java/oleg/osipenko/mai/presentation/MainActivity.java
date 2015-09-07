@@ -87,7 +87,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 getIntent(),
                 savedInstanceState,
                 parceler,
-                History.single(new ListContentScreen("Факультеты")),
+                History.single(new ListContentScreen("menu_faculties")),
                 this);
     }
 

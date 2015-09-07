@@ -2,6 +2,7 @@ package oleg.osipenko.mai;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,6 +16,8 @@ import dagger.Provides;
 import flow.StateParceler;
 import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
+import oleg.osipenko.mai.data.DataModule;
+import oleg.osipenko.mai.data.repository.MaiRepository;
 import oleg.osipenko.mai.presentation.MainActivity;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 
@@ -45,13 +48,17 @@ public class App extends Application {
 
 
     @Module(
-            injects = MainActivity.class,
+            injects = {
+                    MainActivity.class,
+                    DataModule.class
+            },
             library = true
     )
     public class AppModule {
         Context context;
 
         AppModule(Context context) {
+            Log.d("mai", "app module");
             this.context = context;
         }
 

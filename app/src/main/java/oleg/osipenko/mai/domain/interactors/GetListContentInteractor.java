@@ -21,7 +21,6 @@ public class GetListContentInteractor extends Interactor<ListContentSpecificatio
     @Inject
     public GetListContentInteractor(DataRepository repository, PostExecutionThread postExecutionThread, ThreadExecutor threadExecutor) {
         super(repository, postExecutionThread, threadExecutor);
-        Log.d("mai", "interactor constructor");
     }
 
     @Override
