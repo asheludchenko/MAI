@@ -42,6 +42,7 @@ dependencies {
     compile appDeps.butter
     debugCompile appDeps.canary
     compile appDeps.rxAndroid
+    compile appDeps.timber
 }
 
 
