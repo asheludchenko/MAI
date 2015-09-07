@@ -43,6 +43,7 @@ dependencies {
     debugCompile appDeps.canary
     compile appDeps.rxAndroid
     compile appDeps.timber
+    compile appDeps.stickyHeader
 }
 
 

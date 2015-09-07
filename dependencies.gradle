@@ -14,6 +14,7 @@ ext {
     canaryVersion = '1.3'
     rxAndroidVersion = '0.25.0'
     timberVersion = '3.1.0'
+    headerVersion = '0.4.2@aar'
 
     appDeps = [
             appcompat: "com.android.support:appcompat-v7:$appCompatVersion",
@@ -34,6 +35,7 @@ ext {
             butter: "com.jakewharton:butterknife:$butterknifeVersion",
             canary: "com.squareup.leakcanary:leakcanary-android:$canaryVersion",
             rxAndroid: "io.reactivex:rxandroid:$rxAndroidVersion",
-            timber: "com.jakewharton.timber:timber:$timberVersion"
+            timber: "com.jakewharton.timber:timber:$timberVersion",
+            stickyHeader: "com.timehop.stickyheadersrecyclerview:library:$headerVersion"
     ]
 }
