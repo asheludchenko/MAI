@@ -1,6 +1,6 @@
 package oleg.osipenko.mai.data.repository.specification
 
-import oleg.osipenko.mai.data.repository.RequestSpecification
+import oleg.osipenko.mai.data.repository.specification.RequestSpecification
 
 /**
  * Created by olegosipenko on 05.09.15.

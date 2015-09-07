@@ -1,4 +1,4 @@
-package oleg.osipenko.mai.data.repository
+package oleg.osipenko.mai.data.repository.specification
 
 /**
  * Created by olegosipenko on 05.09.15.

@@ -16,7 +16,6 @@ import flow.StateParceler;
 import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.presentation.MainActivity;
-import oleg.osipenko.mai.presentation.PresentationModule;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 
 /**
@@ -46,7 +45,6 @@ public class App extends Application {
 
 
     @Module(
-            includes = PresentationModule.class,
             injects = MainActivity.class,
             library = true
     )

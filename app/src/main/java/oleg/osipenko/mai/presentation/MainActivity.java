@@ -23,7 +23,7 @@ import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
-import oleg.osipenko.mai.presentation.screens.FacultiesScreen;
+import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -87,7 +87,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 getIntent(),
                 savedInstanceState,
                 parceler,
-                History.single(new FacultiesScreen()),
+                History.single(new ListContentScreen("Факультеты")),
                 this);
     }
 

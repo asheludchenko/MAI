@@ -41,6 +41,7 @@ dependencies {
     compile appDeps.gson
     compile appDeps.butter
     debugCompile appDeps.canary
+    compile appDeps.rxAndroid
 }
 
 
