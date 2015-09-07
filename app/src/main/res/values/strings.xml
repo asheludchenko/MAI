@@ -34,4 +34,30 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="faculties">
+        <item name="1st">№1 "Авиационная техника"</item>
+        <item name="2nd">№2 "Двигатели летательных аппаратов"</item>
+        <item name="3rd">№3 "Системы управления, информатика и электроэнергетика</item>
+        <item name="4th">№4 "Радиоэлектроника летательных аппаратов"</item>
+        <item name="6th">№6 "Аэрокосмический"</item>
+        <item name="7th">№7 "Робототехнические и интеллектуальные системы"</item>
+        <item name="8th">№8 "Прикладная математика и физика"</item>
+        <item name="9th">№9 "Прикладная механика"</item>
+        <item name="10th">№10 "Социальный инжиниринг"</item>
+        <item name="languages">Иностранных языков</item>
+        <item name="radioVtuz">"РадиоВТУЗ МАИ"</item>
+    </string-array>
+
+    <string-array name="institutes">
+        <item name="engineering">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
+        <item name="military">Военный институт МАИ</item>
+    </string-array>
+
+    <string-array name="filials">
+        <item name="bayconoor">"Восход" МАИ в г. Байконур</item>
+        <item name="ahtuba">"Взлёт" МАИ в г. Ахтубинске</item>
+        <item name="zhuk">"Стрела" МАИ в г. Жуковском</item>
+        <item name="khimki">"Ракетно-космическая техника" в г. Химки</item>
+    </string-array>
 </resources>
