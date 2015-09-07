@@ -20,10 +20,13 @@ import oleg.osipenko.mai.domain.DomainModule;
 import oleg.osipenko.mai.domain.executors.PostExecutionThread;
 import oleg.osipenko.mai.domain.executors.ThreadExecutor;
 import oleg.osipenko.mai.domain.interactors.GetListContentInteractor;
+import oleg.osipenko.mai.domain.interactors.Interactor;
+import oleg.osipenko.mai.presentation.MaiPresenter;
 import oleg.osipenko.mai.presentation.mf_boilerplate.Layout;
 import oleg.osipenko.mai.presentation.mf_boilerplate.WithModule;
 import oleg.osipenko.mai.presentation.views.ListContentView;
 import rx.Subscriber;
+import timber.log.Timber;
 
 /**
  * Created by olegosipenko on 07.09.15.
@@ -46,11 +49,10 @@ public class ListContentScreen extends Path {
     public class Module {
 
         public Module() {
-            Log.d("mai", "module constructor " + menuItem);
         }
 
         @Provides
-        GetListContentInteractor providesListContentInteractor(DataRepository repository, PostExecutionThread postExecutionThread, ThreadExecutor threadExecutor) {
+        Interactor<ListContentSpecification, List<ListContent>> providesListContentInteractor(DataRepository repository, PostExecutionThread postExecutionThread, ThreadExecutor threadExecutor) {
             GetListContentInteractor interactor = new GetListContentInteractor(repository, postExecutionThread, threadExecutor);
             ListContentSpecification specification = new ListContentSpecification(menuItem);
             interactor.updateParameter(specification);
@@ -59,26 +61,23 @@ public class ListContentScreen extends Path {
     }
 
     @Singleton
-    public static class Presenter extends ViewPresenter<ListContentView> {
-
-        GetListContentInteractor interactor;
+    public static class Presenter extends MaiPresenter<ListContentView, List<ListContent>> {
 
         @Inject
-        public Presenter(GetListContentInteractor interactor) {
-            this.interactor = interactor;
-            Log.d("mai", "constructor");
-        }
+        Interactor<ListContentSpecification, List<ListContent>> interactor;
 
+        public Presenter() {
+        }
 
         private Subscriber<List<ListContent>> subscriber = new Subscriber<List<ListContent>>() {
             @Override
             public void onCompleted() {
-
+                unsubscribe();
             }
 
             @Override
             public void onError(Throwable e) {
-
+                Timber.e(e.getMessage());
             }
 
             @Override
@@ -90,7 +89,6 @@ public class ListContentScreen extends Path {
         @Override
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
-            Log.d("mai", "presenter on load");
             if (!hasView()) return;
             interactor.execute(subscriber);
         }

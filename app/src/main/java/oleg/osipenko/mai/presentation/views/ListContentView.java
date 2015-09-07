@@ -30,7 +30,6 @@ public class ListContentView extends LinearLayout {
 
     public ListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Log.d("mai", "view constructor");
         ObjectGraphService.inject(context, this);
     }
 
@@ -38,14 +37,12 @@ public class ListContentView extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
-        textView.setText("Жопа");
 
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        Log.d("mai", "view " + (presenter == null));
         presenter.takeView(this);
     }
 
@@ -53,6 +50,12 @@ public class ListContentView extends LinearLayout {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         presenter.dropView(this);
+    }
+
+    @Override
+    protected void onWindowVisibilityChanged(int visibility) {
+        super.onWindowVisibilityChanged(visibility);
+        presenter.visibilityChanged(visibility == VISIBLE);
     }
 
     public void showText(List<ListContent> contents) {
