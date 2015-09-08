@@ -44,7 +44,11 @@ public class MaiRepository implements DataRepository {
                     .map(new Func1<String, ListContent>() {
                         @Override
                         public ListContent call(String s) {
-                            return new ListContent(s);
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setImage("https://pbs.twimg.com/profile_images/74881411/01_27.jpg")
+                                    .setWithImage(true)
+                                    .build();
                         }
                     })
                     .toList()

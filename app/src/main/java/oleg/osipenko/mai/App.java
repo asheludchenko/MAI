@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.leakcanary.LeakCanary;
@@ -17,7 +18,6 @@ import flow.StateParceler;
 import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.data.DataModule;
-import oleg.osipenko.mai.data.repository.MaiRepository;
 import oleg.osipenko.mai.presentation.MainActivity;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 
@@ -31,6 +31,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fresco.initialize(this);
         LeakCanary.install(this);
     }
 
