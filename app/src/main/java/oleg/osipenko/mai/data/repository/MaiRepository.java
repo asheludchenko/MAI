@@ -2,6 +2,7 @@ package oleg.osipenko.mai.data.repository;
 
 import android.content.Context;
 
+import java.util.Arrays;
 import java.util.List;
 
 import oleg.osipenko.mai.R;
@@ -12,7 +13,7 @@ import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
-import rx.functions.Func1;
+import rx.functions.Func2;
 
 /**
  * Created by olegosipenko on 07.09.15.
@@ -20,6 +21,33 @@ import rx.functions.Func1;
 public class MaiRepository implements DataRepository {
 
     public static final String FACULTIES = "menu_faculties";
+
+    List<Integer> facImages = Arrays.asList(
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th,
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th,
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th
+    );
+
+
+    List<Integer> instImages = Arrays.asList(
+            R.drawable.f1st,
+            R.drawable.f2nd
+    );
+
+    List<Integer> filImages = Arrays.asList(
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th
+    );
 
     Context context;
 
@@ -38,19 +66,22 @@ public class MaiRepository implements DataRepository {
             String[] faculties = context.getResources().getStringArray(R.array.faculties);
             String[] institutes = context.getResources().getStringArray(R.array.institutes);
             String[] filials = context.getResources().getStringArray(R.array.filials);
-            return Observable.from(faculties)
+            Observable<String> unitedStrings = Observable.from(faculties)
                     .concatWith(Observable.from(institutes))
-                    .concatWith(Observable.from(filials))
-                    .map(new Func1<String, ListContent>() {
-                        @Override
-                        public ListContent call(String s) {
-                            return new ListContent.Builder()
-                                    .setText(s)
-                                    .setImage("https://pbs.twimg.com/profile_images/74881411/01_27.jpg")
-                                    .setWithImage(true)
-                                    .build();
-                        }
-                    })
+                    .concatWith(Observable.from(filials));
+            Observable<Integer> unitedImages = Observable.from(facImages)
+                    .concatWith(Observable.from(instImages))
+                    .concatWith(Observable.from(filImages));
+            return Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+                @Override
+                public ListContent call(String s, Integer integer) {
+                    return new ListContent.Builder()
+                            .setText(s)
+                            .setImage(String.valueOf(integer))
+                            .setWithImage(true)
+                            .build();
+                }
+            })
                     .toList()
                     .cache();
         }

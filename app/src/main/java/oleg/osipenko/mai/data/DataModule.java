@@ -1,14 +1,16 @@
 package oleg.osipenko.mai.data;
 
 import android.content.Context;
-import android.util.Log;
 
-import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import oleg.osipenko.mai.App;
+import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.repository.DataRepository;
 import oleg.osipenko.mai.data.repository.MaiRepository;
 
@@ -26,4 +28,6 @@ public class DataModule {
     DataRepository providesRepository(Context context) {
         return new MaiRepository(context);
     }
+
+
 }
