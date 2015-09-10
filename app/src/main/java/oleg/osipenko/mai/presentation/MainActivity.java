@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -69,17 +70,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    ////.......
-
-                }
-                drawerLayout.closeDrawers();  // CLOSE DRAWER
-                return true;
-            }
-        });
+        initMenu();
 
         containerAsHandlesBack = (HandlesBack) container;
         flowDelegate = FlowDelegate.onCreate(
@@ -87,8 +78,23 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 getIntent(),
                 savedInstanceState,
                 parceler,
-                History.single(new ListContentScreen("menu_faculties")),
+                History.single(new ListContentScreen("Факультеты")),
                 this);
+    }
+
+    private void initMenu() {
+        menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Flow.get(MainActivity.this).setHistory(
+                        History.single(new ListContentScreen(menuItem.getTitle().toString())),
+                        Flow.Direction.REPLACE
+                );
+                drawerLayout.closeDrawers();  // CLOSE DRAWER
+                toolbar.setTitle(menuItem.getTitle());
+                return true;
+            }
+        });
     }
 
     @Override

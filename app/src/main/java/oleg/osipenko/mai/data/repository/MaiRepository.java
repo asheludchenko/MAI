@@ -3,6 +3,8 @@ package oleg.osipenko.mai.data.repository;
 import android.content.Context;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import oleg.osipenko.mai.R;
@@ -20,7 +22,7 @@ import rx.functions.Func2;
  */
 public class MaiRepository implements DataRepository {
 
-    public static final String FACULTIES = "menu_faculties";
+    public static final String FACULTIES = "Факультеты";
 
     List<Integer> facImages = Arrays.asList(
             R.drawable.f1st,
@@ -85,7 +87,7 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         }
-        return null;
+        return Observable.from(Collections.EMPTY_LIST);
     }
 
     @Override
