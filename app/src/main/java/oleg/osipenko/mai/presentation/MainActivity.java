@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.wnafee.vector.compat.ResourcesCompat;
 
@@ -52,27 +54,14 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        @SuppressWarnings("deprecation") FlowDelegate.NonConfigurationInstance nonConfig =
+        @SuppressWarnings("deprecation")
+        FlowDelegate.NonConfigurationInstance nonConfig =
                 (FlowDelegate.NonConfigurationInstance) getLastNonConfigurationInstance();
-
-        MortarScope parentScope = MortarScope.getScope(getApplication());
-        String scopeName = getLocalClassName() + "-task-" + getTaskId();
-
-        activityScope = parentScope.findChild(scopeName);
-        if (null == activityScope) {
-            activityScope = parentScope.buildChild()
-                    .withService(BundleServiceRunner.SERVICE_NAME, new BundleServiceRunner())
-                    .build(scopeName);
-        }
-        ObjectGraphService.inject(this, this);
-
-        getBundleServiceRunner(activityScope).onCreate(savedInstanceState);
-
+        mortarStuff(savedInstanceState);
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Drawable hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
-        toolbar.setNavigationIcon(hamburger);
+        initHamburger();
 
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -94,6 +83,36 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 parceler,
                 History.single(new ListContentScreen("menu_faculties")),
                 this);
+    }
+
+    private void initHamburger() {
+        Drawable hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
+        toolbar.setNavigationIcon(hamburger);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.closeDrawers();
+                }
+            }
+        });
+    }
+
+    private void mortarStuff(Bundle savedInstanceState) {
+        MortarScope parentScope = MortarScope.getScope(getApplication());
+        String scopeName = getLocalClassName() + "-task-" + getTaskId();
+
+        activityScope = parentScope.findChild(scopeName);
+        if (null == activityScope) {
+            activityScope = parentScope.buildChild()
+                    .withService(BundleServiceRunner.SERVICE_NAME, new BundleServiceRunner())
+                    .build(scopeName);
+        }
+        ObjectGraphService.inject(this, this);
+
+        getBundleServiceRunner(activityScope).onCreate(savedInstanceState);
     }
 
     @Override
