@@ -6,11 +6,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.Collections;
@@ -116,8 +118,15 @@ public class ListContentView extends RecyclerView {
                     item.getSub4() == null ? GONE : VISIBLE
             );
             if (item.getText() != null) holder.text.setText(item.getText());
-            if (item.getImage() != null) {
+            if (item.getImage() != null && !item.isWithImage()) {
                 Uri uri = Uri.parse(item.getImage());
+                holder.image.setImageURI(uri);
+            }
+            if (item.getImage() != null && item.isWithImage()) {
+                Uri uri = new Uri.Builder()
+                        .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                        .path(item.getImage())
+                        .build();
                 holder.image.setImageURI(uri);
             }
             if (item.getImage() == null && item.isWithImage()) {
