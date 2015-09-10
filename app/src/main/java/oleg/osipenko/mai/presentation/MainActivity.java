@@ -2,12 +2,15 @@ package oleg.osipenko.mai.presentation;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.wnafee.vector.compat.ResourcesCompat;
 
 import javax.inject.Inject;
 
@@ -68,6 +71,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        Drawable hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
+        toolbar.setNavigationIcon(hamburger);
 
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
