@@ -16,6 +16,7 @@ ext {
     timberVersion = '3.1.0'
     headerVersion = '0.4.2@aar'
     vectorVersion = '1.0.5'
+    bindingVersion = '0.2.0'
 
     appDeps = [
             appcompat: "com.android.support:appcompat-v7:$appCompatVersion",
@@ -38,6 +39,7 @@ ext {
             rxAndroid: "io.reactivex:rxandroid:$rxAndroidVersion",
             timber: "com.jakewharton.timber:timber:$timberVersion",
             stickyHeader: "com.timehop.stickyheadersrecyclerview:library:$headerVersion",
-            vector: "com.wnafee:vector-compat:$vectorVersion"
+            vector: "com.wnafee:vector-compat:$vectorVersion",
+            designBinding: "com.jakewharton.rxbinding:rxbinding-design:$bindingVersion"
     ]
 }

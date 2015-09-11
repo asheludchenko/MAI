@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#0091D2</item>
+        <item name="colorPrimaryDark">#007AA5</item>
     </style>
 
     <style name="Toolbar">

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
+import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
 import com.wnafee.vector.compat.ResourcesCompat;
 
 import javax.inject.Inject;
@@ -29,6 +32,7 @@ import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
+import rx.functions.Func1;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -42,6 +46,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     MortarScreenSwitcherFrame container;
     @Bind(R.id.nav_menu)
     NavigationView menu;
+    @Bind(R.id.tab_layout)
+    TabLayout tabs;
 
     @Inject
     GsonParceler parceler;
@@ -56,7 +62,6 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initIcons();
 
         @SuppressWarnings("deprecation")
         FlowDelegate.NonConfigurationInstance nonConfig =
@@ -65,9 +70,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        initHamburger();
 
+        initIcons();
+        initHamburger();
         initMenu();
+        initTabs();
 
         containerAsHandlesBack = (HandlesBack) container;
         flowDelegate = FlowDelegate.onCreate(
@@ -77,6 +84,30 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 parceler,
                 History.single(new ListContentScreen("Факультеты")),
                 this);
+
+    }
+
+    private void initTabs() {
+        tabs.addTab(tabs.newTab().setText(R.string.tab_main));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_news));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_map));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_schedule));
+        RxTabLayout.selectionEvents(tabs)
+                .map(new Func1<TabLayoutSelectionEvent, Void>() {
+                    @Override
+                    public Void call(TabLayoutSelectionEvent tabLayoutSelectionEvent) {
+                        if (Flow.get(MainActivity.this) != null) {
+                            String title = tabLayoutSelectionEvent.tab().getText().toString();
+                            Flow.get(MainActivity.this).setHistory(
+                                    History.single(new ListContentScreen(title)),
+                                    Flow.Direction.REPLACE
+                            );
+                            toolbar.setTitle(title);
+                        }
+                        return null;
+                    }
+                })
+                .subscribe();
     }
 
     private void initIcons() {

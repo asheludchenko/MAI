@@ -45,6 +45,7 @@ dependencies {
     compile appDeps.timber
     compile appDeps.stickyHeader
     compile appDeps.vector
+    compile appDeps.designBinding
 }
 
 
