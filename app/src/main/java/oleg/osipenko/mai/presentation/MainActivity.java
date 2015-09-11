@@ -99,6 +99,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             }
         });
         toolbar.setTitle(R.string.toolbar_title_student);
+        toolbar.setTitleTextColor(0xFFFFFFFF);
     }
 
     private void mortarStuff(Bundle savedInstanceState) {

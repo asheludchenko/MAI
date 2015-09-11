@@ -14,7 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?colorPrimary"/>
+            style="@style/Toolbar" />
 
         <oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame
             android:id="@+id/container"

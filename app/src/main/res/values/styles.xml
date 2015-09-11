@@ -6,4 +6,8 @@
         <item name="colorPrimary">#0091D2</item>
     </style>
 
+    <style name="Toolbar">
+        <item name="android:background">?colorPrimary</item>
+    </style>
+
 </resources>
