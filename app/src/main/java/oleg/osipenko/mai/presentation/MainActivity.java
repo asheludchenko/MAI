@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,9 +50,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private HandlesBack containerAsHandlesBack;
     private FlowDelegate flowDelegate;
 
+    private Drawable hamburger;
+    private Drawable arrow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initIcons();
 
         @SuppressWarnings("deprecation")
         FlowDelegate.NonConfigurationInstance nonConfig =
@@ -76,8 +79,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 this);
     }
 
+    private void initIcons() {
+        hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
+        arrow = ResourcesCompat.getDrawable(this, R.drawable.arrow);
+    }
+
     private void initHamburger() {
-        Drawable hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
+
         toolbar.setNavigationIcon(hamburger);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +124,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                         History.single(new ListContentScreen(menuItem.getTitle().toString())),
                         Flow.Direction.REPLACE
                 );
+                toolbar.setNavigationIcon(arrow);
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
                 toolbar.setTitle(menuItem.getTitle());
                 return true;
