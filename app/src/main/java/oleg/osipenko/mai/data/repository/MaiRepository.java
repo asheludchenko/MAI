@@ -87,31 +87,31 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticContent>> getStaticContent(StaticContentSpecification specification) {
         if (specification.specified(PRACTICS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DOTATIONS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(EMPLOYMENT_CENTER)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SCIENCE)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DORMITORIES)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SANATORIUM)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DEBATING_CLUB)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MAISKY_VZLET)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(PROFKOM)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SOMOL)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(PRESS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(HISTORY)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         }
-        return null;
+        return Observable.from(Collections.EMPTY_LIST);
     }
 
     @Override
@@ -139,23 +139,23 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(LIBRARIES)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(CANTEENS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(COURSES)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(ACADEMIC_MOBILITY)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SPORT_SECTIONS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MEDIA)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(LIFE)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(HELP)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         }
         return Observable.from(Collections.EMPTY_LIST);
     }
@@ -163,20 +163,20 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticListContent>> getStaticListContent(StaticListContentSpecification specification) {
         if (specification.specified(SESSION)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MILITARY_INSTITUTE)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MAGISTRACY)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SECONDARY_EDUCATION)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(RECREATION_CENTERS)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DK)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DOSAAF)) {
-
+            return Observable.from(Collections.EMPTY_LIST);
         }
-        return null;
+        return Observable.from(Collections.EMPTY_LIST);
     }
 }

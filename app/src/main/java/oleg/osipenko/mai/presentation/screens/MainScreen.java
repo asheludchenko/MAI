@@ -1,5 +1,7 @@
 package oleg.osipenko.mai.presentation.screens;
 
+import android.os.Bundle;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -34,4 +36,6 @@ public class MainScreen extends Path {
         public Presenter() {
         }
     }
+
+
 }

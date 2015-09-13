@@ -46,6 +46,7 @@ dependencies {
     compile appDeps.stickyHeader
     compile appDeps.vector
     compile appDeps.designBinding
+    compile appDeps.zoom
 }
 
 

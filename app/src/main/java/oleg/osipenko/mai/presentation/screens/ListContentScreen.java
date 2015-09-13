@@ -82,7 +82,6 @@ public class ListContentScreen extends Path {
             subscriber = new Subscriber<List<ListContent>>() {
                 @Override
                 public void onCompleted() {
-                    Log.d("mai", "completed");
                     subscriber = Subscribers.empty();
                 }
 

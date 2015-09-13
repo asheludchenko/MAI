@@ -60,6 +60,8 @@ public class Router {
             case MEDIA:
             case LIFE:
             case HELP:
+            case NEWS:
+            case SCHEDULE:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
