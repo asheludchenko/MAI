@@ -71,14 +71,20 @@ public class App extends Application {
 
         @Provides
         @Singleton
-        Gson provideGson() {
+        Gson providesGson() {
             return new GsonBuilder().create();
         }
 
         @Provides
         @Singleton
-        StateParceler provideParceler(Gson gson) {
+        StateParceler providesParceler(Gson gson) {
             return new GsonParceler(gson);
+        }
+
+        @Provides
+        @Singleton
+        Router providesRouter() {
+            return new Router();
         }
     }
 }

@@ -21,10 +21,12 @@ import mortar.MortarScope;
 import mortar.bundler.BundleServiceRunner;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
+import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
+import oleg.osipenko.mai.presentation.screens.MainScreen;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -41,6 +43,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     @Inject
     GsonParceler parceler;
+    @Inject
+    Router router;
 
     private MortarScope activityScope;
     private HandlesBack containerAsHandlesBack;
@@ -78,7 +82,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 getIntent(),
                 savedInstanceState,
                 parceler,
-                History.single(new ListContentScreen("Факультеты")),
+                History.single(new MainScreen()),
                 this);
     }
 
@@ -87,7 +91,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 Flow.get(MainActivity.this).setHistory(
-                        History.single(new ListContentScreen(menuItem.getTitle().toString())),
+                        History.single(router.getScreen(menuItem.getTitle().toString())),
                         Flow.Direction.REPLACE
                 );
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
