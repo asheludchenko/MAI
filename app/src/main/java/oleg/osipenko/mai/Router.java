@@ -3,6 +3,7 @@ package oleg.osipenko.mai;
 import flow.path.Path;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
+import oleg.osipenko.mai.presentation.screens.MapScreen;
 import oleg.osipenko.mai.presentation.screens.StaticContentScreen;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
 
@@ -40,9 +41,14 @@ public class Router {
     public static final String HISTORY = "История МАИ";
     public static final String LIFE = "Жизнь маёвца";
     public static final String HELP = "В помощь студенту";
+    public static final String MAIN = "Главная";
+    public static final String NEWS = "Новости";
+    public static final String MAP = "Карта";
+    public static final String SCHEDULE = "Расписание";
 
     public Path getScreen(String item) {
-        if (item.contains(WEEK)) return new MainScreen();
+        if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
+        if (item.equals(MAP)) return new MapScreen();
         switch (item) {
             case FACULTIES:
             case SCHOLARSHIPS:

@@ -103,7 +103,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                         if (Flow.get(MainActivity.this) != null) {
                             String title = tabLayoutSelectionEvent.tab().getText().toString();
                             Flow.get(MainActivity.this).setHistory(
-                                    History.single(new ListContentScreen(title)),
+                                    History.single(router.getScreen(title)),
                                     Flow.Direction.REPLACE
                             );
                             toolbar.setTitle(title);
