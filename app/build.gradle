@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "oleg.osipenko.mai"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -44,6 +44,8 @@ dependencies {
     compile appDeps.rxAndroid
     compile appDeps.timber
     compile appDeps.stickyHeader
+    compile appDeps.vector
+    compile appDeps.designBinding
 }
 
 

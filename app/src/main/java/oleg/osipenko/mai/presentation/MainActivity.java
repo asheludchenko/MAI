@@ -2,13 +2,20 @@ package oleg.osipenko.mai.presentation;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
+import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
+import com.wnafee.vector.compat.ResourcesCompat;
 
 import javax.inject.Inject;
 
@@ -27,6 +34,7 @@ import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
+import rx.functions.Func1;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -40,6 +48,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     MortarScreenSwitcherFrame container;
     @Bind(R.id.nav_menu)
     NavigationView menu;
+    @Bind(R.id.tab_layout)
+    TabLayout tabs;
 
     @Inject
     GsonParceler parceler;
@@ -50,13 +60,83 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private HandlesBack containerAsHandlesBack;
     private FlowDelegate flowDelegate;
 
+    private Drawable hamburger;
+    private Drawable arrow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        @SuppressWarnings("deprecation") FlowDelegate.NonConfigurationInstance nonConfig =
+        @SuppressWarnings("deprecation")
+        FlowDelegate.NonConfigurationInstance nonConfig =
                 (FlowDelegate.NonConfigurationInstance) getLastNonConfigurationInstance();
+        mortarStuff(savedInstanceState);
 
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
+        initIcons();
+        initHamburger();
+        initMenu();
+        initTabs();
+
+        containerAsHandlesBack = (HandlesBack) container;
+        flowDelegate = FlowDelegate.onCreate(
+                nonConfig,
+                getIntent(),
+                savedInstanceState,
+                parceler,
+                History.single(new MainScreen()),
+                this);
+
+    }
+
+    private void initTabs() {
+        tabs.addTab(tabs.newTab().setText(R.string.tab_main));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_news));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_map));
+        tabs.addTab(tabs.newTab().setText(R.string.tab_schedule));
+        RxTabLayout.selectionEvents(tabs)
+                .map(new Func1<TabLayoutSelectionEvent, Void>() {
+                    @Override
+                    public Void call(TabLayoutSelectionEvent tabLayoutSelectionEvent) {
+                        if (Flow.get(MainActivity.this) != null) {
+                            String title = tabLayoutSelectionEvent.tab().getText().toString();
+                            Flow.get(MainActivity.this).setHistory(
+                                    History.single(new ListContentScreen(title)),
+                                    Flow.Direction.REPLACE
+                            );
+                            toolbar.setTitle(title);
+                        }
+                        return null;
+                    }
+                })
+                .subscribe();
+    }
+
+    private void initIcons() {
+        hamburger = ResourcesCompat.getDrawable(this, R.drawable.hamburger);
+        arrow = ResourcesCompat.getDrawable(this, R.drawable.arrow);
+    }
+
+    private void initHamburger() {
+
+        toolbar.setNavigationIcon(hamburger);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.closeDrawers();
+                }
+            }
+        });
+        toolbar.setTitle(R.string.toolbar_title_student);
+        toolbar.setTitleTextColor(0xFFFFFFFF);
+    }
+
+    private void mortarStuff(Bundle savedInstanceState) {
         MortarScope parentScope = MortarScope.getScope(getApplication());
         String scopeName = getLocalClassName() + "-task-" + getTaskId();
 
@@ -69,21 +149,6 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         ObjectGraphService.inject(this, this);
 
         getBundleServiceRunner(activityScope).onCreate(savedInstanceState);
-
-
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
-        initMenu();
-
-        containerAsHandlesBack = (HandlesBack) container;
-        flowDelegate = FlowDelegate.onCreate(
-                nonConfig,
-                getIntent(),
-                savedInstanceState,
-                parceler,
-                History.single(new MainScreen()),
-                this);
     }
 
     private void initMenu() {
@@ -94,6 +159,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                         History.single(router.getScreen(menuItem.getTitle().toString())),
                         Flow.Direction.REPLACE
                 );
+                toolbar.setNavigationIcon(arrow);
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
                 toolbar.setTitle(menuItem.getTitle());
                 return true;

@@ -26,6 +26,7 @@
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
         android:lineSpacingMultiplier="0.85"
+        android:textColor="@android:color/black"
         android:textSize="15sp"
         android:maxLines="2"
         tools:visibility="gone"
@@ -40,6 +41,7 @@
         android:maxLines="2"
         android:visibility="gone"
         tools:visibility="visible"
+        android:textColor="@android:color/black"
         android:lineSpacingMultiplier="0.7"
         tools:text="Столовая\nЕлочки"/>
 
@@ -50,6 +52,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         tools:visibility="visible"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:text="10:00 - 17:00"/>
 
@@ -64,6 +67,7 @@
         android:textSize="12sp"
         android:visibility="gone"
         tools:visibility="visible"
+        android:textColor="@android:color/black"
         tools:text="Корпус №24, 4-й этаж"/>
 
     <TextView
@@ -77,6 +81,7 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:textSize="12sp"
+        android:textColor="@android:color/black"
         tools:text="Корпус №24, 4-й этаж"/>
 
 </RelativeLayout>
