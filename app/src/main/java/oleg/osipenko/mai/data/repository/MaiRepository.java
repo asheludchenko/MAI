@@ -2,8 +2,12 @@ package oleg.osipenko.mai.data.repository;
 
 import android.content.Context;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+import com.annimon.stream.function.Function;
+
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,42 +19,44 @@ import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
+import rx.Subscriber;
 import rx.functions.Func2;
-import static oleg.osipenko.mai.Router.FACULTIES;
-import static oleg.osipenko.mai.Router.SESSION;
-import static oleg.osipenko.mai.Router.PRACTICS;
-import static oleg.osipenko.mai.Router.SCHOLARSHIPS;
-import static oleg.osipenko.mai.Router.LIBRARIES;
-import static oleg.osipenko.mai.Router.CANTEENS;
-import static oleg.osipenko.mai.Router.DOTATIONS;
-import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
-import static oleg.osipenko.mai.Router.SECONDARY_EDUCATION;
-import static oleg.osipenko.mai.Router.MAGISTRACY;
-import static oleg.osipenko.mai.Router.COURSES;
+
 import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
-import static oleg.osipenko.mai.Router.EMPLOYMENT_CENTER;
-import static oleg.osipenko.mai.Router.SCIENCE;
-import static oleg.osipenko.mai.Router.DORMITORIES;
-import static oleg.osipenko.mai.Router.SANATORIUM;
-import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
-import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
-import static oleg.osipenko.mai.Router.DK;
-import static oleg.osipenko.mai.Router.DOSAAF;
+import static oleg.osipenko.mai.Router.CANTEENS;
+import static oleg.osipenko.mai.Router.COURSES;
 import static oleg.osipenko.mai.Router.DEBATING_CLUB;
-import static oleg.osipenko.mai.Router.MAISKY_VZLET;
-import static oleg.osipenko.mai.Router.PROFKOM;
-import static oleg.osipenko.mai.Router.SOMOL;
-import static oleg.osipenko.mai.Router.PRESS;
-import static oleg.osipenko.mai.Router.MEDIA;
-import static oleg.osipenko.mai.Router.HISTORY;
-import static oleg.osipenko.mai.Router.LIFE;
+import static oleg.osipenko.mai.Router.DK;
+import static oleg.osipenko.mai.Router.DORMITORIES;
+import static oleg.osipenko.mai.Router.DOSAAF;
+import static oleg.osipenko.mai.Router.DOTATIONS;
+import static oleg.osipenko.mai.Router.EMPLOYMENT_CENTER;
+import static oleg.osipenko.mai.Router.FACULTIES;
 import static oleg.osipenko.mai.Router.HELP;
+import static oleg.osipenko.mai.Router.HISTORY;
+import static oleg.osipenko.mai.Router.LIBRARIES;
+import static oleg.osipenko.mai.Router.LIFE;
+import static oleg.osipenko.mai.Router.MAGISTRACY;
+import static oleg.osipenko.mai.Router.MAISKY_VZLET;
+import static oleg.osipenko.mai.Router.MEDIA;
+import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
+import static oleg.osipenko.mai.Router.PRACTICS;
+import static oleg.osipenko.mai.Router.PRESS;
+import static oleg.osipenko.mai.Router.PROFKOM;
+import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
+import static oleg.osipenko.mai.Router.SANATORIUM;
+import static oleg.osipenko.mai.Router.SCHOLARSHIPS;
+import static oleg.osipenko.mai.Router.SCIENCE;
+import static oleg.osipenko.mai.Router.SECONDARY_EDUCATION;
+import static oleg.osipenko.mai.Router.SESSION;
+import static oleg.osipenko.mai.Router.SOMOL;
+import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
 
 /**
  * Created by olegosipenko on 07.09.15.
  */
 public class MaiRepository implements DataRepository {
-    
+
     List<Integer> facImages = Arrays.asList(
             R.drawable.f1st,
             R.drawable.f2nd,
@@ -87,7 +93,26 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticContent>> getStaticContent(StaticContentSpecification specification) {
         if (specification.specified(PRACTICS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] practics = context.getResources().getStringArray(R.array.practics);
+            final List<StaticContent> contents = Stream.of(practics)
+                    .map(new Function<String, StaticContent>() {
+                        @Override
+                        public StaticContent apply(String value) {
+                            return new StaticContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<StaticContent>toList());
+            contents.add(0, new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.praktika))
+                    .build());
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(contents);
+                }
+            });
         } else if (specification.specified(DOTATIONS)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(EMPLOYMENT_CENTER)) {
@@ -163,7 +188,43 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticListContent>> getStaticListContent(StaticListContentSpecification specification) {
         if (specification.specified(SESSION)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] session = context.getResources().getStringArray(R.array.sessions);
+            String[] sessions = context.getResources().getStringArray(R.array.sessions_list);
+            List<ListContent> sessionList = Stream.of(sessions)
+                    .map(new Function<String, ListContent>() {
+                        @Override
+                        public ListContent apply(String value) {
+                            return new ListContent.Builder()
+                                    .setTitle(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<ListContent>toList());
+            StaticListContent sessionsBlock = new StaticListContent.Builder()
+                    .setList(sessionList)
+                    .build();
+            List<StaticListContent> blocks = Stream.of(session)
+                    .map(new Function<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent apply(String value) {
+                            return new StaticListContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<StaticListContent>toList());
+            StaticListContent image = new StaticListContent.Builder()
+                    .setImage(String.valueOf(R.drawable.sessia))
+                    .build();
+            blocks.add(0, image);
+            blocks.add(sessionsBlock);
+            final List<StaticListContent> contents = new ArrayList<>(blocks);
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(contents);
+                }
+            });
         } else if (specification.specified(MILITARY_INSTITUTE)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MAGISTRACY)) {

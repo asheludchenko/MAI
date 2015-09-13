@@ -73,7 +73,7 @@ public class ListContentView extends RecyclerView {
         presenter.visibilityChanged(visibility == VISIBLE);
     }
 
-    public void showText(List<ListContent> contents) {
+    public void showItems(List<ListContent> contents) {
         adapter.setContents(contents);
         adapter.notifyDataSetChanged();
     }

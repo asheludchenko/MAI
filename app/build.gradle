@@ -47,6 +47,7 @@ dependencies {
     compile appDeps.vector
     compile appDeps.designBinding
     compile appDeps.zoom
+    compile appDeps.streams
 }
 
 

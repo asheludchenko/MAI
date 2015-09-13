@@ -1,7 +1,6 @@
 package oleg.osipenko.mai.presentation.screens;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +10,6 @@ import javax.inject.Singleton;
 
 import dagger.Provides;
 import flow.path.Path;
-import mortar.ViewPresenter;
 import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
@@ -94,7 +92,7 @@ public class ListContentScreen extends Path {
                 @Override
                 public void onNext(List<ListContent> contents) {
                     if (!hasView()) return;
-                    getView().showText(contents);
+                    getView().showItems(contents);
                 }
             };
             interactor.execute(subscriber);
