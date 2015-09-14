@@ -52,7 +52,10 @@ public class ListContentScreen extends Path {
         }
 
         @Provides
-        Interactor<ListContentSpecification, List<ListContent>> providesListContentInteractor(DataRepository repository, PostExecutionThread postExecutionThread, ThreadExecutor threadExecutor) {
+        Interactor<ListContentSpecification, List<ListContent>> providesListContentInteractor(
+                DataRepository repository,
+                PostExecutionThread postExecutionThread,
+                ThreadExecutor threadExecutor) {
             GetListContentInteractor interactor = new GetListContentInteractor(repository, postExecutionThread, threadExecutor);
             ListContentSpecification specification = new ListContentSpecification(menuItem);
             interactor.updateParameter(specification);
@@ -65,13 +68,16 @@ public class ListContentScreen extends Path {
 
         @Inject
         Interactor<ListContentSpecification, List<ListContent>> interactor;
+
         List<ListContent> contents;
+
+        private Subscriber<List<ListContent>> subscriber = Subscribers.empty();
 
         public Presenter() {
             contents = Collections.emptyList();
         }
 
-        private Subscriber<List<ListContent>> subscriber = Subscribers.empty();
+
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {

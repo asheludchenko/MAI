@@ -1,5 +1,7 @@
 package oleg.osipenko.mai.data.repository;
 
+import android.graphics.Bitmap;
+
 import java.util.List;
 
 import oleg.osipenko.mai.data.dataModel.ListContent;
@@ -19,4 +21,6 @@ public interface DataRepository {
     Observable<List<ListContent>> getListContent(ListContentSpecification specification);
 
     Observable<List<StaticListContent>> getStaticListContent(StaticListContentSpecification specification);
+
+    Observable<Bitmap> getMapObservable();
 }

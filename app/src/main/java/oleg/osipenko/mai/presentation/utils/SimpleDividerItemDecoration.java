@@ -1,4 +1,4 @@
-package oleg.osipenko.mai.presentation;
+package oleg.osipenko.mai.presentation.utils;
 
 import android.content.Context;
 import android.graphics.Canvas;

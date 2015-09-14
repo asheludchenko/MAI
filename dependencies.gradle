@@ -17,7 +17,6 @@ ext {
     headerVersion = '0.4.2@aar'
     vectorVersion = '1.0.5'
     bindingVersion = '0.2.0'
-    zoomVersion = '1.0.5'
     streamsVersion = '1.0.3'
 
     appDeps = [
@@ -43,7 +42,6 @@ ext {
             stickyHeader: "com.timehop.stickyheadersrecyclerview:library:$headerVersion",
             vector: "com.wnafee:vector-compat:$vectorVersion",
             designBinding: "com.jakewharton.rxbinding:rxbinding-design:$bindingVersion",
-            zoom: "it.sephiroth.android.library.imagezoom:imagezoom:$zoomVersion",
             streams: "com.annimon:stream:$streamsVersion"
     ]
 }

@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+    <oleg.osipenko.mai.presentation.utils.ScaleImageView
         android:id="@+id/zoom"
+        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

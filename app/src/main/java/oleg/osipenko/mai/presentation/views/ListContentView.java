@@ -6,7 +6,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,7 @@ import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
-import oleg.osipenko.mai.presentation.SimpleDividerItemDecoration;
+import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 
 /**

@@ -1,6 +1,8 @@
 package oleg.osipenko.mai.data.repository;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -239,5 +241,17 @@ public class MaiRepository implements DataRepository {
             return Observable.from(Collections.EMPTY_LIST);
         }
         return Observable.from(Collections.EMPTY_LIST);
+    }
+
+    @Override
+    public Observable<Bitmap> getMapObservable() {
+
+        return Observable.create(new Observable.OnSubscribe<Bitmap>() {
+            @Override
+            public void call(Subscriber<? super Bitmap> subscriber) {
+                Bitmap map = BitmapFactory.decodeResource(context.getResources(), R.drawable.map);
+                subscriber.onNext(map);
+            }
+        }).cache();
     }
 }
