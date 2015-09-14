@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g00"
+        android:checkableBehavior="single">
         <item
             android:checkable="false"
             android:title="@string/lower_week"/>
@@ -26,7 +28,9 @@
             android:id="@+id/menu_dotations"
             android:title="@string/dotations"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g01"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_military"
             android:title="@string/military_institute"/>
@@ -46,12 +50,16 @@
             android:id="@+id/menu_employment"
             android:title="@string/employment_center"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g02"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_science"
             android:title="@string/science"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g03"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_dormitories"
             android:title="@string/dormitories"/>
@@ -62,7 +70,9 @@
             android:id="@+id/menu_recreations"
             android:title="@string/recreation_centers"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g04"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/sport"
             android:title="@string/sport_sections"/>
@@ -79,7 +89,9 @@
             android:id="@+id/menu_maisky_vzlet"
             android:title="@string/maisky_vzlet"/>
     </group>
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/g05"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/menu_profkom"
             android:title="@string/profkom"/>
