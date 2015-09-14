@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:background="@android:color/holo_green_light">
+
+    <FrameLayout
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    
+    <RelativeLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:roundAsCircle="true"
+            android:visibility="gone"
+            app:placeholderImage="@android:color/darker_gray"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_toRightOf="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="0.85"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:maxLines="2"
+            tools:text="@string/lorem"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

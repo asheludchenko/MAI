@@ -221,19 +221,16 @@ public class MaiRepository implements DataRepository {
         if (specification.specified(SESSION)) {
             String[] session = context.getResources().getStringArray(R.array.sessions);
             String[] sessions = context.getResources().getStringArray(R.array.sessions_list);
-            List<ListContent> sessionList = Stream.of(sessions)
-                    .map(new Function<String, ListContent>() {
+            List<StaticListContent> sessionList = Stream.of(sessions)
+                    .map(new Function<String, StaticListContent>() {
                         @Override
-                        public ListContent apply(String value) {
-                            return new ListContent.Builder()
-                                    .setTitle(value)
+                        public StaticListContent apply(String value) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(value)
                                     .build();
                         }
                     })
-                    .collect(Collectors.<ListContent>toList());
-            StaticListContent sessionsBlock = new StaticListContent.Builder()
-                    .setList(sessionList)
-                    .build();
+                    .collect(Collectors.<StaticListContent>toList());
             List<StaticListContent> blocks = Stream.of(session)
                     .map(new Function<String, StaticListContent>() {
                         @Override
@@ -248,7 +245,7 @@ public class MaiRepository implements DataRepository {
                     .setImage(String.valueOf(R.drawable.sessia))
                     .build();
             blocks.add(0, image);
-            blocks.add(sessionsBlock);
+            blocks.addAll(sessionList);
             final List<StaticListContent> contents = new ArrayList<>(blocks);
             return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
                 @Override

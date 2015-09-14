@@ -3,11 +3,15 @@ package oleg.osipenko.mai.presentation.views;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,7 +21,9 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import javax.inject.Inject;
 
@@ -28,6 +34,7 @@ import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
+import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -36,6 +43,7 @@ public class StaticListContentView extends NestedScrollView {
 
     @Inject
     StaticListContentScreen.Presenter presenter;
+
     @Bind(R.id.root)
     LinearLayout root;
 
@@ -75,8 +83,8 @@ public class StaticListContentView extends NestedScrollView {
                 view = getImageView(content.getImage());
             } else if (content.getText() != null) {
                 view = getTextView(content.getText());
-            } else if (content.getLists() != null) {
-                //view = getListView(content.getLists());
+            } else if (content.getListTitle() != null) {
+                view = getListView(content);
             }
             root.addView(view);
         }
@@ -99,7 +107,7 @@ public class StaticListContentView extends NestedScrollView {
         imageView.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 height
-                ));
+        ));
         return imageView;
     }
 
@@ -116,8 +124,25 @@ public class StaticListContentView extends NestedScrollView {
         return textView;
     }
 
-    private View getListView(List<ListContent> contents) {
-        return null;
+    private View getListView(StaticListContent content) {
+        View listContent = View.inflate(getContext(), R.layout.item_static_list, null);
+        TextView textView = (TextView) listContent.findViewById(R.id.text);
+        textView.setText(content.getListTitle());
+        if (content.getListImage() != null) {
+            SimpleDraweeView image = (SimpleDraweeView) listContent.findViewById(R.id.image);
+            image.setVisibility(VISIBLE);
+            Uri uri = null;
+            if (content.isListWithImage()) {
+                uri = Uri.parse(content.getListImage());
+            } else {
+                uri = new Uri.Builder()
+                        .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                        .path(content.getListImage())
+                        .build();
+            }
+            image.setImageURI(uri);
+        }
+        return listContent;
     }
 
     private void setParams(View view) {
