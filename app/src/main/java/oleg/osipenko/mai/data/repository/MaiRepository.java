@@ -23,6 +23,7 @@ import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecific
 import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Action1;
 import rx.functions.Func2;
 
 import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
@@ -114,6 +115,7 @@ public class MaiRepository implements DataRepository {
                 @Override
                 public void call(Subscriber<? super List<StaticContent>> subscriber) {
                     subscriber.onNext(contents);
+                    subscriber.onCompleted();
                 }
             });
         } else if (specification.specified(DOTATIONS)) {
@@ -161,19 +163,12 @@ public class MaiRepository implements DataRepository {
                     .concatWith(Observable.from(instImages))
                     .concatWith(Observable.from(filImages));
 
-
-
-            Observable<ListContent> sections = Observable.create(new Observable.OnSubscribe<ListContent>() {
-                @Override
-                public void call(Subscriber<? super ListContent> subscriber) {
-                    ListContent sectionBlock = new ListContent.Builder()
-                            .setSections(sectionsArray)
-                            .setWithSections(true)
-                            .build();
-                    subscriber.onNext(sectionBlock);
-                }
-            });
-            Observable<ListContent> contents = Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+            ListContent sectionBlock = new ListContent.Builder()
+                    .setSections(sectionsArray)
+                    .setWithSections(true)
+                    .build();
+            final List<ListContent> contents = new ArrayList<>();
+            Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
                 @Override
                 public ListContent call(String s, Integer integer) {
                     return new ListContent.Builder()
@@ -182,10 +177,22 @@ public class MaiRepository implements DataRepository {
                             .setWithImage(true)
                             .build();
                 }
-            });
-            return Observable.merge(sections,
-                    contents)
+            })
                     .toList()
+                    .subscribe(new Action1<List<ListContent>>() {
+                        @Override
+                        public void call(List<ListContent> listContents) {
+                            contents.addAll(listContents);
+                        }
+                    });
+            contents.add(sectionBlock);
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(contents);
+                    subscriber.onCompleted();
+                }
+            })
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS)) {
             return Observable.from(Collections.EMPTY_LIST);
@@ -247,6 +254,7 @@ public class MaiRepository implements DataRepository {
                 @Override
                 public void call(Subscriber<? super List<StaticListContent>> subscriber) {
                     subscriber.onNext(contents);
+                    subscriber.onCompleted();
                 }
             });
         } else if (specification.specified(MILITARY_INSTITUTE)) {
