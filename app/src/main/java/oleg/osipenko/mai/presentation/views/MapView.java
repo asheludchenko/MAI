@@ -47,6 +47,12 @@ public class MapView extends FrameLayout {
         presenter.dropView(this);
     }
 
+    @Override
+    protected void onWindowVisibilityChanged(int visibility) {
+        super.onWindowVisibilityChanged(visibility);
+        presenter.visibilityChanged(visibility == VISIBLE);
+    }
+
     public void showMap(Bitmap bitmap) {
         zoom.setImageBitmap(bitmap);
     }

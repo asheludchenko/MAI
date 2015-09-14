@@ -8,7 +8,6 @@ import javax.inject.Singleton;
 
 import dagger.Provides;
 import flow.path.Path;
-import mortar.ViewPresenter;
 import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.repository.DataRepository;
@@ -18,6 +17,7 @@ import oleg.osipenko.mai.domain.executors.PostExecutionThread;
 import oleg.osipenko.mai.domain.executors.ThreadExecutor;
 import oleg.osipenko.mai.domain.interactors.GetMapInteractor;
 import oleg.osipenko.mai.domain.interactors.Interactor;
+import oleg.osipenko.mai.presentation.MaiPresenter;
 import oleg.osipenko.mai.presentation.mf_boilerplate.Layout;
 import oleg.osipenko.mai.presentation.mf_boilerplate.WithModule;
 import oleg.osipenko.mai.presentation.views.MapView;
@@ -49,7 +49,7 @@ public class MapScreen extends Path {
     }
 
     @Singleton
-    public static class Presenter extends ViewPresenter<MapView> {
+    public static class Presenter extends MaiPresenter<MapView, Bitmap> {
         @Inject
         Interactor<StaticContentSpecification, Bitmap> interactor;
 
@@ -80,6 +80,11 @@ public class MapScreen extends Path {
                 }
             };
             interactor.execute(subscriber);
+        }
+
+        @Override
+        protected void unsubscribe() {
+            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
         }
     }
 }
