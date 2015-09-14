@@ -252,6 +252,6 @@ public class MaiRepository implements DataRepository {
                 Bitmap map = BitmapFactory.decodeResource(context.getResources(), R.drawable.map);
                 subscriber.onNext(map);
             }
-        }).cache();
+        });
     }
 }
