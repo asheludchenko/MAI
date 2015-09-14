@@ -20,6 +20,7 @@ import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
+import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func2;
@@ -144,16 +145,35 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
         if (specification.specified(FACULTIES)) {
-            String[] faculties = context.getResources().getStringArray(R.array.faculties);
-            String[] institutes = context.getResources().getStringArray(R.array.institutes);
-            String[] filials = context.getResources().getStringArray(R.array.filials);
-            Observable<String> unitedStrings = Observable.from(faculties)
-                    .concatWith(Observable.from(institutes))
-                    .concatWith(Observable.from(filials));
+            String[] facultiesArray = context.getResources().getStringArray(R.array.faculties);
+            String[] institutesArray = context.getResources().getStringArray(R.array.institutes);
+            String[] filialsArray = context.getResources().getStringArray(R.array.filials);
+
+            final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[3];
+            sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(9, "Институты");
+            sectionsArray[2] = new SimpleSectionListAdapter.Section(13, "Филиалы");
+
+            Observable<String> unitedStrings = Observable.from(facultiesArray)
+                    .concatWith(Observable.from(institutesArray))
+                    .concatWith(Observable.from(filialsArray));
             Observable<Integer> unitedImages = Observable.from(facImages)
                     .concatWith(Observable.from(instImages))
                     .concatWith(Observable.from(filImages));
-            return Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+
+
+
+            Observable<ListContent> sections = Observable.create(new Observable.OnSubscribe<ListContent>() {
+                @Override
+                public void call(Subscriber<? super ListContent> subscriber) {
+                    ListContent sectionBlock = new ListContent.Builder()
+                            .setSections(sectionsArray)
+                            .setWithSections(true)
+                            .build();
+                    subscriber.onNext(sectionBlock);
+                }
+            });
+            Observable<ListContent> contents = Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
                 @Override
                 public ListContent call(String s, Integer integer) {
                     return new ListContent.Builder()
@@ -162,7 +182,9 @@ public class MaiRepository implements DataRepository {
                             .setWithImage(true)
                             .build();
                 }
-            })
+            });
+            return Observable.merge(sections,
+                    contents)
                     .toList()
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS)) {

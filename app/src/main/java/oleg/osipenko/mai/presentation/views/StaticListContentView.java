@@ -3,9 +3,6 @@ package oleg.osipenko.mai.presentation.views;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -30,7 +27,6 @@ import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
-import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
 
 /**
@@ -80,7 +76,7 @@ public class StaticListContentView extends NestedScrollView {
             } else if (content.getText() != null) {
                 view = getTextView(content.getText());
             } else if (content.getLists() != null) {
-                view = getListView(content.getLists());
+                //view = getListView(content.getLists());
             }
             root.addView(view);
         }
@@ -121,17 +117,7 @@ public class StaticListContentView extends NestedScrollView {
     }
 
     private View getListView(List<ListContent> contents) {
-        RecyclerView listView = new RecyclerView(getContext());
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        listView.setLayoutManager(manager);
-        listView.setItemAnimator(new DefaultItemAnimator());
-        listView.addItemDecoration(new SimpleDividerItemDecoration(getContext()));
-        ListContentView.Adapter adapter = new ListContentView.Adapter();
-        adapter.setContents(contents);
-        listView.setAdapter(adapter);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        listView.setLayoutParams(params);
-        return listView;
+        return null;
     }
 
     private void setParams(View view) {
