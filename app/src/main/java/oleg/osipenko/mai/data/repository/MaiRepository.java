@@ -23,6 +23,7 @@ import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecific
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func2;
+import rx.functions.Func3;
 
 import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
 import static oleg.osipenko.mai.Router.CANTEENS;
@@ -168,9 +169,48 @@ public class MaiRepository implements DataRepository {
         } else if (specification.specified(SCHOLARSHIPS)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(LIBRARIES)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] names = context.getResources().getStringArray(R.array.libraries_names);
+            String[] addresses = context.getResources().getStringArray(R.array.libraries_rooms);
+            String[] phones = context.getResources().getStringArray(R.array.libraries_phones);
+            return Observable.zip(
+                    Observable.from(names),
+                    Observable.from(addresses),
+                    Observable.from(phones),
+                    new Func3<String, String, String, ListContent>() {
+                        @Override
+                        public ListContent call(String name, String address, String phone) {
+                            return new ListContent.Builder()
+                                    .setTitle(name)
+                                    .setSub2(address)
+                                    .setSub3(phone)
+                                    .build();
+                        }
+                    }
+            )
+                    .toList()
+                    .cache();
         } else if (specification.specified(CANTEENS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] names = context.getResources().getStringArray(R.array.canteens_names);
+            String[] times = context.getResources().getStringArray(R.array.canteen_times);
+            String[] addresses = context.getResources().getStringArray(R.array.canteen_addresses);
+
+            return Observable.zip(
+                    Observable.from(names),
+                    Observable.from(times),
+                    Observable.from(addresses),
+                    new Func3<String, String, String, ListContent>() {
+                        @Override
+                        public ListContent call(String name, String time, String address) {
+                            return new ListContent.Builder()
+                                    .setTitle(name)
+                                    .setSub2(address)
+                                    .setSub4(time)
+                                    .build();
+                        }
+                    }
+            )
+                    .toList()
+                    .cache();
         } else if (specification.specified(COURSES)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(ACADEMIC_MOBILITY)) {

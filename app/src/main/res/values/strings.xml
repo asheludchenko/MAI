@@ -80,4 +80,94 @@
         <item name="p1">В рамках учебного процесса в МАИ установлена прочная связь с профильными предприятиями, на которых студенты проходят производственную практику, пишут курсовые и дипломные проекты. Московским авиационным институтом заключено более 100 соглашений о стратегическом партнёрстве с различными предприятиями авиационной и ракетно-космической отраслей, среди которых: </item>
         <item name="p2">• ГК "Ростехнологи";\n• ОАО "ОПК "Оборонпром";\n• ОАО "Объединённая авиастроительная корпорация";\n• ОАО "РСК "МиГ";\n• ОАО "ОКБ Сухого";\n• ФГУП ЦНИИмаш;\n• ФГУП "ГосНИИАС";\n• ОАО "Туполев";\n• ФГУП "НПО им. С.&amp;nbsp;А.&amp;nbsp;Лавочкина";\n• ФГУП "ЦАГИ";\n• ОАО "Авиакомпания "Трансаэро";\n• ОАО "РКК "Энергия" имени С.П.Королёва";\n• ОАО "Вертолёты России";\n• и другие.</item>
     </string-array>
+    <string-array name="canteens_names">
+        <item name="c1">Столовая**</item>
+        <item name="c2">Столовая**</item>
+        <item name="c3">Кафе*</item>
+        <item name="c4">Кафе</item>
+        <item name="c5">Столовая</item>
+        <item name="c6">Столовая</item>
+        <item name="c7">Блинная</item>
+        <item name="c8">Кафе</item>
+        <item name="c9">Буфет</item>
+        <item name="c10">Столовая</item>
+        <item name="c11">Столовая</item>
+        <item name="c12">Кафе*</item>
+        <item name="c13">Кафе*</item>
+        <item name="c14">Столовая</item>
+        <item name="c15">Кофейня "Ёлочка"*</item>
+    </string-array>
+    <string-array name="canteen_times">
+        <item name="c1">11:00 – 17:00</item>
+        <item name="c2">10:00 – 21:00</item>
+        <item name="c3">12:00 – 23:00</item>
+        <item name="c4">10:00 – 19:00</item>
+        <item name="c5">11:00 – 17:00</item>
+        <item name="c6">11:00 – 17:00</item>
+        <item name="c7">10:00 – 19:00</item>
+        <item name="c8">10:00 – 18:00</item>
+        <item name="c9">11:00 – 17:00</item>
+        <item name="c10">9:00 – 16:00</item>
+        <item name="c11">11:00 – 16:00</item>
+        <item name="c12">9:00 – 18:00</item>
+        <item name="c13">11:00 – 17:00</item>
+        <item name="c14">11:00 – 17:00</item>
+        <item name="c15">10:00 – 17:00</item>
+    </string-array>
+    <string-array name="canteen_addresses">
+        <item name="c1">ул. К. Царёва, д. 16 («Ледокол»)</item>
+        <item name="c2">ул. К. Царёва, д. 12 («Башня»)</item>
+        <item name="c3">ул. Дубосековская, д. 9 («Космос»)</item>
+        <item name="c4">ул. Дубосековская, д. 13 («Икар»)</item>
+        <item name="c5">ГАК, 1-й этаж</item>
+        <item name="c6">ГУК, зона «В», балкон</item>
+        <item name="c7">ГУК, зона «В», балкон</item>
+        <item name="c8">ГУК, зона «Б», 4-й этаж</item>
+        <item name="c9">Корпус № 2, 2-й этаж</item>
+        <item name="c10">Корпус № 6, 1-й этаж</item>
+        <item name="c11">Корпус № 7, 2-й этаж</item>
+        <item name="c12">Корпус № 7, 4-й этаж</item>
+        <item name="c13">Корпус № 24, 1-й этаж</item>
+        <item name="c14">Корпус № 24, 4-й этаж</item>
+        <item name="c15">около 3-го корпуса</item>
+    </string-array>
+    <string-array name="libraries_names">
+        <item name="l1">Отдел научной литературы</item>
+        <item name="l2">Отдел художественной литературы</item>
+        <item name="l3">Отдел обслуживания младших\nкурсов (1–2 курсы)</item>
+        <item name="l4">Отдел обслуживания старших\курсов (3–6 курсы)</item>
+        <item name="l5">Читальный зал научной\nлитературы</item>
+        <item name="l6">Читальный зал периодических\nизданий</item>
+        <item name="l7">Читальный зал учебной\nлитературы</item>
+        <item name="l8">Читальный зал\nгуманитарныхнаук</item>
+        <item name="l9">Отдел нормативно-технической\nдокументации</item>
+        <item name="l10">Отдел научно-технической\nинформации и библиографии</item>
+        <item name="l11">Зал читательских каталогов</item>
+    </string-array>
+    <string-array name="libraries_rooms">
+        <item name="l1">Комната: 326 (7)</item>
+        <item name="l2">Комната: 121 (7)</item>
+        <item name="l3">Комната: 202 (ГУК "В")</item>
+        <item name="l4">Комната: 300 (ГУК "В")</item>
+        <item name="l5">Комната: 227 (7)</item>
+        <item name="l6">Комната: 219 (7)</item>
+        <item name="l7">Комната: 501 (ГУК "В")</item>
+        <item name="l8">Комната: 601 (ГУК "В")</item>
+        <item name="l9">Комната: 327 (7)</item>
+        <item name="l10">Комната: 223 (7)</item>
+        <item name="l11">Комната: 218 (7)</item>
+    </string-array>
+    <string-array name="libraries_phones">
+        <item name="l1">+7–499–158–45–20</item>
+        <item name="l2">+7–499–158–45–62</item>
+        <item name="l3">+7–499–158–49–91</item>
+        <item name="l4">+7–499–158–49–34</item>
+        <item name="l5">+7–499–158–40–51</item>
+        <item name="l6">+7–499–158–45–22</item>
+        <item name="l7">+7–499–158–49–68</item>
+        <item name="l8">+7–499–158–41–92</item>
+        <item name="l9">+7–499–158–43–75</item>
+        <item name="l10">+7–499–158–47–87</item>
+        <item name="l11">+7–499–158–43–37</item>
+    </string-array>
 </resources>
