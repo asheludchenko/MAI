@@ -229,7 +229,24 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         } else if (specification.specified(COURSES)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] courses = context.getResources().getStringArray(R.array.courses);
+            final List<ListContent> cc = Stream.of(courses)
+                    .map(new Function<String, ListContent>() {
+                        @Override
+                        public ListContent apply(String value) {
+                            return new ListContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<ListContent>toList());
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(cc);
+                    subscriber.onCompleted();
+                }
+            });
         } else if (specification.specified(ACADEMIC_MOBILITY)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SPORT_SECTIONS)) {

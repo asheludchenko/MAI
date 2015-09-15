@@ -181,4 +181,9 @@
         <item name="s08">Государственная стипендия для слушателей и студентов из числа граждан, проходивших военную службу</item>
         <item name="s09">Именные стипендии</item>
     </string-array>
+    <string-array name="courses">
+        <item name="c01">Курсы иностранных языков</item>
+        <item name="c02">Курсы КЛЦ-103</item>
+        <item name="c03">Курсы C-COURSES</item>
+    </string-array>
 </resources>
