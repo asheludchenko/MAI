@@ -24,8 +24,9 @@ import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
-import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
+import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
+import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 
 /**
  * Created by olegosipenko on 07.09.15.
@@ -40,11 +41,11 @@ public class ListContentView extends RecyclerView {
     public ListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
-        adapter = new Adapter();
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         setLayoutManager(layoutManager);
         setItemAnimator(new DefaultItemAnimator());
         addItemDecoration(new SimpleDividerItemDecoration(context));
+        adapter = new Adapter(Collections.EMPTY_LIST);
         setAdapter(adapter);
     }
 
@@ -77,11 +78,22 @@ public class ListContentView extends RecyclerView {
         adapter.notifyDataSetChanged();
     }
 
+    public void showWithSections(List<ListContent> contents, SimpleSectionListAdapter.Section[] sections) {
+        adapter = new Adapter(contents);
+        SimpleSectionListAdapter sectionedAdapter = new SimpleSectionListAdapter(
+                getContext(),
+                R.layout.section,
+                R.id.section_text,
+                adapter);
+        sectionedAdapter.setSections(sections);
+        swapAdapter(sectionedAdapter, true);
+    }
+
     public static class Adapter extends RecyclerView.Adapter<ViewHolder> {
         private List<ListContent> contents;
 
-        public Adapter() {
-            this.contents = Collections.emptyList();
+        public Adapter(List<ListContent> contents) {
+            this.contents = contents;
         }
 
         public void setContents(List<ListContent> contents) {

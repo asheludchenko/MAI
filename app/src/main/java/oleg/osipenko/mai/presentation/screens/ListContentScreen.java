@@ -1,6 +1,7 @@
 package oleg.osipenko.mai.presentation.screens;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.Collections;
 import java.util.List;
@@ -23,6 +24,7 @@ import oleg.osipenko.mai.domain.interactors.Interactor;
 import oleg.osipenko.mai.presentation.MaiPresenter;
 import oleg.osipenko.mai.presentation.mf_boilerplate.Layout;
 import oleg.osipenko.mai.presentation.mf_boilerplate.WithModule;
+import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 import oleg.osipenko.mai.presentation.views.ListContentView;
 import rx.Subscriber;
 import rx.observers.Subscribers;
@@ -98,6 +100,16 @@ public class ListContentScreen extends Path {
                 @Override
                 public void onNext(List<ListContent> contents) {
                     if (!hasView()) return;
+                    for (ListContent content : contents) {
+                        if (content.isWithSections()) {
+                            List<ListContent> blocks = contents;
+                            SimpleSectionListAdapter.Section[] sections = content.getSections();
+                            blocks.remove(content);
+                            getView().showWithSections(blocks, sections);
+                            return;
+                        }
+                    }
+                    Log.d("mai", "мы не должны были здесь оказаться");
                     getView().showItems(contents);
                 }
             };

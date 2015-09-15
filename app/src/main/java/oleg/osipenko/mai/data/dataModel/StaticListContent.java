@@ -9,7 +9,9 @@ public class StaticListContent {
     private String title;
     private String image;
     private String text;
-    private List<ListContent> lists;
+    private String listTitle;
+    private String listImage;
+    private boolean listWithImage;
 
     public StaticListContent() {
     }
@@ -26,8 +28,16 @@ public class StaticListContent {
         return text;
     }
 
-    public List<ListContent> getLists() {
-        return lists;
+    public String getListTitle() {
+        return listTitle;
+    }
+
+    public String getListImage() {
+        return listImage;
+    }
+
+    public boolean isListWithImage() {
+        return listWithImage;
     }
 
     @Override
@@ -36,7 +46,9 @@ public class StaticListContent {
                 "title='" + title + '\'' +
                 ", image='" + image + '\'' +
                 ", text='" + text + '\'' +
-                ", lists=" + lists +
+                ", listTitle='" + listTitle + '\'' +
+                ", listImage='" + listImage + '\'' +
+                ", listWithImage=" + listWithImage +
                 '}';
     }
 
@@ -62,8 +74,18 @@ public class StaticListContent {
             return this;
         }
 
-        public Builder setList(List<ListContent> list) {
-            content.lists = list;
+        public Builder setListTitle(String listTitle) {
+            content.listTitle= listTitle;
+            return this;
+        }
+
+        public Builder setListImage(String listImage) {
+            content.listImage = listImage;
+            return this;
+        }
+
+        public Builder setWithImage(boolean withImage) {
+            content.listWithImage = withImage;
             return this;
         }
 

@@ -1,5 +1,7 @@
 package oleg.osipenko.mai.data.dataModel;
 
+import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
+
 /**
  * Created by olegosipenko on 07.09.15.
  */
@@ -11,6 +13,8 @@ public class ListContent {
     private String sub3;
     private String sub4;
     private boolean withImage;
+    private boolean withSections;
+    private SimpleSectionListAdapter.Section[] sections;
 
     public ListContent() {
     }
@@ -41,6 +45,14 @@ public class ListContent {
 
     public boolean isWithImage() {
         return withImage;
+    }
+
+    public SimpleSectionListAdapter.Section[] getSections() {
+        return sections;
+    }
+
+    public boolean isWithSections() {
+        return withSections;
     }
 
     public static class Builder {
@@ -82,6 +94,16 @@ public class ListContent {
 
         public Builder setWithImage(boolean withImage) {
             content.withImage = withImage;
+            return this;
+        }
+
+        public Builder setWithSections(boolean withSections) {
+            content.withSections = withSections;
+            return this;
+        }
+
+        public Builder setSections(SimpleSectionListAdapter.Section[] sections) {
+            content.sections = sections;
             return this;
         }
 
