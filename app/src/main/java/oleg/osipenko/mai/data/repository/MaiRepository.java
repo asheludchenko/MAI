@@ -248,9 +248,43 @@ public class MaiRepository implements DataRepository {
                 }
             });
         } else if (specification.specified(ACADEMIC_MOBILITY)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] mobil = context.getResources().getStringArray(R.array.acad_mob);
+            final List<ListContent> am = Stream.of(mobil)
+                    .map(new Function<String, ListContent>() {
+                        @Override
+                        public ListContent apply(String value) {
+                            return new ListContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<ListContent>toList());
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(am);
+                    subscriber.onCompleted();
+                }
+            });
         } else if (specification.specified(SPORT_SECTIONS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] sections = context.getResources().getStringArray(R.array.sport);
+            final List<ListContent> ss = Stream.of(sections)
+                    .map(new Function<String, ListContent>() {
+                        @Override
+                        public ListContent apply(String value) {
+                            return new ListContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<ListContent>toList());
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            });
         } else if (specification.specified(MEDIA)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(LIFE)) {
