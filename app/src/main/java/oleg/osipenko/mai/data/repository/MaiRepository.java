@@ -167,7 +167,24 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            String[] scholarships = context.getResources().getStringArray(R.array.scholarships);
+            final List<ListContent> ss = Stream.of(scholarships)
+                    .map(new Function<String, ListContent>() {
+                        @Override
+                        public ListContent apply(String value) {
+                            return new ListContent.Builder()
+                                    .setText(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<ListContent>toList());
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            });
         } else if (specification.specified(LIBRARIES)) {
             String[] names = context.getResources().getStringArray(R.array.libraries_names);
             String[] addresses = context.getResources().getStringArray(R.array.libraries_rooms);
