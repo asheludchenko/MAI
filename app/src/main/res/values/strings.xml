@@ -205,7 +205,7 @@
         <item name="ss12">Каратэ</item>
         <item name="ss13">Лыжные гонки</item>
         <item name="ss14">Мини-футбол (м)</item>
-        <item name="ss15">>Мини-футбол (ж)</item>
+        <item name="ss15">Мини-футбол (ж)</item>
         <item name="ss16">Рукопашный бой</item>
         <item name="ss17">Теннис\n(ул. К. Царёва, д. 12а)</item>
         <item name="ss18">Тхэквондо</item>
@@ -240,5 +240,20 @@
         <item name="ss47">Сноуборд, горные лыжи</item>
         <item name="ss48">Спортивное ориентирование</item>
         <item name="ss49">Шахматы</item>
+    </string-array>
+    <string-array name="media">
+        <item name="m01">Фото</item>
+        <item name="m02">Видео</item>
+        <item name="m03">Презентации</item>
+    </string-array>
+    <string-array name="life">
+        <item name="l01">Песни</item>
+        <item name="l02">Словарь</item>
+        <item name="l02">Тосты</item>
+    </string-array>
+    <string-array name="help">
+        <item name="h01">Копировальные центры</item>
+        <item name="h02">Расписание</item>
+        <item name="h03">Европейское приложение к диплому</item>
     </string-array>
 </resources>
