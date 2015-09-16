@@ -24,6 +24,7 @@ import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;
+import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.functions.Func3;
 
@@ -76,6 +77,24 @@ public class MaiRepository implements DataRepository {
             R.drawable.f4th
     );
 
+    List<Integer> magImages = Arrays.asList(
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th,
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th,
+            R.drawable.f1st
+    );
+
+    List<Integer> secImages = Arrays.asList(
+            R.drawable.f1st,
+            R.drawable.f2nd,
+            R.drawable.f4th,
+            R.drawable.f6th
+    );
 
     List<Integer> instImages = Arrays.asList(
             R.drawable.f1st,
@@ -98,8 +117,7 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticContent>> getStaticContent(StaticContentSpecification specification) {
         if (specification.specified(PRACTICS)) {
-            String[] practics = context.getResources().getStringArray(R.array.practics);
-            final List<StaticContent> contents = Stream.of(practics)
+            final List<StaticContent> contents = Stream.of(context.getResources().getStringArray(R.array.practics))
                     .map(new Function<String, StaticContent>() {
                         @Override
                         public StaticContent apply(String value) {
@@ -148,18 +166,15 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
         if (specification.specified(FACULTIES)) {
-            String[] facultiesArray = context.getResources().getStringArray(R.array.faculties);
-            String[] institutesArray = context.getResources().getStringArray(R.array.institutes);
-            String[] filialsArray = context.getResources().getStringArray(R.array.filials);
 
             final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[3];
             sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
             sectionsArray[1] = new SimpleSectionListAdapter.Section(9, "Институты");
             sectionsArray[2] = new SimpleSectionListAdapter.Section(13, "Филиалы");
 
-            Observable<String> unitedStrings = Observable.from(facultiesArray)
-                    .concatWith(Observable.from(institutesArray))
-                    .concatWith(Observable.from(filialsArray));
+            Observable<String> unitedStrings = Observable.from(context.getResources().getStringArray(R.array.faculties))
+                    .concatWith(Observable.from(context.getResources().getStringArray(R.array.institutes)))
+                    .concatWith(Observable.from(context.getResources().getStringArray(R.array.filials)));
             Observable<Integer> unitedImages = Observable.from(facImages)
                     .concatWith(Observable.from(instImages))
                     .concatWith(Observable.from(filImages));
@@ -196,8 +211,7 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS)) {
-            String[] scholarships = context.getResources().getStringArray(R.array.scholarships);
-            final List<ListContent> ss = Stream.of(scholarships)
+            final List<ListContent> ss = Stream.of(context.getResources().getStringArray(R.array.scholarships))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -215,13 +229,10 @@ public class MaiRepository implements DataRepository {
                 }
             });
         } else if (specification.specified(LIBRARIES)) {
-            String[] names = context.getResources().getStringArray(R.array.libraries_names);
-            String[] addresses = context.getResources().getStringArray(R.array.libraries_rooms);
-            String[] phones = context.getResources().getStringArray(R.array.libraries_phones);
             return Observable.zip(
-                    Observable.from(names),
-                    Observable.from(addresses),
-                    Observable.from(phones),
+                    Observable.from(context.getResources().getStringArray(R.array.libraries_names)),
+                    Observable.from(context.getResources().getStringArray(R.array.libraries_rooms)),
+                    Observable.from(context.getResources().getStringArray(R.array.libraries_phones)),
                     new Func3<String, String, String, ListContent>() {
                         @Override
                         public ListContent call(String name, String address, String phone) {
@@ -236,14 +247,11 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         } else if (specification.specified(CANTEENS)) {
-            String[] names = context.getResources().getStringArray(R.array.canteens_names);
-            String[] times = context.getResources().getStringArray(R.array.canteen_times);
-            String[] addresses = context.getResources().getStringArray(R.array.canteen_addresses);
 
             return Observable.zip(
-                    Observable.from(names),
-                    Observable.from(times),
-                    Observable.from(addresses),
+                    Observable.from(context.getResources().getStringArray(R.array.canteens_names)),
+                    Observable.from(context.getResources().getStringArray(R.array.canteen_times)),
+                    Observable.from(context.getResources().getStringArray(R.array.canteen_addresses)),
                     new Func3<String, String, String, ListContent>() {
                         @Override
                         public ListContent call(String name, String time, String address) {
@@ -258,8 +266,7 @@ public class MaiRepository implements DataRepository {
                     .toList()
                     .cache();
         } else if (specification.specified(COURSES)) {
-            String[] courses = context.getResources().getStringArray(R.array.courses);
-            final List<ListContent> cc = Stream.of(courses)
+            final List<ListContent> cc = Stream.of(context.getResources().getStringArray(R.array.courses))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -278,8 +285,7 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(ACADEMIC_MOBILITY)) {
-            String[] mobil = context.getResources().getStringArray(R.array.acad_mob);
-            final List<ListContent> am = Stream.of(mobil)
+            final List<ListContent> am = Stream.of(context.getResources().getStringArray(R.array.acad_mob))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -298,8 +304,7 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(SPORT_SECTIONS)) {
-            String[] sections = context.getResources().getStringArray(R.array.sport);
-            final List<ListContent> ss = Stream.of(sections)
+            final List<ListContent> ss = Stream.of(context.getResources().getStringArray(R.array.sport))
                     .sorted()
                     .map(new Function<String, ListContent>() {
                         @Override
@@ -319,8 +324,7 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(MEDIA)) {
-            String[] media = context.getResources().getStringArray(R.array.media);
-            final List<ListContent> ms = Stream.of(media)
+            final List<ListContent> ms = Stream.of(context.getResources().getStringArray(R.array.media))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -338,8 +342,7 @@ public class MaiRepository implements DataRepository {
                 }
             });
         } else if (specification.specified(LIFE)) {
-            String[] life = context.getResources().getStringArray(R.array.life);
-            final List<ListContent> ls = Stream.of(life)
+            final List<ListContent> ls = Stream.of(context.getResources().getStringArray(R.array.life))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -358,8 +361,7 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(HELP)) {
-            String[] help = context.getResources().getStringArray(R.array.help);
-            final List<ListContent> hs = Stream.of(help)
+            final List<ListContent> hs = Stream.of(context.getResources().getStringArray(R.array.help))
                     .map(new Function<String, ListContent>() {
                         @Override
                         public ListContent apply(String value) {
@@ -384,9 +386,7 @@ public class MaiRepository implements DataRepository {
     @Override
     public Observable<List<StaticListContent>> getStaticListContent(StaticListContentSpecification specification) {
         if (specification.specified(SESSION)) {
-            String[] session = context.getResources().getStringArray(R.array.sessions);
-            String[] sessions = context.getResources().getStringArray(R.array.sessions_list);
-            List<StaticListContent> sessionList = Stream.of(sessions)
+            List<StaticListContent> sessionList = Stream.of(context.getResources().getStringArray(R.array.sessions_list))
                     .map(new Function<String, StaticListContent>() {
                         @Override
                         public StaticListContent apply(String value) {
@@ -396,7 +396,7 @@ public class MaiRepository implements DataRepository {
                         }
                     })
                     .collect(Collectors.<StaticListContent>toList());
-            List<StaticListContent> blocks = Stream.of(session)
+            List<StaticListContent> blocks = Stream.of(context.getResources().getStringArray(R.array.sessions))
                     .map(new Function<String, StaticListContent>() {
                         @Override
                         public StaticListContent apply(String value) {
@@ -420,17 +420,189 @@ public class MaiRepository implements DataRepository {
                 }
             });
         } else if (specification.specified(MILITARY_INSTITUTE)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticListContent textBlock = new StaticListContent.Builder()
+                    .setText(context.getString(R.string.militar))
+                    .build();
+            List<StaticListContent> ms = Stream.of(context.getResources().getStringArray(R.array.military_list))
+                    .map(new Function<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent apply(String value) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(value)
+                                    .build();
+                        }
+                    })
+                    .collect(Collectors.<StaticListContent>toList());
+            ms.add(0, textBlock);
+            final List<StaticListContent> m = new ArrayList<>(ms);
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(m);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(MAGISTRACY)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            final StaticListContent textBlock = new StaticListContent.Builder()
+                    .setText(context.getString(R.string.magistrat))
+                    .build();
+            final List<StaticListContent> m = Observable.zip(
+                    Observable.from(context.getResources().getStringArray(R.array.magistr_ways)),
+                    Observable.from(magImages),
+                    new Func2<String, Integer, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s, Integer integer) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(s)
+                                    .setListImage(String.valueOf(integer))
+                                    .build();
+                        }
+                    }
+            )
+                    .startWith(textBlock)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(m);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(SECONDARY_EDUCATION)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            Observable<StaticListContent> texts = Observable.from(context.getResources().getStringArray(R.array.second))
+                    .map(new Func1<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s) {
+                            return new StaticListContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    });
+            final List<StaticListContent> ss = Observable.zip(
+                    Observable.from(context.getResources().getStringArray(R.array.second_ways)),
+                    Observable.from(secImages),
+                    new Func2<String, Integer, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s, Integer integer) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(s)
+                                    .setListImage(String.valueOf(integer))
+                                    .build();
+                        }
+                    }
+            )
+                    .startWith(texts)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            });
         } else if (specification.specified(RECREATION_CENTERS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            // TODO нужно изображение
+            StaticListContent textBlock = new StaticListContent.Builder()
+                    .setText(context.getString(R.string.recreation))
+                    .build();
+            final List<StaticListContent> rs = Observable.from(context.getResources().getStringArray(R.array.recreations))
+                    .map(new Func1<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(textBlock)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(rs);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(DK)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticListContent title = new StaticListContent.Builder()
+                    .setTitle(context.getString(R.string.dk_title))
+                    .build();
+            final List<StaticListContent> dks = Observable.concat(
+                    Observable.merge(
+                            Observable.from(context.getResources().getStringArray(R.array.dk))
+                                    .map(new Func1<String, StaticListContent>() {
+                                        @Override
+                                        public StaticListContent call(String s) {
+                                            return new StaticListContent.Builder()
+                                                    .setText(s)
+                                                    .build();
+                                        }
+                                    }),
+                            Observable.just(title)
+                    ),
+                    Observable.from(context.getResources().getStringArray(R.array.dks))
+                            .map(new Func1<String, StaticListContent>() {
+                                @Override
+                                public StaticListContent call(String s) {
+                                    return new StaticListContent.Builder()
+                                            .setListTitle(s)
+                                            .build();
+
+                                }
+                            })
+            )
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(dks);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(DOSAAF)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            final List<StaticListContent> ds = Observable.merge(
+                    Observable.from(context.getResources().getStringArray(R.array.dossaaf))
+                            .map(new Func1<String, StaticListContent>() {
+                                @Override
+                                public StaticListContent call(String s) {
+                                    return new StaticListContent.Builder()
+                                            .setText(s)
+                                            .build();
+                                }
+                            }),
+                    Observable.from(context.getResources().getStringArray(R.array.dosaafs))
+                            .map(new Func1<String, StaticListContent>() {
+                                @Override
+                                public StaticListContent call(String s) {
+                                    return new StaticListContent.Builder()
+                                            .setListTitle(s)
+                                            .build();
+                                }
+                            })
+            )
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         }
         return Observable.from(Collections.EMPTY_LIST);
     }

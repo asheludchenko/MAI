@@ -1,17 +1,14 @@
 package oleg.osipenko.mai.presentation.views;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,9 +18,7 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import javax.inject.Inject;
 
@@ -31,10 +26,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
-import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
-import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -85,6 +78,8 @@ public class StaticListContentView extends NestedScrollView {
                 view = getTextView(content.getText());
             } else if (content.getListTitle() != null) {
                 view = getListView(content);
+            } else if (content.getTitle() != null) {
+                view = getTitleView(content.getTitle());
             }
             root.addView(view);
         }
@@ -113,8 +108,24 @@ public class StaticListContentView extends NestedScrollView {
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
+        textView.setAutoLinkMask(Linkify.ALL);
+        textView.setText(text);
+        textView.setTextColor(getResources().getColor(android.R.color.black));
+        int padding = Math.round(
+                getResources().getDisplayMetrics().density * 16
+        );
+        textView.setPadding(padding, padding / 2, padding, padding / 2);
+        setParams(textView);
+
+        return textView;
+    }
+
+    private View getTitleView(String text) {
+        TextView textView = new TextView(getContext());
         textView.setText(text);
         textView.setAutoLinkMask(Linkify.ALL);
+        Typeface tf = textView.getTypeface();
+        textView.setTypeface(tf, 1);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16

@@ -1,7 +1,6 @@
 package oleg.osipenko.mai.presentation.screens;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.Collections;
 import java.util.List;
@@ -109,7 +108,6 @@ public class ListContentScreen extends Path {
                             return;
                         }
                     }
-                    Log.d("mai", "мы не должны были здесь оказаться");
                     getView().showItems(contents);
                 }
             };
