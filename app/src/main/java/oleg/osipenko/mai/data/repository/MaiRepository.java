@@ -507,7 +507,9 @@ public class MaiRepository implements DataRepository {
                 }
             });
         } else if (specification.specified(RECREATION_CENTERS)) {
-            // TODO нужно изображение
+            StaticListContent image = new StaticListContent.Builder()
+                    .setImage(String.valueOf(R.drawable.recreation))
+                    .build();
             StaticListContent textBlock = new StaticListContent.Builder()
                     .setText(context.getString(R.string.recreation))
                     .build();
@@ -521,6 +523,7 @@ public class MaiRepository implements DataRepository {
                         }
                     })
                     .startWith(textBlock)
+                    .startWith(image)
                     .toList()
                     .toBlocking()
                     .single();
