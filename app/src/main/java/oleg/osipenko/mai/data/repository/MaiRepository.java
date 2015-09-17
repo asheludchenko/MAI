@@ -33,7 +33,7 @@ import static oleg.osipenko.mai.Router.CANTEENS;
 import static oleg.osipenko.mai.Router.COURSES;
 import static oleg.osipenko.mai.Router.DEBATING_CLUB;
 import static oleg.osipenko.mai.Router.DK;
-import static oleg.osipenko.mai.Router.DORMITORIES;
+import static oleg.osipenko.mai.Router.STUDGORODOK;
 import static oleg.osipenko.mai.Router.DOSAAF;
 import static oleg.osipenko.mai.Router.DOTATIONS;
 import static oleg.osipenko.mai.Router.EMPLOYMENT_CENTER;
@@ -188,8 +188,31 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(SCIENCE)) {
-            return Observable.from(Collections.EMPTY_LIST);
-        } else if (specification.specified(DORMITORIES)) {
+            StaticContent portrait = new StaticContent.Builder()
+                    .setFacPhoto(String.valueOf(R.drawable.polyanski))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.science))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(portrait)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(STUDGORODOK)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(SANATORIUM)) {
             return Observable.from(Collections.EMPTY_LIST);

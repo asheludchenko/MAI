@@ -7,6 +7,9 @@ public class StaticContent {
     private String title;
     private String image;
     private String text;
+    private String facTitle;
+    private String facPhoto;
+    private String facText;
 
     public StaticContent() {
     }
@@ -21,6 +24,18 @@ public class StaticContent {
 
     public String getText() {
         return text;
+    }
+
+    public String getFacTitle() {
+        return facTitle;
+    }
+
+    public String getFacPhoto() {
+        return facPhoto;
+    }
+
+    public String getFacText() {
+        return facText;
     }
 
     public static class Builder {
@@ -42,6 +57,21 @@ public class StaticContent {
 
         public Builder setText(String text) {
             staticContent.text = text;
+            return this;
+        }
+
+        public Builder setFacTitile(String facTitile) {
+            staticContent.facTitle = facTitile;
+            return this;
+        }
+
+        public Builder setFacPhoto(String facPhoto) {
+            staticContent.facPhoto = facPhoto;
+            return this;
+        }
+
+        public Builder setFacText(String facText) {
+            staticContent.facText = facText;
             return this;
         }
 

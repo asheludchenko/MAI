@@ -6,6 +6,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -74,9 +75,38 @@ public class StaticContentView extends NestedScrollView{
                 view = getImageView(content.getImage());
             } else if (content.getText() != null) {
                 view = getTextView(content.getText());
+            } else if (content.getFacTitle() != null) {
+                view = getFacTitleView(content.getFacTitle());
+            } else if (content.getFacPhoto() != null) {
+                view = getFacPhoto(content.getFacPhoto());
+            } else if (content.getFacText() != null) {
+                view = getFacText(content.getFacText());
             }
             root.addView(view);
         }
+    }
+
+    private View getFacText(String facText) {
+        TextView text = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.fac_text, null);
+        text.setText(facText);
+        return text;
+    }
+
+    private View getFacPhoto(String facPhoto) {
+        View photo = LayoutInflater.from(getContext()).inflate(R.layout.fac_image, null);
+        SimpleDraweeView view = (SimpleDraweeView) photo.findViewById(R.id.portrait);
+        Uri uri = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                .path(facPhoto)
+                .build();
+        view.setImageURI(uri);
+        return photo;
+    }
+
+    private View getFacTitleView(String facTitle) {
+        TextView title = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.fac_title, null);
+        title.setText(facTitle);
+        return title;
     }
 
     private View getImageView(String image) {

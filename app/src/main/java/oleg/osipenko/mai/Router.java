@@ -26,7 +26,7 @@ public class Router {
     public static final String ACADEMIC_MOBILITY = "Академическая мобильность";
     public static final String EMPLOYMENT_CENTER = "Центр трудоустройства МАИ";
     public static final String SCIENCE = "Научная деятельность";
-    public static final String DORMITORIES = "Студгородок";
+    public static final String STUDGORODOK = "Студгородок";
     public static final String SANATORIUM = "Санаторий-профилакторий";
     public static final String RECREATION_CENTERS = "Базы отдыха";
     public static final String SPORT_SECTIONS = "Спортивные секции";
@@ -75,7 +75,7 @@ public class Router {
             case DOTATIONS:
             case EMPLOYMENT_CENTER:
             case SCIENCE:
-            case DORMITORIES:
+            case STUDGORODOK:
             case SANATORIUM:
             case DEBATING_CLUB:
             case MAISKY_VZLET:
