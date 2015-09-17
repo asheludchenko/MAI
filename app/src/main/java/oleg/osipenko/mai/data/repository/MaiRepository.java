@@ -263,17 +263,163 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(DEBATING_CLUB)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.debat))
+                    .build();
+            final List<StaticContent> ds = Observable.from(context.getResources().getStringArray(R.array.debating))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(MAISKY_VZLET)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.vzlet))
+                    .build();
+            final List<StaticContent> ms = Observable.from(context.getResources().getStringArray(R.array.vzlet_fest))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ms);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(PROFKOM)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.profkom))
+                    .build();
+            final List<StaticContent> ps = Observable.from(context.getResources().getStringArray(R.array.prof))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ps);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(SOMOL)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.somol))
+                    .build();
+            final List<StaticContent> ps = Observable.from(context.getResources().getStringArray(R.array.somol))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ps);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(PRESS)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.press))
+                    .build();
+            StaticContent smiTitle = new StaticContent.Builder()
+                    .setTitle(context.getString(R.string.mai_smi_title))
+                    .build();
+            StaticContent smis = new StaticContent.Builder()
+                    .setText(context.getString(R.string.mai_smis))
+                    .build();
+            StaticContent internetTitle = new StaticContent.Builder()
+                    .setTitle(context.getString(R.string.internet_title))
+                    .build();
+            StaticContent internets = new StaticContent.Builder()
+                    .setText(context.getString(R.string.inets))
+                    .build();
+            final List<StaticContent> ps = Observable.merge(
+                    Observable.just(image),
+                    Observable.just(smiTitle),
+                    Observable.just(smis),
+                    Observable.just(internetTitle),
+                    Observable.just(internets)
+            ).toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ps);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(HISTORY)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.hist))
+                    .build();
+            final List<StaticContent> hs = Observable.from(context.getResources().getStringArray(R.array.history))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(hs);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         }
         return Observable.from(Collections.EMPTY_LIST);
     }

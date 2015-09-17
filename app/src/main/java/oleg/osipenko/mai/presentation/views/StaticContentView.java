@@ -81,6 +81,9 @@ public class StaticContentView extends NestedScrollView{
                 view = getFacPhoto(content.getFacPhoto());
             } else if (content.getFacText() != null) {
                 view = getFacText(content.getFacText());
+            } else if (content.getTitle() != null) {
+                view = getFacTitleView(content.getTitle());
+                ((TextView) view).setGravity(Gravity.LEFT);
             }
             root.addView(view);
         }
