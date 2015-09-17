@@ -238,7 +238,30 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(SANATORIUM)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.profilak))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.sanatorium))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(DEBATING_CLUB)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(MAISKY_VZLET)) {
