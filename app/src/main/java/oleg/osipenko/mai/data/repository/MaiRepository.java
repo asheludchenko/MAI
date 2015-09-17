@@ -163,7 +163,30 @@ public class MaiRepository implements DataRepository {
             })
                     .cache();
         } else if (specification.specified(EMPLOYMENT_CENTER)) {
-            return Observable.from(Collections.EMPTY_LIST);
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.employ))
+                    .build();
+            final List<StaticContent> es = Observable.from(context.getResources().getStringArray(R.array.employment))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(es);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(SCIENCE)) {
             return Observable.from(Collections.EMPTY_LIST);
         } else if (specification.specified(DORMITORIES)) {

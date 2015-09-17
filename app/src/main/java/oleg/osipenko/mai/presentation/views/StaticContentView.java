@@ -8,9 +8,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.facebook.common.util.UriUtil;
@@ -28,7 +26,6 @@ import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.StaticContent;
-import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.presentation.screens.StaticContentScreen;
 
 /**
@@ -105,8 +102,8 @@ public class StaticContentView extends NestedScrollView{
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
-        textView.setText(text);
         textView.setAutoLinkMask(Linkify.ALL);
+        textView.setText(text);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
