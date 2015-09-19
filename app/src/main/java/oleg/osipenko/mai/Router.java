@@ -45,6 +45,16 @@ public class Router {
     public static final String NEWS = "Новости";
     public static final String MAP = "Карта";
     public static final String SCHEDULE = "Расписание";
+    public static final String WAYS = "Направления подготовки";
+    public static final String DORMITORIES = "Общежития";
+    public static final String ALUMNI = "Выпускники";
+    public static final String PODGOTOVKA = "Подготовка к поступлению";
+    public static final String DOCS = "Документы для поступления";
+    public static final String NABOR = "Целевой набор";
+    public static final String SCHOOL_CENTERS = "Центры обучения школьников";
+    public static final String SCHOOL_ACTIVITY = "Мероприятия для школьников";
+    public static final String DOSUG = "Досуг";
+    public static final String CONTACTS = "Контакты";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -62,6 +72,9 @@ public class Router {
             case HELP:
             case NEWS:
             case SCHEDULE:
+            case WAYS:
+            case SCHOOL_ACTIVITY:
+            case DOSUG:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
@@ -70,6 +83,7 @@ public class Router {
             case RECREATION_CENTERS:
             case DK:
             case DOSAAF:
+            case PODGOTOVKA:
                 return new StaticListContentScreen(item);
             case PRACTICS:
             case DOTATIONS:
@@ -83,6 +97,11 @@ public class Router {
             case SOMOL:
             case PRESS:
             case HISTORY:
+            case DORMITORIES:
+            case ALUMNI:
+            case DOCS:
+            case NABOR:
+            case CONTACTS:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

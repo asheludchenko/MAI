@@ -6,14 +6,11 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Function;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Provides;
-import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.StaticContent;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
@@ -21,11 +18,16 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
+import static oleg.osipenko.mai.Router.ALUMNI;
+import static oleg.osipenko.mai.Router.CONTACTS;
 import static oleg.osipenko.mai.Router.DEBATING_CLUB;
+import static oleg.osipenko.mai.Router.DOCS;
+import static oleg.osipenko.mai.Router.DORMITORIES;
 import static oleg.osipenko.mai.Router.DOTATIONS;
 import static oleg.osipenko.mai.Router.EMPLOYMENT_CENTER;
 import static oleg.osipenko.mai.Router.HISTORY;
 import static oleg.osipenko.mai.Router.MAISKY_VZLET;
+import static oleg.osipenko.mai.Router.NABOR;
 import static oleg.osipenko.mai.Router.PRACTICS;
 import static oleg.osipenko.mai.Router.PRESS;
 import static oleg.osipenko.mai.Router.PROFKOM;
@@ -346,6 +348,128 @@ public class StaticContentProvider {
                 @Override
                 public void call(Subscriber<? super List<StaticContent>> subscriber) {
                     subscriber.onNext(hs);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DORMITORIES)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.dormitories))
+                    .build();
+            final List<StaticContent> ds = Observable.from(context.getResources().getStringArray(R.array.dormitories))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(ALUMNI)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.alumni))
+                    .build();
+            final List<StaticContent> as = Observable.from(context.getResources().getStringArray(R.array.alumnis))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(as);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOCS)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.docs))
+                    .build();
+            final List<StaticContent> ds = Observable.from(context.getResources().getStringArray(R.array.docss))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(NABOR)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.nabor))
+                    .build();
+            final List<StaticContent> ds = Observable.from(context.getResources().getStringArray(R.array.nabors))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(CONTACTS)) {
+            StaticContent address = new StaticContent.Builder()
+                    .setFacText(context.getString(R.string.address))
+                    .build();
+            StaticContent phone = new StaticContent.Builder()
+                    .setFacText(context.getString(R.string.phone))
+                    .build();
+            StaticContent email = new StaticContent.Builder()
+                    .setFacText(context.getString(R.string.email))
+                    .build();
+            StaticContent site = new StaticContent.Builder()
+                    .setFacText(context.getString(R.string.site))
+                    .build();
+            final List<StaticContent> cs = Arrays.asList(address, phone, email, site);
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(cs);
                     subscriber.onCompleted();
                 }
             })

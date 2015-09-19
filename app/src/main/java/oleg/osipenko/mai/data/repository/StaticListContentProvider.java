@@ -11,12 +11,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Module;
-import dagger.Provides;
-import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
@@ -32,6 +26,7 @@ import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
 import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
 import static oleg.osipenko.mai.Router.SECONDARY_EDUCATION;
 import static oleg.osipenko.mai.Router.SESSION;
+import static oleg.osipenko.mai.Router.PODGOTOVKA;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -282,6 +277,35 @@ public class StaticListContentProvider {
                 @Override
                 public void call(Subscriber<? super List<StaticListContent>> subscriber) {
                     subscriber.onNext(ds);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(PODGOTOVKA)) {
+            StaticListContent image = new StaticListContent.Builder()
+                    .setImage(String.valueOf(R.drawable.podgotovka))
+                    .build();
+            StaticListContent text = new StaticListContent.Builder()
+                    .setText(context.getString(R.string.podgot))
+                    .build();
+            final List<StaticListContent> ps = Observable.from(context.getResources().getStringArray(R.array.podgotovka))
+                    .map(new Func1<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s) {
+                            return new StaticListContent.Builder()
+                                    .setListTitle(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(text)
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(ps);
                     subscriber.onCompleted();
                 }
             })

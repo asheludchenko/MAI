@@ -61,8 +61,8 @@
         android:id="@+id/g03"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_dormitories"
-            android:title="@string/dormitories"/>
+            android:id="@+id/menu_studgorodok"
+            android:title="@string/studgorodok"/>
         <item
             android:id="@+id/menu_sanatorium"
             android:title="@string/sanatorium"/>

@@ -28,6 +28,4 @@ public class DataModule {
     DataRepository providesRepository(Context context) {
         return new MaiRepository(context);
     }
-
-
 }

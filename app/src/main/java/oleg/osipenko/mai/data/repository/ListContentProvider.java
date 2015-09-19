@@ -11,17 +11,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Provides;
-import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
-import oleg.osipenko.mai.data.DataModule;
 import oleg.osipenko.mai.data.dataModel.ListContent;
-import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
-import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
@@ -33,20 +25,16 @@ import rx.functions.Func3;
 import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
 import static oleg.osipenko.mai.Router.CANTEENS;
 import static oleg.osipenko.mai.Router.COURSES;
-import static oleg.osipenko.mai.Router.DK;
-import static oleg.osipenko.mai.Router.DOSAAF;
 import static oleg.osipenko.mai.Router.FACULTIES;
 import static oleg.osipenko.mai.Router.HELP;
 import static oleg.osipenko.mai.Router.LIBRARIES;
 import static oleg.osipenko.mai.Router.LIFE;
-import static oleg.osipenko.mai.Router.MAGISTRACY;
 import static oleg.osipenko.mai.Router.MEDIA;
-import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
-import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
 import static oleg.osipenko.mai.Router.SCHOLARSHIPS;
-import static oleg.osipenko.mai.Router.SECONDARY_EDUCATION;
-import static oleg.osipenko.mai.Router.SESSION;
 import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
+import static oleg.osipenko.mai.Router.WAYS;
+import static oleg.osipenko.mai.Router.SCHOOL_ACTIVITY;
+import static oleg.osipenko.mai.Router.DOSUG;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -66,7 +54,6 @@ public class ListContentProvider {
             R.drawable.f2nd,
             R.drawable.f4th
     );
-
 
 
     List<Integer> instImages = Arrays.asList(
@@ -298,6 +285,69 @@ public class ListContentProvider {
                 @Override
                 public void call(Subscriber<? super List<ListContent>> subscriber) {
                     subscriber.onNext(hs);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS)) {
+            final List<ListContent> ws = Observable.from(context.getResources().getStringArray(R.array.ways))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ws);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SCHOOL_ACTIVITY)) {
+            final List<ListContent> as = Observable.from(context.getResources().getStringArray(R.array.activity))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(as);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSUG)) {
+            final List<ListContent> as = Observable.from(context.getResources().getStringArray(R.array.dosug))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(as);
                     subscriber.onCompleted();
                 }
             })

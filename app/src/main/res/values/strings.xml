@@ -15,7 +15,7 @@
     <string name="academic_mobility">Академическая мобильность</string>
     <string name="employment_center">Центр трудоустройства МАИ</string>
     <string name="science">Научная деятельность</string>
-    <string name="dormitories">Студгородок</string>
+    <string name="studgorodok">Студгородок</string>
     <string name="sanatorium">Санаторий-профилакторий</string>
     <string name="recreation_centers">Базы отдыха</string>
     <string name="sport_sections">Спортивные секции</string>
@@ -56,6 +56,22 @@
     <string name="mai_smis">• \"Пропеллер\"  – официальная газета МАИ\n\n • \"От винта\"  – молодёжная общественно-политическая газета\n\n • СМИ Профкома студентов и аспирантов МАИ\n\n • \"Импульс\"  – газета факультета № 4\n\n • \"Поехали!\"  – газета факультета № 6\n\n • \"Под прицелом\"  – газета факультета № 7\n\n • \"Восьмёрка\"  – газета факультета № 8</string>
     <string name="internet_title">Интернет-ресурсы</string>
     <string name="inets">• www.mai.ru – официальный сайт МАИ\n\n • vk.com/mai_niu – официальный аккаунт МАИ\n\n • vk.com/mai_club – сообщество маёвцев\n\n • vk.com/mai_first – сообщество первокурсников МАИ\n\n • vk.com/ordenmai – паблик \"Орден МАИ\"\n\n • facebook.com/mai.university – официальный аккаунт МАИ\n\n • facebook.com/MoscowAviationInstitute – интернациональный аккаунт МАИ\n\n • instagram.com/mai_university/ – официальный аккаунт МАИ\n\n • twitter.com/newsMAI – официальный аккаунт МАИ\n\n • youtube.com/universitymai – официальный канал МАИ\n\n • instagram.com/mai_university – официальный аккаунт МАИ\n\n • mai.exler.ru – студенческая энциклопедия МАИ</string>
+    <string name="upper_week">Верхняя неделя</string>
+    <string name="napravlenia">Направления подготовки</string>
+    <string name="dormitories">Общежития</string>
+    <string name="alumni">Выпускники</string>
+    <string name="podgotovka">Подготовка к поступлению</string>
+    <string name="docs">Документы для поступления</string>
+    <string name="nabor">Целевой набор</string>
+    <string name="school_centers">Центры обучения школьников</string>
+    <string name="school_activity">Мероприятия для школьников</string>
+    <string name="dosug">Досуг</string>
+    <string name="contacts">Контакты</string>
+    <string name="podgot">Залог успешного поступления в МАИ и другие престижные технические вузы — качественная подготовка к ЕГЭ, вступительным испытаниям. Школьная программа не всегда способна дать полный объём знаний, необходимый для успешной сдачи экзаменов. Для того чтобы помочь абитуриентам успешно сдать вступительные испытания, в МАИ существует целый ряд подготовительных курсов и отделений для 9-х, 10-х и 11-х классов.</string>
+    <string name="address">Адрес приёмной комиссии:\nг. Москва, ул. Дубосековская, д. 4,\nМАИ, Главный Учебный Корпус (ГУК),\n4-й этаж</string>
+    <string name="phone">Телефоны для справок (с 10 до 17 ч.):\n+7-499-158-40-56,\n+7-499-158-43-00,\n+7-499-158-47-09</string>
+    <string name="email">Электронная почта\npriem@mai.ru</string>
+    <string name="site">Сайт Приемной комиссии\nwww.priem.mai.ru</string>
 
 
 </resources>
