@@ -45,6 +45,7 @@ public class Router {
     public static final String NEWS = "Новости";
     public static final String MAP = "Карта";
     public static final String SCHEDULE = "Расписание";
+    public static final String PRIEM = "Приёмная комиссия";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -70,6 +71,7 @@ public class Router {
             case RECREATION_CENTERS:
             case DK:
             case DOSAAF:
+            case PRIEM:
                 return new StaticListContentScreen(item);
             case PRACTICS:
             case DOTATIONS:

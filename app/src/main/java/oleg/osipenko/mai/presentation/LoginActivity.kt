@@ -20,7 +20,7 @@ public class LoginActivity : Activity() {
         btn_student.setOnClickListener{
             View -> savePerson()
         }
-        btn_student.setOnClickListener {
+        btn_abitur.setOnClickListener {
             View -> savePerson(false)
         }
         if (getSharedPreferences(SP_KEY, Context.MODE_PRIVATE).contains(IS_STUDENT_KEY)) {

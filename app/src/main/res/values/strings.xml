@@ -57,6 +57,8 @@
     <string name="internet_title">Интернет-ресурсы</string>
     <string name="inets">• www.mai.ru – официальный сайт МАИ\n\n • vk.com/mai_niu – официальный аккаунт МАИ\n\n • vk.com/mai_club – сообщество маёвцев\n\n • vk.com/mai_first – сообщество первокурсников МАИ\n\n • vk.com/ordenmai – паблик \"Орден МАИ\"\n\n • facebook.com/mai.university – официальный аккаунт МАИ\n\n • facebook.com/MoscowAviationInstitute – интернациональный аккаунт МАИ\n\n • instagram.com/mai_university/ – официальный аккаунт МАИ\n\n • twitter.com/newsMAI – официальный аккаунт МАИ\n\n • youtube.com/universitymai – официальный канал МАИ\n\n • instagram.com/mai_university – официальный аккаунт МАИ\n\n • mai.exler.ru – студенческая энциклопедия МАИ</string>
     <string name="toolbar_title_abitur">Абитуриент</string>
+    <string name="tab_priem">Приёмная комиссия</string>
+    <string name="tab_media">Медиа</string>
 
 
 </resources>

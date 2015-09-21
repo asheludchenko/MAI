@@ -63,6 +63,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     private Drawable hamburger;
     private Drawable arrow;
+    boolean isStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        isStudent = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
 
         initIcons();
         initHamburger();
@@ -93,10 +96,18 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void initTabs() {
-        tabs.addTab(tabs.newTab().setText(R.string.tab_main));
-        tabs.addTab(tabs.newTab().setText(R.string.tab_news));
-        tabs.addTab(tabs.newTab().setText(R.string.tab_map));
-        tabs.addTab(tabs.newTab().setText(R.string.tab_schedule));
+        if (tabs.getTabCount() > 0) tabs.removeAllTabs();
+        if (isStudent) {
+            tabs.addTab(tabs.newTab().setText(R.string.tab_main));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_news));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_map));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_schedule));
+        } else {
+            tabs.addTab(tabs.newTab().setText(R.string.tab_main));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_news));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_priem));
+            tabs.addTab(tabs.newTab().setText(R.string.tab_media));
+        }
         RxTabLayout.selectionEvents(tabs)
                 .map(new Func1<TabLayoutSelectionEvent, Void>() {
                     @Override
@@ -148,7 +159,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 return true;
             }
         });
-        //toolbar.setOverflowIcon();
+        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_overflow));
         toolbar.setTitleTextColor(0xFFFFFFFF);
     }
 
