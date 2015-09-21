@@ -515,4 +515,8 @@ GPS Location: Nord 55. 91209, East 37. 50276; profkom-st.mai.ru.</item>
         <item name="p">В 2015 году МАИ занял первое место среди самых востребованных организациями ОПК, подведомственных Минпромторгу России, учебных заведений страны.</item>
         <item name="p">Более подробно с информацией по целевому набору, можно ознакомиться на сайте Приёмной комиссии МАИ — http://priem.mai.ru/index.php</item>
     </string-array>
+    <string-array name="school_centers">
+        <item name="ss1">Центр технологической поддержки образования МАИ</item>
+        <item name="ss2">Центр авиамодельного творчества учащихся</item>
+    </string-array>
 </resources>
