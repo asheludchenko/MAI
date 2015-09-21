@@ -18,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
@@ -51,7 +54,7 @@ dependencies {
 
 
 buildscript {
-    ext.kotlin_version = '0.12.1230'
+    ext.kotlin_version = '0.13.1514'
     repositories {
         mavenCentral()
     }
@@ -60,4 +63,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
 
     }
+}
+repositories {
+    mavenCentral()
 }

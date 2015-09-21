@@ -55,6 +55,7 @@ public class Router {
     public static final String SCHOOL_ACTIVITY = "Мероприятия для школьников";
     public static final String DOSUG = "Досуг";
     public static final String CONTACTS = "Контакты";
+    public static final String PRIEM = "Приёмная комиссия";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -84,6 +85,7 @@ public class Router {
             case DK:
             case DOSAAF:
             case PODGOTOVKA:
+            case PRIEM:
                 return new StaticListContentScreen(item);
             case PRACTICS:
             case DOTATIONS:
