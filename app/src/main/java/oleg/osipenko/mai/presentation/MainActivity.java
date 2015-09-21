@@ -2,6 +2,7 @@ package oleg.osipenko.mai.presentation;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -27,12 +28,12 @@ import flow.History;
 import mortar.MortarScope;
 import mortar.bundler.BundleServiceRunner;
 import mortar.dagger1support.ObjectGraphService;
+import oleg.osipenko.mai.ConstantsKt;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
-import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
 import rx.functions.Func1;
 
@@ -132,7 +133,22 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 }
             }
         });
-        toolbar.setTitle(R.string.toolbar_title_student);
+        final SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
+        if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
+            toolbar.setTitle(R.string.toolbar_title_abitur);
+        } else {
+            toolbar.setTitle(R.string.toolbar_title_student);
+        }
+        toolbar.inflateMenu(R.menu.toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                sp.edit().clear().apply();
+                finish();
+                return true;
+            }
+        });
+        //toolbar.setOverflowIcon();
         toolbar.setTitleTextColor(0xFFFFFFFF);
     }
 
@@ -152,6 +168,10 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void initMenu() {
+        SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
+        if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
+            // TODO inflate abitur menu
+        }
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
