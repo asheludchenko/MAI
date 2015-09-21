@@ -132,20 +132,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void initHamburger() {
-
-        toolbar.setNavigationIcon(hamburger);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    drawerLayout.openDrawer(Gravity.LEFT);
-                } else {
-                    drawerLayout.closeDrawers();
-                }
-            }
-        });
         final SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
-        if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
+        if (!isStudent) {
             toolbar.setTitle(R.string.toolbar_title_abitur);
         } else {
             toolbar.setTitle(R.string.toolbar_title_student);
@@ -161,6 +149,16 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         });
         toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_overflow));
         toolbar.setTitleTextColor(0xFFFFFFFF);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.closeDrawers();
+                }
+            }
+        });
     }
 
     private void mortarStuff(Bundle savedInstanceState) {
@@ -181,7 +179,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private void initMenu() {
         SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
         if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
-            // TODO inflate abitur menu
+            menu.getMenu().clear();
+            menu.inflateMenu(R.menu.abiturient);
+            toolbar.setNavigationIcon(hamburger);
+        } else {
+            menu.getMenu().clear();
+            menu.inflateMenu(R.menu.student_low);
+            toolbar.setNavigationIcon(hamburger);
         }
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
