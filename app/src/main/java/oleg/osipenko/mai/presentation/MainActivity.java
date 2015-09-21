@@ -139,6 +139,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             toolbar.setTitle(R.string.toolbar_title_student);
         }
         toolbar.inflateMenu(R.menu.toolbar);
+        toolbar.setNavigationIcon(hamburger);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -181,11 +182,9 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
             menu.getMenu().clear();
             menu.inflateMenu(R.menu.abiturient);
-            toolbar.setNavigationIcon(hamburger);
         } else {
             menu.getMenu().clear();
             menu.inflateMenu(R.menu.student_low);
-            toolbar.setNavigationIcon(hamburger);
         }
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

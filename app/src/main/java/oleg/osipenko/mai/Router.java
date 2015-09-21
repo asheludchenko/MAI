@@ -76,6 +76,7 @@ public class Router {
             case WAYS:
             case SCHOOL_ACTIVITY:
             case DOSUG:
+            case SCHOOL_CENTERS:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:

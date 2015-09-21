@@ -35,6 +35,7 @@ import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
 import static oleg.osipenko.mai.Router.WAYS;
 import static oleg.osipenko.mai.Router.SCHOOL_ACTIVITY;
 import static oleg.osipenko.mai.Router.DOSUG;
+import static oleg.osipenko.mai.Router.SCHOOL_CENTERS;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -352,6 +353,8 @@ public class ListContentProvider {
                 }
             })
                     .cache();
+        } else if (specification.specified(SCHOOL_CENTERS)) {
+
         }
         return Observable.from(Collections.EMPTY_LIST);
     }
