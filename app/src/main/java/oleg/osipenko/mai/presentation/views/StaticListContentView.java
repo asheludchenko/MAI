@@ -51,7 +51,7 @@ public class StaticListContentView extends NestedScrollView {
         listener = new ListContentView.ClickListener() {
             @Override
             public void itemClicked(String value) {
-                App.bus.post(new ChangeScreenEvent(value));
+                App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
             }
         };
     }

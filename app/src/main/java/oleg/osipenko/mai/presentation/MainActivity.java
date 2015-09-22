@@ -278,7 +278,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void changeScreen(String title) {
-        toolbar.setTitle(title);
+        String[] a = title.split("#");
+        toolbar.setTitle(a.length > 1 ? a[1] : a[0]);
         Flow.get(MainActivity.this).setHistory(
                 History.single(router.getScreen(title)),
                 Flow.Direction.REPLACE
@@ -287,7 +288,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     @Subscribe
     public void ItemClicked(ChangeScreenEvent event) {
-        Log.d("mai", "event " + event);
+        Log.d("mai", event.getTitle());
         changeScreen(event.getTitle());
     }
 }

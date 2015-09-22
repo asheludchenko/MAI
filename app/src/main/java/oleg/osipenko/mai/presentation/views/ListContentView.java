@@ -102,7 +102,7 @@ public class ListContentView extends RecyclerView {
             listener = new ClickListener() {
                 @Override
                 public void itemClicked(String value) {
-                    App.bus.post(new ChangeScreenEvent(screenName + value));
+                    App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
                 }
             };
             screenName = parameter;
