@@ -79,6 +79,16 @@ public class Router {
     public static final String SESSION_ZACHET = "Зачётная сессия";
     public static final String SESSION_EXAM = "Экзаменационная сессия";
     public static final String SESSION_OTCH = "Отчисление студентов";
+    public static final String S1 = "Государственная академическая стипендия";
+    public static final String S2 = "Повышенная государственная академическая стипендия";
+    public static final String S3 = "Повышенная стипендия Учёного Совета МАИ";
+    public static final String S4 = "Дополнительная повышенная государственная академическая стипендия";
+    public static final String S5 = "Государственная стипендия для иностранных студентов, обучающихся по очной форме обучения за счет средств федерального бюджета (по направлениям Минобрнауки России)";
+    public static final String S6 = "Государственная социальная стипендия";
+    public static final String S7 = "Дополнительная повышенная государственная социальная стипендия нуждающимся студентам 1-го и 2-го курсов";
+    public static final String S8 = "Дополнительная стипендия студентам, обучающимся по программам военной подготовки в учебном военном центре при МАИ";
+    public static final String S9 = "Государственная стипендия для слушателей и студентов из числа граждан, проходивших военную службу";
+    public static final String S10 = "Именные стипендии";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -148,6 +158,16 @@ public class Router {
             case SESSION + DELIM + SESSION_ZACHET:
             case SESSION + DELIM + SESSION_EXAM:
             case SESSION + DELIM + SESSION_OTCH:
+            case SCHOLARSHIPS + DELIM + S1:
+            case SCHOLARSHIPS + DELIM + S2:
+            case SCHOLARSHIPS + DELIM + S3:
+            case SCHOLARSHIPS + DELIM + S4:
+            case SCHOLARSHIPS + DELIM + S5:
+            case SCHOLARSHIPS + DELIM + S6:
+            case SCHOLARSHIPS + DELIM + S7:
+            case SCHOLARSHIPS + DELIM + S8:
+            case SCHOLARSHIPS + DELIM + S9:
+            case SCHOLARSHIPS + DELIM + S10:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();
