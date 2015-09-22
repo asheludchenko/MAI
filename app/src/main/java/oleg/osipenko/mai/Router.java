@@ -1,5 +1,7 @@
 package oleg.osipenko.mai;
 
+import android.util.Log;
+
 import flow.path.Path;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
@@ -56,6 +58,27 @@ public class Router {
     public static final String DOSUG = "Досуг";
     public static final String CONTACTS = "Контакты";
     public static final String PRIEM = "Приёмная комиссия";
+    public static final String DELIM = "#";
+    public static final String F1 = "№1 \"Авиационная техника\"";
+    public static final String F2 = "№2 \"Двигатели летательных аппаратов\"";
+    public static final String F3 = "№3 \"Системы управления, информатика и электроэнергетика\"";
+    public static final String F4 = "№4 \"Радиоэлектроника летательных аппаратов\"";
+    public static final String F6 = "№6 \"Аэрокосмический\"";
+    public static final String F5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String F7 = "№7 \"Робототехнические и интеллектуальные системы\"";
+    public static final String F8 = "№8 \"Прикладная математика и физика\"";
+    public static final String F9 = "№9 \"Прикладная механика\"";
+    public static final String F10 = "№10 \"Социальный инжиниринг\"";
+    public static final String RADIOVTUZ = "\"РадиоВТУЗ МАИ\"";
+    public static final String INLANG = "Иностранных языков";
+    public static final String BAYC = "\"Восход\" МАИ в г. Байконур";
+    public static final String AHTUBA = "\"Взлёт\" МАИ в г. Ахтубинске";
+    public static final String STRELA = "\"Стрела\" МАИ в г. Жуковском";
+    public static final String KHIMKI = "\"Ракетно-космическая техника\" в г. Химки";
+    public static final String MILIT_INST = "Военный институт МАИ";
+    public static final String SESSION_ZACHET = "Зачётная сессия";
+    public static final String SESSION_EXAM = "Экзаменационная сессия";
+    public static final String SESSION_OTCH = "Отчисление студентов";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -105,6 +128,23 @@ public class Router {
             case DOCS:
             case NABOR:
             case CONTACTS:
+            case (FACULTIES + DELIM + F1):
+            case FACULTIES + DELIM + F2:
+            case FACULTIES + DELIM + F3:
+            case FACULTIES + DELIM + F4:
+            case FACULTIES + DELIM + F5:
+            case FACULTIES + DELIM + F6:
+            case FACULTIES + DELIM + F7:
+            case FACULTIES + DELIM + F8:
+            case FACULTIES + DELIM + F9:
+            case FACULTIES + DELIM + F10:
+            case FACULTIES + DELIM + RADIOVTUZ:
+            case FACULTIES + DELIM + INLANG:
+            case FACULTIES + DELIM + MILIT_INST:
+            case FACULTIES + DELIM + BAYC:
+            case FACULTIES + DELIM + AHTUBA:
+            case FACULTIES + DELIM + STRELA:
+            case FACULTIES + DELIM + KHIMKI:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

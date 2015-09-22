@@ -326,17 +326,17 @@
         <item name="h03">Европейское приложение к диплому</item>
     </string-array>
     <string-array name="faculties">
-        <item name="1st">№1 "Авиационная техника"</item>
-        <item name="2nd">№2 "Двигатели летательных аппаратов"</item>
-        <item name="3rd">№3 "Системы управления, информатика и электроэнергетика</item>
-        <item name="4th">№4 "Радиоэлектроника летательных аппаратов"</item>
-        <item name="6th">№6 "Аэрокосмический"</item>
-        <item name="7th">№7 "Робототехнические и интеллектуальные системы"</item>
-        <item name="8th">№8 "Прикладная математика и физика"</item>
-        <item name="9th">№9 "Прикладная механика"</item>
-        <item name="10th">№10 "Социальный инжиниринг"</item>
+        <item name="1st">№1 \"Авиационная техника\"</item>
+        <item name="2nd">№2 \"Двигатели летательных аппаратов\"</item>
+        <item name="3rd">№3 \"Системы управления, информатика и электроэнергетика\"</item>
+        <item name="4th">№4 \"Радиоэлектроника летательных аппаратов\"</item>
+        <item name="6th">№6 \"Аэрокосмический\"</item>
+        <item name="7th">№7 \"Робототехнические и интеллектуальные системы\"</item>
+        <item name="8th">№8 \"Прикладная математика и физика\"</item>
+        <item name="9th">№9 \"Прикладная механика\"</item>
+        <item name="10th">№10 \"Социальный инжиниринг\"</item>
         <item name="languages">Иностранных языков</item>
-        <item name="radioVtuz">"РадиоВТУЗ МАИ"</item>
+        <item name="radioVtuz">\"РадиоВТУЗ МАИ\"</item>
     </string-array>
 
     <string-array name="institutes">
@@ -345,10 +345,10 @@
     </string-array>
 
     <string-array name="filials">
-        <item name="bayconoor">"Восход" МАИ в г. Байконур</item>
-        <item name="ahtuba">"Взлёт" МАИ в г. Ахтубинске</item>
-        <item name="zhuk">"Стрела" МАИ в г. Жуковском</item>
-        <item name="khimki">"Ракетно-космическая техника" в г. Химки</item>
+        <item name="bayconoor">\"Восход\" МАИ в г. Байконур</item>
+        <item name="ahtuba">\"Взлёт\" МАИ в г. Ахтубинске</item>
+        <item name="zhuk">\"Стрела\" МАИ в г. Жуковском</item>
+        <item name="khimki">\"Ракетно-космическая техника\" в г. Химки</item>
     </string-array>
 
     <string-array name="sessions">
@@ -518,5 +518,90 @@ GPS Location: Nord 55. 91209, East 37. 50276; profkom-st.mai.ru.</item>
     <string-array name="school_centers">
         <item name="ss1">Центр технологической поддержки образования МАИ</item>
         <item name="ss2">Центр авиамодельного творчества учащихся</item>
+    </string-array>
+    <string-array name="fac1">
+        <item name="s01">Александр Викторович Ефремов</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n506, корп. 7\n+7-499-158-27-71\n+7-499-158-43-22\nhttp://mai.ru/unit/avia</item>
+    </string-array>
+    <string-array name="fac2">
+        <item name="s01">Алексей Борисович Агульник</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n405-1, корп. 2В\n+7-499-158-27-31\n+7-499-158-40-12\nhttp://mai.ru/unit/engines/</item>
+    </string-array>
+    <string-array name="fac3">
+        <item name="s01">Юрий Германович Следков</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n209, корп. 3\n+7-499-158-27-21\nhttp://mai.ru/unit/control/</item>
+    </string-array>
+    <string-array name="fac4">
+        <item name="s01">Владимир Владимирович Кирдяшкин</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n307, корп. 24Б\n+7-499-158-15-73\n+7-499-158-40-14\nhttp://mai.ru/unit/frela/</item>
+    </string-array>
+    <string-array name="fac5">
+        <item name="s01">Алексей Иванович Тихонов</item>
+        <item name="s02">директор института</item>
+        <item name="s03">Контакты\n214, корп. 5\n+7-499-158-19-53\nhttp://mai.ru/unit/ingekin/</item>
+    </string-array>
+    <string-array name="fac6">
+        <item name="s01">Тушавина Ольга Валериановна</item>
+        <item name="s02">и.о. декана</item>
+        <item name="s03">Контакты\n418, корп. 24А\n+7-499-158-58-65\n+7-499-158-46-39\n+7-499-158-46-54\nhttp://mai.ru/unit/space/</item>
+    </string-array>
+    <string-array name="fac7">
+        <item name="s01">Константин Михайлович Тихонов</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n638, корп. 24А\n+7-499-158-58-68\n+7-499-158-52-36\http://mai.ru/unit/robotic/</item>
+    </string-array>
+    <string-array name="fac8">
+        <item name="s01">Сергей Сергеевич Крылов</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n603, корп. ГУК, зона «А»\n+7-499-158-09-06\nhttp://mai.ru/unit/fpmf/</item>
+    </string-array>
+    <string-array name="fac9">
+        <item name="s01">Лев Наумович Рабинский</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n431, корп. ГУК, зона «Б»\n+7-499-158-00-06\nhttp://mai.ru/unit/mechanics/</item>
+    </string-array>
+    <string-array name="fac10">
+        <item name="s01">Светлана Ивановна Мавроди</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n526, корп. ГУК, зона «А»\n+7-499-158-65-00\n+7-499-158-45-50\nhttp://mai.ru/unit/social/</item>
+    </string-array>
+    <string-array name="fac_inlang">
+        <item name="s01">Александр Константинович Каллиопин</item>
+        <item name="s02">Декан</item>
+        <item name="s03">Контакты\n411 «А», корп. ГАК\n+7-495-221-58-86\n+7-495-221-58-99\nhttp://mai.ru/unit/foreign/</item>
+    </string-array>
+    <string-array name="fac_milit">
+        <item name="s01">Владимир Иванович Гончаренко</item>
+        <item name="s02">директор института</item>
+        <item name="s03">Контакты\n208, корп. 6\n+7-499-158-17-01\nhttp://mai.ru/unit/military/</item>
+    </string-array>
+    <string-array name="fac_bayc">
+        <item name="s01">Анатолий Сергеевич Просочкин</item>
+        <item name="s02">директор</item>
+        <item name="s03">Контакты\nг. Байконур,\nпр. Гагарина, 5\n+7-33622-5-14-43\nhttp://mai.ru/unit/voshod/</item>
+    </string-array>
+    <string-array name="fac_ahtuba">
+        <item name="s01">Владимир Александрович Торопов</item>
+        <item name="s02">директор</item>
+        <item name="s03">Контакты\nАстраханская область,\nг. Ахтубинск,\nул. Добролюбова, 5\n+7-85141-5-28-26\nhttp://mai.ru/unit/vzlet/</item>
+    </string-array>
+    <string-array name="fac_khimki">
+        <item name="s01">Александр Алексеевич Мазуров</item>
+        <item name="s02">директор</item>
+        <item name="s03">Контакты\nМосковская область,\nг. Химки, ул. Репина, 3\n+7-495-571-24-47\nhttp://mai.ru/unit/rkt/</item>
+    </string-array>
+    <string-array name="fac_strela">
+        <item name="s01">Владислав Сергеевич Максимов</item>
+        <item name="s02">директор</item>
+        <item name="s03">Контакты\nМосковская область,\nг.о. Жуковский,\nул.Жуковского, д.8\n+7-495-556-66-55\n+7 495 556-90-11\nhttp://mai.ru/unit/strela/</item>
+    </string-array>
+    <string-array name="fac_radiovtuz">
+        <item name="s01">Игорь Валерьевич Грубрин</item>
+        <item name="s02">декан</item>
+        <item name="s03">Контакты\n305, г. Москва, ул. Новая Басманная, д.16 «A»\n+7-499-261-65-44\n+7-499-267-76-18\n+7-499-267-86-35\nhttp://mai.ru/unit/radiovtuz/</item>
     </string-array>
 </resources>
