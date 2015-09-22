@@ -128,7 +128,7 @@ public class Router {
             case DOCS:
             case NABOR:
             case CONTACTS:
-            case (FACULTIES + DELIM + F1):
+            case FACULTIES + DELIM + F1:
             case FACULTIES + DELIM + F2:
             case FACULTIES + DELIM + F3:
             case FACULTIES + DELIM + F4:
@@ -145,6 +145,9 @@ public class Router {
             case FACULTIES + DELIM + AHTUBA:
             case FACULTIES + DELIM + STRELA:
             case FACULTIES + DELIM + KHIMKI:
+            case SESSION + DELIM + SESSION_ZACHET:
+            case SESSION + DELIM + SESSION_EXAM:
+            case SESSION + DELIM + SESSION_OTCH:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

@@ -54,6 +54,10 @@ import static oleg.osipenko.mai.Router.STRELA;
 import static oleg.osipenko.mai.Router.KHIMKI;
 import static oleg.osipenko.mai.Router.MILIT_INST;
 import static oleg.osipenko.mai.Router.DELIM;
+import static oleg.osipenko.mai.Router.SESSION;
+import static oleg.osipenko.mai.Router.SESSION_ZACHET;
+import static oleg.osipenko.mai.Router.SESSION_EXAM;
+import static oleg.osipenko.mai.Router.SESSION_OTCH;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -522,7 +526,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F2)) {
+        } else if (specification.specified(FACULTIES + DELIM + F2)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F2)
                     .build();
@@ -551,7 +555,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F3)) {
+        } else if (specification.specified(FACULTIES + DELIM + F3)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F3)
                     .build();
@@ -580,7 +584,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F4)) {
+        } else if (specification.specified(FACULTIES + DELIM + F4)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F4)
                     .build();
@@ -609,7 +613,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F5)) {
+        } else if (specification.specified(FACULTIES + DELIM + F5)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F5)
                     .build();
@@ -638,7 +642,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F6)) {
+        } else if (specification.specified(FACULTIES + DELIM + F6)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F6)
                     .build();
@@ -667,7 +671,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F7)) {
+        } else if (specification.specified(FACULTIES + DELIM + F7)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F7)
                     .build();
@@ -696,7 +700,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F8)) {
+        } else if (specification.specified(FACULTIES + DELIM + F8)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F8)
                     .build();
@@ -725,7 +729,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F9)) {
+        } else if (specification.specified(FACULTIES + DELIM + F9)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F9)
                     .build();
@@ -754,7 +758,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + F10)) {
+        } else if (specification.specified(FACULTIES + DELIM + F10)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(F10)
                     .build();
@@ -783,7 +787,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + INLANG)) {
+        } else if (specification.specified(FACULTIES + DELIM + INLANG)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(INLANG)
                     .build();
@@ -812,7 +816,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + MILIT_INST)) {
+        } else if (specification.specified(FACULTIES + DELIM + MILIT_INST)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(MILIT_INST)
                     .build();
@@ -841,7 +845,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + BAYC)) {
+        } else if (specification.specified(FACULTIES + DELIM + BAYC)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(BAYC)
                     .build();
@@ -870,7 +874,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + STRELA)) {
+        } else if (specification.specified(FACULTIES + DELIM + STRELA)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(STRELA)
                     .build();
@@ -899,7 +903,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + AHTUBA)) {
+        } else if (specification.specified(FACULTIES + DELIM + AHTUBA)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(AHTUBA)
                     .build();
@@ -928,7 +932,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + KHIMKI)) {
+        } else if (specification.specified(FACULTIES + DELIM + KHIMKI)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(KHIMKI)
                     .build();
@@ -957,7 +961,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }else if (specification.specified(FACULTIES + DELIM + RADIOVTUZ)) {
+        } else if (specification.specified(FACULTIES + DELIM + RADIOVTUZ)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(RADIOVTUZ)
                     .build();
@@ -975,6 +979,69 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SESSION + DELIM + SESSION_ZACHET)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.session_zach))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SESSION + DELIM + SESSION_EXAM)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.session_exam))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SESSION + DELIM + SESSION_OTCH)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.session_otch))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
                     .toList()
                     .toBlocking()
                     .single();
