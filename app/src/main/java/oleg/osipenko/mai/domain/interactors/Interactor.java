@@ -51,6 +51,10 @@ public abstract class Interactor<T, R> {
         this.parameter = parameter;
     }
 
+    public T getParameter() {
+        return parameter;
+    }
+
     public boolean isUnSubscribed() {
         return this.subscription.isUnsubscribed();
     }

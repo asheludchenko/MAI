@@ -18,6 +18,7 @@ ext {
     vectorVersion = '1.0.5'
     bindingVersion = '0.2.0'
     streamsVersion = '1.0.3'
+    ottoVersion = '1.3.8'
 
     appDeps = [
             appcompat: "com.android.support:appcompat-v7:$appCompatVersion",
@@ -43,6 +44,7 @@ ext {
             stickyHeader: "com.timehop.stickyheadersrecyclerview:library:$headerVersion",
             vector: "com.wnafee:vector-compat:$vectorVersion",
             designBinding: "com.jakewharton.rxbinding:rxbinding-design:$bindingVersion",
-            streams: "com.annimon:stream:$streamsVersion"
+            streams: "com.annimon:stream:$streamsVersion",
+            otto: "com.squareup:otto:$ottoVersion"
     ]
 }

@@ -1,5 +1,7 @@
 package oleg.osipenko.mai.data.dataModel;
 
+import java.util.Arrays;
+
 import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 
 /**
@@ -15,6 +17,7 @@ public class ListContent {
     private boolean withImage;
     private boolean withSections;
     private SimpleSectionListAdapter.Section[] sections;
+    private boolean clickable;
 
     public ListContent() {
     }
@@ -53,6 +56,26 @@ public class ListContent {
 
     public boolean isWithSections() {
         return withSections;
+    }
+
+    public boolean isClickable() {
+        return clickable;
+    }
+
+    @Override
+    public String toString() {
+        return "ListContent{" +
+                "text='" + text + '\'' +
+                ", image='" + image + '\'' +
+                ", title='" + title + '\'' +
+                ", sub2='" + sub2 + '\'' +
+                ", sub3='" + sub3 + '\'' +
+                ", sub4='" + sub4 + '\'' +
+                ", withImage=" + withImage +
+                ", withSections=" + withSections +
+                ", sections=" + Arrays.toString(sections) +
+                ", clickable=" + clickable +
+                '}';
     }
 
     public static class Builder {
@@ -104,6 +127,11 @@ public class ListContent {
 
         public Builder setSections(SimpleSectionListAdapter.Section[] sections) {
             content.sections = sections;
+            return this;
+        }
+
+        public Builder setClickable() {
+            content.clickable = true;
             return this;
         }
 

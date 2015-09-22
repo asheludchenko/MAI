@@ -38,6 +38,18 @@ public class StaticContent {
         return facText;
     }
 
+    @Override
+    public String toString() {
+        return "StaticContent{" +
+                "title='" + title + '\'' +
+                ", image='" + image + '\'' +
+                ", text='" + text + '\'' +
+                ", facTitle='" + facTitle + '\'' +
+                ", facPhoto='" + facPhoto + '\'' +
+                ", facText='" + facText + '\'' +
+                '}';
+    }
+
     public static class Builder {
         private StaticContent staticContent;
 

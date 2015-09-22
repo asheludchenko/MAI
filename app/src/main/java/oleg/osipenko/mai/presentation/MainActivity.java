@@ -9,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.view.View;
 
 import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
 import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
+import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
 import javax.inject.Inject;
@@ -28,9 +30,11 @@ import flow.History;
 import mortar.MortarScope;
 import mortar.bundler.BundleServiceRunner;
 import mortar.dagger1support.ObjectGraphService;
+import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.ConstantsKt;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.Router;
+import oleg.osipenko.mai.presentation.events.ChangeScreenEvent;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
 import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
@@ -114,11 +118,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                     public Void call(TabLayoutSelectionEvent tabLayoutSelectionEvent) {
                         if (Flow.get(MainActivity.this) != null) {
                             String title = tabLayoutSelectionEvent.tab().getText().toString();
-                            Flow.get(MainActivity.this).setHistory(
-                                    History.single(router.getScreen(title)),
-                                    Flow.Direction.REPLACE
-                            );
-                            toolbar.setTitle(title);
+                            changeScreen(title);
                         }
                         return null;
                     }
@@ -189,13 +189,9 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Flow.get(MainActivity.this).setHistory(
-                        History.single(router.getScreen(menuItem.getTitle().toString())),
-                        Flow.Direction.REPLACE
-                );
+                changeScreen(menuItem.getTitle().toString());
                 toolbar.setNavigationIcon(arrow);
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
-                toolbar.setTitle(menuItem.getTitle());
                 return true;
             }
         });
@@ -210,12 +206,14 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     @Override
     protected void onResume() {
         super.onResume();
+        App.bus.register(this);
         flowDelegate.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        App.bus.unregister(this);
         flowDelegate.onPause();
     }
 
@@ -277,5 +275,19 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     @Override
     public void dispatch(Flow.Traversal traversal, Flow.TraversalCallback callback) {
         container.dispatch(traversal, callback);
+    }
+
+    private void changeScreen(String title) {
+        toolbar.setTitle(title);
+        Flow.get(MainActivity.this).setHistory(
+                History.single(router.getScreen(title)),
+                Flow.Direction.REPLACE
+        );
+    }
+
+    @Subscribe
+    public void ItemClicked(ChangeScreenEvent event) {
+        Log.d("mai", "event " + event);
+        changeScreen(event.getTitle());
     }
 }

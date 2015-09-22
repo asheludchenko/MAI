@@ -2,12 +2,12 @@ package oleg.osipenko.mai;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
@@ -26,6 +26,8 @@ import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
  */
 public class App extends Application {
 
+    public static Bus bus;
+
     private MortarScope rootScope;
 
     @Override
@@ -33,6 +35,7 @@ public class App extends Application {
         super.onCreate();
         Fresco.initialize(this);
         LeakCanary.install(this);
+        bus = new Bus();
     }
 
     @Override
@@ -59,7 +62,6 @@ public class App extends Application {
         Context context;
 
         AppModule(Context context) {
-            Log.d("mai", "app module");
             this.context = context;
         }
 

@@ -102,6 +102,7 @@ public class ListContentProvider {
                             .setText(s)
                             .setImage(String.valueOf(integer))
                             .setWithImage(true)
+                            .setClickable()
                             .build();
                 }
             })
@@ -128,6 +129,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -183,6 +185,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -202,6 +205,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -222,6 +226,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -241,6 +246,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -259,6 +265,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -278,6 +285,7 @@ public class ListContentProvider {
                         public ListContent apply(String value) {
                             return new ListContent.Builder()
                                     .setText(value)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -318,6 +326,7 @@ public class ListContentProvider {
                         public ListContent call(String s) {
                             return new ListContent.Builder()
                                     .setText(s)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -339,6 +348,7 @@ public class ListContentProvider {
                         public ListContent call(String s) {
                             return new ListContent.Builder()
                                     .setText(s)
+                                    .setClickable()
                                     .build();
                         }
                     })
@@ -360,6 +370,7 @@ public class ListContentProvider {
                         public ListContent call(String s) {
                             return new ListContent.Builder()
                                     .setText(s)
+                                    .setClickable()
                                     .build();
                         }
                     })

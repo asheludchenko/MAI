@@ -78,7 +78,9 @@ public class ListContentScreen extends Path {
             contents = Collections.emptyList();
         }
 
-
+        public String getParameter() {
+            return interactor.getParameter().getParameter();
+        }
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {

@@ -22,8 +22,10 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
+import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.ListContent;
+import oleg.osipenko.mai.presentation.events.ChangeScreenEvent;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.utils.SimpleDividerItemDecoration;
 import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
@@ -38,6 +40,7 @@ public class ListContentView extends RecyclerView {
 
     private Adapter adapter;
 
+
     public ListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
@@ -45,7 +48,7 @@ public class ListContentView extends RecyclerView {
         setLayoutManager(layoutManager);
         setItemAnimator(new DefaultItemAnimator());
         addItemDecoration(new SimpleDividerItemDecoration(context));
-        adapter = new Adapter(Collections.EMPTY_LIST);
+        adapter = new Adapter(Collections.EMPTY_LIST, presenter.getParameter());
         setAdapter(adapter);
     }
 
@@ -79,7 +82,7 @@ public class ListContentView extends RecyclerView {
     }
 
     public void showWithSections(List<ListContent> contents, SimpleSectionListAdapter.Section[] sections) {
-        adapter = new Adapter(contents);
+        adapter = new Adapter(contents, presenter.getParameter());
         SimpleSectionListAdapter sectionedAdapter = new SimpleSectionListAdapter(
                 getContext(),
                 R.layout.section,
@@ -91,9 +94,18 @@ public class ListContentView extends RecyclerView {
 
     public static class Adapter extends RecyclerView.Adapter<ViewHolder> {
         private List<ListContent> contents;
+        private ClickListener listener;
+        private String screenName;
 
-        public Adapter(List<ListContent> contents) {
+        public Adapter(List<ListContent> contents, String parameter) {
             this.contents = contents;
+            listener = new ClickListener() {
+                @Override
+                public void itemClicked(String value) {
+                    App.bus.post(new ChangeScreenEvent(screenName + value));
+                }
+            };
+            screenName = parameter;
         }
 
         public void setContents(List<ListContent> contents) {
@@ -109,7 +121,7 @@ public class ListContentView extends RecyclerView {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            ListContent item = contents.get(position);
+            final ListContent item = contents.get(position);
             holder.text.setVisibility(
                     item.getText() == null? GONE : VISIBLE
             );
@@ -148,6 +160,16 @@ public class ListContentView extends RecyclerView {
             if (item.getSub2() != null) holder.sub2.setText(item.getSub2());
             if (item.getSub3() != null) holder.sub3.setText(item.getSub3());
             if (item.getSub4() != null) holder.sub4.setText(item.getSub4());
+            if (item.isClickable()) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        listener.itemClicked(item.getText());
+                    }
+                });
+            } else {
+                holder.itemView.setOnClickListener(null);
+            }
         }
 
         @Override
@@ -174,5 +196,9 @@ public class ListContentView extends RecyclerView {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public interface ClickListener {
+        void itemClicked(String value);
     }
 }

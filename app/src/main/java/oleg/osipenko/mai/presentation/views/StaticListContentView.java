@@ -25,8 +25,10 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
+import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
+import oleg.osipenko.mai.presentation.events.ChangeScreenEvent;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
 
 /**
@@ -39,10 +41,19 @@ public class StaticListContentView extends NestedScrollView {
 
     @Bind(R.id.root)
     LinearLayout root;
+    ListContentView.ClickListener listener;
+    String screenName;
 
     public StaticListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
+        screenName = presenter.getParameter();
+        listener = new ListContentView.ClickListener() {
+            @Override
+            public void itemClicked(String value) {
+                App.bus.post(new ChangeScreenEvent(value));
+            }
+        };
     }
 
     @Override
@@ -135,7 +146,7 @@ public class StaticListContentView extends NestedScrollView {
         return textView;
     }
 
-    private View getListView(StaticListContent content) {
+    private View getListView(final StaticListContent content) {
         View listContent = View.inflate(getContext(), R.layout.item_static_list, null);
         TextView textView = (TextView) listContent.findViewById(R.id.text);
         textView.setText(content.getListTitle());
@@ -152,6 +163,14 @@ public class StaticListContentView extends NestedScrollView {
                         .build();
             }
             image.setImageURI(uri);
+        }
+        if (content.isListClickable()) {
+            listContent.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.itemClicked(content.getListTitle());
+                }
+            });
         }
         return listContent;
     }

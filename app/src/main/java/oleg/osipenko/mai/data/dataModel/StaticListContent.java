@@ -1,7 +1,5 @@
 package oleg.osipenko.mai.data.dataModel;
 
-import java.util.List;
-
 /**
  * Created by olegosipenko on 13.09.15.
  */
@@ -12,6 +10,7 @@ public class StaticListContent {
     private String listTitle;
     private String listImage;
     private boolean listWithImage;
+    private boolean listClickable;
 
     public StaticListContent() {
     }
@@ -40,6 +39,10 @@ public class StaticListContent {
         return listWithImage;
     }
 
+    public boolean isListClickable() {
+        return listClickable;
+    }
+
     @Override
     public String toString() {
         return "StaticListContent{" +
@@ -49,6 +52,7 @@ public class StaticListContent {
                 ", listTitle='" + listTitle + '\'' +
                 ", listImage='" + listImage + '\'' +
                 ", listWithImage=" + listWithImage +
+                ", listClickable=" + listClickable +
                 '}';
     }
 
@@ -86,6 +90,11 @@ public class StaticListContent {
 
         public Builder setWithImage(boolean withImage) {
             content.listWithImage = withImage;
+            return this;
+        }
+
+        public Builder setListClickable() {
+            content.listClickable = true;
             return this;
         }
 

@@ -67,6 +67,7 @@ public class StaticListContentProvider {
                         public StaticListContent apply(String value) {
                             return new StaticListContent.Builder()
                                     .setListTitle(value)
+                                    .setListClickable()
                                     .build();
                         }
                     })
@@ -104,6 +105,7 @@ public class StaticListContentProvider {
                         public StaticListContent apply(String value) {
                             return new StaticListContent.Builder()
                                     .setListTitle(value)
+                                    .setListClickable()
                                     .build();
                         }
                     })
@@ -131,6 +133,7 @@ public class StaticListContentProvider {
                             return new StaticListContent.Builder()
                                     .setListTitle(s)
                                     .setListImage(String.valueOf(integer))
+                                    .setListClickable()
                                     .build();
                         }
                     }
@@ -166,6 +169,7 @@ public class StaticListContentProvider {
                             return new StaticListContent.Builder()
                                     .setListTitle(s)
                                     .setListImage(String.valueOf(integer))
+                                    .setListClickable()
                                     .build();
                         }
                     }
@@ -194,6 +198,7 @@ public class StaticListContentProvider {
                         public StaticListContent call(String s) {
                             return new StaticListContent.Builder()
                                     .setListTitle(s)
+                                    .setListClickable()
                                     .build();
                         }
                     })
@@ -233,6 +238,7 @@ public class StaticListContentProvider {
                                 public StaticListContent call(String s) {
                                     return new StaticListContent.Builder()
                                             .setListTitle(s)
+                                            .setListClickable()
                                             .build();
 
                                 }
@@ -266,6 +272,7 @@ public class StaticListContentProvider {
                                 public StaticListContent call(String s) {
                                     return new StaticListContent.Builder()
                                             .setListTitle(s)
+                                            .setListClickable()
                                             .build();
                                 }
                             })
@@ -294,6 +301,7 @@ public class StaticListContentProvider {
                         public StaticListContent call(String s) {
                             return new StaticListContent.Builder()
                                     .setListTitle(s)
+                                    .setListClickable()
                                     .build();
                         }
                     })

@@ -50,6 +50,7 @@ dependencies {
     compile appDeps.vector
     compile appDeps.designBinding
     compile appDeps.streams
+    compile appDeps.otto
 }
 
 

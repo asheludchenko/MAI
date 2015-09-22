@@ -15,4 +15,8 @@ public class ListContentSpecification implements RequestSpecification<String> {
     public boolean specified(String string) {
         return string.equals(menuItem);
     }
+
+    public String getParameter() {
+        return menuItem;
+    }
 }
