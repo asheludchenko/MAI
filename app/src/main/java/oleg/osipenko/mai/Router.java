@@ -89,6 +89,39 @@ public class Router {
     public static final String S8 = "Дополнительная стипендия студентам, обучающимся по программам военной подготовки в учебном военном центре при МАИ";
     public static final String S9 = "Государственная стипендия для слушателей и студентов из числа граждан, проходивших военную службу";
     public static final String S10 = "Именные стипендии";
+    public static final String MILIT_01 = "Учебный военный центр";
+    public static final String MILIT_02 = "Военная кафедра";
+    public static final String SE01 = "«Авиационная техника»";
+    public static final String SE02 = "Инженерно-экономический институт МАИ";
+    public static final String SE03 = "«Прикладная механика»";
+    public static final String SE04 = "«Иностранных языков»";
+    public static final String MAG01 = "«Авиационная техника»";
+    public static final String MAG02 = "«Двигатели летательных аппаратов»";
+    public static final String MAG03 = "«Системы управления, информатика и электроэнергетика»";
+    public static final String MAG04 = "«Инженерно-экономический институт МАИ»";
+    public static final String MAG05 = "«Аэрокосмический»";
+    public static final String MAG06 = "«Прикладная математика и физика»";
+    public static final String MAG07 = "«Прикладная механика»";
+    public static final String MAG08 = "«Социальный инжиниринг»";
+    public static final String MAG09 = "«Иностранных языков»";
+    public static final String ACAD01 = "Глобальное образование";
+    public static final String ACAD02 = "Программы обмена";
+    public static final String DK01 = "Коллективы";
+    public static final String DK02 = "Мероприятия";
+    public static final String DOS01 = "Авиамодельный клуб";
+    public static final String DOS02 = "Аэродром МАИ";
+    public static final String DOS03 = "Авиа-технический клуб";
+    public static final String DOS04 = "Дельтапланерный клуб";
+    public static final String DOS05 = "Морской клуб (клуб аквалангистов)";
+    public static final String DOS06 = "Стрелковый клуб";
+    public static final String LIF01 = "Песни";
+    public static final String LIF02 = "Словарь";
+    public static final String LIF03 = "Тосты";
+    public static final String HELP1 = "Копировальные центры";
+    public static final String HELP2 = "Расписание";
+    public static final String HELP3 = "Европейское приложение к диплому";
+    public static final String REC1 = "ОУЦ МАИ Алушта";
+    public static final String REC2 = "ОУЦ Ярополец";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -168,6 +201,39 @@ public class Router {
             case SCHOLARSHIPS + DELIM + S8:
             case SCHOLARSHIPS + DELIM + S9:
             case SCHOLARSHIPS + DELIM + S10:
+            case MILITARY_INSTITUTE + DELIM + MILIT_01:
+            case MILITARY_INSTITUTE + DELIM + MILIT_02:
+            case SECONDARY_EDUCATION + DELIM + SE01:
+            case SECONDARY_EDUCATION + DELIM + SE02:
+            case SECONDARY_EDUCATION + DELIM + SE03:
+            case SECONDARY_EDUCATION + DELIM + SE04:
+            case MAGISTRACY + DELIM + MAG01:
+            case MAGISTRACY + DELIM + MAG02:
+            case MAGISTRACY + DELIM + MAG03:
+            case MAGISTRACY + DELIM + MAG04:
+            case MAGISTRACY + DELIM + MAG05:
+            case MAGISTRACY + DELIM + MAG06:
+            case MAGISTRACY + DELIM + MAG07:
+            case MAGISTRACY + DELIM + MAG08:
+            case MAGISTRACY + DELIM + MAG09:
+            case ACADEMIC_MOBILITY + DELIM + ACAD01:
+            case ACADEMIC_MOBILITY + DELIM + ACAD02:
+            case DK + DELIM + DK01:
+            case DK + DELIM + DK02:
+            case DOSAAF + DELIM + DOS01:
+            case DOSAAF + DELIM + DOS02:
+            case DOSAAF + DELIM + DOS03:
+            case DOSAAF + DELIM + DOS04:
+            case DOSAAF + DELIM + DOS05:
+            case DOSAAF + DELIM + DOS06:
+            case LIFE + DELIM + LIF01:
+            case LIFE + DELIM + LIF02:
+            case LIFE + DELIM + LIF03:
+            case HELP + DELIM + HELP1:
+            case HELP + DELIM + HELP2:
+            case HELP + DELIM + HELP3:
+            case RECREATION_CENTERS + DELIM + REC1:
+            case RECREATION_CENTERS + DELIM + REC2:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

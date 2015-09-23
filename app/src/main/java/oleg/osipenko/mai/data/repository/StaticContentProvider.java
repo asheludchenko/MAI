@@ -6,7 +6,6 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Function;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -18,57 +17,100 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
+import static oleg.osipenko.mai.Router.AHTUBA;
 import static oleg.osipenko.mai.Router.ALUMNI;
+import static oleg.osipenko.mai.Router.BAYC;
 import static oleg.osipenko.mai.Router.CONTACTS;
 import static oleg.osipenko.mai.Router.DEBATING_CLUB;
+import static oleg.osipenko.mai.Router.DELIM;
 import static oleg.osipenko.mai.Router.DOCS;
 import static oleg.osipenko.mai.Router.DORMITORIES;
 import static oleg.osipenko.mai.Router.DOTATIONS;
 import static oleg.osipenko.mai.Router.EMPLOYMENT_CENTER;
+import static oleg.osipenko.mai.Router.F1;
+import static oleg.osipenko.mai.Router.F10;
+import static oleg.osipenko.mai.Router.F2;
+import static oleg.osipenko.mai.Router.F3;
+import static oleg.osipenko.mai.Router.F4;
+import static oleg.osipenko.mai.Router.F5;
+import static oleg.osipenko.mai.Router.F6;
+import static oleg.osipenko.mai.Router.F7;
+import static oleg.osipenko.mai.Router.F8;
+import static oleg.osipenko.mai.Router.F9;
+import static oleg.osipenko.mai.Router.FACULTIES;
 import static oleg.osipenko.mai.Router.HISTORY;
+import static oleg.osipenko.mai.Router.INLANG;
+import static oleg.osipenko.mai.Router.KHIMKI;
 import static oleg.osipenko.mai.Router.MAISKY_VZLET;
+import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
+import static oleg.osipenko.mai.Router.MILIT_01;
+import static oleg.osipenko.mai.Router.MILIT_02;
+import static oleg.osipenko.mai.Router.MILIT_INST;
 import static oleg.osipenko.mai.Router.NABOR;
 import static oleg.osipenko.mai.Router.PRACTICS;
 import static oleg.osipenko.mai.Router.PRESS;
 import static oleg.osipenko.mai.Router.PROFKOM;
-import static oleg.osipenko.mai.Router.SANATORIUM;
-import static oleg.osipenko.mai.Router.SCIENCE;
-import static oleg.osipenko.mai.Router.SOMOL;
-import static oleg.osipenko.mai.Router.STUDGORODOK;
-import static oleg.osipenko.mai.Router.FACULTIES;
-import static oleg.osipenko.mai.Router.F1;
-import static oleg.osipenko.mai.Router.F2;
-import static oleg.osipenko.mai.Router.F3;
-import static oleg.osipenko.mai.Router.F4;
-import static oleg.osipenko.mai.Router.F6;
-import static oleg.osipenko.mai.Router.F5;
-import static oleg.osipenko.mai.Router.F7;
-import static oleg.osipenko.mai.Router.F8;
-import static oleg.osipenko.mai.Router.F9;
-import static oleg.osipenko.mai.Router.F10;
 import static oleg.osipenko.mai.Router.RADIOVTUZ;
-import static oleg.osipenko.mai.Router.INLANG;
-import static oleg.osipenko.mai.Router.BAYC;
-import static oleg.osipenko.mai.Router.AHTUBA;
-import static oleg.osipenko.mai.Router.STRELA;
-import static oleg.osipenko.mai.Router.KHIMKI;
-import static oleg.osipenko.mai.Router.MILIT_INST;
-import static oleg.osipenko.mai.Router.DELIM;
-import static oleg.osipenko.mai.Router.SESSION;
-import static oleg.osipenko.mai.Router.SESSION_ZACHET;
-import static oleg.osipenko.mai.Router.SESSION_EXAM;
-import static oleg.osipenko.mai.Router.SESSION_OTCH;
-import static oleg.osipenko.mai.Router.SCHOLARSHIPS;
 import static oleg.osipenko.mai.Router.S1;
+import static oleg.osipenko.mai.Router.S10;
 import static oleg.osipenko.mai.Router.S2;
 import static oleg.osipenko.mai.Router.S3;
 import static oleg.osipenko.mai.Router.S4;
-import static oleg.osipenko.mai.Router.S6;
 import static oleg.osipenko.mai.Router.S5;
+import static oleg.osipenko.mai.Router.S6;
 import static oleg.osipenko.mai.Router.S7;
 import static oleg.osipenko.mai.Router.S8;
 import static oleg.osipenko.mai.Router.S9;
-import static oleg.osipenko.mai.Router.S10;
+import static oleg.osipenko.mai.Router.SANATORIUM;
+import static oleg.osipenko.mai.Router.SCHOLARSHIPS;
+import static oleg.osipenko.mai.Router.SCIENCE;
+import static oleg.osipenko.mai.Router.SECONDARY_EDUCATION;
+import static oleg.osipenko.mai.Router.SESSION;
+import static oleg.osipenko.mai.Router.SESSION_EXAM;
+import static oleg.osipenko.mai.Router.SESSION_OTCH;
+import static oleg.osipenko.mai.Router.SESSION_ZACHET;
+import static oleg.osipenko.mai.Router.SOMOL;
+import static oleg.osipenko.mai.Router.STRELA;
+import static oleg.osipenko.mai.Router.STUDGORODOK;
+import static oleg.osipenko.mai.Router.SE01;
+import static oleg.osipenko.mai.Router.SE02;
+import static oleg.osipenko.mai.Router.SE03;
+import static oleg.osipenko.mai.Router.SE04;
+import static oleg.osipenko.mai.Router.MAGISTRACY;
+import static oleg.osipenko.mai.Router.MAG01;
+import static oleg.osipenko.mai.Router.MAG02;
+import static oleg.osipenko.mai.Router.MAG03;
+import static oleg.osipenko.mai.Router.MAG04;
+import static oleg.osipenko.mai.Router.MAG05;
+import static oleg.osipenko.mai.Router.MAG06;
+import static oleg.osipenko.mai.Router.MAG07;
+import static oleg.osipenko.mai.Router.MAG08;
+import static oleg.osipenko.mai.Router.MAG09;
+import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
+import static oleg.osipenko.mai.Router.ACAD01;
+import static oleg.osipenko.mai.Router.ACAD02;
+import static oleg.osipenko.mai.Router.DK;
+import static oleg.osipenko.mai.Router.DK01;
+import static oleg.osipenko.mai.Router.DK02;
+import static oleg.osipenko.mai.Router.DOSAAF;
+import static oleg.osipenko.mai.Router.DOS01;
+import static oleg.osipenko.mai.Router.DOS02;
+import static oleg.osipenko.mai.Router.DOS03;
+import static oleg.osipenko.mai.Router.DOS04;
+import static oleg.osipenko.mai.Router.DOS05;
+import static oleg.osipenko.mai.Router.DOS06;
+import static oleg.osipenko.mai.Router.LIFE;
+import static oleg.osipenko.mai.Router.LIF01;
+import static oleg.osipenko.mai.Router.LIF02;
+import static oleg.osipenko.mai.Router.LIF03;
+import static oleg.osipenko.mai.Router.HELP;
+import static oleg.osipenko.mai.Router.HELP1;
+import static oleg.osipenko.mai.Router.HELP2;
+import static oleg.osipenko.mai.Router.HELP3;
+import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
+import static oleg.osipenko.mai.Router.REC1;
+import static oleg.osipenko.mai.Router.REC2;
+
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -1314,7 +1356,821 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
+        } else if (specification.specified(MILITARY_INSTITUTE + DELIM + MILIT_01)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.uvc))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.uvc))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MILITARY_INSTITUTE + DELIM + MILIT_02)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.voennaja_kaf))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.voenkaf))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE01)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se01))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE02)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se02))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE03)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se03))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE04)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se04))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG01)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG02)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG03)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG04)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag4))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG05)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag5))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG06)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag6))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG07)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag7))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG08)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag8))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(MAGISTRACY + DELIM + MAG09)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(SE01)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag9))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(ACADEMIC_MOBILITY + DELIM + ACAD01)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.globaleducation))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.acad01))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(ACADEMIC_MOBILITY + DELIM + ACAD02)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.obmen))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.acad02))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DK + DELIM + DK01)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.kollektivi))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dk1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DK + DELIM + DK02)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.dk_event))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dk2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS01)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.aviamodelizm))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS02)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.aerodrom))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS03)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.aviateh_club))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS04)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.deltaplan))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos4))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS05)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.divers))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos5))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(DOSAAF + DELIM + DOS06)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.tir))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.dos6))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(LIFE + DELIM + LIF01)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile("Маёвская рекламная\n(\"Только в МАИ\")")
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile("Маёвский тост")
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(HELP + DELIM + HELP1)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.help1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(HELP + DELIM + HELP2)) {
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.help2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(HELP + DELIM + HELP3)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.prilozenie))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.help3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC1)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.alushta))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.rec1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC2)) {
+            StaticContent image = new StaticContent.Builder()
+                    .setImage(String.valueOf(R.drawable.jaropolec))
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.rec2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         }
+
         return Observable.from(Collections.EMPTY_LIST);
     }
 }
