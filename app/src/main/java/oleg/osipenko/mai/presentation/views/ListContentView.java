@@ -173,8 +173,6 @@ public class ListContentView extends RecyclerView {
                         listener.itemClicked(item.getText());
                     }
                 });
-            } else {
-                holder.itemView.setOnClickListener(null);
             }
             if (item.isDialogable()) {
                 holder.itemView.setOnClickListener(new OnClickListener() {
@@ -192,7 +190,8 @@ public class ListContentView extends RecyclerView {
                         dialog.show();
                     }
                 });
-            } else {
+            }
+            if (!item.isDialogable() && !item.isClickable()) {
                 holder.itemView.setOnClickListener(null);
             }
         }

@@ -14,4 +14,8 @@ public class StaticContentSpecification implements RequestSpecification<String> 
     public boolean specified(String s)  {
         return s.equals(item);
     }
+
+    public String getItem() {
+        return item;
+    }
 }

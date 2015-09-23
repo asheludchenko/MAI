@@ -1,11 +1,15 @@
 package oleg.osipenko.mai.data.repository;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.Log;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Function;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -3677,6 +3681,36 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.getItem().contains("WW")) {
+            String item = specification.getItem();
+            int res = 0;
+            try {
+                Field idField = R.array.class.getDeclaredField(item);
+                res = idField.getInt(idField);
+            } catch (Exception e) {
+                Log.e("mai", e.getMessage());
+            }
+            StaticContent title = new StaticContent.Builder().setFacTitile(item).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(res))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
                     .toList()
                     .toBlocking()
                     .single();
