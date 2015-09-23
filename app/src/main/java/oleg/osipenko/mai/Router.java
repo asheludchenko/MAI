@@ -181,6 +181,8 @@ public class Router {
     public static final String COU3 = "ИНПО";
     public static final String COU4 = "ЭНТОС";
     public static final String COU5 = "Абитуриент";
+    public static final String SS1 = "Центр технологической поддержки образования МАИ";
+    public static final String SS2 = "Центр авиамодельного творчества учащихся";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -352,6 +354,8 @@ public class Router {
             case PODGOTOVKA + DELIM + POD1 + DELIM + COU3:
             case PODGOTOVKA + DELIM + POD1 + DELIM + COU4:
             case PODGOTOVKA + DELIM + POD1 + DELIM + COU5:
+            case SCHOOL_CENTERS + DELIM + SS1:
+            case SCHOOL_CENTERS + DELIM + SS2:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

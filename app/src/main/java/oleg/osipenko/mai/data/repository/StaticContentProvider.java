@@ -172,6 +172,11 @@ import static oleg.osipenko.mai.Router.COU3;
 import static oleg.osipenko.mai.Router.COU4;
 import static oleg.osipenko.mai.Router.COU5;
 
+import static oleg.osipenko.mai.Router.SCHOOL_CENTERS;
+import static oleg.osipenko.mai.Router.SS1;
+import static oleg.osipenko.mai.Router.SS2;
+
+
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -3556,6 +3561,50 @@ public class StaticContentProvider {
                                     .build();
                         }
                     })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SCHOOL_CENTERS + DELIM + SS1)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_ctpo)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SCHOOL_CENTERS + DELIM + SS2)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_miraviamodeli)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
                     .toList()
                     .toBlocking()
                     .single();
