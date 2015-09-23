@@ -122,6 +122,55 @@ public class Router {
     public static final String HELP3 = "Европейское приложение к диплому";
     public static final String REC1 = "ОУЦ МАИ Алушта";
     public static final String REC2 = "ОУЦ Ярополец";
+    public static final String SS01= "Айкидо";
+    public static final String SS02= "Академическая гребля";
+    public static final String SS03= "Атлетическая гимнастика\n(корпус № 12 «Черепаха»)";
+    public static final String SS04= "Аэробика";
+    public static final String SS05= "Бадминтон";
+    public static final String SS06= "Волейбол";
+    public static final String SS07= "Греко-римская борьба";
+    public static final String SS08= "Настольный теннис";
+    public static final String SS09= "Скалолазание";
+    public static final String SS10= "Атлетическая гимнастика\n(ул. К. Царёва, д. 12а)";
+    public static final String SS11= "Йога";
+    public static final String SS12= "Каратэ";
+    public static final String SS13= "Лыжные гонки";
+    public static final String SS14= "Мини-футбол (м)";
+    public static final String SS15= "Мини-футбол (ж)";
+    public static final String SS16= "Рукопашный бой";
+    public static final String SS17= "Теннис\n(ул. К. Царёва, д. 12а)";
+    public static final String SS18= "Тхэквондо";
+    public static final String SS19= "Фитнес";
+    public static final String SS20= "Футбол";
+    public static final String SS21= "Армрестлинг";
+    public static final String SS22= "Бокс";
+    public static final String SS23= "Вольная борьба";
+    public static final String SS24= "Дзюдо";
+    public static final String SS25= "Дуэльная стрельба";
+    public static final String SS26= "Йога\n(корпус № 3 МАИ)";
+    public static final String SS27= "Пулевая стрельба";
+    public static final String SS28= "Гиревой спорт\n(ул. Дубосековская, д. 5)";
+    public static final String SS29= "Пауэрлифтинг";
+    public static final String SS30= "Тяжёлая атлетика\n(ул. Дубосековская, д. 5)";
+    public static final String SS31= "Атлетическая гимнастика\n(Тушино)";
+    public static final String SS32= "Баскетбол";
+    public static final String SS33= "Гиревой спорт\n(«Тушино»)";
+    public static final String SS34= "Теннис\n(«Тушино»)";
+    public static final String SS35= "Спортивные танцы";
+    public static final String SS36= "Альпинизм";
+    public static final String SS37= "Спортивный туризм";
+    public static final String SS38= "Артистическое фехтование";
+    public static final String SS39= "Боевые искусства (капоэйра, окинава-каратэ, тайский бокс)";
+    public static final String SS40= "Гольф";
+    public static final String SS41= "Горный велосипед";
+    public static final String SS42= "Лёгкая атлетика";
+    public static final String SS43= "Парусный спорт";
+    public static final String SS44= "Плавание";
+    public static final String SS45= "Подводное плавание";
+    public static final String SS46= "Регби";
+    public static final String SS47= "Сноуборд, горные лыжи";
+    public static final String SS48= "Спортивное ориентирование";
+    public static final String SS49= "Шахматы";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -234,6 +283,55 @@ public class Router {
             case HELP + DELIM + HELP3:
             case RECREATION_CENTERS + DELIM + REC1:
             case RECREATION_CENTERS + DELIM + REC2:
+            case SPORT_SECTIONS + DELIM + SS01:
+            case SPORT_SECTIONS + DELIM + SS02:
+            case SPORT_SECTIONS + DELIM + SS03:
+            case SPORT_SECTIONS + DELIM + SS04:
+            case SPORT_SECTIONS + DELIM + SS05:
+            case SPORT_SECTIONS + DELIM + SS06:
+            case SPORT_SECTIONS + DELIM + SS07:
+            case SPORT_SECTIONS + DELIM + SS08:
+            case SPORT_SECTIONS + DELIM + SS09:
+            case SPORT_SECTIONS + DELIM + SS10:
+            case SPORT_SECTIONS + DELIM + SS11:
+            case SPORT_SECTIONS + DELIM + SS12:
+            case SPORT_SECTIONS + DELIM + SS13:
+            case SPORT_SECTIONS + DELIM + SS14:
+            case SPORT_SECTIONS + DELIM + SS15:
+            case SPORT_SECTIONS + DELIM + SS16:
+            case SPORT_SECTIONS + DELIM + SS17:
+            case SPORT_SECTIONS + DELIM + SS18:
+            case SPORT_SECTIONS + DELIM + SS19:
+            case SPORT_SECTIONS + DELIM + SS20:
+            case SPORT_SECTIONS + DELIM + SS21:
+            case SPORT_SECTIONS + DELIM + SS22:
+            case SPORT_SECTIONS + DELIM + SS23:
+            case SPORT_SECTIONS + DELIM + SS24:
+            case SPORT_SECTIONS + DELIM + SS25:
+            case SPORT_SECTIONS + DELIM + SS26:
+            case SPORT_SECTIONS + DELIM + SS27:
+            case SPORT_SECTIONS + DELIM + SS28:
+            case SPORT_SECTIONS + DELIM + SS29:
+            case SPORT_SECTIONS + DELIM + SS30:
+            case SPORT_SECTIONS + DELIM + SS31:
+            case SPORT_SECTIONS + DELIM + SS32:
+            case SPORT_SECTIONS + DELIM + SS33:
+            case SPORT_SECTIONS + DELIM + SS34:
+            case SPORT_SECTIONS + DELIM + SS35:
+            case SPORT_SECTIONS + DELIM + SS36:
+            case SPORT_SECTIONS + DELIM + SS37:
+            case SPORT_SECTIONS + DELIM + SS38:
+            case SPORT_SECTIONS + DELIM + SS39:
+            case SPORT_SECTIONS + DELIM + SS40:
+            case SPORT_SECTIONS + DELIM + SS41:
+            case SPORT_SECTIONS + DELIM + SS42:
+            case SPORT_SECTIONS + DELIM + SS43:
+            case SPORT_SECTIONS + DELIM + SS44:
+            case SPORT_SECTIONS + DELIM + SS45:
+            case SPORT_SECTIONS + DELIM + SS46:
+            case SPORT_SECTIONS + DELIM + SS47:
+            case SPORT_SECTIONS + DELIM + SS48:
+            case SPORT_SECTIONS + DELIM + SS49:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

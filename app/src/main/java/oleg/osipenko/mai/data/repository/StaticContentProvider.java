@@ -111,6 +111,57 @@ import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
 import static oleg.osipenko.mai.Router.REC1;
 import static oleg.osipenko.mai.Router.REC2;
 
+import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
+import static oleg.osipenko.mai.Router.SS01;
+import static oleg.osipenko.mai.Router.SS02;
+import static oleg.osipenko.mai.Router.SS03;
+import static oleg.osipenko.mai.Router.SS04;
+import static oleg.osipenko.mai.Router.SS05;
+import static oleg.osipenko.mai.Router.SS06;
+import static oleg.osipenko.mai.Router.SS07;
+import static oleg.osipenko.mai.Router.SS08;
+import static oleg.osipenko.mai.Router.SS09;
+import static oleg.osipenko.mai.Router.SS10;
+import static oleg.osipenko.mai.Router.SS11;
+import static oleg.osipenko.mai.Router.SS12;
+import static oleg.osipenko.mai.Router.SS13;
+import static oleg.osipenko.mai.Router.SS14;
+import static oleg.osipenko.mai.Router.SS15;
+import static oleg.osipenko.mai.Router.SS16;
+import static oleg.osipenko.mai.Router.SS17;
+import static oleg.osipenko.mai.Router.SS18;
+import static oleg.osipenko.mai.Router.SS19;
+import static oleg.osipenko.mai.Router.SS20;
+import static oleg.osipenko.mai.Router.SS21;
+import static oleg.osipenko.mai.Router.SS22;
+import static oleg.osipenko.mai.Router.SS23;
+import static oleg.osipenko.mai.Router.SS24;
+import static oleg.osipenko.mai.Router.SS25;
+import static oleg.osipenko.mai.Router.SS26;
+import static oleg.osipenko.mai.Router.SS27;
+import static oleg.osipenko.mai.Router.SS28;
+import static oleg.osipenko.mai.Router.SS29;
+import static oleg.osipenko.mai.Router.SS30;
+import static oleg.osipenko.mai.Router.SS31;
+import static oleg.osipenko.mai.Router.SS32;
+import static oleg.osipenko.mai.Router.SS33;
+import static oleg.osipenko.mai.Router.SS34;
+import static oleg.osipenko.mai.Router.SS35;
+import static oleg.osipenko.mai.Router.SS36;
+import static oleg.osipenko.mai.Router.SS37;
+import static oleg.osipenko.mai.Router.SS38;
+import static oleg.osipenko.mai.Router.SS39;
+import static oleg.osipenko.mai.Router.SS40;
+import static oleg.osipenko.mai.Router.SS41;
+import static oleg.osipenko.mai.Router.SS42;
+import static oleg.osipenko.mai.Router.SS43;
+import static oleg.osipenko.mai.Router.SS44;
+import static oleg.osipenko.mai.Router.SS45;
+import static oleg.osipenko.mai.Router.SS46;
+import static oleg.osipenko.mai.Router.SS47;
+import static oleg.osipenko.mai.Router.SS48;
+import static oleg.osipenko.mai.Router.SS49;
+
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -2169,7 +2220,1183 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        }
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS01)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS01).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.aikido)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss01))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS02)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS02).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.akadem_greb)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss02))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS03)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS03).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.atl_gimn)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss03))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS04)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS04).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.aerob)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss04))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS05)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS05).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.badmin)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss05))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS06)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS06).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.voleibol)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss06))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS07)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS07).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.greko_rim)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss07))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS08)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS08).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.small_tennis)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss08))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS09)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS09).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.skalolaz)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss09))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS10)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS10).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.atl_gimn)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss10))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS11)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS11).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.yoga)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss11))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS12)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS12).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.karate)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss12))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS13)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS13).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ligi)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss13))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS14)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS14).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.minifootball)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss14))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS15)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS15).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.minifootball_girl)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss15))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS16)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS16).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.rukopash)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss16))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS17)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS17).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.tenis)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss17))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS18)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS18).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.tekvondo)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss18))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS19)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS19).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.fitnes)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss19))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS20)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS20).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.football)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss20))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS21)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS21).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.arm)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss21))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS22)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS22).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.box)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss22))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS23)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS23).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.volnaja)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss23))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS24)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS24).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.dzudo)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss24))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS25)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS25).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.dual_strelba)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss25))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS26)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS26).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.yoga)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss26))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS27)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS27).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.pulevaja)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss27))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS28)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS28).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.giri)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss28))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS29)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS29).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.powerlifting)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss29))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS30)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS30).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.tyajolaja)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss30))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS31)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS31).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.atl_gimn)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss31))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS32)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS32).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.basket)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss32))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS33)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS33).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.giri)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss33))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS34)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS34).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.tenis)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss34))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS35)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS35).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.sporttanci)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss35))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS36)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS36).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.alp)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss36))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS37)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS37).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.sporturizm)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss37))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS38)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS38).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.feht)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss38))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS39)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS39).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.boevie)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss39))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS40)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS40).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.golf)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss40))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS41)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS41).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.gornij)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss41))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS42)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS42).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.legk_atletika)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss42))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS43)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS43).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.parus)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss43))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS44)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS44).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.swim)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss44))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS45)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS45).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.podvodnoe)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss45))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS46)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS46).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.regbi)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss46))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS47)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS47).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.snowboard)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss47))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS48)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS48).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.sportorientir)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss48))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SPORT_SECTIONS + DELIM + SS49)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile(SS49).build();
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.chess)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss49))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .mergeWith(Observable.just(image))
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } 
 
         return Observable.from(Collections.EMPTY_LIST);
     }
