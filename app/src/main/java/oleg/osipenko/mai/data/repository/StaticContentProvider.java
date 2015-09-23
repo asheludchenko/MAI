@@ -3531,20 +3531,28 @@ public class StaticContentProvider {
             }).cache();
         } else if (specification.getItem().length() - specification.getItem().replace(DELIM, "").length() == 3) {
             String[] a = specification.getItem().split(DELIM);
-            int index = 0;
-            for (int i = 0; i < wwws.length; i++) {
-                if (wwws[i].equals(a[3])) index = i;
-                break;
-            }
-            String resId = "WW" + ++index;
             int res = 0;
-            try {
-                Field idField = R.array.class.getDeclaredField(resId);
-                res = idField.getInt(idField);
-            } catch (Exception e) {
-                Log.e("mai", e.getMessage());
+            if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW1 + 0)) {
+                res = R.array.WW1;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW2 + 1)) {
+                res = R.array.WW2;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW3 + 2)) {
+                res = R.array.WW3;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW4 + 3)) {
+                res = R.array.WW4;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW5 + 4)) {
+                res = R.array.WW5;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW6 + 5)) {
+                res = R.array.WW6;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW7 + 6)) {
+                res = R.array.WW7;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW8 + 7)) {
+                res = R.array.WW8;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW9 + 8)) {
+                res = R.array.WW9;
             }
-            StaticContent title = new StaticContent.Builder().setFacTitile(a[3]).build();
+            String screenTitle = a[3].substring(0, a[3].length()-1);
+            StaticContent title = new StaticContent.Builder().setFacTitile(screenTitle).build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(res))
                     .map(new Func1<String, StaticContent>() {
                         @Override

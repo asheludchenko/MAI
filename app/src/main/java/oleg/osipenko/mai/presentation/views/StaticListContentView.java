@@ -50,7 +50,7 @@ public class StaticListContentView extends NestedScrollView {
         screenName = presenter.getParameter();
         listener = new ListContentView.ClickListener() {
             @Override
-            public void itemClicked(String value) {
+            public void itemClicked(String value, int pos) {
                 App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
             }
         };
@@ -168,7 +168,7 @@ public class StaticListContentView extends NestedScrollView {
             listContent.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.itemClicked(content.getListTitle());
+                    listener.itemClicked(content.getListTitle(), 0);
                 }
             });
         }

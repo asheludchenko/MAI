@@ -107,8 +107,12 @@ public class ListContentView extends RecyclerView {
             this.contents = contents;
             listener = new ClickListener() {
                 @Override
-                public void itemClicked(String value) {
-                    App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
+                public void itemClicked(String value, int pos) {
+                    if (screenName.split("#").length > 2) {
+                        App.bus.post(new ChangeScreenEvent(screenName + "#" + value+pos));
+                    } else {
+                        App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
+                    }
                 }
             };
             screenName = parameter;
@@ -126,7 +130,7 @@ public class ListContentView extends RecyclerView {
         }
 
         @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
             final ListContent item = contents.get(position);
             holder.text.setVisibility(
                     item.getText() == null ? GONE : VISIBLE
@@ -170,7 +174,7 @@ public class ListContentView extends RecyclerView {
                 holder.itemView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        listener.itemClicked(item.getText());
+                        listener.itemClicked(item.getText(), position);
                     }
                 });
             }
@@ -183,8 +187,7 @@ public class ListContentView extends RecyclerView {
                                 .setItems(dialogMenu, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        listener.itemClicked(item.getText() + "#" + dialogMenu[i]);
-                                        Log.d("mai", item.getText() + "#" + dialogMenu[i]);
+                                        listener.itemClicked(item.getText() + "#" + dialogMenu[i], position);
                                     }
                                 });
                         dialog.show();
@@ -223,6 +226,6 @@ public class ListContentView extends RecyclerView {
     }
 
     public interface ClickListener {
-        void itemClicked(String value);
+        void itemClicked(String value, int pos);
     }
 }
