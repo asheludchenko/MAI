@@ -3578,7 +3578,7 @@ public class StaticContentProvider {
                         @Override
                         public StaticContent call(String s) {
                             return new StaticContent.Builder()
-                                    .setFacText(s)
+                                    .setText(s)
                                     .build();
                         }
                     })
@@ -3600,7 +3600,7 @@ public class StaticContentProvider {
                         @Override
                         public StaticContent call(String s) {
                             return new StaticContent.Builder()
-                                    .setFacText(s)
+                                    .setText(s)
                                     .build();
                         }
                     })
