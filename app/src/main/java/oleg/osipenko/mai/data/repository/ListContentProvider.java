@@ -40,6 +40,25 @@ import static oleg.osipenko.mai.Router.WAYS;
 import static oleg.osipenko.mai.Router.PODGOTOVKA;
 import static oleg.osipenko.mai.Router.POD1;
 import static oleg.osipenko.mai.Router.POD5;
+import static oleg.osipenko.mai.Router.OCH;
+import static oleg.osipenko.mai.Router.ZAOCH;
+import static oleg.osipenko.mai.Router.OZ;
+import static oleg.osipenko.mai.Router.WAY1;
+import static oleg.osipenko.mai.Router.WAY2;
+import static oleg.osipenko.mai.Router.WAY3;
+import static oleg.osipenko.mai.Router.WAY4;
+import static oleg.osipenko.mai.Router.WAY5;
+import static oleg.osipenko.mai.Router.WAY6;
+import static oleg.osipenko.mai.Router.WAY7;
+import static oleg.osipenko.mai.Router.WAY8;
+import static oleg.osipenko.mai.Router.WAY9;
+import static oleg.osipenko.mai.Router.WAY10;
+import static oleg.osipenko.mai.Router.WAY11;
+import static oleg.osipenko.mai.Router.WAY12;
+import static oleg.osipenko.mai.Router.WAY13;
+import static oleg.osipenko.mai.Router.WAY14;
+import static oleg.osipenko.mai.Router.WAY15;
+import static oleg.osipenko.mai.Router.WAY16;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -309,6 +328,7 @@ public class ListContentProvider {
                         public ListContent call(String s) {
                             return new ListContent.Builder()
                                     .setText(s)
+                                    .setDialogable()
                                     .build();
                         }
                     })
@@ -418,6 +438,754 @@ public class ListContentProvider {
                         public ListContent call(String s) {
                             return new ListContent.Builder()
                                     .setText(s)
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY1 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way1o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY1 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way1z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY1 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way1oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY2 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way2o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY2 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way2oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY3 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way3o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY3 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way3z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY4 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way4o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY4 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way4oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY5 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way5o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY5 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way5z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY5 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way5oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY6 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way6o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY7 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way7o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY7 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way7oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY8 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way8o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY8 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way8oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY9 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way9o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY9 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way9oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY10 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way10o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY11 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way11o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY11 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way11z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY12 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way12o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY12 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way12z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY12 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way12oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY13 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way13o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY13 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way13z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY13 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way13oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY14 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way14o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY14 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way14oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY15 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way15o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY15 + DELIM + ZAOCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way15z))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY15 + DELIM + OZ)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way15oz))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(WAYS + DELIM + WAY16 + DELIM + OCH)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.way16o))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
                                     .build();
                         }
                     })

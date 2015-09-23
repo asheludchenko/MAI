@@ -1,11 +1,14 @@
 package oleg.osipenko.mai.presentation.views;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,8 @@ import android.widget.TextView;
 
 import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.jetbrains.anko.AlertDialogBuilder;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,6 +29,7 @@ import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.App;
 import oleg.osipenko.mai.R;
+import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.presentation.events.ChangeScreenEvent;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
@@ -120,10 +126,10 @@ public class ListContentView extends RecyclerView {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(final ViewHolder holder, int position) {
             final ListContent item = contents.get(position);
             holder.text.setVisibility(
-                    item.getText() == null? GONE : VISIBLE
+                    item.getText() == null ? GONE : VISIBLE
             );
             holder.image.setVisibility(
                     item.getImage() == null || !item.isWithImage() ? GONE : VISIBLE
@@ -165,6 +171,25 @@ public class ListContentView extends RecyclerView {
                     @Override
                     public void onClick(View view) {
                         listener.itemClicked(item.getText());
+                    }
+                });
+            } else {
+                holder.itemView.setOnClickListener(null);
+            }
+            if (item.isDialogable()) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final CharSequence[] dialogMenu = Router.getDialogItems(item.getText());
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(holder.itemView.getContext())
+                                .setItems(dialogMenu, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        listener.itemClicked(item.getText() + "#" + dialogMenu[i]);
+                                        Log.d("mai", item.getText() + "#" + dialogMenu[i]);
+                                    }
+                                });
+                        dialog.show();
                     }
                 });
             } else {

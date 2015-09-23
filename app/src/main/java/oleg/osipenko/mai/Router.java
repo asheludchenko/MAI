@@ -188,6 +188,25 @@ public class Router {
     public static final String A3 = "Университетские субботы";
     public static final String DOSUG1 = "Коллективы ДКиТ МАИ";
     public static final String DOSUG2 = "Базы отдыха";
+    public static final String WAY1 = "Факультет №1 — \"Авиационная техника\"";
+    public static final String WAY2 = "Факультет №2 — \"Двигатели летательных аппаратов\"";
+    public static final String WAY3 = "Факультет №3 — \"Системы управления, информатика и электроэнергетика";
+    public static final String WAY4 = "Факультет №4 — \"Радиоэлектроника летательных аппаратов\"";
+    public static final String WAY5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String WAY6 = "Факультет №6 — \"Аэрокосмический\"";
+    public static final String WAY7 = "Факультет №7 — \"Робототехнические и интеллектуальные системы\"";
+    public static final String WAY8 = "Факультет №8 — \"Прикладная математика и физика\"";
+    public static final String WAY9 = "Факультет №9 — \"Прикладная механика\"";
+    public static final String WAY10 = "Факультет №10 — \"Социальный инжиниринг\"";
+    public static final String WAY11 = "Факультет \"РадиоВТУЗ МАИ\"";
+    public static final String WAY12 = "Факультет Иностранных языков";
+    public static final String WAY13 = "Филиал \"Восход\" МАИ в г. Байконур";
+    public static final String WAY14 = "Филиал \"Взлёт\" МАИ в г. Ахтубинске";
+    public static final String WAY15 = "Филиал \"Стрела\" МАИ в г. Жуковском";
+    public static final String WAY16 = "Филиал \"Ракетно-космическая техника\" в г. Химки";
+    public static final String OCH = "Очная";
+    public static final String ZAOCH = "Заочная";
+    public static final String OZ = "Очно-Заочная";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -211,6 +230,54 @@ public class Router {
             case SCHOOL_CENTERS:
             case PODGOTOVKA + DELIM + POD1:
             case PODGOTOVKA + DELIM + POD5:
+            case WAYS + DELIM + WAY1 + DELIM + OCH:
+            case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY1 + DELIM + OZ:
+            case WAYS + DELIM + WAY2 + DELIM + OCH:
+            case WAYS + DELIM + WAY2 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY2 + DELIM + OZ:
+            case WAYS + DELIM + WAY3 + DELIM + OCH:
+            case WAYS + DELIM + WAY3 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY3 + DELIM + OZ:
+            case WAYS + DELIM + WAY4 + DELIM + OCH:
+            case WAYS + DELIM + WAY4 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY4 + DELIM + OZ:
+            case WAYS + DELIM + WAY5 + DELIM + OCH:
+            case WAYS + DELIM + WAY5 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY5 + DELIM + OZ:
+            case WAYS + DELIM + WAY6 + DELIM + OCH:
+            case WAYS + DELIM + WAY6 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY6 + DELIM + OZ:
+            case WAYS + DELIM + WAY7 + DELIM + OCH:
+            case WAYS + DELIM + WAY7 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY7 + DELIM + OZ:
+            case WAYS + DELIM + WAY8 + DELIM + OCH:
+            case WAYS + DELIM + WAY8 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY8 + DELIM + OZ:
+            case WAYS + DELIM + WAY9 + DELIM + OCH:
+            case WAYS + DELIM + WAY9 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY9 + DELIM + OZ:
+            case WAYS + DELIM + WAY10 + DELIM + OCH:
+            case WAYS + DELIM + WAY10 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY10 + DELIM + OZ:
+            case WAYS + DELIM + WAY11 + DELIM + OCH:
+            case WAYS + DELIM + WAY11 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY11 + DELIM + OZ:
+            case WAYS + DELIM + WAY12 + DELIM + OCH:
+            case WAYS + DELIM + WAY12 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY12 + DELIM + OZ:
+            case WAYS + DELIM + WAY13 + DELIM + OCH:
+            case WAYS + DELIM + WAY13 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY13 + DELIM + OZ:
+            case WAYS + DELIM + WAY14 + DELIM + OCH:
+            case WAYS + DELIM + WAY14 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY14 + DELIM + OZ:
+            case WAYS + DELIM + WAY15 + DELIM + OCH:
+            case WAYS + DELIM + WAY15 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY15 + DELIM + OZ:
+            case WAYS + DELIM + WAY16 + DELIM + OCH:
+            case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY16 + DELIM + OZ:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
@@ -371,6 +438,31 @@ public class Router {
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();
+        }
+    }
+
+    public static CharSequence[] getDialogItems(String text) {
+        CharSequence[] all = {OCH, ZAOCH, OZ};
+        CharSequence[] ochOz = {OCH, OZ};
+        CharSequence[] ochZaoch = {OCH, ZAOCH};
+        CharSequence[] och = {OCH};
+        switch (text) {
+            case WAY2:
+            case WAY4:
+            case WAY7:
+            case WAY8:
+            case WAY9:
+            case WAY14:
+                return ochOz;
+            case WAY3:
+            case WAY11:
+                return ochZaoch;
+            case WAY6:
+            case WAY10:
+            case WAY16:
+                return och;
+            default:
+                return all;
         }
     }
 }

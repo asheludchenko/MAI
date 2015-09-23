@@ -449,22 +449,22 @@ GPS Location: Nord 55. 91209, East 37. 50276; profkom-st.mai.ru.</item>
     </item>
     </string-array>
     <string-array name="ways">
-        <item name="w">Факультет №1 — "Авиационная техника"</item>
-        <item name="2nd">Факультет №2 — "Двигатели летательных аппаратов"</item>
-        <item name="3rd">Факультет №3 — "Системы управления, информатика и электроэнергетика</item>
-        <item name="4th">Факультет №4 — "Радиоэлектроника летательных аппаратов"</item>
+        <item name="w">Факультет №1 — \"Авиационная техника\"</item>
+        <item name="2nd">Факультет №2 — \"Двигатели летательных аппаратов\"</item>
+        <item name="3rd">Факультет №3 — \"Системы управления, информатика и электроэнергетика\"</item>
+        <item name="4th">Факультет №4 — \"Радиоэлектроника летательных аппаратов\"</item>
         <item name="inzh">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
-        <item name="6th">Факультет №6 — "Аэрокосмический"</item>
-        <item name="7th">Факультет №7 — "Робототехнические и интеллектуальные системы"</item>
-        <item name="8th">Факультет №8 — "Прикладная математика и физика"</item>
-        <item name="9th">Факультет №9 — "Прикладная механика"</item>
-        <item name="10th">Факультет №10 — "Социальный инжиниринг"</item>
-        <item name="radioVtuz">Факультет "РадиоВТУЗ МАИ"</item>
+        <item name="6th">Факультет №6 — \"Аэрокосмический\"</item>
+        <item name="7th">Факультет №7 — \"Робототехнические и интеллектуальные системы\"</item>
+        <item name="8th">Факультет №8 — \"Прикладная математика и физика\"</item>
+        <item name="9th">Факультет №9 — \"Прикладная механика\"</item>
+        <item name="10th">Факультет №10 — \"Социальный инжиниринг\"</item>
+        <item name="radioVtuz">Факультет \"РадиоВТУЗ МАИ\"</item>
         <item name="languages">Факультет Иностранных языков</item>
-        <item name="bayconoor">Филиал "Восход" МАИ в г. Байконур</item>
-        <item name="ahtuba">Филиал "Взлёт" МАИ в г. Ахтубинске</item>
-        <item name="zhuk">Филиал "Стрела" МАИ в г. Жуковском</item>
-        <item name="khimki">Филиал "Ракетно-космическая техника" в г. Химки</item>
+        <item name="bayconoor">Филиал \"Восход\" МАИ в г. Байконур</item>
+        <item name="ahtuba">Филиал \"Взлёт\" МАИ в г. Ахтубинске</item>
+        <item name="zhuk">Филиал \"Стрела\" МАИ в г. Жуковском</item>
+        <item name="khimki">Филиал \"Ракетно-космическая техника\" в г. Химки</item>
     </string-array>
     <string-array name="activity">
         <item name="a">Дни открытых дверей</item>
@@ -1362,4 +1362,203 @@ www.dessa.ru</item>
         <item name="a">Участие в мероприятии бесплатное по предварительной регистрации. Школьники подтверждают своё участие, зарегистрировавшись на сайте программы "Университетские субботы", где опубликована информация о мероприятиях вузов г. Москвы.</item>
         <item name="a">Сайт программы: http://us.dogm.mos.ru/</item>
     </string-array>
+    <string-array name="way1o">
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Управление качеством</item>
+        <item name="a">Сервис</item>
+        <item name="a">Системный анализ и управление</item>
+        <item name="a">Самолето- и вертолетостроение</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Специальные организационно-технические системы</item>
+    </string-array>
+    <string-array name="way1z">
+        <item name="a">Сервис</item>
+    </string-array>
+    <string-array name="way1oz">
+        <item name="a">Авиастроение</item>
+        <item name="a">Самолето- и вертолетостроение</item>
+        <item name="a">Авиастроение</item>
+    </string-array>
+    <string-array name="way2o">
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Проектирование авиационных и ракетных двигателей</item>
+        <item name="a">Стандартизация и метрология</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Техносферная безопасность</item>
+    </string-array>
+    <string-array name="way2oz">
+        <item name="a">Двигатели летательных аппаратов</item>
+    </string-array>
+    <string-array name="way3o">
+        <item name="a">Информационные системы и технологии</item>
+        <item name="a">Прикладаная информатика</item>
+        <item name="a">Программная инженерия</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Электроэнергетика и электротехника</item>
+        <item name="a">Системы управления движением и навигация</item>
+        <item name="a">Управление в технических системах</item>
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Программная инженерия</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">управление в технических системах</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way3z">
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way4o">
+        <item name="a">Информационная безопасность</item>
+        <item name="a">Радиотехника</item>
+        <item name="a">Инфокоммуникационные технологии и системы связи</item>
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Безопасность информационных технологий в правоохранительной сфере</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Радиотехника</item>
+        <item name="a">Инфокоммуникационные технологии и системы связи</item>
+    </string-array>
+    <string-array name="way4oz">
+        <item name="a">Радиотехника</item>
+    </string-array>
+    <string-array name="way5o">
+        <item name="a">Управление персоналом</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Экология и природопользование</item>
+        <item name="a">Экономика</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way5z">
+        <item name="a">Экономика</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Управление персоналом</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way5oz">
+        <item name="a">Экономика</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way6o">
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Ракетные комплексы и космонавтика</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Специальные организационно-технические системы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Системный анализ и управление</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Ракетные комплексы, и космонавтика</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Экология и природопользование</item>
+    </string-array>
+    <string-array name="way7o">
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+    </string-array>
+    <string-array name="way7oz">
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+    </string-array>
+    <string-array name="way8o">
+        <item name="a">Прикладная математика и информатика</item>
+        <item name="a">Прикладная математика</item>
+        <item name="a">Прикладная математика</item>
+    </string-array>
+    <string-array name="way8oz">
+        <item name="a">Прикладная математика</item>
+    </string-array>
+    <string-array name="way9o">
+        <item name="a">Авиастроение</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Прикладная механика</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way9oz">
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way10o">
+        <item name="a">Менеджмент</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way11o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Конструирование</item>
+    </string-array>
+    <string-array name="way11z">
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Радиотехника</item>
+    </string-array>
+    <string-array name="way12o">
+        <item name="a">Лингвистика</item>
+        <item name="a">Реклама и связи с общественностью</item>
+        <item name="a">Авиастроение</item>
+    </string-array>
+    <string-array name="way12z">
+        <item name="a">Реклама и связи с общественностью</item>
+    </string-array>
+    <string-array name="way12oz">
+        <item name="a">Лингвистика</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Реклама и связи с общественностью</item>
+    </string-array>
+    <string-array name="way13o">
+        <item name="a">Менеджмент</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way13z">
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way13oz">
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way14o">
+        <item name="a">Прикладная математика</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way14oz">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way15o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+        <item name="a">Самолёто- и вертолётостроение</item>
+    </string-array>
+    <string-array name="way15z">
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way15oz">
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way16o">
+        <item name="a">Специальные машины и устройства</item>
+        <item name="a">Автоматические системы управления</item>
+        <item name="a">Компьютерные системы и комплексы</item>
+        <item name="a">Программирование в компьютерных системах</item>
+        <item name="a">Экономика и бухгалтерский учёт</item>
+    </string-array>
+
 </resources>
