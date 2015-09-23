@@ -25,6 +25,7 @@ import rx.functions.Func3;
 import static oleg.osipenko.mai.Router.ACADEMIC_MOBILITY;
 import static oleg.osipenko.mai.Router.CANTEENS;
 import static oleg.osipenko.mai.Router.COURSES;
+import static oleg.osipenko.mai.Router.DELIM;
 import static oleg.osipenko.mai.Router.DOSUG;
 import static oleg.osipenko.mai.Router.FACULTIES;
 import static oleg.osipenko.mai.Router.HELP;
@@ -36,6 +37,9 @@ import static oleg.osipenko.mai.Router.SCHOOL_ACTIVITY;
 import static oleg.osipenko.mai.Router.SCHOOL_CENTERS;
 import static oleg.osipenko.mai.Router.SPORT_SECTIONS;
 import static oleg.osipenko.mai.Router.WAYS;
+import static oleg.osipenko.mai.Router.PODGOTOVKA;
+import static oleg.osipenko.mai.Router.POD1;
+import static oleg.osipenko.mai.Router.POD5;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -371,6 +375,49 @@ public class ListContentProvider {
                             return new ListContent.Builder()
                                     .setText(s)
                                     .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(PODGOTOVKA + DELIM + POD1)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.pod1))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(PODGOTOVKA + DELIM + POD5)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.pod5))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
                                     .build();
                         }
                     })

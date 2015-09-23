@@ -279,7 +279,12 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     private void changeScreen(String title) {
         String[] a = title.split("#");
-        toolbar.setTitle(a.length > 1 ? a[1] : a[0]);
+        if (a.length > 1) {
+            String[] b = a[1].split("#");
+            toolbar.setTitle(b.length > 1 ? b[1] : b[0]);
+        } else {
+            toolbar.setTitle(title);
+        }
         Flow.get(MainActivity.this).setHistory(
                 History.single(router.getScreen(title)),
                 Flow.Direction.REPLACE

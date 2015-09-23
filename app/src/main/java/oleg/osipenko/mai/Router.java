@@ -122,55 +122,65 @@ public class Router {
     public static final String HELP3 = "Европейское приложение к диплому";
     public static final String REC1 = "ОУЦ МАИ Алушта";
     public static final String REC2 = "ОУЦ Ярополец";
-    public static final String SS01= "Айкидо";
-    public static final String SS02= "Академическая гребля";
-    public static final String SS03= "Атлетическая гимнастика\n(корпус № 12 «Черепаха»)";
-    public static final String SS04= "Аэробика";
-    public static final String SS05= "Бадминтон";
-    public static final String SS06= "Волейбол";
-    public static final String SS07= "Греко-римская борьба";
-    public static final String SS08= "Настольный теннис";
-    public static final String SS09= "Скалолазание";
-    public static final String SS10= "Атлетическая гимнастика\n(ул. К. Царёва, д. 12а)";
-    public static final String SS11= "Йога";
-    public static final String SS12= "Каратэ";
-    public static final String SS13= "Лыжные гонки";
-    public static final String SS14= "Мини-футбол (м)";
-    public static final String SS15= "Мини-футбол (ж)";
-    public static final String SS16= "Рукопашный бой";
-    public static final String SS17= "Теннис\n(ул. К. Царёва, д. 12а)";
-    public static final String SS18= "Тхэквондо";
-    public static final String SS19= "Фитнес";
-    public static final String SS20= "Футбол";
-    public static final String SS21= "Армрестлинг";
-    public static final String SS22= "Бокс";
-    public static final String SS23= "Вольная борьба";
-    public static final String SS24= "Дзюдо";
-    public static final String SS25= "Дуэльная стрельба";
-    public static final String SS26= "Йога\n(корпус № 3 МАИ)";
-    public static final String SS27= "Пулевая стрельба";
-    public static final String SS28= "Гиревой спорт\n(ул. Дубосековская, д. 5)";
-    public static final String SS29= "Пауэрлифтинг";
-    public static final String SS30= "Тяжёлая атлетика\n(ул. Дубосековская, д. 5)";
-    public static final String SS31= "Атлетическая гимнастика\n(Тушино)";
-    public static final String SS32= "Баскетбол";
-    public static final String SS33= "Гиревой спорт\n(«Тушино»)";
-    public static final String SS34= "Теннис\n(«Тушино»)";
-    public static final String SS35= "Спортивные танцы";
-    public static final String SS36= "Альпинизм";
-    public static final String SS37= "Спортивный туризм";
-    public static final String SS38= "Артистическое фехтование";
-    public static final String SS39= "Боевые искусства (капоэйра, окинава-каратэ, тайский бокс)";
-    public static final String SS40= "Гольф";
-    public static final String SS41= "Горный велосипед";
-    public static final String SS42= "Лёгкая атлетика";
-    public static final String SS43= "Парусный спорт";
-    public static final String SS44= "Плавание";
-    public static final String SS45= "Подводное плавание";
-    public static final String SS46= "Регби";
-    public static final String SS47= "Сноуборд, горные лыжи";
-    public static final String SS48= "Спортивное ориентирование";
-    public static final String SS49= "Шахматы";
+    public static final String SS01 = "Айкидо";
+    public static final String SS02 = "Академическая гребля";
+    public static final String SS03 = "Атлетическая гимнастика\n(корпус № 12 «Черепаха»)";
+    public static final String SS04 = "Аэробика";
+    public static final String SS05 = "Бадминтон";
+    public static final String SS06 = "Волейбол";
+    public static final String SS07 = "Греко-римская борьба";
+    public static final String SS08 = "Настольный теннис";
+    public static final String SS09 = "Скалолазание";
+    public static final String SS10 = "Атлетическая гимнастика\n(ул. К. Царёва, д. 12а)";
+    public static final String SS11 = "Йога";
+    public static final String SS12 = "Каратэ";
+    public static final String SS13 = "Лыжные гонки";
+    public static final String SS14 = "Мини-футбол (м)";
+    public static final String SS15 = "Мини-футбол (ж)";
+    public static final String SS16 = "Рукопашный бой";
+    public static final String SS17 = "Теннис\n(ул. К. Царёва, д. 12а)";
+    public static final String SS18 = "Тхэквондо";
+    public static final String SS19 = "Фитнес";
+    public static final String SS20 = "Футбол";
+    public static final String SS21 = "Армрестлинг";
+    public static final String SS22 = "Бокс";
+    public static final String SS23 = "Вольная борьба";
+    public static final String SS24 = "Дзюдо";
+    public static final String SS25 = "Дуэльная стрельба";
+    public static final String SS26 = "Йога\n(корпус № 3 МАИ)";
+    public static final String SS27 = "Пулевая стрельба";
+    public static final String SS28 = "Гиревой спорт\n(ул. Дубосековская, д. 5)";
+    public static final String SS29 = "Пауэрлифтинг";
+    public static final String SS30 = "Тяжёлая атлетика\n(ул. Дубосековская, д. 5)";
+    public static final String SS31 = "Атлетическая гимнастика\n(Тушино)";
+    public static final String SS32 = "Баскетбол";
+    public static final String SS33 = "Гиревой спорт\n(«Тушино»)";
+    public static final String SS34 = "Теннис\n(«Тушино»)";
+    public static final String SS35 = "Спортивные танцы";
+    public static final String SS36 = "Альпинизм";
+    public static final String SS37 = "Спортивный туризм";
+    public static final String SS38 = "Артистическое фехтование";
+    public static final String SS39 = "Боевые искусства (капоэйра, окинава-каратэ, тайский бокс)";
+    public static final String SS40 = "Гольф";
+    public static final String SS41 = "Горный велосипед";
+    public static final String SS42 = "Лёгкая атлетика";
+    public static final String SS43 = "Парусный спорт";
+    public static final String SS44 = "Плавание";
+    public static final String SS45 = "Подводное плавание";
+    public static final String SS46 = "Регби";
+    public static final String SS47 = "Сноуборд, горные лыжи";
+    public static final String SS48 = "Спортивное ориентирование";
+    public static final String SS49 = "Шахматы";
+    public static final String POD1 = "Подготовительные курсы";
+    public static final String POD2 = "Школа-экстернат при МАИ";
+    public static final String POD3 = "Физико-математическая школа";
+    public static final String POD4 = "Центр тестирования и подготовки «ЕГЭ-МАИ»";
+    public static final String POD5 = "Базовые школы";
+    public static final String COU1 = "Курсы ФДП";
+    public static final String COU2 = "МАИНО";
+    public static final String COU3 = "ИНПО";
+    public static final String COU4 = "ЭНТОС";
+    public static final String COU5 = "Абитуриент";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -192,6 +202,8 @@ public class Router {
             case SCHOOL_ACTIVITY:
             case DOSUG:
             case SCHOOL_CENTERS:
+            case PODGOTOVKA + DELIM + POD1:
+            case PODGOTOVKA + DELIM + POD5:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
@@ -332,6 +344,14 @@ public class Router {
             case SPORT_SECTIONS + DELIM + SS47:
             case SPORT_SECTIONS + DELIM + SS48:
             case SPORT_SECTIONS + DELIM + SS49:
+            case PODGOTOVKA + DELIM + POD2:
+            case PODGOTOVKA + DELIM + POD3:
+            case PODGOTOVKA + DELIM + POD4:
+            case PODGOTOVKA + DELIM + POD1 + DELIM + COU1:
+            case PODGOTOVKA + DELIM + POD1 + DELIM + COU2:
+            case PODGOTOVKA + DELIM + POD1 + DELIM + COU3:
+            case PODGOTOVKA + DELIM + POD1 + DELIM + COU4:
+            case PODGOTOVKA + DELIM + POD1 + DELIM + COU5:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();
