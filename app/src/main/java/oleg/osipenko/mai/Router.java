@@ -183,6 +183,11 @@ public class Router {
     public static final String COU5 = "Абитуриент";
     public static final String SS1 = "Центр технологической поддержки образования МАИ";
     public static final String SS2 = "Центр авиамодельного творчества учащихся";
+    public static final String A1 = "Дни открытых дверей";
+    public static final String A2 = "День науки в МАИ";
+    public static final String A3 = "Университетские субботы";
+    public static final String DOSUG1 = "Коллективы ДКиТ МАИ";
+    public static final String DOSUG2 = "Базы отдыха";
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
@@ -216,6 +221,7 @@ public class Router {
             case DOSAAF:
             case PODGOTOVKA:
             case PRIEM:
+            case DOSUG + DELIM + DOSUG2:
                 return new StaticListContentScreen(item);
             case PRACTICS:
             case DOTATIONS:
@@ -356,6 +362,12 @@ public class Router {
             case PODGOTOVKA + DELIM + POD1 + DELIM + COU5:
             case SCHOOL_CENTERS + DELIM + SS1:
             case SCHOOL_CENTERS + DELIM + SS2:
+            case SCHOOL_ACTIVITY + DELIM + A1:
+            case SCHOOL_ACTIVITY + DELIM + A2:
+            case SCHOOL_ACTIVITY + DELIM + A3:
+            case DOSUG + DELIM + DOSUG1:
+            case DOSUG + DELIM + DOSUG2 + DELIM + REC1:
+            case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
                 return new StaticContentScreen(item);
             default:
                 return new MainScreen();

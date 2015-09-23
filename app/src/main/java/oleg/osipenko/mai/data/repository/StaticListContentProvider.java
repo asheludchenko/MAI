@@ -19,8 +19,11 @@ import rx.Subscriber;
 import rx.functions.Func1;
 import rx.functions.Func2;
 
+import static oleg.osipenko.mai.Router.DELIM;
 import static oleg.osipenko.mai.Router.DK;
 import static oleg.osipenko.mai.Router.DOSAAF;
+import static oleg.osipenko.mai.Router.DOSUG;
+import static oleg.osipenko.mai.Router.DOSUG2;
 import static oleg.osipenko.mai.Router.MAGISTRACY;
 import static oleg.osipenko.mai.Router.MILITARY_INSTITUTE;
 import static oleg.osipenko.mai.Router.RECREATION_CENTERS;
@@ -185,7 +188,7 @@ public class StaticListContentProvider {
                     subscriber.onCompleted();
                 }
             });
-        } else if (specification.specified(RECREATION_CENTERS)) {
+        } else if (specification.specified(RECREATION_CENTERS) || specification.specified(DOSUG + DELIM + DOSUG2)) {
             StaticListContent image = new StaticListContent.Builder()
                     .setImage(String.valueOf(R.drawable.recreation))
                     .build();

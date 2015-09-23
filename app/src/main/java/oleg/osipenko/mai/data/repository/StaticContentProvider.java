@@ -171,10 +171,16 @@ import static oleg.osipenko.mai.Router.COU2;
 import static oleg.osipenko.mai.Router.COU3;
 import static oleg.osipenko.mai.Router.COU4;
 import static oleg.osipenko.mai.Router.COU5;
-
 import static oleg.osipenko.mai.Router.SCHOOL_CENTERS;
 import static oleg.osipenko.mai.Router.SS1;
 import static oleg.osipenko.mai.Router.SS2;
+import static oleg.osipenko.mai.Router.SCHOOL_ACTIVITY;
+import static oleg.osipenko.mai.Router.A1;
+import static oleg.osipenko.mai.Router.A2;
+import static oleg.osipenko.mai.Router.A3;
+import static oleg.osipenko.mai.Router.DOSUG;
+import static oleg.osipenko.mai.Router.DOSUG1;
+import static oleg.osipenko.mai.Router.DOSUG2;
 
 
 
@@ -1847,7 +1853,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        } else if (specification.specified(DK + DELIM + DK01)) {
+        } else if (specification.specified(DK + DELIM + DK01) || specification.specified(DOSUG + DELIM + DOSUG1)) {
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.kollektivi))
                     .build();
@@ -2185,7 +2191,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC1)) {
+        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC1) || specification.specified(DOSUG + DELIM + DOSUG2 + DELIM + REC1)) {
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.alushta))
                     .build();
@@ -2210,7 +2216,7 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC2)) {
+        } else if (specification.specified(RECREATION_CENTERS + DELIM + REC2) || specification.specified(DOSUG + DELIM + DOSUG2 + DELIM + REC2)) {
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.jaropolec))
                     .build();
@@ -3596,6 +3602,72 @@ public class StaticContentProvider {
         } else if (specification.specified(SCHOOL_CENTERS + DELIM + SS2)) {
             StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_miraviamodeli)).build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.ss2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SCHOOL_ACTIVITY + DELIM + A1)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_dod)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.a1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SCHOOL_ACTIVITY + DELIM + A2)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_dennauki)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.a2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(SCHOOL_ACTIVITY + DELIM + A3)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.ab_saturday)).build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.a3))
                     .map(new Func1<String, StaticContent>() {
                         @Override
                         public StaticContent call(String s) {
