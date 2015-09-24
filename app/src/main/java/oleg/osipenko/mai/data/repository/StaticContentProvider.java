@@ -3550,6 +3550,74 @@ public class StaticContentProvider {
                 res = R.array.WW8;
             } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW9 + 8)) {
                 res = R.array.WW9;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + ZAOCH + DELIM + WW10 + 0)) {
+                res = R.array.WW10;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OZ + DELIM + WW11 + 0)) {
+                res = R.array.WW11;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OZ + DELIM + WW12 + 1)) {
+                res = R.array.WW12;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OZ + DELIM + WW13 + 2)) {
+                res = R.array.WW13;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW14 + 0)) {
+                res = R.array.WW14;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW15 + 1)) {
+                res = R.array.WW15;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW16 + 2)) {
+                res = R.array.WW16;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW17 + 3)) {
+                res = R.array.WW17;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW18 + 4)) {
+                res = R.array.WW18;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OZ + DELIM + WW19 + 0)) {
+                res = R.array.WW19;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW20 + 0)) {
+                res = R.array.WW20;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW21 + 1)) {
+                res = R.array.WW21;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW22 + 2)) {
+                res = R.array.WW22;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW23 + 3)) {
+                res = R.array.WW23;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW24 + 4)) {
+                res = R.array.WW24;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW25 + 5)) {
+                res = R.array.WW25;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW26 + 6)) {
+                res = R.array.WW26;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW27 + 7)) {
+                res = R.array.WW27;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW28 + 8)) {
+                res = R.array.WW28;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW29 + 9)) {
+                res = R.array.WW29;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW30 + 10)) {
+                res = R.array.WW30;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW31 + 11)) {
+                res = R.array.WW31;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW32 + 12)) {
+                res = R.array.WW32;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW33 + 13)) {
+                res = R.array.WW33;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + ZAOCH + DELIM + WW34 + 0)) {
+                res = R.array.WW34;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW35 + 0)) {
+                res = R.array.WW35;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW36 + 1)) {
+                res = R.array.WW36;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW37 + 2)) {
+                res = R.array.WW37;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW38 + 3)) {
+                res = R.array.WW38;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW39 + 4)) {
+                res = R.array.WW39;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW40 + 5)) {
+                res = R.array.WW40;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW41 + 6)) {
+                res = R.array.WW41;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW42 + 7)) {
+                res = R.array.WW42;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OZ + DELIM + WW43 + 0)) {
+                res = R.array.WW43;
             }
             String screenTitle = a[3].substring(0, a[3].length()-1);
             StaticContent title = new StaticContent.Builder().setFacTitile(screenTitle).build();
