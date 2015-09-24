@@ -19,6 +19,9 @@ import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
 import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 import javax.inject.Inject;
 
 import butterknife.Bind;
@@ -67,6 +70,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private Drawable hamburger;
     private Drawable arrow;
     boolean isStudent;
+    private Deque<String> titleHistory = new LinkedList<>();
 
     private View.OnClickListener hambgurgerListener = new View.OnClickListener() {
         @Override
@@ -82,6 +86,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private View.OnClickListener arrowListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            toolbar.setTitle(titleHistory.removeFirst());
             containerAsHandlesBack.onBackPressed();
         }
     };
@@ -160,6 +165,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 sp.edit().clear().apply();
+                titleHistory.clear();
                 finish();
                 return true;
             }
@@ -260,14 +266,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     public void onBackPressed() {
         if (!containerAsHandlesBack.onBackPressed()) {
             super.onBackPressed();
+        } else {
+            toolbar.setTitle(titleHistory.removeFirst());
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            return containerAsHandlesBack.onBackPressed();
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -295,13 +300,16 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void changeScreen(String title) {
+        titleHistory.push(toolbar.getTitle().toString());
         String[] a = title.split("#");
         if (a.length > 1) {
             String[] b = a[1].split("#");
-            toolbar.setTitle(b.length > 1 ? b[1] : b[0]);
+            String screenTitle = b.length > 1 ? b[1] : b[0];
+            toolbar.setTitle(screenTitle);
         } else {
             toolbar.setTitle(title);
         }
+
         Flow.get(MainActivity.this).set(router.getScreen(title));
     }
 
