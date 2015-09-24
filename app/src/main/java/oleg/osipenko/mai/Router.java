@@ -199,8 +199,8 @@ public class Router {
     public static final String WAY10 = "Факультет №10 — \"Социальный инжиниринг\"";
     public static final String WAY11 = "Факультет \"РадиоВТУЗ МАИ\"";
     public static final String WAY12 = "Факультет Иностранных языков";
-    public static final String WAY13 = "Филиал \"Восход\" МАИ в г. Байконур";
-    public static final String WAY14 = "Филиал \"Взлёт\" МАИ в г. Ахтубинске";
+    public static final String WAY14 = "Филиал \"Восход\" МАИ в г. Байконур";
+    public static final String WAY13 = "Филиал \"Взлёт\" МАИ в г. Ахтубинске";
     public static final String WAY15 = "Филиал \"Стрела\" МАИ в г. Жуковском";
     public static final String WAY16 = "Филиал \"Ракетно-космическая техника\" в г. Химки";
     public static final String OCH = "Очная";

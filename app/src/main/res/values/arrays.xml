@@ -461,8 +461,8 @@ GPS Location: Nord 55. 91209, East 37. 50276; profkom-st.mai.ru.</item>
         <item name="10th">Факультет №10 — \"Социальный инжиниринг\"</item>
         <item name="radioVtuz">Факультет \"РадиоВТУЗ МАИ\"</item>
         <item name="languages">Факультет Иностранных языков</item>
-        <item name="bayconoor">Филиал \"Восход\" МАИ в г. Байконур</item>
         <item name="ahtuba">Филиал \"Взлёт\" МАИ в г. Ахтубинске</item>
+        <item name="bayconoor">Филиал \"Восход\" МАИ в г. Байконур</item>
         <item name="zhuk">Филиал \"Стрела\" МАИ в г. Жуковском</item>
         <item name="khimki">Филиал \"Ракетно-космическая техника\" в г. Химки</item>
     </string-array>
