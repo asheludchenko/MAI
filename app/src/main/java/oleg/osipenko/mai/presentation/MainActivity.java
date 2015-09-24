@@ -9,7 +9,6 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -69,6 +68,24 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private Drawable arrow;
     boolean isStudent;
 
+    private View.OnClickListener hambgurgerListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            } else {
+                drawerLayout.closeDrawers();
+            }
+        }
+    };
+
+    private View.OnClickListener arrowListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            containerAsHandlesBack.onBackPressed();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +101,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         isStudent = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
 
         initIcons();
-        initHamburger();
+        initToolbar();
         initMenu();
         initTabs();
 
@@ -131,7 +148,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         arrow = ResourcesCompat.getDrawable(this, R.drawable.arrow);
     }
 
-    private void initHamburger() {
+    private void initToolbar() {
         final SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
         if (!isStudent) {
             toolbar.setTitle(R.string.toolbar_title_abitur);
@@ -139,7 +156,6 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             toolbar.setTitle(R.string.toolbar_title_student);
         }
         toolbar.inflateMenu(R.menu.toolbar);
-        toolbar.setNavigationIcon(hamburger);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -150,16 +166,17 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         });
         toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_overflow));
         toolbar.setTitleTextColor(0xFFFFFFFF);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                    drawerLayout.openDrawer(Gravity.LEFT);
-                } else {
-                    drawerLayout.closeDrawers();
-                }
-            }
-        });
+        setHamburger();
+    }
+
+    private void setArrow() {
+        toolbar.setNavigationIcon(arrow);
+        toolbar.setNavigationOnClickListener(arrowListener);
+    }
+
+    private void setHamburger() {
+        toolbar.setNavigationIcon(hamburger);
+        toolbar.setNavigationOnClickListener(hambgurgerListener);
     }
 
     private void mortarStuff(Bundle savedInstanceState) {
@@ -190,13 +207,12 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 changeScreen(menuItem.getTitle().toString());
-                toolbar.setNavigationIcon(arrow);
+                setArrow();
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
                 return true;
             }
         });
     }
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -274,6 +290,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     @Override
     public void dispatch(Flow.Traversal traversal, Flow.TraversalCallback callback) {
+        if (traversal.destination.size() == 1) setHamburger();
         container.dispatch(traversal, callback);
     }
 
@@ -285,15 +302,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         } else {
             toolbar.setTitle(title);
         }
-        Flow.get(MainActivity.this).setHistory(
-                History.single(router.getScreen(title)),
-                Flow.Direction.REPLACE
-        );
+        Flow.get(MainActivity.this).set(router.getScreen(title));
     }
 
     @Subscribe
     public void ItemClicked(ChangeScreenEvent event) {
-        Log.d("mai", event.getTitle());
         changeScreen(event.getTitle());
     }
 }
