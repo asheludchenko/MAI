@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import oleg.osipenko.mai.R;
@@ -17,6 +18,9 @@ import oleg.osipenko.mai.data.repository.specification.StaticContentSpecificatio
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by olegosipenko on 07.09.15.
@@ -44,7 +48,16 @@ public class MaiRepository implements DataRepository {
 
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
-        if (specification.specified(Router.NEWS)) return networkProvider.getNews();
+        if (specification.specified(Router.NEWS)) {
+            return networkProvider.getNews()
+                    .flatMap(new Func1<List<? extends ListContent>, Observable<List<ListContent>>>() {
+                        @Override
+                        public Observable<List<ListContent>> call(List<? extends ListContent> listContents) {
+                            List<ListContent> ks = new ArrayList<ListContent>(listContents);
+                            return  Observable.just(ks);
+                        }
+                    });
+        }
         return listContentProvider.getListContent(specification);
     }
 

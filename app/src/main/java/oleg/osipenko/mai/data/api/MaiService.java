@@ -14,5 +14,5 @@ public interface MaiService {
     public void getNewsById(@Query(value = "id", encodeValue = false) String id, Callback<Response> callback);
 
     @GET("/events/news/jsonp_list.php")
-    public void getNewsList(@Query(value = "page", encodeValue = false) int page, @Query(value = "pagesize", encodeValue = false) int pagesize, Callback<Response> callback);
+    public Response getNewsList(@Query(value = "page", encodeValue = false) int page, @Query(value = "pagesize", encodeValue = false) int pagesize);
 }

@@ -14,5 +14,22 @@ public class NewsHeadersResponse {
         private String header;
         private String photo;
         private String date;
+
+        public String getId() {
+            return id;
+        }
+
+        public String getHeader() {
+            return header;
+        }
+
+        public String getPhoto() {
+            return photo;
+        }
+
+        public String getDate() {
+            return date;
+        }
     }
+
 }

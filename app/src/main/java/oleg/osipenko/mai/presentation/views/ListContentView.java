@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -136,7 +137,7 @@ public class ListContentView extends RecyclerView {
                     item.getText() == null ? GONE : VISIBLE
             );
             holder.image.setVisibility(
-                    item.getImage() == null || !item.isWithImage() ? GONE : VISIBLE
+                    item.getImage() == null ? GONE : VISIBLE
             );
             holder.title.setVisibility(
                     item.getTitle() == null ? GONE : VISIBLE
@@ -150,7 +151,7 @@ public class ListContentView extends RecyclerView {
             holder.sub4.setVisibility(
                     item.getSub4() == null ? GONE : VISIBLE
             );
-            if (item.getText() != null) holder.text.setText(item.getText());
+            if (item.getText() != null) holder.text.setText(Html.fromHtml(item.getText()));
             if (item.getImage() != null && !item.isWithImage()) {
                 Uri uri = Uri.parse(item.getImage());
                 holder.image.setImageURI(uri);
@@ -162,10 +163,10 @@ public class ListContentView extends RecyclerView {
                         .build();
                 holder.image.setImageURI(uri);
             }
-            if (item.getImage() == null && item.isWithImage()) {
+            /*if (item.getImage() == null && item.isWithImage()) {
                 Uri uri = Uri.parse(item.getImage());
                 holder.image.setImageURI(uri);
-            }
+            }*/
             if (item.getTitle() != null) holder.title.setText(item.getTitle());
             if (item.getSub2() != null) holder.sub2.setText(item.getSub2());
             if (item.getSub3() != null) holder.sub3.setText(item.getSub3());
