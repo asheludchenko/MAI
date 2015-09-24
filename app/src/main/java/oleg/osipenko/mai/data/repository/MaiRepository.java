@@ -7,6 +7,8 @@ import android.graphics.BitmapFactory;
 import java.util.List;
 
 import oleg.osipenko.mai.R;
+import oleg.osipenko.mai.Router;
+import oleg.osipenko.mai.data.api.NetworkProvider;
 import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
@@ -25,12 +27,14 @@ public class MaiRepository implements DataRepository {
     StaticContentProvider staticContentProvider;
     ListContentProvider listContentProvider;
     StaticListContentProvider staticListContentProvider;
+    NetworkProvider networkProvider;
 
     public MaiRepository(Context context) {
         this.context = context;
         staticContentProvider = new StaticContentProvider(context);
         listContentProvider = new ListContentProvider(context);
         staticListContentProvider = new StaticListContentProvider(context);
+        networkProvider = new NetworkProvider();
     }
 
     @Override
@@ -40,6 +44,7 @@ public class MaiRepository implements DataRepository {
 
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
+        if (specification.specified(Router.NEWS)) return networkProvider.getNews();
         return listContentProvider.getListContent(specification);
     }
 
