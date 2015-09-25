@@ -11,7 +11,7 @@ import retrofit.http.Query;
 public interface MaiService {
 
     @GET("/events/news/jsonp_detail.php")
-    public void getNewsById(@Query(value = "id", encodeValue = false) String id, Callback<Response> callback);
+    public Response getNewsById(@Query(value = "id", encodeValue = false) String id);
 
     @GET("/events/news/jsonp_list.php")
     public Response getNewsList(@Query(value = "page", encodeValue = false) int page, @Query(value = "pagesize", encodeValue = false) int pagesize);

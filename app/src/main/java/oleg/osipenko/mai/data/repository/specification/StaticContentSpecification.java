@@ -15,6 +15,7 @@ public class StaticContentSpecification implements RequestSpecification<String> 
         return s.equals(item);
     }
 
+    @Override
     public String getItem() {
         return item;
     }

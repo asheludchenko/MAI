@@ -16,7 +16,8 @@ public class ListContentSpecification implements RequestSpecification<String> {
         return string.equals(menuItem);
     }
 
-    public String getParameter() {
+    @Override
+    public String getItem() {
         return menuItem;
     }
 }

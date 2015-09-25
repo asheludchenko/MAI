@@ -1,5 +1,8 @@
 package oleg.osipenko.mai.data.dataModel;
 
+import android.text.Spannable;
+import android.text.Spanned;
+
 /**
  * Created by olegosipenko on 13.09.15.
  */
@@ -10,6 +13,7 @@ public class StaticContent {
     private String facTitle;
     private String facPhoto;
     private String facText;
+    private Spanned newsText;
 
     public StaticContent() {
     }
@@ -38,6 +42,10 @@ public class StaticContent {
         return facText;
     }
 
+    public Spanned getNewsText() {
+        return newsText;
+    }
+
     @Override
     public String toString() {
         return "StaticContent{" +
@@ -47,6 +55,7 @@ public class StaticContent {
                 ", facTitle='" + facTitle + '\'' +
                 ", facPhoto='" + facPhoto + '\'' +
                 ", facText='" + facText + '\'' +
+                ", newsText=" + newsText +
                 '}';
     }
 
@@ -84,6 +93,11 @@ public class StaticContent {
 
         public Builder setFacText(String facText) {
             staticContent.facText = facText;
+            return this;
+        }
+
+        public Builder setNewsText(Spanned spannable) {
+            staticContent.newsText = spannable;
             return this;
         }
 

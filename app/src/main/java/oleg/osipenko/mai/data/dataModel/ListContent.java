@@ -19,6 +19,7 @@ public class ListContent {
     private SimpleSectionListAdapter.Section[] sections;
     private boolean clickable;
     private boolean dialogable;
+    private String link;
 
     public ListContent() {
     }
@@ -67,6 +68,10 @@ public class ListContent {
         return dialogable;
     }
 
+    public String getLink() {
+        return link;
+    }
+
     @Override
     public String toString() {
         return "ListContent{" +
@@ -81,6 +86,7 @@ public class ListContent {
                 ", sections=" + Arrays.toString(sections) +
                 ", clickable=" + clickable +
                 ", dialogable=" + dialogable +
+                ", link='" + link + '\'' +
                 '}';
     }
 
@@ -143,6 +149,11 @@ public class ListContent {
 
         public Builder setDialogable() {
             content.dialogable = true;
+            return this;
+        }
+
+        public Builder setLink(String link) {
+            content.link = link;
             return this;
         }
 

@@ -195,7 +195,15 @@ public class ListContentView extends RecyclerView {
                     }
                 });
             }
-            if (!item.isDialogable() && !item.isClickable()) {
+            if (item.getLink() != null) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listener.itemClicked(item.getLink(), position);
+                    }
+                });
+            }
+            if (!item.isDialogable() && !item.isClickable() && item.getLink() == null) {
                 holder.itemView.setOnClickListener(null);
             }
         }

@@ -5,6 +5,7 @@ import flow.path.Path;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
 import oleg.osipenko.mai.presentation.screens.MapScreen;
+import oleg.osipenko.mai.presentation.screens.NewsContentScreen;
 import oleg.osipenko.mai.presentation.screens.StaticContentScreen;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
 
@@ -341,6 +342,7 @@ public class Router {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
         if (item.equals(MAP)) return new MapScreen();
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
+        if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
         switch (item) {
             case FACULTIES:
             case SCHOLARSHIPS:

@@ -8,6 +8,7 @@ import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
+import oleg.osipenko.mai.data.repository.specification.NewsContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
@@ -23,4 +24,6 @@ public interface DataRepository {
     Observable<List<StaticListContent>> getStaticListContent(StaticListContentSpecification specification);
 
     Observable<Bitmap> getMapObservable();
+
+    Observable<List<StaticContent>> getSingleNews(NewsContentSpecification parameter);
 }

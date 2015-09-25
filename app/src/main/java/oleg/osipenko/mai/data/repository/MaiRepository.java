@@ -14,6 +14,7 @@ import oleg.osipenko.mai.data.dataModel.ListContent;
 import oleg.osipenko.mai.data.dataModel.StaticContent;
 import oleg.osipenko.mai.data.dataModel.StaticListContent;
 import oleg.osipenko.mai.data.repository.specification.ListContentSpecification;
+import oleg.osipenko.mai.data.repository.specification.NewsContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticContentSpecification;
 import oleg.osipenko.mai.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
@@ -76,5 +77,17 @@ public class MaiRepository implements DataRepository {
                 subscriber.onNext(map);
             }
         });
+    }
+
+    @Override
+    public Observable<List<StaticContent>> getSingleNews(NewsContentSpecification parameter) {
+        return networkProvider.getNewsById(parameter)
+                .flatMap(new Func1<List<? extends StaticContent>, Observable<List<StaticContent>>>() {
+                    @Override
+                    public Observable<List<StaticContent>> call(List<? extends StaticContent> staticContents) {
+                        List<StaticContent> ks = new ArrayList<StaticContent>(staticContents);
+                        return  Observable.just(ks);
+                    }
+                });
     }
 }

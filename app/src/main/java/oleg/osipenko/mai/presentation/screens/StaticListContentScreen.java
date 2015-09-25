@@ -73,7 +73,7 @@ public class StaticListContentScreen extends Path {
         }
 
         public String getParameter() {
-            return interactor.getParameter().getParameter();
+            return interactor.getParameter().getItem();
         }
 
         @Override

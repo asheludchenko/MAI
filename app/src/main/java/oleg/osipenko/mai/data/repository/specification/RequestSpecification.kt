@@ -6,4 +6,6 @@ package oleg.osipenko.mai.data.repository.specification
 public interface RequestSpecification<T> {
 
     public fun specified(t: T): Boolean
+
+    public fun getItem() : T
 }
