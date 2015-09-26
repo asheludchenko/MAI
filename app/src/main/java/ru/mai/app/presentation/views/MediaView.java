@@ -15,7 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.App;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
 import ru.mai.app.presentation.screens.MediaScreen;

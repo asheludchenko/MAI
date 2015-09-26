@@ -26,7 +26,7 @@ import flow.Flow;
 import flow.path.Path;
 import flow.path.PathContainer;
 import flow.path.PathContainerView;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 
 
 /**

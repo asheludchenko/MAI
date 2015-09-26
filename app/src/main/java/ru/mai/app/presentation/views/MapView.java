@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.presentation.screens.MapScreen;
 import ru.mai.app.presentation.utils.ScaleImageView;
 

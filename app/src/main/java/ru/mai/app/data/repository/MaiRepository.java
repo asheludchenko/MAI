@@ -7,9 +7,9 @@ import android.graphics.BitmapFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.Router;
-import oleg.osipenko.app.data.api.NetworkProvider;
+import ru.mai.app.data.api.NetworkProvider;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.dataModel.StaticListContent;

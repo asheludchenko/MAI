@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.repository.specification.ListContentSpecification;
 import ru.mai.app.presentation.utils.SimpleSectionListAdapter;

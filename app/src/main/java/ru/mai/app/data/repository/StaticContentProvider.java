@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.repository.specification.StaticContentSpecification;
 import rx.Observable;

@@ -24,7 +24,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.Photo;
 import ru.mai.app.presentation.PhotoActivity;

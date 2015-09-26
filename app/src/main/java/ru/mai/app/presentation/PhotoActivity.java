@@ -8,7 +8,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 
 /**
  * Created by olegosipenko on 26.09.15.

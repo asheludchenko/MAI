@@ -10,8 +10,8 @@ import javax.inject.Singleton;
 
 import dagger.Provides;
 import flow.path.Path;
-import oleg.osipenko.app.R;
 import ru.mai.app.App;
+import ru.mai.app.R;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.repository.DataRepository;
 import ru.mai.app.data.repository.specification.ListContentSpecification;

@@ -26,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.App;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
@@ -107,7 +107,7 @@ public class ListContentView extends RecyclerView {
                 @Override
                 public void itemClicked(String value, int pos) {
                     if (screenName.split("#").length > 2) {
-                        App.bus.post(new ChangeScreenEvent(screenName + "#" + value+pos));
+                        App.bus.post(new ChangeScreenEvent(screenName + "#" + value + pos));
                     } else {
                         App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
                     }

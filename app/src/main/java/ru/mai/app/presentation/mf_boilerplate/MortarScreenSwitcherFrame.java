@@ -19,7 +19,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import flow.path.Path;
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
 
 public class MortarScreenSwitcherFrame extends FramePathContainerView {
   public MortarScreenSwitcherFrame(Context context, AttributeSet attrs) {

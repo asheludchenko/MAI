@@ -7,7 +7,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import oleg.osipenko.app.R;
+import ru.mai.app.R;
+
 
 /**
  * Created by olegosipenko on 08.09.15.
