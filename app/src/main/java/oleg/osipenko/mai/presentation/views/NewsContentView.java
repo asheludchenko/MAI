@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.facebook.common.util.UriUtil;
@@ -39,6 +40,8 @@ public class NewsContentView extends NestedScrollView {
 
     @Inject
     NewsContentScreen.Presenter presenter;
+    @Bind(R.id.pb)
+    ProgressBar progressBar;
     @Bind(R.id.root)
     LinearLayout root;
 
@@ -72,6 +75,7 @@ public class NewsContentView extends NestedScrollView {
     }
 
     public void showContent(List<StaticContent> contents) {
+        progressBar.setVisibility(GONE);
         for (StaticContent content : contents) {
             View view = null;
             if (content.getImage() != null) {

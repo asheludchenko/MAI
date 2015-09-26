@@ -1,6 +1,7 @@
 package oleg.osipenko.mai.presentation.screens;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import java.util.Collections;
 import java.util.List;
@@ -70,9 +71,11 @@ public class NewsContentScreen extends Path {
         Interactor<NewsContentSpecification, List<StaticContent>> interactor;
         List<StaticContent> contents;
         private Subscriber<List<StaticContent>> subscriber = Subscribers.empty();
+        private Handler handler;
 
         public Presenter() {
             contents = Collections.emptyList();
+            handler = new Handler();
         }
 
         @Override
@@ -97,7 +100,12 @@ public class NewsContentScreen extends Path {
                     getView().showContent(contents);
                 }
             };
-            interactor.execute(subscriber);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interactor.execute(subscriber);
+                }
+            }, 700);
         }
 
         @Override
