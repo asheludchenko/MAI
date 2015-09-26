@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<oleg.osipenko.mai.presentation.views.MediaView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<oleg.osipenko.mai.presentation.views.MediaView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mai_blue">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/bkg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:placeholderImage="@drawable/media"
+        app:placeholderImageScaleType="centerCrop"/>
 
     <LinearLayout
         android:id="@+id/buttons"
