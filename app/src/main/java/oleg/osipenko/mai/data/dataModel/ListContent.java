@@ -1,6 +1,9 @@
 package oleg.osipenko.mai.data.dataModel;
 
+import android.text.Spanned;
+
 import java.util.Arrays;
+import java.util.List;
 
 import oleg.osipenko.mai.presentation.utils.SimpleSectionListAdapter;
 
@@ -20,6 +23,8 @@ public class ListContent {
     private boolean clickable;
     private boolean dialogable;
     private String link;
+    private Spanned albumTitle;
+    private List<Photo> photos;
 
     public ListContent() {
     }
@@ -72,6 +77,14 @@ public class ListContent {
         return link;
     }
 
+    public Spanned getAlbumTitle() {
+        return albumTitle;
+    }
+
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
     @Override
     public String toString() {
         return "ListContent{" +
@@ -87,6 +100,8 @@ public class ListContent {
                 ", clickable=" + clickable +
                 ", dialogable=" + dialogable +
                 ", link='" + link + '\'' +
+                ", albumTitle=" + albumTitle +
+                ", photos=" + photos +
                 '}';
     }
 
@@ -154,6 +169,16 @@ public class ListContent {
 
         public Builder setLink(String link) {
             content.link = link;
+            return this;
+        }
+
+        public Builder setAlbumTitle(Spanned title) {
+            content.albumTitle = title;
+            return this;
+        }
+
+        public Builder setPhotos(List<Photo> photos) {
+            content.photos = photos;
             return this;
         }
 

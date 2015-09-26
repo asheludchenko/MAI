@@ -26,4 +26,6 @@ public interface DataRepository {
     Observable<Bitmap> getMapObservable();
 
     Observable<List<StaticContent>> getSingleNews(NewsContentSpecification parameter);
+
+    Observable<List<ListContent>> getPhotos(NewsContentSpecification parameter);
 }

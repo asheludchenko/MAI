@@ -90,4 +90,16 @@ public class MaiRepository implements DataRepository {
                     }
                 });
     }
+
+    @Override
+    public Observable<List<ListContent>> getPhotos(NewsContentSpecification parameter) {
+        return networkProvider.getPhotoAlbums()
+                .flatMap(new Func1<List<? extends ListContent>, Observable<List<ListContent>>>() {
+                    @Override
+                    public Observable<List<ListContent>> call(List<? extends ListContent> listContents) {
+                        List<ListContent> als = new ArrayList<ListContent>(listContents);
+                        return Observable.just(als);
+                    }
+                });
+    }
 }

@@ -5,9 +5,13 @@ import flow.path.Path;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
 import oleg.osipenko.mai.presentation.screens.MapScreen;
+import oleg.osipenko.mai.presentation.screens.MediaScreen;
 import oleg.osipenko.mai.presentation.screens.NewsContentScreen;
+import oleg.osipenko.mai.presentation.screens.PhotoScreen;
+import oleg.osipenko.mai.presentation.screens.PresentationScreen;
 import oleg.osipenko.mai.presentation.screens.StaticContentScreen;
 import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
+import oleg.osipenko.mai.presentation.screens.VideoScreen;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -337,12 +341,19 @@ public class Router {
     public static final String WW128 = "Компьютерные системы и комплексы";
     public static final String WW129 = "Программирование в компьютерных системах";
     public static final String WW130 = "Экономика и бухгалтерский учёт";
+    private static final String VIDEO = "Видео";
+    private static final String PHOTO = "Фото";
+    private static final String PRESENTATIONS = "Презентации";
+
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
         if (item.equals(MAP)) return new MapScreen();
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
+        if (item.equals(VIDEO)) return new VideoScreen();
+        if (item.equals(PHOTO)) return new PhotoScreen(item);
+        if (item.equals(PRESENTATIONS)) return new PresentationScreen();
         switch (item) {
             case FACULTIES:
             case SCHOLARSHIPS:
@@ -351,7 +362,6 @@ public class Router {
             case COURSES:
             case ACADEMIC_MOBILITY:
             case SPORT_SECTIONS:
-            case MEDIA:
             case LIFE:
             case HELP:
             case NEWS:
@@ -568,6 +578,8 @@ public class Router {
             case DOSUG + DELIM + DOSUG2 + DELIM + REC1:
             case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
                 return new StaticContentScreen(item);
+            case MEDIA:
+                return new MediaScreen(item);
             default:
                 return new MainScreen();
         }
