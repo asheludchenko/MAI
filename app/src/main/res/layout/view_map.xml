@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<oleg.osipenko.mai.presentation.views.MapView
+<ru.mai.app.presentation.views.MapView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <oleg.osipenko.mai.presentation.utils.ScaleImageView
+    <ru.mai.app.presentation.utils.ScaleImageView
         android:id="@+id/zoom"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</oleg.osipenko.mai.presentation.views.MapView>
+</ru.mai.app.presentation.views.MapView>
