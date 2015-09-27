@@ -16,7 +16,7 @@ import ru.mai.app.presentation.screens.StaticListContentScreen;
  * Created by olegosipenko on 13.09.15.
  */
 public class Router {
-    public static final String WEEK = "week";
+    public static final String WEEK = "неделя";
     public static final String FACULTIES = "Факультеты";
     public static final String SESSION = "Сессия";
     public static final String PRACTICS = "Практика";

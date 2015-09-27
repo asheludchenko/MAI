@@ -213,7 +213,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 changeScreen(menuItem.getTitle().toString());
-                setArrow();
+                if (menuItem.toString().contains(Router.WEEK)) {
+                    setHamburger();
+                } else {
+                    setArrow();
+                }
                 drawerLayout.closeDrawers();  // CLOSE DRAWER
                 return true;
             }
