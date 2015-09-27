@@ -32,6 +32,7 @@ import static ru.mai.app.Router.HELP;
 import static ru.mai.app.Router.LIBRARIES;
 import static ru.mai.app.Router.LIFE;
 import static ru.mai.app.Router.MEDIA;
+import static ru.mai.app.Router.PRESENTATIONS;
 import static ru.mai.app.Router.SCHOLARSHIPS;
 import static ru.mai.app.Router.SCHOOL_ACTIVITY;
 import static ru.mai.app.Router.SCHOOL_CENTERS;
@@ -1196,6 +1197,28 @@ public class ListContentProvider {
                 @Override
                 public void call(Subscriber<? super List<ListContent>> subscriber) {
                     subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(PRESENTATIONS)) {
+            final List<ListContent> ps = Observable.from(context.getResources().getStringArray(R.array.presentations))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ps);
                     subscriber.onCompleted();
                 }
             })

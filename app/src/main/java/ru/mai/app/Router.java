@@ -351,7 +351,7 @@ public class Router {
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
         if (item.equals(PHOTO)) return new PhotoScreen(item);
-        if (item.equals(PRESENTATIONS)) return new PresentationScreen();
+        if (item.startsWith(PRESENTATIONS + DELIM)) return new PresentationScreen(item);
         switch (item) {
             case FACULTIES:
             case SCHOLARSHIPS:
@@ -418,6 +418,7 @@ public class Router {
             case WAYS + DELIM + WAY16 + DELIM + OCH:
             case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY16 + DELIM + OZ:
+            case PRESENTATIONS:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
