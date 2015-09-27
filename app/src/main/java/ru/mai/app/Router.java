@@ -11,7 +11,6 @@ import ru.mai.app.presentation.screens.PhotoScreen;
 import ru.mai.app.presentation.screens.PresentationScreen;
 import ru.mai.app.presentation.screens.StaticContentScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
-import ru.mai.app.presentation.screens.VideoScreen;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -341,9 +340,9 @@ public class Router {
     public static final String WW128 = "Компьютерные системы и комплексы";
     public static final String WW129 = "Программирование в компьютерных системах";
     public static final String WW130 = "Экономика и бухгалтерский учёт";
-    private static final String VIDEO = "Видео";
-    private static final String PHOTO = "Фото";
-    private static final String PRESENTATIONS = "Презентации";
+    public static final String VIDEO = "Видео";
+    public static final String PHOTO = "Фото";
+    public static final String PRESENTATIONS = "Презентации";
 
 
     public Path getScreen(String item) {
@@ -351,7 +350,6 @@ public class Router {
         if (item.equals(MAP)) return new MapScreen();
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
-        if (item.equals(VIDEO)) return new VideoScreen();
         if (item.equals(PHOTO)) return new PhotoScreen(item);
         if (item.equals(PRESENTATIONS)) return new PresentationScreen();
         switch (item) {

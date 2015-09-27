@@ -7,7 +7,7 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -29,6 +29,10 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".presentation.PhotoActivity"/>
+
+        <activity
+            android:name=".presentation.MaiChannelActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

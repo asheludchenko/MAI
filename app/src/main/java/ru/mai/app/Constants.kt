@@ -5,3 +5,4 @@ package ru.mai.app
  */
 val SP_KEY = "sp key"
 val IS_STUDENT_KEY = "is student key"
+val CHANNEL_URL = "https://www.youtube.com/user/universitymai";

@@ -309,8 +309,10 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         } else {
             toolbar.setTitle(title);
         }
-
-        Flow.get(MainActivity.this).set(router.getScreen(title));
+        if (title.equals(Router.VIDEO)) {
+            Intent showYoutube = new Intent(this, MaiChannelActivity.class);
+            startActivity(showYoutube);
+        } else Flow.get(MainActivity.this).set(router.getScreen(title));
     }
 
     @Subscribe
