@@ -16,6 +16,7 @@ import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
+import com.facebook.drawee.generic.RoundingParams;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -27,6 +28,7 @@ import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.App;
 import ru.mai.app.R;
+import ru.mai.app.Router;
 import ru.mai.app.data.dataModel.StaticListContent;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
@@ -141,7 +143,7 @@ public class StaticListContentView extends NestedScrollView {
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
         );
-        textView.setPadding(padding, padding/2, padding, padding/2);
+        textView.setPadding(padding, padding / 2, padding, padding / 2);
         setParams(textView);
         return textView;
     }
@@ -153,6 +155,13 @@ public class StaticListContentView extends NestedScrollView {
         if (content.getListImage() != null) {
             SimpleDraweeView image = (SimpleDraweeView) listContent.findViewById(R.id.image);
             image.setVisibility(VISIBLE);
+            if (screenName.startsWith(Router.MAGISTRACY + Router.DELIM) ||
+                    screenName.startsWith(Router.SECONDARY_EDUCATION + Router.DELIM)) {
+                RoundingParams roundingParams = image.getHierarchy().getRoundingParams();
+                roundingParams.setRoundAsCircle(false);
+                image.getHierarchy().setRoundingParams(roundingParams);
+                image.getHierarchy().setActualImageScaleType(ScalingUtils.ScaleType.FIT_CENTER);
+            }
             Uri uri = null;
             if (content.isListWithImage()) {
                 uri = Uri.parse(content.getListImage());
