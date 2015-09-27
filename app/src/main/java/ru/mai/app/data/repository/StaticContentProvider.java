@@ -449,7 +449,10 @@ public class StaticContentProvider {
             StaticContent site = new StaticContent.Builder()
                     .setFacText(context.getString(R.string.site))
                     .build();
-            final List<StaticContent> cs = Arrays.asList(address, phone, email, site);
+            StaticContent map = new StaticContent.Builder()
+                    .setMap(String.valueOf(R.drawable.contacts))
+                    .build();
+            final List<StaticContent> cs = Arrays.asList(address, phone, email, site, map);
             return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
                 @Override
                 public void call(Subscriber<? super List<StaticContent>> subscriber) {
@@ -1982,6 +1985,7 @@ public class StaticContentProvider {
             })
                     .cache();
         } else if (specification.specified(HELP + DELIM + HELP2)) {
+            StaticContent image = new StaticContent.Builder().setImage(String.valueOf(R.drawable.raspisanie)).build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.help2))
                     .map(new Func1<String, StaticContent>() {
                         @Override
@@ -1991,6 +1995,7 @@ public class StaticContentProvider {
                                     .build();
                         }
                     })
+                    .startWith(image)
                     .toList()
                     .toBlocking()
                     .single();

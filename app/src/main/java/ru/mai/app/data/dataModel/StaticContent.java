@@ -13,6 +13,7 @@ public class StaticContent {
     private String facPhoto;
     private String facText;
     private Spanned newsText;
+    private String map;
 
     public StaticContent() {
     }
@@ -45,6 +46,10 @@ public class StaticContent {
         return newsText;
     }
 
+    public String getMap() {
+        return map;
+    }
+
     @Override
     public String toString() {
         return "StaticContent{" +
@@ -55,6 +60,7 @@ public class StaticContent {
                 ", facPhoto='" + facPhoto + '\'' +
                 ", facText='" + facText + '\'' +
                 ", newsText=" + newsText +
+                ", map='" + map + '\'' +
                 '}';
     }
 
@@ -97,6 +103,11 @@ public class StaticContent {
 
         public Builder setNewsText(Spanned spannable) {
             staticContent.newsText = spannable;
+            return this;
+        }
+
+        public Builder setMap(String map) {
+            staticContent.map = map;
             return this;
         }
 

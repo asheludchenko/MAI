@@ -84,6 +84,8 @@ public class StaticContentView extends NestedScrollView{
             } else if (content.getTitle() != null) {
                 view = getFacTitleView(content.getTitle());
                 ((TextView) view).setGravity(Gravity.LEFT);
+            } else if (content.getMap() != null) {
+                view = getMapImageView(content.getMap());
             }
             root.addView(view);
         }
@@ -123,6 +125,22 @@ public class StaticContentView extends NestedScrollView{
                 .setActualImageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
                 .build();
         imageView.setHierarchy(hierarchy);
+        imageView.setImageURI(uri);
+        imageView.setAdjustViewBounds(true);
+        int height = Math.round(getWidth() / 1.79f);
+        imageView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                height
+        ));
+        return imageView;
+    }
+
+    private View getMapImageView(String image) {
+        SimpleDraweeView imageView = new SimpleDraweeView(getContext());
+        Uri uri = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                .path(image)
+                .build();
         imageView.setImageURI(uri);
         imageView.setAdjustViewBounds(true);
         int height = Math.round(getWidth() / 1.79f);

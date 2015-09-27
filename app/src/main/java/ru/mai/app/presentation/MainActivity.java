@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -271,7 +272,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     @Override
     public void onBackPressed() {
         if (!containerAsHandlesBack.onBackPressed()) {
-            super.onBackPressed();
+            if (Build.VERSION.SDK_INT >= 16) {
+                finishAffinity();
+            } else {
+                setResult(RESULT_CANCELED);
+                finish();
+            }
+
         } else {
             toolbar.setTitle(titleHistory.removeFirst());
         }
