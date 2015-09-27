@@ -1,39 +1,38 @@
 package ru.mai.app.presentation.screens;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import dagger.Module;
 import dagger.Provides;
 import flow.path.Path;
 import ru.mai.app.App;
 import ru.mai.app.R;
-import ru.mai.app.domain.DomainModule;
 import ru.mai.app.presentation.MaiPresenter;
 import ru.mai.app.presentation.mf_boilerplate.Layout;
 import ru.mai.app.presentation.mf_boilerplate.WithModule;
-import ru.mai.app.presentation.views.PresView;
-import static ru.mai.app.Router.PRESENTATIONS;
+import ru.mai.app.presentation.views.ViewWeb;
+
+import static ru.mai.app.Router.COURSES;
 import static ru.mai.app.Router.DELIM;
+import static ru.mai.app.Router.PRESENTATIONS;
 
 /**
  * Created by olegosipenko on 25.09.15.
  */
-@Layout(R.layout.view_pres)
-@WithModule(PresentationScreen.Module.class)
-public class PresentationScreen extends Path {
+@Layout(R.layout.view_web)
+@WithModule(WebViewScreen.Module.class)
+public class WebViewScreen extends Path {
 
     public static String sTitle;
 
-    public PresentationScreen(String title) {
+    public WebViewScreen(String title) {
         sTitle = title;
     }
 
     @dagger.Module(
-            injects = PresView.class,
+            injects = ViewWeb.class,
             addsTo = App.AppModule.class
     )
     public class Module {
@@ -44,9 +43,10 @@ public class PresentationScreen extends Path {
     }
 
     @Singleton
-    public static class Presenter extends MaiPresenter<PresView, Object>{
+    public static class Presenter extends MaiPresenter<ViewWeb, Object> {
 
-        @Inject Chooser chooser;
+        @Inject
+        Chooser chooser;
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {
@@ -63,18 +63,24 @@ public class PresentationScreen extends Path {
 
     public static class Chooser {
 
-        public static final String P01 = "http://files.mai.ru/site/life/brand/presentation/presentation_mai_gos_politika_kadry.pdf";
-        public static final String P02 = "http://files.mai.ru/site/life/brand/presentation/presentation_mai_podgotovka_kadrov.pdf";
-        public static final String P03 = "http://files.mai.ru/site/life/brand/presentation/presentation_mai_rector_(short).pdf";
-        public static final String P04 = "http://files.mai.ru/site/life/brand/presentation/presentation_mai_rector_(full).pdf";
-        public static final String P05 = "http://files.mai.ru/site/life/brand/presentation/presentation_mai_school.pdf";
+        public static final String P01 = "http://docs.google.com/gview?embedded=true&url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_gos_politika_kadry.pdf";
+        public static final String P02 = "http://docs.google.com/gview?embedded=true&url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_podgotovka_kadrov.pdf";
+        public static final String P03 = "http://docs.google.com/gview?embedded=true&url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_rector_(short).pdf";
+        public static final String P04 = "http://docs.google.com/gview?embedded=true&url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_rector_(full).pdf";
+        public static final String P05 = "http://docs.google.com/gview?embedded=true&url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_school.pdf";
+        public static final String C01 = "http://inter.mai.ru/";
+        public static final String C02 = "http://klc103.mai.ru/";
+        public static final String C03 = "http://klc103.mai.ru/";
 
         private static String[] items = {
                 "О государственной политике в сфере подготовки инженерно-технических кадров в Российской Федерации — выступление в Совете Федерации",
                 "Подготовка высококвалифицированных кадров для оборонно-промышленного комплекса в России в МАИ",
                 "Выступление Геращенко А.Н. на круглом столе с Рогозиным Д.О. (сокращенное)",
                 "Выступление Геращенко А.Н. на круглом столе с Рогозиным Д.О. (полное)",
-                "Презентация МАИ для школьников и абитуриентов (PDF)"
+                "Презентация МАИ для школьников и абитуриентов (PDF)",
+                "Курсы иностранных языков",
+                "Курсы КЛЦ-103",
+                "Курсы C-COURSES"
         };
 
         @Inject
@@ -92,7 +98,13 @@ public class PresentationScreen extends Path {
                 return P04;
             } else if (sTitle.equals(PRESENTATIONS + DELIM + items[4])) {
                 return P05;
-            } else {
+            } else if (sTitle.equals(COURSES + DELIM + items[5])) {
+                return C01;
+            } else if (sTitle.equals(COURSES + DELIM + items[6])) {
+                return C02;
+            }  else if (sTitle.equals(COURSES + DELIM + items[7])) {
+                return C03;
+            }  else {
                 return "";
             }
         }

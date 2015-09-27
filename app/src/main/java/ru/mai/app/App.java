@@ -20,7 +20,7 @@ import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.data.DataModule;
 import ru.mai.app.presentation.MainActivity;
 import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
-import ru.mai.app.presentation.views.PresView;
+import ru.mai.app.presentation.views.ViewWeb;
 
 /**
  * Created by olegosipenko on 06.09.15.
@@ -56,7 +56,7 @@ public class App extends Application {
             injects = {
                     MainActivity.class,
                     DataModule.class,
-                    PresView.class
+                    ViewWeb.class
             },
             library = true
     )

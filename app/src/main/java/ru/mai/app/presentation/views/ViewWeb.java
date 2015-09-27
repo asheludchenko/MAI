@@ -13,23 +13,20 @@ import android.widget.FrameLayout;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
 import mortar.dagger1support.ObjectGraphService;
-import ru.mai.app.ConstantsKt;
-import ru.mai.app.R;
-import ru.mai.app.presentation.screens.PresentationScreen;
+import ru.mai.app.presentation.screens.WebViewScreen;
 
 /**
  * Created by olegosipenko on 27.09.15.
  */
-public class PresView extends FrameLayout{
+public class ViewWeb extends FrameLayout{
 
     @Inject
-    PresentationScreen.Presenter presenter;
+    WebViewScreen.Presenter presenter;
     @Inject Context context;
     private WebView webView;
 
-    public PresView(Context context, AttributeSet attrs) {
+    public ViewWeb(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
     }
@@ -60,7 +57,7 @@ public class PresView extends FrameLayout{
         settings.setJavaScriptEnabled(true);
         settings.setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + url);
+        webView.loadUrl(url);
         webView.setWebChromeClient(new WebChromeClient());
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
             webView.requestFocus(View.FOCUS_DOWN);
