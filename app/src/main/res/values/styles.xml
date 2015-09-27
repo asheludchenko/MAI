@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/mai_blue</item>
         <item name="colorPrimaryDark">@color/mai_dark_blue</item>
+        <item name="android:textColorLink">@color/mai_blue</item>
     </style>
 
     <style name="Toolbar">
