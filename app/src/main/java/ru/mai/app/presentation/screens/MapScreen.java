@@ -2,6 +2,7 @@ package ru.mai.app.presentation.screens;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -52,10 +53,12 @@ public class MapScreen extends Path {
     public static class Presenter extends MaiPresenter<MapView, Bitmap> {
         @Inject
         Interactor<StaticContentSpecification, Bitmap> interactor;
+        private Handler handler;
 
         private Subscriber<Bitmap> subscriber = Subscribers.empty();
 
         public Presenter() {
+            handler = new Handler();
         }
 
         @Override
@@ -79,12 +82,18 @@ public class MapScreen extends Path {
                     getView().showMap(bitmap);
                 }
             };
-            interactor.execute(subscriber);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    interactor.execute(subscriber);
+                }
+            }, 800);
         }
 
         @Override
         protected void unsubscribe() {
             if (!interactor.isUnSubscribed()) interactor.unsubscribe();
+            handler.removeCallbacksAndMessages(null);
         }
     }
 }

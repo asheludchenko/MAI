@@ -19,6 +19,7 @@ import ru.mai.app.data.repository.specification.StaticContentSpecification;
 import ru.mai.app.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Func0;
 import rx.functions.Func1;
 
 /**
@@ -67,12 +68,10 @@ public class MaiRepository implements DataRepository {
 
     @Override
     public Observable<Bitmap> getMapObservable() {
-
-        return Observable.create(new Observable.OnSubscribe<Bitmap>() {
+        return Observable.defer(new Func0<Observable<Bitmap>>() {
             @Override
-            public void call(Subscriber<? super Bitmap> subscriber) {
-                Bitmap map = BitmapFactory.decodeResource(context.getResources(), R.drawable.map);
-                subscriber.onNext(map);
+            public Observable<Bitmap> call() {
+                return Observable.just(BitmapFactory.decodeResource(context.getResources(), R.drawable.map));
             }
         });
     }
