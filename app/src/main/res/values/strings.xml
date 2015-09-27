@@ -75,6 +75,6 @@
     <string name="phone">Телефоны для справок (с 10 до 17 ч.):\n+7-499-158-40-56,\n+7-499-158-43-00,\n+7-499-158-47-09</string>
     <string name="email">Электронная почта\npriem@mai.ru</string>
     <string name="site">Сайт Приемной комиссии\nwww.priem.mai.ru</string>
-
+    <string name="hint">* — работают по субботам\n** — работают по субботам и воскресеньям</string>
 
 </resources>

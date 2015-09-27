@@ -9,10 +9,12 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
 import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
@@ -304,6 +306,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void changeScreen(String title) {
+        Log.d("mai", title);
         titleHistory.push(toolbar.getTitle().toString());
         String[] a = title.split("#");
         if (a.length > 1) {

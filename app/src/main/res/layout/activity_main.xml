@@ -23,8 +23,7 @@
             app:tabMode="scrollable"
             android:background="@color/mai_blue"
             app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="@android:color/darker_gray" />
-
+            app:tabTextColor="@color/mai_dark_blue" />
 
         <ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame
             android:id="@+id/container"

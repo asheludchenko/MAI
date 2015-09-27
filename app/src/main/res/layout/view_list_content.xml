@@ -2,8 +2,24 @@
 <ru.mai.app.presentation.views.ListContentView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/hint_view"
+        android:background="@android:color/darker_gray"
+        android:text="@string/hint"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/hint_view"/>
+
 
 
 </ru.mai.app.presentation.views.ListContentView>

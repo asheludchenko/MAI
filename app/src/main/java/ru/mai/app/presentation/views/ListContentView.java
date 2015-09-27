@@ -12,6 +12,9 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.common.util.UriUtil;
@@ -39,10 +42,14 @@ import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
 /**
  * Created by olegosipenko on 07.09.15.
  */
-public class ListContentView extends RecyclerView {
+public class ListContentView extends RelativeLayout {
 
     @Inject
     ListContentScreen.Presenter presenter;
+    @Bind(R.id.list)
+    RecyclerView list;
+    @Bind(R.id.hint_view)
+    TextView hint;
 
     private Adapter adapter;
     private boolean canLoadMore = true;
@@ -53,15 +60,22 @@ public class ListContentView extends RecyclerView {
     public ListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        setLayoutManager(layoutManager);
-        setItemAnimator(new DefaultItemAnimator());
-        addItemDecoration(new SimpleDividerItemDecoration(context));
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        ButterKnife.bind(this);
+        if (presenter.getParameter().equals(Router.CANTEENS)) hint.setVisibility(VISIBLE);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        list.setLayoutManager(layoutManager);
+        list.setItemAnimator(new DefaultItemAnimator());
+        list.addItemDecoration(new SimpleDividerItemDecoration(getContext()));
         adapter = new Adapter(new ArrayList<ListContent>(), presenter.getParameter());
-        setAdapter(adapter);
+        list.setAdapter(adapter);
         if (presenter.getParameter().equals(Router.NEWS) ||
                 presenter.getParameter().equals(Router.PHOTO)) {
-            addOnScrollListener(new OnScrollListener() {
+            list.addOnScrollListener(new RecyclerView.OnScrollListener(){
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     visibleItemCount = layoutManager.getChildCount();
@@ -77,12 +91,6 @@ public class ListContentView extends RecyclerView {
                 }
             });
         }
-    }
-
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-
     }
 
     @Override
@@ -117,7 +125,7 @@ public class ListContentView extends RecyclerView {
                 R.id.section_text,
                 adapter);
         sectionedAdapter.setSections(sections);
-        swapAdapter(sectionedAdapter, true);
+        list.swapAdapter(sectionedAdapter, true);
     }
 
     public static class Adapter extends RecyclerView.Adapter<ViewHolder> {
