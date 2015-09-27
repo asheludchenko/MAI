@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import retrofit.RestAdapter
 import retrofit.client.Response
+import ru.mai.app.App
 import ru.mai.app.data.dataModel.ListContent
 import ru.mai.app.data.dataModel.Photo
 import ru.mai.app.data.dataModel.StaticContent
@@ -34,7 +35,7 @@ public class NetworkProvider() {
     public fun getNews(): Observable<List<ListContent>> {
         return Observable.defer(object : Func0<Observable<List<ListContent>>> {
             override fun call(): Observable<List<ListContent>>? {
-                val response = service.getNewsList(1, 30)
+                val response = service.getNewsList(App.getNewsPage(), 8)
                 val json = trimJson(trimResponse(response))
                 val gson = Gson()
                 val reader = JsonReader(StringReader(json))
@@ -78,7 +79,7 @@ public class NetworkProvider() {
     public fun getPhotoAlbums(): Observable<List<ListContent>> {
         return Observable.defer(object : Func0<Observable<List<ListContent>>> {
             override fun call(): Observable<List<ListContent>>? {
-                val response = service.getAlbums(1, 10)
+                val response = service.getAlbums(App.getPhotoPage(), 10)
                 val json = trimJson(trimResponse(response))
                 val gson = Gson()
                 val reader = JsonReader(StringReader(json))

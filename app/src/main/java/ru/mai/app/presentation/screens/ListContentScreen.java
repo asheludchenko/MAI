@@ -86,6 +86,19 @@ public class ListContentScreen extends Path {
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
+            executeLoad();
+        }
+
+        @Override
+        protected void unsubscribe() {
+            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
+        }
+
+        public void loadMore() {
+            executeLoad();
+        }
+
+        private void executeLoad() {
             subscriber = new Subscriber<List<ListContent>>() {
                 @Override
                 public void onCompleted() {
@@ -114,11 +127,6 @@ public class ListContentScreen extends Path {
                 }
             };
             interactor.execute(subscriber);
-        }
-
-        @Override
-        protected void unsubscribe() {
-            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
         }
     }
 }

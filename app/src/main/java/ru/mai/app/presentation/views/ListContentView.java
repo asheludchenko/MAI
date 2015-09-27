@@ -19,7 +19,7 @@ import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.RoundingParams;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -45,17 +45,38 @@ public class ListContentView extends RecyclerView {
     ListContentScreen.Presenter presenter;
 
     private Adapter adapter;
-
+    private boolean canLoadMore = true;
+    private int visibleItemCount;
+    private int totalItemCount;
+    private int pastVisiblesItems;
 
     public ListContentView(Context context, AttributeSet attrs) {
         super(context, attrs);
         ObjectGraphService.inject(context, this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         setLayoutManager(layoutManager);
         setItemAnimator(new DefaultItemAnimator());
         addItemDecoration(new SimpleDividerItemDecoration(context));
-        adapter = new Adapter(Collections.EMPTY_LIST, presenter.getParameter());
+        adapter = new Adapter(new ArrayList<ListContent>(), presenter.getParameter());
         setAdapter(adapter);
+        if (presenter.getParameter().equals(Router.NEWS) ||
+                presenter.getParameter().equals(Router.PHOTO)) {
+            addOnScrollListener(new OnScrollListener() {
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    visibleItemCount = layoutManager.getChildCount();
+                    totalItemCount = layoutManager.getItemCount();
+                    pastVisiblesItems = layoutManager.findFirstVisibleItemPosition();
+
+                    if (canLoadMore) {
+                        if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
+                            canLoadMore = false;
+                            presenter.loadMore();
+                        }
+                    }
+                }
+            });
+        }
     }
 
     @Override
@@ -85,6 +106,7 @@ public class ListContentView extends RecyclerView {
     public void showItems(List<ListContent> contents) {
         adapter.setContents(contents);
         adapter.notifyDataSetChanged();
+        canLoadMore = true;
     }
 
     public void showWithSections(List<ListContent> contents, SimpleSectionListAdapter.Section[] sections) {
@@ -124,9 +146,8 @@ public class ListContentView extends RecyclerView {
             }
         }
 
-        public void setContents(List<ListContent> contents) {
-            this.contents.clear();
-            this.contents = contents;
+        public void setContents(List<ListContent> items) {
+            contents.addAll(items);
         }
 
         @Override

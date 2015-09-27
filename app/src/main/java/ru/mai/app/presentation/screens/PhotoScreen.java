@@ -88,6 +88,25 @@ public class PhotoScreen extends Path {
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
+            executeLoad();
+        }
+
+        @Override
+        public void dropView(ListPhotosView view) {
+            super.dropView(view);
+            handler.removeCallbacksAndMessages(null);
+        }
+
+        @Override
+        protected void unsubscribe() {
+            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
+        }
+
+        public void loadMore() {
+            executeLoad();
+        }
+
+        private void executeLoad() {
             subscriber = new Subscriber<List<ListContent>>() {
                 @Override
                 public void onCompleted() {
@@ -112,17 +131,6 @@ public class PhotoScreen extends Path {
                     interactor.execute(subscriber);
                 }
             }, 700);
-        }
-
-        @Override
-        public void dropView(ListPhotosView view) {
-            super.dropView(view);
-            handler.removeCallbacksAndMessages(null);
-        }
-
-        @Override
-        protected void unsubscribe() {
-            if (!interactor.isUnSubscribed()) interactor.unsubscribe();
         }
     }
 }

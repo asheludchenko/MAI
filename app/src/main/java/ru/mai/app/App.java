@@ -28,6 +28,8 @@ import ru.mai.app.presentation.views.ViewWeb;
 public class App extends Application {
 
     public static Bus bus;
+    private static int newsPage = 1;
+    private static int photoPage = 1;
 
     private MortarScope rootScope;
 
@@ -49,6 +51,26 @@ public class App extends Application {
 
         if (rootScope.hasService(name)) return rootScope.getService(name);
         return super.getSystemService(name);
+    }
+
+    public static int getNewsPage() {
+        int current = newsPage;
+        newsPage++;
+        return current;
+    }
+
+    public static int getPhotoPage() {
+        int current = photoPage;
+        photoPage++;
+        return current;
+    }
+
+    public static void resetNewsPage() {
+        newsPage = 1;
+    }
+
+    public static void resetPhotoPage() {
+        photoPage = 1;
     }
 
 

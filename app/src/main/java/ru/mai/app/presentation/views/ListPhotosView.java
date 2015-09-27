@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -44,7 +45,10 @@ public class ListPhotosView extends FrameLayout {
     ProgressBar progressBar;
 
     private Adapter adapter;
-
+    private boolean canLoadMore = true;
+    private int visibleItemCount;
+    private int totalItemCount;
+    private int pastVisiblesItems;
 
     public ListPhotosView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -55,12 +59,27 @@ public class ListPhotosView extends FrameLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         list.setLayoutManager(layoutManager);
         list.setItemAnimator(new DefaultItemAnimator());
         list.addItemDecoration(new SimpleDividerItemDecoration(getContext()));
-        adapter = new Adapter(Collections.EMPTY_LIST);
+        adapter = new Adapter(new ArrayList<ListContent>());
         list.setAdapter(adapter);
+        list.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                visibleItemCount = layoutManager.getChildCount();
+                totalItemCount = layoutManager.getItemCount();
+                pastVisiblesItems = layoutManager.findFirstVisibleItemPosition();
+
+                if (canLoadMore) {
+                    if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
+                        canLoadMore = false;
+                        presenter.loadMore();
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -85,6 +104,7 @@ public class ListPhotosView extends FrameLayout {
         adapter.setContents(contents);
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(GONE);
+        canLoadMore = true;
     }
 
     public static class Adapter extends RecyclerView.Adapter<ViewHolder> {
@@ -94,9 +114,8 @@ public class ListPhotosView extends FrameLayout {
             this.contents = contents;
         }
 
-        public void setContents(List<ListContent> contents) {
-            this.contents.clear();
-            this.contents = contents;
+        public void setContents(List<ListContent> photos) {
+            this.contents.addAll(photos);
         }
 
         @Override
