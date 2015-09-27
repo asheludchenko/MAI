@@ -155,8 +155,8 @@ public class StaticListContentView extends NestedScrollView {
         if (content.getListImage() != null) {
             SimpleDraweeView image = (SimpleDraweeView) listContent.findViewById(R.id.image);
             image.setVisibility(VISIBLE);
-            if (screenName.startsWith(Router.MAGISTRACY + Router.DELIM) ||
-                    screenName.startsWith(Router.SECONDARY_EDUCATION + Router.DELIM)) {
+            if (screenName.startsWith(Router.MAGISTRACY) ||
+                    screenName.startsWith(Router.SECONDARY_EDUCATION)) {
                 RoundingParams roundingParams = image.getHierarchy().getRoundingParams();
                 roundingParams.setRoundAsCircle(false);
                 image.getHierarchy().setRoundingParams(roundingParams);

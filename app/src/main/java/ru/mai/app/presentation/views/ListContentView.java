@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.facebook.common.util.UriUtil;
+import com.facebook.drawee.drawable.ScalingUtils;
+import com.facebook.drawee.generic.RoundingParams;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.Collections;
@@ -100,6 +102,7 @@ public class ListContentView extends RecyclerView {
         private List<ListContent> contents;
         private ClickListener listener;
         private String screenName;
+        private boolean isRound;
 
         public Adapter(List<ListContent> contents, String parameter) {
             this.contents = contents;
@@ -114,6 +117,11 @@ public class ListContentView extends RecyclerView {
                 }
             };
             screenName = parameter;
+            if (parameter.startsWith(Router.FACULTIES)) {
+                isRound = false;
+            } else {
+                isRound = true;
+            }
         }
 
         public void setContents(List<ListContent> contents) {
@@ -149,6 +157,17 @@ public class ListContentView extends RecyclerView {
                     item.getSub4() == null ? GONE : VISIBLE
             );
             if (item.getText() != null) holder.text.setText(Html.fromHtml(item.getText()));
+            if (!isRound) {
+                RoundingParams roundingParams = holder.image.getHierarchy().getRoundingParams();
+                roundingParams.setRoundAsCircle(false);
+                holder.image.getHierarchy().setRoundingParams(roundingParams);
+                holder.image.getHierarchy().setActualImageScaleType(ScalingUtils.ScaleType.FIT_CENTER);
+            } else {
+                RoundingParams roundingParams = holder.image.getHierarchy().getRoundingParams();
+                roundingParams.setRoundAsCircle(true);
+                holder.image.getHierarchy().setRoundingParams(roundingParams);
+                holder.image.getHierarchy().setActualImageScaleType(ScalingUtils.ScaleType.CENTER_CROP);
+            }
             if (item.getImage() != null && !item.isWithImage()) {
                 Uri uri = Uri.parse(item.getImage());
                 holder.image.setImageURI(uri);
