@@ -34,8 +34,6 @@ public class MaiChannelActivity extends AppCompatActivity {
     FrameLayout youtube_container;
 
     private WebView youtube;
-    private WeakReference<WebView> viewRef;
-
 
     @Override
     protected void onCreate(Bundle savedState) {
@@ -61,7 +59,6 @@ public class MaiChannelActivity extends AppCompatActivity {
             youtube.setWebViewClient(new WebViewClient());
             youtube.loadUrl(ConstantsKt.getCHANNEL_URL());
             youtube.setWebChromeClient(new WebChromeClient());
-            viewRef = new WeakReference<WebView>(youtube);
             youtube.setOnKeyListener(new KeyListener());
 
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
