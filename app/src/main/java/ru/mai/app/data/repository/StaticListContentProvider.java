@@ -37,22 +37,22 @@ import static ru.mai.app.Router.PODGOTOVKA;
 public class StaticListContentProvider {
 
     List<Integer> magImages = Arrays.asList(
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th,
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th,
-            R.drawable.f1st
+            R.drawable.fac_1,
+            R.drawable.fac_2,
+            R.drawable.fac_3,
+            R.drawable.fac_ing,
+            R.drawable.fac_6,
+            R.drawable.fac_8,
+            R.drawable.fac_9,
+            R.drawable.fac_10,
+            R.drawable.fac_inyaz
     );
 
     List<Integer> secImages = Arrays.asList(
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th
+            R.drawable.fac_1,
+            R.drawable.fac_ing,
+            R.drawable.fac_9,
+            R.drawable.fac_inyaz
     );
 
 

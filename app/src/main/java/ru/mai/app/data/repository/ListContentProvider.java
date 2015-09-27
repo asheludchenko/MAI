@@ -67,30 +67,30 @@ import static ru.mai.app.Router.WAY16;
 public class ListContentProvider {
 
     List<Integer> facImages = Arrays.asList(
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th,
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th,
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th
+            R.drawable.fac_1,
+            R.drawable.fac_2,
+            R.drawable.fac_3,
+            R.drawable.fac_4,
+            R.drawable.fac_6,
+            R.drawable.fac_7,
+            R.drawable.fac_8,
+            R.drawable.fac_9,
+            R.drawable.fac_10,
+            R.drawable.fac_inyaz,
+            R.drawable.fac_radiovtuz
     );
 
 
     List<Integer> instImages = Arrays.asList(
-            R.drawable.f1st,
-            R.drawable.f2nd
+            R.drawable.fac_ing,
+            R.drawable.fac_voen
     );
 
     List<Integer> filImages = Arrays.asList(
-            R.drawable.f1st,
-            R.drawable.f2nd,
-            R.drawable.f4th,
-            R.drawable.f6th
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo
     );
 
     private Context context;
@@ -104,7 +104,7 @@ public class ListContentProvider {
 
             final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[3];
             sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
-            sectionsArray[1] = new SimpleSectionListAdapter.Section(9, "Институты");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(11, "Институты");
             sectionsArray[2] = new SimpleSectionListAdapter.Section(13, "Филиалы");
 
             Observable<String> unitedStrings = Observable.from(context.getResources().getStringArray(R.array.faculties))
