@@ -109,7 +109,7 @@ public class WebViewScreen extends Path {
             } else if ((sTitle.equals(Router.PRIEM + DELIM + Router.PRIEM_SCHEDULE))) {
                 return PS;
             }else {
-                return "";
+                return "http://ya.ru";
             }
         }
 

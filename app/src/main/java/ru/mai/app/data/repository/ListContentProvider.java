@@ -18,6 +18,7 @@ import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;
+import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.functions.Func3;
@@ -33,6 +34,8 @@ import static ru.mai.app.Router.LIBRARIES;
 import static ru.mai.app.Router.LIFE;
 import static ru.mai.app.Router.MEDIA;
 import static ru.mai.app.Router.PRESENTATIONS;
+import static ru.mai.app.Router.S1;
+import static ru.mai.app.Router.SCH1;
 import static ru.mai.app.Router.SCHOLARSHIPS;
 import static ru.mai.app.Router.SCHOOL_ACTIVITY;
 import static ru.mai.app.Router.SCHOOL_CENTERS;
@@ -61,6 +64,17 @@ import static ru.mai.app.Router.WAY14;
 import static ru.mai.app.Router.WAY15;
 import static ru.mai.app.Router.WAY16;
 import static ru.mai.app.Router.SCHEDULE;
+import static ru.mai.app.Router.SCH1;
+import static ru.mai.app.Router.SCH2;
+import static ru.mai.app.Router.SCH3;
+import static ru.mai.app.Router.SCH4;
+import static ru.mai.app.Router.SCH5;
+import static ru.mai.app.Router.SCH6;
+import static ru.mai.app.Router.SCH7;
+import static ru.mai.app.Router.SCH8;
+import static ru.mai.app.Router.SCH9;
+import static ru.mai.app.Router.SCH10;
+import static ru.mai.app.Router.SCH11;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -1273,6 +1287,160 @@ public class ListContentProvider {
                 }
             })
                     .cache();
+        } else if (specification.specified(SCHEDULE + DELIM + SCH1)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch1))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH2)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch2))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH3)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch3))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH4)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch4))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH5)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch5))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH6)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch6))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH7)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch7))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH8)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch8))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH9)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch9))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH10)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch10))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH11)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch11))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
         }
         return Observable.from(Collections.EMPTY_LIST);
     }

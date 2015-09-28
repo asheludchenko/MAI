@@ -344,11 +344,23 @@ public class Router {
     public static final String PHOTO = "Фото";
     public static final String PRESENTATIONS = "Презентации";
     public static final String PRIEM_SCHEDULE = "Расписание работы Приёмной комиссии МАИ";
+    public static final String SCH1 = "№1 \"Авиационная техника\"";
+    public static final String SCH2 = "№2 \"Двигатели летательных аппаратов\"";
+    public static final String SCH3 = "№3 \"Системы управления, информатика и электроэнергетика\"";
+    public static final String SCH4 = "№4 \"Радиоэлектроника летательных аппаратов\"";
+    public static final String SCH5 = "№6 \"Аэрокосмический\"";
+    public static final String SCH6 = "№7 \"Робототехнические и интеллектуальные системы\"";
+    public static final String SCH7 = "№8 \"Прикладная математика и физика\"";
+    public static final String SCH8 = "№9 \"Прикладная механика\"";
+    public static final String SCH9 = "№10 \"Социальный инжиниринг\"";
+    public static final String SCH10 = "Иностранных языков";
+    public static final String SCH11 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
 
 
     public Path getScreen(String item) {
         if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
         if (item.equals(MAP)) return new MapScreen();
+        if (item.startsWith(SCHEDULE + DELIM) && ((item.length() - item.replace(DELIM, "").length()) == 2)) return new WebViewScreen(item);
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
         if (item.equals(PHOTO)) return new PhotoScreen(item);
@@ -422,6 +434,17 @@ public class Router {
             case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY16 + DELIM + OZ:
             case PRESENTATIONS:
+            case SCHEDULE + DELIM + SCH1:
+            case SCHEDULE + DELIM + SCH2:
+            case SCHEDULE + DELIM + SCH3:
+            case SCHEDULE + DELIM + SCH4:
+            case SCHEDULE + DELIM + SCH5:
+            case SCHEDULE + DELIM + SCH6:
+            case SCHEDULE + DELIM + SCH7:
+            case SCHEDULE + DELIM + SCH8:
+            case SCHEDULE + DELIM + SCH9:
+            case SCHEDULE + DELIM + SCH10:
+            case SCHEDULE + DELIM + SCH11:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
