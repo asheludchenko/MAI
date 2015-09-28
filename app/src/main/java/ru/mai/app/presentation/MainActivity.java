@@ -18,9 +18,13 @@ import android.view.View;
 
 import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
 import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
+import com.parse.ConfigCallback;
+import com.parse.ParseConfig;
+import com.parse.ParseException;
 import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
+import java.util.Calendar;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -113,6 +117,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         initToolbar();
         initMenu();
         initTabs();
+        updateWeek();
 
         containerAsHandlesBack = (HandlesBack) container;
         flowDelegate = FlowDelegate.onCreate(
@@ -123,6 +128,19 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 History.single(new MainScreen()),
                 this);
 
+    }
+
+    private void updateWeek() {
+        ParseConfig.getInBackground(new ConfigCallback() {
+            @Override
+            public void done(ParseConfig config, ParseException e) {
+                if (null == e) {
+                    boolean isEven = config.getBoolean(ConstantsKt.getCONFIG_WEEK_KEY());
+                    getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).edit().putBoolean(ConstantsKt.getWEEK_KEY(), isEven).apply();
+                    inflateMenu();
+                }
+            }
+        });
     }
 
     private void initTabs() {
@@ -194,14 +212,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void initMenu() {
-        SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
-        if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
-            menu.getMenu().clear();
-            menu.inflateMenu(R.menu.abiturient);
-        } else {
-            menu.getMenu().clear();
-            menu.inflateMenu(R.menu.student_low);
-        }
+        inflateMenu();
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -220,6 +231,23 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 return true;
             }
         });
+    }
+
+    private void inflateMenu() {
+        SharedPreferences sp = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE);
+        if (!sp.getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true)) {
+            menu.getMenu().clear();
+            menu.inflateMenu(R.menu.abiturient);
+        } else {
+            menu.getMenu().clear();
+            boolean isTopEven = sp.getBoolean(ConstantsKt.getWEEK_KEY(), true);
+            boolean currentIsEven = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR) % 2 == 0;
+            if ((currentIsEven && isTopEven) || (!currentIsEven && !isTopEven)) {
+                menu.inflateMenu(R.menu.student_high);
+            } else {
+                menu.inflateMenu(R.menu.student_low);
+            }
+        }
     }
 
     @Override
@@ -322,7 +350,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 toolbar.setTitle(title);
             }
         } else {
-            titleHistory.push(titleHistory.peek());
+            titleHistory.push(Router.NEWS);
         }
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
@@ -339,7 +367,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private void startNewHistory(String s) {
         resetCounters(s);
         titleHistory.clear();
-        titleHistory.push(s);
+        if (!isStudent) {
+            titleHistory.push(getString(R.string.toolbar_title_abitur));
+        } else {
+            titleHistory.push(getString(R.string.toolbar_title_student));
+        }
         toolbar.setTitle(s);
         Flow.get(this).setHistory(
                 History.emptyBuilder()

@@ -6,6 +6,7 @@ import android.content.Context;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.parse.Parse;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.otto.Bus;
 
@@ -38,6 +39,7 @@ public class App extends Application {
         super.onCreate();
         Fresco.initialize(this);
         LeakCanary.install(this);
+        Parse.initialize(this, ConstantsKt.getAPP_ID(), ConstantsKt.getCLIENT());
         bus = new Bus();
     }
 

@@ -19,6 +19,7 @@ ext {
     bindingVersion = '0.2.0'
     streamsVersion = '1.0.3'
     ottoVersion = '1.3.8'
+    parseVersion = '1.10.2'
 
     appDeps = [
             appcompat: "com.android.support:appcompat-v7:$appCompatVersion",
@@ -45,6 +46,7 @@ ext {
             vector: "com.wnafee:vector-compat:$vectorVersion",
             designBinding: "com.jakewharton.rxbinding:rxbinding-design:$bindingVersion",
             streams: "com.annimon:stream:$streamsVersion",
-            otto: "com.squareup:otto:$ottoVersion"
+            otto: "com.squareup:otto:$ottoVersion",
+            parse: "com.parse:parse-android:$parseVersion"
     ]
 }
