@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.mai.app.R;
+import ru.mai.app.Router;
 import ru.mai.app.data.dataModel.StaticListContent;
 import ru.mai.app.data.repository.specification.StaticListContentSpecification;
 import rx.Observable;
@@ -30,6 +31,7 @@ import static ru.mai.app.Router.RECREATION_CENTERS;
 import static ru.mai.app.Router.SECONDARY_EDUCATION;
 import static ru.mai.app.Router.SESSION;
 import static ru.mai.app.Router.PODGOTOVKA;
+import static ru.mai.app.Router.PRIEM;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -310,6 +312,32 @@ public class StaticListContentProvider {
                     })
                     .startWith(text)
                     .startWith(image)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticListContent>> subscriber) {
+                    subscriber.onNext(ps);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(PRIEM)) {
+            StaticListContent listItem = new StaticListContent.Builder()
+                    .setListTitle(Router.PRIEM_SCHEDULE)
+                    .setListClickable()
+                    .build();
+            final List<StaticListContent> ps = Observable.from(context.getResources().getStringArray(R.array.priem))
+                    .map(new Func1<String, StaticListContent>() {
+                        @Override
+                        public StaticListContent call(String s) {
+                            return new StaticListContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .mergeWith(Observable.just(listItem))
                     .toList()
                     .toBlocking()
                     .single();

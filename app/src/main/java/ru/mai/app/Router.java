@@ -343,6 +343,7 @@ public class Router {
     public static final String VIDEO = "Видео";
     public static final String PHOTO = "Фото";
     public static final String PRESENTATIONS = "Презентации";
+    public static final String PRIEM_SCHEDULE = "Расписание работы Приёмной комиссии МАИ";
 
 
     public Path getScreen(String item) {
@@ -353,6 +354,7 @@ public class Router {
         if (item.equals(PHOTO)) return new PhotoScreen(item);
         if (item.startsWith(PRESENTATIONS + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(COURSES + DELIM)) return new WebViewScreen(item);
+        if (item.startsWith(PRIEM + DELIM)) return new WebViewScreen(item);
         switch (item) {
             case FACULTIES:
             case SCHOLARSHIPS:

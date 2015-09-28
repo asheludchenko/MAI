@@ -9,6 +9,7 @@ import dagger.Provides;
 import flow.path.Path;
 import ru.mai.app.App;
 import ru.mai.app.R;
+import ru.mai.app.Router;
 import ru.mai.app.presentation.MaiPresenter;
 import ru.mai.app.presentation.mf_boilerplate.Layout;
 import ru.mai.app.presentation.mf_boilerplate.WithModule;
@@ -71,6 +72,7 @@ public class WebViewScreen extends Path {
         public static final String C01 = "http://inter.mai.ru/";
         public static final String C02 = "http://klc103.mai.ru/";
         public static final String C03 = "http://klc103.mai.ru/";
+        public static final String PS = "http://priem.mai.ru/index.php";
 
         private static String[] items = {
                 "О государственной политике в сфере подготовки инженерно-технических кадров в Российской Федерации — выступление в Совете Федерации",
@@ -104,7 +106,9 @@ public class WebViewScreen extends Path {
                 return C02;
             }  else if (sTitle.equals(COURSES + DELIM + items[7])) {
                 return C03;
-            }  else {
+            } else if ((sTitle.equals(Router.PRIEM + DELIM + Router.PRIEM_SCHEDULE))) {
+                return PS;
+            }else {
                 return "";
             }
         }
