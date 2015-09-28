@@ -215,7 +215,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         menu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                changeScreen(menuItem.getTitle().toString());
+                startNewHistory(menuItem.getTitle().toString());
                 if (menuItem.toString().contains(Router.WEEK)) {
                     setHamburger();
                 } else {
@@ -226,6 +226,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             }
         });
     }
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -314,9 +315,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     private void changeScreen(String title) {
         Log.d("mai", title);
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO)) App.resetPhotoPage();
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
-                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM))) App.resetNewsPage();
+        resetCounters(title);
         titleHistory.push(toolbar.getTitle().toString());
         String[] a = title.split("#");
         if (a.length > 1) {
@@ -330,6 +329,25 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
             startActivity(showYoutube);
         } else Flow.get(MainActivity.this).set(router.getScreen(title));
+    }
+
+    private void resetCounters(String title) {
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO)) App.resetPhotoPage();
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
+                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM))) App.resetNewsPage();
+    }
+
+    private void startNewHistory(String s) {
+        resetCounters(s);
+        titleHistory.clear();
+        titleHistory.push(s);
+        Flow.get(this).setHistory(
+                History.emptyBuilder()
+                .push(new MainScreen())
+                .push(router.getScreen(s))
+                .build(),
+                Flow.Direction.REPLACE
+        );
     }
 
     @Subscribe
