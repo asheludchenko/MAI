@@ -60,6 +60,7 @@ import static ru.mai.app.Router.WAY13;
 import static ru.mai.app.Router.WAY14;
 import static ru.mai.app.Router.WAY15;
 import static ru.mai.app.Router.WAY16;
+import static ru.mai.app.Router.SCHEDULE;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -78,6 +79,23 @@ public class ListContentProvider {
             R.drawable.fac_10,
             R.drawable.fac_inyaz,
             R.drawable.fac_radiovtuz
+    );
+
+    List<Integer> schedFacImages = Arrays.asList(
+            R.drawable.fac_1,
+            R.drawable.fac_2,
+            R.drawable.fac_3,
+            R.drawable.fac_4,
+            R.drawable.fac_6,
+            R.drawable.fac_7,
+            R.drawable.fac_8,
+            R.drawable.fac_9,
+            R.drawable.fac_10,
+            R.drawable.fac_inyaz
+    );
+
+    List<Integer> schedInstImages = Arrays.asList(
+            R.drawable.fac_ing
     );
 
 
@@ -118,8 +136,7 @@ public class ListContentProvider {
                     .setSections(sectionsArray)
                     .setWithSections(true)
                     .build();
-            final List<ListContent> contents = new ArrayList<>();
-            Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+            final List<ListContent> contents =  Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
                 @Override
                 public ListContent call(String s, Integer integer) {
                     return new ListContent.Builder()
@@ -131,12 +148,8 @@ public class ListContentProvider {
                 }
             })
                     .toList()
-                    .subscribe(new Action1<List<ListContent>>() {
-                        @Override
-                        public void call(List<ListContent> listContents) {
-                            contents.addAll(listContents);
-                        }
-                    });
+                    .toBlocking()
+                    .single();
             contents.add(sectionBlock);
             return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
                 @Override
@@ -1219,6 +1232,43 @@ public class ListContentProvider {
                 @Override
                 public void call(Subscriber<? super List<ListContent>> subscriber) {
                     subscriber.onNext(ps);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(SCHEDULE)) {
+            final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[2];
+            sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(10, "Институты");
+
+            Observable<String> unitedStrings = Observable.from(context.getResources().getStringArray(R.array.sched_facs))
+                    .concatWith(Observable.from(context.getResources().getStringArray(R.array.sched_insts)));
+            Observable<Integer> unitedImages = Observable.from(schedFacImages)
+                    .concatWith(Observable.from(schedInstImages));
+
+            ListContent sectionBlock = new ListContent.Builder()
+                    .setSections(sectionsArray)
+                    .setWithSections(true)
+                    .build();
+            final List<ListContent> contents = Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+                @Override
+                public ListContent call(String s, Integer integer) {
+                    return new ListContent.Builder()
+                            .setText(s)
+                            .setImage(String.valueOf(integer))
+                            .setWithImage(true)
+                            .setClickable()
+                            .build();
+                }
+            })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            contents.add(sectionBlock);
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(contents);
                     subscriber.onCompleted();
                 }
             })
