@@ -15,7 +15,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
 import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
@@ -74,6 +73,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private Drawable arrow;
     boolean isStudent;
     private Deque<String> titleHistory = new LinkedList<>();
+    private TabListener tabListener;
 
     private View.OnClickListener hambgurgerListener = new View.OnClickListener() {
         @Override
@@ -105,6 +105,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        tabListener = new TabListener();
 
         isStudent = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
 
@@ -137,18 +138,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             tabs.addTab(tabs.newTab().setText(R.string.tab_priem));
             tabs.addTab(tabs.newTab().setText(R.string.tab_media));
         }
-        RxTabLayout.selectionEvents(tabs)
-                .map(new Func1<TabLayoutSelectionEvent, Void>() {
-                    @Override
-                    public Void call(TabLayoutSelectionEvent tabLayoutSelectionEvent) {
-                        if (Flow.get(MainActivity.this) != null) {
-                            String title = tabLayoutSelectionEvent.tab().getText().toString();
-                            changeScreen(title);
-                        }
-                        return null;
-                    }
-                })
-                .subscribe();
+        tabs.setOnTabSelectedListener(tabListener);
     }
 
     private void initIcons() {
@@ -216,6 +206,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 startNewHistory(menuItem.getTitle().toString());
+                if (tabs.getSelectedTabPosition() != 0) {
+                    tabs.setOnTabSelectedListener(null);
+                    tabs.getTabAt(0).select();
+                    tabs.setOnTabSelectedListener(tabListener);
+                }
                 if (menuItem.toString().contains(Router.WEEK)) {
                     setHamburger();
                 } else {
@@ -326,6 +321,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             } else {
                 toolbar.setTitle(title);
             }
+        } else {
+            titleHistory.push(titleHistory.peek());
         }
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
@@ -346,14 +343,39 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         toolbar.setTitle(s);
         Flow.get(this).setHistory(
                 History.emptyBuilder()
-                .push(new MainScreen())
-                .push(router.getScreen(s))
-                .build(),
+                        .push(new MainScreen())
+                        .push(router.getScreen(s))
+                        .build(),
                 Flow.Direction.REPLACE
         );
     }
     @Subscribe
     public void itemClicked(ChangeScreenEvent event) {
         changeScreen(event.getTitle());
+    }
+
+    public class TabListener implements TabLayout.OnTabSelectedListener {
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            if (Flow.get(MainActivity.this) != null) {
+                String title = tab.getText().toString();
+                startNewHistory(title);
+                if (tab.getPosition() != 0) {
+                    setArrow();
+                } else {
+                    setHamburger();
+                }
+            }
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
     }
 }
