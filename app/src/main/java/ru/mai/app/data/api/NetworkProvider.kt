@@ -48,6 +48,7 @@ public class NetworkProvider() {
                                     .setLink(header.id).setImage(header.photo).setText(header.header).build()
                         }
                         .toList()
+                        .cache()
             }
         })
     }
@@ -72,6 +73,7 @@ public class NetworkProvider() {
                         .mergeWith(Observable.just(date))
                         .mergeWith(Observable.just(text))
                         .toList()
+                        .cache()
             }
         })
     }
@@ -94,6 +96,7 @@ public class NetworkProvider() {
                                     .build()
                         }
                         .toList()
+                        .cache()
             }
 
         })
