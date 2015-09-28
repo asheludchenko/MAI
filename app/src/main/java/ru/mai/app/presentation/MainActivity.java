@@ -316,14 +316,16 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private void changeScreen(String title) {
         Log.d("mai", title);
         resetCounters(title);
-        titleHistory.push(toolbar.getTitle().toString());
-        String[] a = title.split("#");
-        if (a.length > 1) {
-            String[] b = a[1].split("#");
-            String screenTitle = b.length > 1 ? b[1] : b[0];
-            toolbar.setTitle(screenTitle);
-        } else {
-            toolbar.setTitle(title);
+        if (!title.startsWith(Router.NEWS + Router.DELIM)) {
+            titleHistory.push(toolbar.getTitle().toString());
+            String[] a = title.split("#");
+            if (a.length > 1) {
+                String[] b = a[1].split("#");
+                String screenTitle = b.length > 1 ? b[1] : b[0];
+                toolbar.setTitle(screenTitle);
+            } else {
+                toolbar.setTitle(title);
+            }
         }
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
@@ -341,6 +343,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         resetCounters(s);
         titleHistory.clear();
         titleHistory.push(s);
+        toolbar.setTitle(s);
         Flow.get(this).setHistory(
                 History.emptyBuilder()
                 .push(new MainScreen())
@@ -349,9 +352,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 Flow.Direction.REPLACE
         );
     }
-
     @Subscribe
-    public void ItemClicked(ChangeScreenEvent event) {
+    public void itemClicked(ChangeScreenEvent event) {
         changeScreen(event.getTitle());
     }
 }
