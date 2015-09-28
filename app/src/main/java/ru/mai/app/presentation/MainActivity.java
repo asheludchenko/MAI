@@ -315,7 +315,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private void changeScreen(String title) {
         Log.d("mai", title);
         if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO)) App.resetPhotoPage();
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS)) App.resetNewsPage();
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
+                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM))) App.resetNewsPage();
         titleHistory.push(toolbar.getTitle().toString());
         String[] a = title.split("#");
         if (a.length > 1) {
