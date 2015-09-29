@@ -348,13 +348,13 @@ public class Router {
     public static final String SCH2 = "№2 \"Двигатели летательных аппаратов\"";
     public static final String SCH3 = "№3 \"Системы управления, информатика и электроэнергетика\"";
     public static final String SCH4 = "№4 \"Радиоэлектроника летательных аппаратов\"";
-    public static final String SCH5 = "№6 \"Аэрокосмический\"";
-    public static final String SCH6 = "№7 \"Робототехнические и интеллектуальные системы\"";
-    public static final String SCH7 = "№8 \"Прикладная математика и физика\"";
-    public static final String SCH8 = "№9 \"Прикладная механика\"";
-    public static final String SCH9 = "№10 \"Социальный инжиниринг\"";
-    public static final String SCH10 = "Иностранных языков";
-    public static final String SCH11 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String SCH5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String SCH7 = "№7 \"Робототехнические и интеллектуальные системы\"";
+    public static final String SCH8 = "№8 \"Прикладная математика и физика\"";
+    public static final String SCH9 = "№9 \"Прикладная механика\"";
+    public static final String SCH10 = "№10 \"Социальный инжиниринг\"";
+    public static final String SCH11 = "Иностранных языков";
+    public static final String SCH6 = "№6 \"Аэрокосмический\"";
 
 
     public Path getScreen(String item) {

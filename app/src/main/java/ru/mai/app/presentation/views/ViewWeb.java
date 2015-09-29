@@ -2,6 +2,7 @@ package ru.mai.app.presentation.views;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,12 +20,11 @@ import ru.mai.app.presentation.screens.WebViewScreen;
 /**
  * Created by olegosipenko on 27.09.15.
  */
-public class ViewWeb extends FrameLayout{
+public class ViewWeb extends NestedScrollView{
 
     @Inject
     WebViewScreen.Presenter presenter;
     @Inject Context context;
-    private WebView webView;
 
     public ViewWeb(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -34,12 +34,11 @@ public class ViewWeb extends FrameLayout{
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        webView = new WebView(context);
-        addView(webView);
+
     }
 
     @Override
-    protected void onAttachedToWindow() {
+    public void onAttachedToWindow() {
         super.onAttachedToWindow();
         presenter.takeView(this);
     }
@@ -49,32 +48,36 @@ public class ViewWeb extends FrameLayout{
         super.onDetachedFromWindow();
         presenter.dropView(this);
         removeAllViews();
-        webView.destroy();
     }
 
-    public void loadContent(String url) {
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setLoadWithOverviewMode(true);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl(url);
-        webView.setWebChromeClient(new WebChromeClient());
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
-            webView.requestFocus(View.FOCUS_DOWN);
-            webView.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    switch (event.getAction()) {
-                        case MotionEvent.ACTION_DOWN:
-                        case MotionEvent.ACTION_UP:
-                            if (!v.hasFocus()) {
-                                v.requestFocus();
-                            }
-                            break;
+    public void loadContent(String[] url) {
+        for (String string : url) {
+            WebView webView = new WebView(context);
+            addView(webView);
+            WebSettings settings = webView.getSettings();
+            settings.setDisplayZoomControls(true);
+            settings.setJavaScriptEnabled(true);
+            settings.setLoadWithOverviewMode(true);
+            webView.setWebViewClient(new WebViewClient());
+            webView.loadUrl(string);
+            webView.setWebChromeClient(new WebChromeClient());
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2) {
+                webView.requestFocus(View.FOCUS_DOWN);
+                webView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        switch (event.getAction()) {
+                            case MotionEvent.ACTION_DOWN:
+                            case MotionEvent.ACTION_UP:
+                                if (!v.hasFocus()) {
+                                    v.requestFocus();
+                                }
+                                break;
+                        }
+                        return false;
                     }
-                    return false;
-                }
-            });
+                });
+            }
         }
     }
 }

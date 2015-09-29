@@ -1609,35 +1609,24 @@ www.dessa.ru</item>
         <item>Курс №1</item>
         <item>Курс №2</item>
         <item>Курс №3</item>
-        <item>Курс №4</item>
-        <item>Курс №5</item>
-        <item>Вечернее отделение</item>
     </string-array>
     <string-array name="sch3">
         <item>Курс №1</item>
         <item>Курс №2</item>
         <item>Курс №3</item>
-        <item>Курс №4</item>
         <item>Курс №5</item>
-        <item>Вечернее отделение 4,5 курс</item>
-        <item>Вечернее отделение 2 курс</item>
-        <item>группы 16-17</item>
     </string-array>
     <string-array name="sch4">
         <item>Курс №1</item>
         <item>Курс №2</item>
         <item>Курс №3</item>
         <item>Курс №4</item>
-        <item>Курс №5</item>
-        <item>Вечернее отделение</item>
     </string-array>
     <string-array name="sch5">
-        <item>Курс №1</item>
-        <item>Курс №2</item>
-        <item>Курс №3</item>
-        <item>Курс №4</item>
-        <item>Курс №5</item>
-        <item>Вечернее отделение</item>
+        <item>Курс №1 Вечернее отделение</item>
+        <item>Курс №2 Вечернее отделение</item>
+        <item>Курс №3 Вечернее отделение</item>
+        <item>Курс №5 Вечернее отделение</item>
     </string-array>
     <string-array name="sch6">
         <item>Курс №1</item>
@@ -1645,7 +1634,6 @@ www.dessa.ru</item>
         <item>Курс №3</item>
         <item>Курс №4</item>
         <item>Курс №5</item>
-        <item>Вечернее отделение</item>
     </string-array>
     <string-array name="sch7">
         <item>Курс №1</item>
@@ -1659,34 +1647,28 @@ www.dessa.ru</item>
         <item>Курс №2</item>
         <item>Курс №3</item>
         <item>Курс №4</item>
-        <item>Курс №5</item>
-        <item>Курсы №1-5</item>
     </string-array>
     <string-array name="sch9">
         <item>Курс №1</item>
-        <item>Курс №2</item>
         <item>Курс №3</item>
         <item>Курс №4</item>
         <item>Курс №5</item>
     </string-array>
     <string-array name="sch10">
-        <item>Курс №1 (Лингвистика)</item>
-        <item>Курс №2 (Лингвистика)</item>
-        <item>Курс №3 (Лингвистика)</item>
-        <item>Курс №4 (Лингвистика)</item>
-        <item>Курс №5 (Лингвистика)</item>
-        <item>Очное отделение (Реклама и связи с общественностью)</item>
-        <item>Вечернее отделение (Реклама и связи с общественностью)</item>
-        <item>Магистратура (Связи с общественностью) </item>
-    </string-array>
-    <string-array name="sch11">
         <item>Курс №1</item>
         <item>Курс №2</item>
         <item>Курс №3</item>
         <item>Курс №4</item>
-        <item>Курс №5</item>
-        <item>Магистратура</item>
-        <item>Вечернее отделение</item>
+        <item>Вечернее отделение (4-5 курсы)</item>
+        <item>Магистратура (1-2 курсы)</item>
+    </string-array>
+    <string-array name="sch11">
+        <item>Курс №1 (Лингвистика)</item>
+        <item>Курс №2 (Лингвистика)</item>
+        <item>Курс №3 (Лингвистика)</item>
+        <item>Курс №4 (Лингвистика)</item>
+        <item>Очное отделение (Реклама и связи с общественностью)</item>
+        <item>Магистратура (1-2 курсы)</item>
     </string-array>
 
 </resources>
