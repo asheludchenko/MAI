@@ -1,12 +1,19 @@
 package ru.mai.app.data.repository;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
+import ru.mai.app.ConstantsKt;
 import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.data.api.NetworkProvider;
@@ -54,7 +61,7 @@ public class MaiRepository implements DataRepository {
                         @Override
                         public Observable<List<ListContent>> call(List<? extends ListContent> listContents) {
                             List<ListContent> ks = new ArrayList<ListContent>(listContents);
-                            return  Observable.just(ks);
+                            return Observable.just(ks);
                         }
                     });
         }
@@ -83,7 +90,7 @@ public class MaiRepository implements DataRepository {
                     @Override
                     public Observable<List<StaticContent>> call(List<? extends StaticContent> staticContents) {
                         List<StaticContent> ks = new ArrayList<StaticContent>(staticContents);
-                        return  Observable.just(ks);
+                        return Observable.just(ks);
                     }
                 });
     }
@@ -98,5 +105,26 @@ public class MaiRepository implements DataRepository {
                         return Observable.just(als);
                     }
                 });
+    }
+
+    @Override
+    public Observable<String> getImages() {
+        return Observable.defer(new Func0<Observable<String>>() {
+            @Override
+            public Observable<String> call() {
+                ConnectivityManager cm =
+                        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo netInfo = cm.getActiveNetworkInfo();
+                SharedPreferences sp = context.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE);
+                if (sp.contains(ConstantsKt.getIMAGES_KEY()) && netInfo != null && netInfo.isConnected()) {
+                    ArrayList<String> images = new ArrayList<>(sp.getStringSet(ConstantsKt.getIMAGES_KEY(), new HashSet<String>()));
+                    Random random = new Random(System.nanoTime());
+                    int randomIndex = random.nextInt(images.size());
+                    return Observable.just(images.get(randomIndex));
+                } else {
+                    return Observable.just(String.valueOf(R.drawable.adv));
+                }
+            }
+        });
     }
 }

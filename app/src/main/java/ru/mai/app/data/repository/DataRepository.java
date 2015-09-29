@@ -3,6 +3,7 @@ package ru.mai.app.data.repository;
 import android.graphics.Bitmap;
 
 import java.util.List;
+import java.util.Set;
 
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.StaticContent;
@@ -28,4 +29,6 @@ public interface DataRepository {
     Observable<List<StaticContent>> getSingleNews(NewsContentSpecification parameter);
 
     Observable<List<ListContent>> getPhotos(NewsContentSpecification parameter);
+
+    Observable<String> getImages();
 }

@@ -16,17 +16,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.jakewharton.rxbinding.support.design.widget.RxTabLayout;
-import com.jakewharton.rxbinding.support.design.widget.TabLayoutSelectionEvent;
 import com.parse.ConfigCallback;
 import com.parse.ParseConfig;
 import com.parse.ParseException;
 import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -47,7 +48,6 @@ import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
 import ru.mai.app.presentation.mf_boilerplate.HandlesBack;
 import ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import ru.mai.app.presentation.screens.MainScreen;
-import rx.functions.Func1;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -136,7 +136,14 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             public void done(ParseConfig config, ParseException e) {
                 if (null == e) {
                     boolean isEven = config.getBoolean(ConstantsKt.getCONFIG_WEEK_KEY());
-                    getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).edit().putBoolean(ConstantsKt.getWEEK_KEY(), isEven).apply();
+                    SharedPreferences.Editor editor = getSharedPreferences(ConstantsKt.getSP_KEY(), MODE_PRIVATE).edit();
+                    if (isStudent) {
+                        editor.putStringSet(ConstantsKt.getIMAGES_KEY(), new HashSet<String>(config.getList(ConstantsKt.getSTUDENT_IMAGES(), new ArrayList<String>())));
+                    } else {
+                        editor.putStringSet(ConstantsKt.getIMAGES_KEY(), new HashSet<String>(config.getList(ConstantsKt.getABITUR_IMAGES(), new ArrayList<String>())));
+                    }
+                    editor.putBoolean(ConstantsKt.getWEEK_KEY(), isEven);
+                    editor.apply();
                     inflateMenu();
                 }
             }
@@ -359,9 +366,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void resetCounters(String title) {
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO)) App.resetPhotoPage();
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO))
+            App.resetPhotoPage();
         if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
-                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM))) App.resetNewsPage();
+                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM)))
+            App.resetNewsPage();
     }
 
     private void startNewHistory(String s) {
@@ -381,6 +390,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 Flow.Direction.REPLACE
         );
     }
+
     @Subscribe
     public void itemClicked(ChangeScreenEvent event) {
         changeScreen(event.getTitle());

@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/bkg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/adv"
         android:scaleType="centerCrop"/>
 
 </ru.mai.app.presentation.views.MainView>

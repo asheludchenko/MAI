@@ -2,11 +2,15 @@ package ru.mai.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.parse.ConfigCallback;
 import com.parse.Parse;
+import com.parse.ParseConfig;
+import com.parse.ParseException;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.otto.Bus;
 
