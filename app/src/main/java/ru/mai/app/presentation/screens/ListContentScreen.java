@@ -70,12 +70,10 @@ public class ListContentScreen extends Path {
         @Inject
         Interactor<ListContentSpecification, List<ListContent>> interactor;
 
-        List<ListContent> contents;
-
         private Subscriber<List<ListContent>> subscriber = Subscribers.empty();
 
         public Presenter() {
-            contents = Collections.emptyList();
+
         }
 
         public String getParameter() {
