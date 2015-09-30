@@ -18,8 +18,13 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_above="@id/hint_view"/>
 
-
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"/>
 
 </ru.mai.app.presentation.views.ListContentView>

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -50,6 +51,8 @@ public class ListContentView extends RelativeLayout {
     RecyclerView list;
     @Bind(R.id.hint_view)
     TextView hint;
+    @Bind(R.id.pb)
+    ProgressBar progressBar;
 
     private Adapter adapter;
     private boolean canLoadMore = true;
@@ -112,6 +115,8 @@ public class ListContentView extends RelativeLayout {
     }
 
     public void showItems(List<ListContent> contents) {
+        progressBar.setVisibility(GONE);
+        list.setVisibility(VISIBLE);
         adapter.setContents(contents);
         adapter.notifyDataSetChanged();
         canLoadMore = true;
