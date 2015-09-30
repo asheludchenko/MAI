@@ -78,7 +78,12 @@ public class MaiRepository implements DataRepository {
         return Observable.defer(new Func0<Observable<Bitmap>>() {
             @Override
             public Observable<Bitmap> call() {
-                return Observable.just(BitmapFactory.decodeResource(context.getResources(), R.drawable.map));
+                final BitmapFactory.Options options = new BitmapFactory.Options();
+                //options.inJustDecodeBounds = true;
+                options.inPreferredConfig = Bitmap.Config.RGB_565;
+                options.inDither = true;
+                Bitmap map = BitmapFactory.decodeResource(context.getResources(), R.drawable.mai_plan_big_color, options);
+                return Observable.just(map);
             }
         });
     }
