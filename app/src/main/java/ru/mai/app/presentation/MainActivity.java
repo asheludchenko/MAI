@@ -15,6 +15,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.parse.ConfigCallback;
 import com.parse.ParseConfig;
@@ -22,12 +23,14 @@ import com.parse.ParseException;
 import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
+import org.w3c.dom.Text;
+
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -78,6 +81,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     boolean isStudent;
     private Deque<String> titleHistory = new LinkedList<>();
     private TabListener tabListener;
+    private WeakReference<View> headerref;
 
     private View.OnClickListener hambgurgerListener = new View.OnClickListener() {
         @Override
@@ -247,13 +251,18 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             menu.inflateMenu(R.menu.abiturient);
         } else {
             menu.getMenu().clear();
+            menu.inflateMenu(R.menu.student);
             boolean isTopEven = sp.getBoolean(ConstantsKt.getWEEK_KEY(), true);
             boolean currentIsEven = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR) % 2 == 0;
+            TextView header = (TextView) View.inflate(this, R.layout.header, null);
             if ((currentIsEven && isTopEven) || (!currentIsEven && !isTopEven)) {
-                menu.inflateMenu(R.menu.student_high);
+                header.setText("Верхняя неделя");
             } else {
-                menu.inflateMenu(R.menu.student_low);
+                header.setText("Нижняя неделя");
             }
+            if (null != headerref && headerref.get() != null) menu.removeHeaderView(headerref.get());
+            headerref = new WeakReference<View>(header);
+            menu.addHeaderView(header);
         }
     }
 

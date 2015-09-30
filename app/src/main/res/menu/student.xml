@@ -4,9 +4,6 @@
         android:id="@+id/g00"
         android:checkableBehavior="single">
         <item
-            android:checkable="false"
-            android:title="@string/lower_week"/>
-        <item
             android:id="@+id/menu_faculties"
             android:title="@string/faculties"/>
         <item
