@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 
+import com.crashlytics.android.Crashlytics;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,6 +15,7 @@ import com.parse.ParseException;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.otto.Bus;
 
+import io.fabric.sdk.android.Fabric;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -41,6 +43,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         Fresco.initialize(this);
         LeakCanary.install(this);
         Parse.initialize(this, ConstantsKt.getAPP_ID(), ConstantsKt.getCLIENT());
