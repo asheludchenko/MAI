@@ -553,7 +553,7 @@ GPS Location: Nord 55. 91209, East 37. 50276; profkom-st.mai.ru.</item>
     <string-array name="fac7">
         <item name="s01">Константин Михайлович Тихонов</item>
         <item name="s02">декан</item>
-        <item name="s03">Контакты\n638, корп. 24А\n+7-499-158-58-68\n+7-499-158-52-36\http://mai.ru/unit/robotic/</item>
+        <item name="s03">Контакты\n638, корп. 24А\n+7-499-158-58-68\n+7-499-158-52-36\nhttp://mai.ru/unit/robotic/</item>
     </string-array>
     <string-array name="fac8">
         <item name="s01">Сергей Сергеевич Крылов</item>
