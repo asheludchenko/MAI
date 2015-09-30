@@ -123,6 +123,8 @@ public class ListContentView extends RelativeLayout {
     }
 
     public void showWithSections(List<ListContent> contents, SimpleSectionListAdapter.Section[] sections) {
+        progressBar.setVisibility(GONE);
+        list.setVisibility(VISIBLE);
         adapter = new Adapter(contents, presenter.getParameter());
         SimpleSectionListAdapter sectionedAdapter = new SimpleSectionListAdapter(
                 getContext(),

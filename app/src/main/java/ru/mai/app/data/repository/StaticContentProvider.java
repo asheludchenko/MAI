@@ -1344,7 +1344,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE02)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(SE02)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se02))
                     .map(new Func1<String, StaticContent>() {
@@ -1369,7 +1369,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE03)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(SE03)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se03))
                     .map(new Func1<String, StaticContent>() {
@@ -1394,7 +1394,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SECONDARY_EDUCATION + DELIM + SE04)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(SE04)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.se04))
                     .map(new Func1<String, StaticContent>() {
@@ -1419,7 +1419,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG01)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG01)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag1))
                     .map(new Func1<String, StaticContent>() {
@@ -1444,7 +1444,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG02)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG02)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag2))
                     .map(new Func1<String, StaticContent>() {
@@ -1469,7 +1469,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG03)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG03)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag3))
                     .map(new Func1<String, StaticContent>() {
@@ -1494,7 +1494,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG04)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG04)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag4))
                     .map(new Func1<String, StaticContent>() {
@@ -1519,7 +1519,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG05)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG05)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag5))
                     .map(new Func1<String, StaticContent>() {
@@ -1544,7 +1544,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG06)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG06)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag6))
                     .map(new Func1<String, StaticContent>() {
@@ -1569,7 +1569,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG07)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG07)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag7))
                     .map(new Func1<String, StaticContent>() {
@@ -1594,7 +1594,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG08)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG08)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag8))
                     .map(new Func1<String, StaticContent>() {
@@ -1619,7 +1619,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(MAGISTRACY + DELIM + MAG09)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(SE01)
+                    .setFacTitile(MAG09)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.mag9))
                     .map(new Func1<String, StaticContent>() {

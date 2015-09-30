@@ -39,6 +39,7 @@ import butterknife.ButterKnife;
 import flow.Flow;
 import flow.FlowDelegate;
 import flow.History;
+import flow.path.Path;
 import mortar.MortarScope;
 import mortar.bundler.BundleServiceRunner;
 import mortar.dagger1support.ObjectGraphService;
@@ -355,7 +356,9 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private void changeScreen(String title) {
         Log.d("mai", title);
         resetCounters(title);
-        if (!title.startsWith(Router.NEWS + Router.DELIM)) {
+        if (!title.startsWith(Router.NEWS + Router.DELIM) &&
+                !title.startsWith(Router.FACULTIES + Router.DELIM) &&
+                !title.startsWith(Router.WAYS + Router.DELIM)) {
             titleHistory.push(toolbar.getTitle().toString());
             String[] a = title.split("#");
             if (a.length > 1) {
@@ -366,12 +369,21 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 toolbar.setTitle(title);
             }
         } else {
-            titleHistory.push(Router.NEWS);
+            if (!title.startsWith(Router.FACULTIES + Router.DELIM) && !title.startsWith(Router.WAYS + Router.DELIM)) {
+                titleHistory.push(Router.NEWS);
+            } else if (!title.startsWith(Router.WAYS + Router.DELIM)) {
+                titleHistory.push(Router.FACULTIES);
+            } else {
+                titleHistory.push(Router.WAYS);
+            }
         }
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
             startActivity(showYoutube);
-        } else Flow.get(MainActivity.this).set(router.getScreen(title));
+        } else {
+            Path newScreen = router.getScreen(title);
+            Flow.get(MainActivity.this).set(newScreen);
+        }
     }
 
     private void resetCounters(String title) {
@@ -391,10 +403,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             titleHistory.push(getString(R.string.toolbar_title_student));
         }
         toolbar.setTitle(s);
+        Path newScreen = router.getScreen(s);
         Flow.get(this).setHistory(
                 History.emptyBuilder()
                         .push(new MainScreen())
-                        .push(router.getScreen(s))
+                        .push(newScreen)
                         .build(),
                 Flow.Direction.REPLACE
         );
