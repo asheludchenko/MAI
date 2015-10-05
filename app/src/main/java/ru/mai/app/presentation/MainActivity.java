@@ -98,7 +98,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     private View.OnClickListener arrowListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            toolbar.setTitle(titleHistory.removeFirst());
+            setupTitleOnBack();
             containerAsHandlesBack.onBackPressed();
         }
     };
@@ -321,7 +321,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             }
 
         } else {
-            toolbar.setTitle(titleHistory.removeFirst());
+            setupTitleOnBack();
         }
     }
 
@@ -411,6 +411,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                         .build(),
                 Flow.Direction.REPLACE
         );
+    }
+
+    private void setupTitleOnBack() {
+        toolbar.setTitle(titleHistory.removeFirst());
+        if (titleHistory.isEmpty()) drawerLayout.openDrawer(Gravity.LEFT);
     }
 
     @Subscribe
