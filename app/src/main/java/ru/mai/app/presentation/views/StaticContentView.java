@@ -3,6 +3,7 @@ package ru.mai.app.presentation.views;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
+import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -32,7 +33,7 @@ import ru.mai.app.presentation.screens.StaticContentScreen;
 /**
  * Created by olegosipenko on 13.09.15.
  */
-public class StaticContentView extends NestedScrollView{
+public class StaticContentView extends NestedScrollView {
 
     @Inject
     StaticContentScreen.Presenter presenter;
@@ -153,13 +154,13 @@ public class StaticContentView extends NestedScrollView{
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
-        textView.setAutoLinkMask(Linkify.ALL);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(text);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
         );
-        textView.setPadding(padding, padding/2, padding, padding/2);
+        textView.setPadding(padding, padding / 2, padding, padding / 2);
         setParams(textView);
         return textView;
     }

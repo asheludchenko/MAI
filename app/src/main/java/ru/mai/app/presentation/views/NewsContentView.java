@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -115,7 +116,7 @@ public class NewsContentView extends NestedScrollView {
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
-        textView.setAutoLinkMask(Linkify.ALL);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(text);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
@@ -129,7 +130,7 @@ public class NewsContentView extends NestedScrollView {
 
     private View getTextView(Spanned text) {
         TextView textView = new TextView(getContext());
-        textView.setAutoLinkMask(Linkify.ALL);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(text);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
