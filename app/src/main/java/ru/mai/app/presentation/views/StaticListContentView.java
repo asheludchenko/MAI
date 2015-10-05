@@ -97,6 +97,22 @@ public class StaticListContentView extends NestedScrollView {
             }
             root.addView(view);
         }
+        if (contents.get(contents.size() - 1).getListTitle() != null) {
+            root.addView(getDivider());
+        }
+    }
+
+    private View getDivider(){
+        View divider = new View(getContext());
+        divider.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+        int dpSize = Math.round(getResources().getDisplayMetrics().density * 1);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                dpSize,
+                Gravity.START
+        );
+        divider.setLayoutParams(params);
+        return divider;
     }
 
     private View getImageView(String image) {
