@@ -336,7 +336,7 @@
         <item name="8th">№8 «Прикладная математика и физика»</item>
         <item name="9th">№9 «Прикладная механика»</item>
         <item name="10th">№10 «Социальный инжиниринг»</item>
-        <item name="languages">«Иностранных языков</item>
+        <item name="languages">«Иностранных языков»</item>
         <item name="radioVtuz">«РадиоВТУЗ МАИ»</item>
     </string-array>
 
@@ -346,10 +346,10 @@
     </string-array>
 
     <string-array name="filials">
-        <item name="bayconoor">»Восход» МАИ в г. Байконур</item>
-        <item name="ahtuba">»Взлёт» МАИ в г. Ахтубинске</item>
-        <item name="zhuk">»Стрела» МАИ в г. Жуковском</item>
-        <item name="khimki">»Ракетно-космическая техника» в г. Химки</item>
+        <item name="bayconoor">«Восход» МАИ в г. Байконур</item>
+        <item name="ahtuba">«Взлёт» МАИ в г. Ахтубинске</item>
+        <item name="zhuk">«Стрела» МАИ в г. Жуковском</item>
+        <item name="khimki">«Ракетно-космическая техника» в г. Химки</item>
     </string-array>
 
     <string-array name="sessions">
