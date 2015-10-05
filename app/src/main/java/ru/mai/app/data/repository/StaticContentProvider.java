@@ -1044,7 +1044,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S2)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S2)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s2))
                     .map(new Func1<String, StaticContent>() {
@@ -1069,7 +1069,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S3)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S3)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s3))
                     .map(new Func1<String, StaticContent>() {
@@ -1094,7 +1094,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S4)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S4)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s4))
                     .map(new Func1<String, StaticContent>() {
@@ -1119,7 +1119,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S5)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S5)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s5))
                     .map(new Func1<String, StaticContent>() {
@@ -1144,7 +1144,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S6)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S6)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s6))
                     .map(new Func1<String, StaticContent>() {
@@ -1169,7 +1169,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S7)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S7)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s7))
                     .map(new Func1<String, StaticContent>() {
@@ -1194,7 +1194,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S8)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S8)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s8))
                     .map(new Func1<String, StaticContent>() {
@@ -1219,7 +1219,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S9)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S9)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s9))
                     .map(new Func1<String, StaticContent>() {
@@ -1244,7 +1244,7 @@ public class StaticContentProvider {
                     .cache();
         } else if (specification.specified(SCHOLARSHIPS + DELIM + S10)) {
             StaticContent title = new StaticContent.Builder()
-                    .setFacTitile(S1)
+                    .setFacTitile(S10)
                     .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.s10))
                     .map(new Func1<String, StaticContent>() {
