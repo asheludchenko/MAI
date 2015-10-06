@@ -8,6 +8,7 @@ import ru.mai.app.presentation.screens.MapScreen;
 import ru.mai.app.presentation.screens.MediaScreen;
 import ru.mai.app.presentation.screens.NewsContentScreen;
 import ru.mai.app.presentation.screens.PhotoScreen;
+import ru.mai.app.presentation.screens.SubListScreen;
 import ru.mai.app.presentation.screens.WebViewScreen;
 import ru.mai.app.presentation.screens.StaticContentScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
@@ -385,66 +386,7 @@ public class Router {
             case SCHOOL_CENTERS:
             case PODGOTOVKA + DELIM + POD1:
             case PODGOTOVKA + DELIM + POD5:
-            case WAYS + DELIM + WAY1 + DELIM + OCH:
-            case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY1 + DELIM + OZ:
-            case WAYS + DELIM + WAY2 + DELIM + OCH:
-            case WAYS + DELIM + WAY2 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY2 + DELIM + OZ:
-            case WAYS + DELIM + WAY3 + DELIM + OCH:
-            case WAYS + DELIM + WAY3 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY3 + DELIM + OZ:
-            case WAYS + DELIM + WAY4 + DELIM + OCH:
-            case WAYS + DELIM + WAY4 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY4 + DELIM + OZ:
-            case WAYS + DELIM + WAY5 + DELIM + OCH:
-            case WAYS + DELIM + WAY5 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY5 + DELIM + OZ:
-            case WAYS + DELIM + WAY6 + DELIM + OCH:
-            case WAYS + DELIM + WAY6 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY6 + DELIM + OZ:
-            case WAYS + DELIM + WAY7 + DELIM + OCH:
-            case WAYS + DELIM + WAY7 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY7 + DELIM + OZ:
-            case WAYS + DELIM + WAY8 + DELIM + OCH:
-            case WAYS + DELIM + WAY8 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY8 + DELIM + OZ:
-            case WAYS + DELIM + WAY9 + DELIM + OCH:
-            case WAYS + DELIM + WAY9 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY9 + DELIM + OZ:
-            case WAYS + DELIM + WAY10 + DELIM + OCH:
-            case WAYS + DELIM + WAY10 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY10 + DELIM + OZ:
-            case WAYS + DELIM + WAY11 + DELIM + OCH:
-            case WAYS + DELIM + WAY11 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY11 + DELIM + OZ:
-            case WAYS + DELIM + WAY12 + DELIM + OCH:
-            case WAYS + DELIM + WAY12 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY12 + DELIM + OZ:
-            case WAYS + DELIM + WAY13 + DELIM + OCH:
-            case WAYS + DELIM + WAY13 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY13 + DELIM + OZ:
-            case WAYS + DELIM + WAY14 + DELIM + OCH:
-            case WAYS + DELIM + WAY14 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY14 + DELIM + OZ:
-            case WAYS + DELIM + WAY15 + DELIM + OCH:
-            case WAYS + DELIM + WAY15 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY15 + DELIM + OZ:
-            case WAYS + DELIM + WAY16 + DELIM + OCH:
-            case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY16 + DELIM + OZ:
             case PRESENTATIONS:
-            case SCHEDULE + DELIM + SCH1:
-            case SCHEDULE + DELIM + SCH2:
-            case SCHEDULE + DELIM + SCH3:
-            case SCHEDULE + DELIM + SCH4:
-            case SCHEDULE + DELIM + SCH5:
-            case SCHEDULE + DELIM + SCH6:
-            case SCHEDULE + DELIM + SCH7:
-            case SCHEDULE + DELIM + SCH8:
-            case SCHEDULE + DELIM + SCH9:
-            case SCHEDULE + DELIM + SCH10:
-            case SCHEDULE + DELIM + SCH11:
                 return new ListContentScreen(item);
             case SESSION:
             case MILITARY_INSTITUTE:
@@ -605,6 +547,66 @@ public class Router {
                 return new StaticContentScreen(item);
             case MEDIA:
                 return new MediaScreen(item);
+            case WAYS + DELIM + WAY1 + DELIM + OCH:
+            case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY1 + DELIM + OZ:
+            case WAYS + DELIM + WAY2 + DELIM + OCH:
+            case WAYS + DELIM + WAY2 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY2 + DELIM + OZ:
+            case WAYS + DELIM + WAY3 + DELIM + OCH:
+            case WAYS + DELIM + WAY3 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY3 + DELIM + OZ:
+            case WAYS + DELIM + WAY4 + DELIM + OCH:
+            case WAYS + DELIM + WAY4 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY4 + DELIM + OZ:
+            case WAYS + DELIM + WAY5 + DELIM + OCH:
+            case WAYS + DELIM + WAY5 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY5 + DELIM + OZ:
+            case WAYS + DELIM + WAY6 + DELIM + OCH:
+            case WAYS + DELIM + WAY6 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY6 + DELIM + OZ:
+            case WAYS + DELIM + WAY7 + DELIM + OCH:
+            case WAYS + DELIM + WAY7 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY7 + DELIM + OZ:
+            case WAYS + DELIM + WAY8 + DELIM + OCH:
+            case WAYS + DELIM + WAY8 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY8 + DELIM + OZ:
+            case WAYS + DELIM + WAY9 + DELIM + OCH:
+            case WAYS + DELIM + WAY9 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY9 + DELIM + OZ:
+            case WAYS + DELIM + WAY10 + DELIM + OCH:
+            case WAYS + DELIM + WAY10 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY10 + DELIM + OZ:
+            case WAYS + DELIM + WAY11 + DELIM + OCH:
+            case WAYS + DELIM + WAY11 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY11 + DELIM + OZ:
+            case WAYS + DELIM + WAY12 + DELIM + OCH:
+            case WAYS + DELIM + WAY12 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY12 + DELIM + OZ:
+            case WAYS + DELIM + WAY13 + DELIM + OCH:
+            case WAYS + DELIM + WAY13 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY13 + DELIM + OZ:
+            case WAYS + DELIM + WAY14 + DELIM + OCH:
+            case WAYS + DELIM + WAY14 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY14 + DELIM + OZ:
+            case WAYS + DELIM + WAY15 + DELIM + OCH:
+            case WAYS + DELIM + WAY15 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY15 + DELIM + OZ:
+            case WAYS + DELIM + WAY16 + DELIM + OCH:
+            case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY16 + DELIM + OZ:
+            case SCHEDULE + DELIM + SCH1:
+            case SCHEDULE + DELIM + SCH2:
+            case SCHEDULE + DELIM + SCH3:
+            case SCHEDULE + DELIM + SCH4:
+            case SCHEDULE + DELIM + SCH5:
+            case SCHEDULE + DELIM + SCH6:
+            case SCHEDULE + DELIM + SCH7:
+            case SCHEDULE + DELIM + SCH8:
+            case SCHEDULE + DELIM + SCH9:
+            case SCHEDULE + DELIM + SCH10:
+            case SCHEDULE + DELIM + SCH11:
+                return new SubListScreen(item);
             default:
                 return new MainScreen();
         }
