@@ -421,18 +421,20 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void setupTitleOnBack() {
-        String titleFromHistory = titleHistory.removeFirst();
-        int delimCount = titleFromHistory.length() - titleFromHistory.replaceAll(Router.DELIM, "").length();
-        if (delimCount == 1 && !titleFromHistory.startsWith(Router.SCHEDULE)) {
-            String[] parts = titleFromHistory.split(Router.DELIM);
-            toolbar.setTitle(parts[0]);
-        }
-        else {
-            String[] parts = titleFromHistory.split(Router.DELIM);
-            if (parts.length > 1) {
+        if (!titleHistory.isEmpty()) {
+            String titleFromHistory = titleHistory.removeFirst();
+            int delimCount = titleFromHistory.length() - titleFromHistory.replaceAll(Router.DELIM, "").length();
+            if (delimCount == 1 && !titleFromHistory.startsWith(Router.SCHEDULE)) {
+                String[] parts = titleFromHistory.split(Router.DELIM);
                 toolbar.setTitle(parts[0]);
-            } else {
-                toolbar.setTitle(titleFromHistory);
+            }
+            else {
+                String[] parts = titleFromHistory.split(Router.DELIM);
+                if (parts.length > 1) {
+                    toolbar.setTitle(parts[0]);
+                } else {
+                    toolbar.setTitle(titleFromHistory);
+                }
             }
         }
         if (titleHistory.isEmpty()) drawerLayout.openDrawer(Gravity.LEFT);
