@@ -27,6 +27,7 @@ import org.w3c.dom.Text;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Deque;
 import java.util.HashSet;
@@ -354,35 +355,38 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void changeScreen(String title) {
-        Log.d("mai", title);
         resetCounters(title);
-        if (!title.startsWith(Router.NEWS + Router.DELIM) &&
-                !title.startsWith(Router.FACULTIES + Router.DELIM) &&
-                !title.startsWith(Router.WAYS + Router.DELIM)) {
-            titleHistory.push(toolbar.getTitle().toString());
-            String[] a = title.split("#");
-            if (a.length > 1) {
-                String[] b = a[1].split("#");
-                String screenTitle = b.length > 1 ? b[1] : b[0];
-                toolbar.setTitle(screenTitle);
-            } else {
-                toolbar.setTitle(title);
-            }
-        } else {
-            if (!title.startsWith(Router.FACULTIES + Router.DELIM) && !title.startsWith(Router.WAYS + Router.DELIM)) {
-                titleHistory.push(Router.NEWS);
-            } else if (!title.startsWith(Router.WAYS + Router.DELIM)) {
-                titleHistory.push(Router.FACULTIES);
-            } else {
-                titleHistory.push(Router.WAYS);
-            }
-        }
+        setToolbarTitle(title);
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
             startActivity(showYoutube);
         } else {
             Path newScreen = router.getScreen(title);
             Flow.get(MainActivity.this).set(newScreen);
+        }
+    }
+
+    private void setToolbarTitle(String title) {
+        int delimCount = title.length() - title.replaceAll(Router.DELIM, "").length();
+        if (delimCount == 1 && !title.startsWith(Router.SCHEDULE)) {
+            titleHistory.push(toolbar.getTitle().toString());
+            String[] parts = title.split(Router.DELIM);
+            toolbar.setTitle(parts[0]);
+        }
+        else {
+            String[] parts = title.split(Router.DELIM);
+            if (parts.length > 1) {
+                if (title.startsWith(Router.SCHEDULE)) {
+                    String titleToSet = parts[1].split(" ")[0];
+                    toolbar.setTitle(titleToSet);
+                } else {
+                    toolbar.setTitle(parts[0]);
+                }
+                titleHistory.push(title);
+            } else {
+                titleHistory.push(title);
+                toolbar.setTitle(title);
+            }
         }
     }
 
@@ -414,7 +418,20 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void setupTitleOnBack() {
-        toolbar.setTitle(titleHistory.removeFirst());
+        String titleFromHistory = titleHistory.removeFirst();
+        int delimCount = titleFromHistory.length() - titleFromHistory.replaceAll(Router.DELIM, "").length();
+        if (delimCount == 1 && !titleFromHistory.startsWith(Router.SCHEDULE)) {
+            String[] parts = titleFromHistory.split(Router.DELIM);
+            toolbar.setTitle(parts[0]);
+        }
+        else {
+            String[] parts = titleFromHistory.split(Router.DELIM);
+            if (parts.length > 1) {
+                toolbar.setTitle(parts[0]);
+            } else {
+                toolbar.setTitle(titleFromHistory);
+            }
+        }
         if (titleHistory.isEmpty()) drawerLayout.openDrawer(Gravity.LEFT);
     }
 
