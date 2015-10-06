@@ -360,15 +360,18 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
             startActivity(showYoutube);
+            //titleHistory.push(title);
         } else {
             Path newScreen = router.getScreen(title);
             Flow.get(MainActivity.this).set(newScreen);
+            //titleHistory.push(title);
         }
     }
 
     private void setToolbarTitle(String title) {
+        if (title.equals(Router.VIDEO)) return;
         int delimCount = title.length() - title.replaceAll(Router.DELIM, "").length();
-        if (delimCount == 1 && !title.startsWith(Router.SCHEDULE)) {
+        if (delimCount == 1 && !title.startsWith(Router.SCHEDULE) || title.equals(Router.PHOTO) || title.equals(Router.PRESENTATIONS)) {
             titleHistory.push(toolbar.getTitle().toString());
             String[] parts = title.split(Router.DELIM);
             toolbar.setTitle(parts[0]);
