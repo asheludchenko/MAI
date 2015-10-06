@@ -471,7 +471,7 @@ public class WebViewScreen extends Path {
             } else if ((sTitle.equals(SCHEDULE + DELIM + SCH11 + DELIM + S11_6))) {
                 return SCH_IN_R_2;
             } else if ((sTitle.equals(SCHEDULE + DELIM + SCH11 + DELIM + S11_7))) {
-                return SCH_IN_2;
+                return SCH_IN_M;
             } else {
                 return "http://mai.ru";
             }
