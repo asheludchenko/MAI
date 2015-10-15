@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ss49">
+        <item name="a"><![CDATA[Юрий Сергеевич Кан<br>(главный тренер)]]></item>
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>ул. Дубосековская, д. 9 <br>+7-499-158-41-13]]></item>
+    </string-array>
+    <string-array name="ss48">
+        <item name="a"><![CDATA[Алексей Вениаминович Огрызков<br>(главный тренер)]]></item>
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>+7 916 518-89-03<br>]]></item>
+    </string-array>
+    <string-array name="ss47">
+        <item name="a"><![CDATA[Мария Илларионовна Топорова<br>(главный тренер)]]></item>
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>СК «Крылатское»<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss46">
+        <item name="a"><![CDATA[Валерий Петрович Хроменков<br>(главный тренер)]]></item>
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>УСК МАИ «Наука»<br>+7-499-158-57-58]]></item>
+    </string-array>
+    <string-array name="ss45">
+        <item name="a"><![CDATA[Сергей Петрович Царёв<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>+7-499-158-46-20<br>]]></item>
+    </string-array>
+    <string-array name="ss44">
+        <item name="a"><![CDATA[Наталья Владимировна Изюмова<br>Наталия Николаевна Травьянская<br>(главный тренер)]]></item>
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>бассейн «Октябрь»<br>бассейн «Олимпийский» <br>+7-499-158-57-58]]></item>
+    </string-array>
+    <string-array name="ss43">
+        <item name="a"><![CDATA[Андрей Олегович Маслов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>ВСБ «Старт», пр. ДОС Флота, д. 10<br>+7-495- 493-15-61]]></item>
+    </string-array>
+    <string-array name="ss42">
+        <item name="a"><![CDATA[Сергей Юрьевич Оськин<br>Марина Игоревна Филатова<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>ЛФК ЦСКА <br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss41">
+        <item name="a"><![CDATA[Антон Александрович Иванов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>+7 926 878-78-23<br>]]></item>
+    </string-array>
+    <string-array name="ss40">
+        <item name="a"><![CDATA[Сергей Владимирович Цветков<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>ул. Усиевича, д. 6<br>+7 903 548-54-11]]></item>
+    </string-array>
+    <string-array name="ss39">
+        <item name="a"><![CDATA[Михаил Игоревич Шишкин<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>+7-499-180-94-73<br>]]></item>
+    </string-array>
+    <string-array name="ss38">
+        <item name="a"><![CDATA[Леонид Александрович Бойко<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>+7-499-158-57-58<br>]]></item>
+    </string-array>
+    <string-array name="ss37">
+        <item name="a"><![CDATA[Андрей Александрович Лебедев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Альпклуб и турклуб МАИ, ул. Дубосековская, д. 13<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss36">
+        <item name="a"><![CDATA[Михаил Евгеньевич Волков<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Альпклуб и турклуб МАИ, ул. Дубосековская, д. 13<br>+7-499-158-48-46]]></item>
+    </string-array>
+    <string-array name="ss35">
+        <item name="a"><![CDATA[Наталья Викторовна Леонтьева<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-00-19]]></item>
+    </string-array>
+    <string-array name="ss34">
+        <item name="a"><![CDATA[Елена Георгиевна Холодкова<br>Вячеслав Борисович Колосов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss33">
+        <item name="a"><![CDATA[Ярослав Эдуардович Якубенко<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-57-58]]></item>
+    </string-array>
+    <string-array name="ss32">
+        <item name="a"><![CDATA[Елена Викторовна Дунина<br>Наталья Михайловна Костина <br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-57-58]]></item>
+    </string-array>
+    <string-array name="ss31">
+        <item name="a"><![CDATA[Ярослав Эдуардович Якубенко<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-57-58]]></item>
+    </string-array>
+    <string-array name="ss30">
+        <item name="a"><![CDATA[Олег Юрьевич Зайцев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 4, ул. Дубосековская, д. 5<br>+7-499-158-44-75]]></item>
+    </string-array>
+    <string-array name="ss29">
+        <item name="a"><![CDATA[Сергей Митрофанович Косарев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 5 «Тушино», ул. В. Лациса, д. 16а<br>+7-499-158-44-75]]></item>
+    </string-array>
+    <string-array name="ss28">
+        <item name="a"><![CDATA[Александр Иванович Тарасов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 4, ул. Дубосековская, д. 5<br>+7-499-158-44-75]]></item>
+    </string-array>
+    <string-array name="ss27">
+        <item name="a"><![CDATA[Александр Михайлович Щеглов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-06-03]]></item>
+    </string-array>
+    <string-array name="ss26">
+        <item name="a"><![CDATA[Татьяна Геннадьевна Львова<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-42-39]]></item>
+    </string-array>
+    <string-array name="ss25">
+        <item name="a"><![CDATA[Сергей Владимирович Елистратов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-06-03]]></item>
+    </string-array>
+    <string-array name="ss24">
+        <item name="a"><![CDATA[Евгений Яковлевич Крупник<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-42-39]]></item>
+    </string-array>
+    <string-array name="ss23">
+        <item name="a"><![CDATA[Сергей Васильевич Караулов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-42-39]]></item>
+    </string-array>
+    <string-array name="ss22">
+        <item name="a"><![CDATA[Анатолий Сергеевич Шпилев<br>Артём Гургенович Аваков<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-42-39]]></item>
+    </string-array>
+    <string-array name="ss21">
+        <item name="a"><![CDATA[Островский Владимир Владимирович<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 3, корпус № 3 МАИ<br>+7-499-158-42-39]]></item>
+    </string-array>
+    <string-array name="ss20">
+        <item name="a"><![CDATA[Александр Васильевич Закурдаев<br>Юрий Васильевич Величкин<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss19">
+        <item name="a"><![CDATA[Рюрик Константинович Юхневич<br>Марина Борисовна Юхневич<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss18">
+        <item name="a"><![CDATA[Сергей Дмитриевич Бубнов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss17">
+        <item name="a"><![CDATA[Вячеслав Борисович Колосов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss16">
+        <item name="a"><![CDATA[лег Валентинович Комардин<br>Александр Валентинович Подарин<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss15">
+        <item name="a"><![CDATA[Юрий Васильевич Величкин<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss14">
+        <item name="a"><![CDATA[Сергей Евгеньевич Исаев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-47-99]]></item>
+    </string-array>
+    <string-array name="ss13">
+        <item name="a"><![CDATA[Валерий Васильевич Николенко<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss12">
+        <item name="a"><![CDATA[Борис Иванович Бахтин<br>Роберт Георгиевич Ким<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss11">
+        <item name="a"><![CDATA[Ирина Николаевна Гаврилова<br>(ул. К. Царёва, д. 12а)<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79<br>+7 910 468-96-11]]></item>
+    </string-array>
+    <string-array name="ss10">
+        <item name="a"><![CDATA[Алексей Александрович Мерзликин<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спорткомплекс МАИ № 2, ул. К. Царёва, д. 12а<br>+7-499-158-43-79]]></item>
+    </string-array>
+    <string-array name="ss09">
+        <item name="a"><![CDATA[Светлана Геннадьевна Чистякова<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-58-67]]></item>
+    </string-array>
+    <string-array name="ss08">
+        <item name="a"><![CDATA[Александр Николаевич Мизин<br>Сергей Иванович Митяев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss07">
+        <item name="a"><![CDATA[Юрий Георгиевич Коджаспиров<br>Юрий Захарович Сычев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-43-01]]></item>
+    </string-array>
+    <string-array name="ss06">
+        <item name="a"><![CDATA[Анатолий Васильевич Тихонов<br>Виктор Викторович Белов<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss05">
+        <item name="a"><![CDATA[Борис Валентинович Казбеков<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss04">
+        <item name="a"><![CDATA[Наталья Владимировна Рочева<br>Виктория Викторовна Курбацкая<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss03">
+        <item name="a"><![CDATA[Наталья Петровна Марухина<br>Елена Олеговна Баранова<br>Татьяна Юрьевна Дмитриева<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1, корпус № 12 «Черепаха» МАИ<br>+7 499 158-46-20]]></item>
+    </string-array>
+    <string-array name="ss02">
+        <item name="a"><![CDATA[Виталий Михайлович Елисеев<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>гребная база «Буревестник»,<br>Волоколамское ш., д. 67<br>+7-499-158-43-01<br>+7-499-158-46-20]]></item>
+    </string-array>
+    <string-array name="ss01">
+        <item name="a"><![CDATA[Василий Дмитриевич Кабачек<br>(главный тренер)]]></item>
+
+        <item name="a"><![CDATA[<b>Контакты секции</b><br>Спортивный комплекс МАИ № 1,<br>корпус № 12 «Черепаха» МАИ<br>+7-499-158-57-58<br>+7-499-158-43-01<br>+7-499-158-46-20]]></item>
+    </string-array>
+</resources>
