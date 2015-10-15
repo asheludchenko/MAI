@@ -3,6 +3,7 @@ package ru.mai.app.presentation.views;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
@@ -94,7 +95,7 @@ public class StaticContentView extends NestedScrollView {
 
     private View getFacText(String facText) {
         TextView text = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.fac_text, null);
-        text.setText(facText);
+        text.setText(Html.fromHtml(facText));
         return text;
     }
 
