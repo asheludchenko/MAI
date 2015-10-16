@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faculties">
+        <item name="1st">№1 «Авиационная техника»</item>
+        <item name="2nd">№2 «Двигатели летательных аппаратов»</item>
+        <item name="3rd">№3 «Системы управления, информатика и электроэнергетика»</item>
+        <item name="4th">№4 «Радиоэлектроника летательных аппаратов»</item>
+        <item name="6th">№6 «Аэрокосмический»</item>
+        <item name="7th">№7 «Робототехнические и интеллектуальные системы»</item>
+        <item name="8th">№8 «Прикладная математика и физика»</item>
+        <item name="9th">№9 «Прикладная механика»</item>
+        <item name="10th">№10 «Социальный инжиниринг»</item>
+        <item name="languages">«Иностранных языков»</item>
+        <item name="radioVtuz">«РадиоВТУЗ МАИ»</item>
+    </string-array>
+
+    <string-array name="institutes">
+        <item name="engineering">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
+        <item name="military">Военный институт МАИ</item>
+    </string-array>
+
+    <string-array name="filials">
+        <item name="bayconoor">«Восход» МАИ в г. Байконур</item>
+        <item name="ahtuba">«Взлёт» МАИ в г. Ахтубинске</item>
+        <item name="zhuk">«Стрела» МАИ в г. Жуковском</item>
+        <item name="khimki">«Ракетно-космическая техника» в г. Химки</item>
+    </string-array>
+    <string-array name="scholarships">
+        <item name="s01">Государственная академическая стипендия</item>
+        <item name="s02">Повышенная государственная академическая стипендия</item>
+        <item name="s03">Повышенная стипендия Учёного Совета МАИ</item>
+        <item name="s04">Дополнительная повышенная государственная академическая стипендия</item>
+        <item name="s05">Государственная стипендия для иностранных студентов, обучающихся по очной форме обучения за счет средств федерального бюджета (по направлениям Минобрнауки России)</item>
+        <item name="s05">Государственная социальная стипендия</item>
+        <item name="s06">Дополнительная повышенная государственная социальная стипендия нуждающимся студентам 1-го и 2-го курсов</item>
+        <item name="s07">Дополнительная стипендия студентам, обучающимся по программам военной подготовки в учебном военном центре при МАИ</item>
+        <item name="s08">Государственная стипендия для слушателей и студентов из числа граждан, проходивших военную службу</item>
+        <item name="s09">Именные стипендии</item>
+    </string-array>
+    <string-array name="libraries_names">
+        <item name="l1">Отдел научной литературы</item>
+        <item name="l2">Отдел художественной литературы</item>
+        <item name="l3">Отдел обслуживания младших\nкурсов (1–2 курсы)</item>
+        <item name="l4">Отдел обслуживания старших\курсов (3–6 курсы)</item>
+        <item name="l5">Читальный зал научной\nлитературы</item>
+        <item name="l6">Читальный зал периодических\nизданий</item>
+        <item name="l7">Читальный зал учебной\nлитературы</item>
+        <item name="l8">Читальный зал\nгуманитарныхнаук</item>
+        <item name="l9">Отдел нормативно-технической\nдокументации</item>
+        <item name="l10">Отдел научно-технической\nинформации и библиографии</item>
+        <item name="l11">Зал читательских каталогов</item>
+    </string-array>
+    <string-array name="libraries_rooms">
+        <item name="l1">Комната: 326 (7)</item>
+        <item name="l2">Комната: 121 (7)</item>
+        <item name="l3">Комната: 202 (ГУК «В")</item>
+        <item name="l4">Комната: 300 (ГУК «В")</item>
+        <item name="l5">Комната: 227 (7)</item>
+        <item name="l6">Комната: 219 (7)</item>
+        <item name="l7">Комната: 501 (ГУК «В")</item>
+        <item name="l8">Комната: 601 (ГУК «В")</item>
+        <item name="l9">Комната: 327 (7)</item>
+        <item name="l10">Комната: 223 (7)</item>
+        <item name="l11">Комната: 218 (7)</item>
+    </string-array>
+    <string-array name="libraries_phones">
+        <item name="l1">+7–499–158–45–20</item>
+        <item name="l2">+7–499–158–45–62</item>
+        <item name="l3">+7–499–158–49–91</item>
+        <item name="l4">+7–499–158–49–34</item>
+        <item name="l5">+7–499–158–40–51</item>
+        <item name="l6">+7–499–158–45–22</item>
+        <item name="l7">+7–499–158–49–68</item>
+        <item name="l8">+7–499–158–41–92</item>
+        <item name="l9">+7–499–158–43–75</item>
+        <item name="l10">+7–499–158–47–87</item>
+        <item name="l11">+7–499–158–43–37</item>
+    </string-array>
+    <string-array name="canteens_names">
+        <item name="c1">Столовая**</item>
+        <item name="c2">Столовая**</item>
+        <item name="c3">Кафе*</item>
+        <item name="c4">Кафе</item>
+        <item name="c5">Столовая</item>
+        <item name="c6">Столовая</item>
+        <item name="c7">Блинная</item>
+        <item name="c8">Кафе</item>
+        <item name="c9">Буфет</item>
+        <item name="c10">Столовая</item>
+        <item name="c11">Столовая</item>
+        <item name="c12">Кафе*</item>
+        <item name="c13">Кафе*</item>
+        <item name="c14">Столовая</item>
+        <item name="c15">Кофейня «Ёлочка"*</item>
+    </string-array>
+    <string-array name="canteen_times">
+        <item name="c1">11:00 – 17:00</item>
+        <item name="c2">10:00 – 21:00</item>
+        <item name="c3">12:00 – 23:00</item>
+        <item name="c4">10:00 – 19:00</item>
+        <item name="c5">11:00 – 17:00</item>
+        <item name="c6">11:00 – 17:00</item>
+        <item name="c7">10:00 – 19:00</item>
+        <item name="c8">10:00 – 18:00</item>
+        <item name="c9">11:00 – 17:00</item>
+        <item name="c10">9:00 – 16:00</item>
+        <item name="c11">11:00 – 16:00</item>
+        <item name="c12">9:00 – 18:00</item>
+        <item name="c13">11:00 – 17:00</item>
+        <item name="c14">11:00 – 17:00</item>
+        <item name="c15">10:00 – 17:00</item>
+    </string-array>
+    <string-array name="canteen_addresses">
+        <item name="c1">ул. К. Царёва, д. 16 («Ледокол»)</item>
+        <item name="c2">ул. К. Царёва, д. 12 («Башня»)</item>
+        <item name="c3">ул. Дубосековская, д. 9 («Космос»)</item>
+        <item name="c4">ул. Дубосековская, д. 13 («Икар»)</item>
+        <item name="c5">ГАК, 1-й этаж</item>
+        <item name="c6">ГУК, зона «В», балкон</item>
+        <item name="c7">ГУК, зона «В», балкон</item>
+        <item name="c8">ГУК, зона «Б», 4-й этаж</item>
+        <item name="c9">Корпус № 2, 2-й этаж</item>
+        <item name="c10">Корпус № 6, 1-й этаж</item>
+        <item name="c11">Корпус № 7, 2-й этаж</item>
+        <item name="c12">Корпус № 7, 4-й этаж</item>
+        <item name="c13">Корпус № 24, 1-й этаж</item>
+        <item name="c14">Корпус № 24, 4-й этаж</item>
+        <item name="c15">около 3-го корпуса</item>
+    </string-array>
+    <string-array name="courses">
+        <item name="c01">Курсы иностранных языков</item>
+        <item name="c02">Курсы КЛЦ-103</item>
+        <item name="c03">Курсы C-COURSES</item>
+    </string-array>
+    <string-array name="acad_mob">
+        <item name="a01">Глобальное образование</item>
+        <item name="a02">Программы обмена</item>
+    </string-array>
+    <string-array name="sport">
+        <item name="ss01">Айкидо</item>
+        <item name="ss02">Академическая гребля</item>
+        <item name="ss03">Атлетическая гимнастика\n(корпус № 12 «Черепаха»)</item>
+        <item name="ss04">Аэробика</item>
+        <item name="ss05">Бадминтон</item>
+        <item name="ss06">Волейбол</item>
+        <item name="ss07">Греко-римская борьба</item>
+        <item name="ss08">Настольный теннис</item>
+        <item name="ss09">Скалолазание</item>
+        <item name="ss10">Атлетическая гимнастика\n(ул. К. Царёва, д. 12а)</item>
+        <item name="ss11">Йога</item>
+        <item name="ss12">Каратэ</item>
+        <item name="ss13">Лыжные гонки</item>
+        <item name="ss14">Мини-футбол (м)</item>
+        <item name="ss15">Мини-футбол (ж)</item>
+        <item name="ss16">Рукопашный бой</item>
+        <item name="ss17">Теннис\n(ул. К. Царёва, д. 12а)</item>
+        <item name="ss18">Тхэквондо</item>
+        <item name="ss19">Фитнес</item>
+        <item name="ss20">Футбол</item>
+        <item name="ss21">Армрестлинг</item>
+        <item name="ss22">Бокс</item>
+        <item name="ss23">Вольная борьба</item>
+        <item name="ss24">Дзюдо</item>
+        <item name="ss25">Дуэльная стрельба</item>
+        <item name="ss26">Йога\n(корпус № 3 МАИ)</item>
+        <item name="ss27">Пулевая стрельба</item>
+        <item name="ss28">Гиревой спорт\n(ул. Дубосековская, д. 5)</item>
+        <item name="ss29">Пауэрлифтинг</item>
+        <item name="ss30">Тяжёлая атлетика\n(ул. Дубосековская, д. 5)</item>
+        <item name="ss31">Атлетическая гимнастика\n(Тушино)</item>
+        <item name="ss32">Баскетбол</item>
+        <item name="ss33">Гиревой спорт\n(«Тушино»)</item>
+        <item name="ss34">Теннис\n(«Тушино»)</item>
+        <item name="ss35">Спортивные танцы</item>
+        <item name="ss36">Альпинизм</item>
+        <item name="ss37">Спортивный туризм</item>
+        <item name="ss38">Артистическое фехтование</item>
+        <item name="ss39">Боевые искусства (капоэйра, окинава-каратэ, тайский бокс)</item>
+        <item name="ss40">Гольф</item>
+        <item name="ss41">Горный велосипед</item>
+        <item name="ss42">Лёгкая атлетика</item>
+        <item name="ss43">Парусный спорт</item>
+        <item name="ss44">Плавание</item>
+        <item name="ss45">Подводное плавание</item>
+        <item name="ss46">Регби</item>
+        <item name="ss47">Сноуборд, горные лыжи</item>
+        <item name="ss48">Спортивное ориентирование</item>
+        <item name="ss49">Шахматы</item>
+    </string-array>
+    <string-array name="media">
+        <item name="m01">Фото</item>
+        <item name="m02">Видео</item>
+        <item name="m03">Презентации</item>
+    </string-array>
+    <string-array name="life">
+        <item name="l01">Песни</item>
+        <item name="l02">Словарь</item>
+        <item name="l02">Тосты</item>
+    </string-array>
+    <string-array name="help">
+        <item name="h01">Копировальные центры</item>
+        <item name="h02">Расписание</item>
+        <item name="h03">Европейское приложение к диплому</item>
+    </string-array>
+    <string-array name="ways">
+        <item name="w">Факультет №1 — «Авиационная техника»</item>
+        <item name="2nd">Факультет №2 — «Двигатели летательных аппаратов»</item>
+        <item name="3rd">Факультет №3 — «Системы управления, информатика и электроэнергетика»</item>
+        <item name="4th">Факультет №4 — «Радиоэлектроника летательных аппаратов»</item>
+        <item name="inzh">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
+        <item name="6th">Факультет №6 — «Аэрокосмический»</item>
+        <item name="7th">Факультет №7 — «Робототехнические и интеллектуальные системы»</item>
+        <item name="8th">Факультет №8 — «Прикладная математика и физика»</item>
+        <item name="9th">Факультет №9 — «Прикладная механика»</item>
+        <item name="10th">Факультет №10 — «Социальный инжиниринг»</item>
+        <item name="radioVtuz">Факультет «РадиоВТУЗ МАИ»</item>
+        <item name="languages">Факультет Иностранных языков</item>
+        <item name="ahtuba">Филиал «Взлёт» МАИ в г. Ахтубинске</item>
+        <item name="bayconoor">Филиал «Восход» МАИ в г. Байконур</item>
+        <item name="zhuk">Филиал «Стрела» МАИ в г. Жуковском</item>
+        <item name="khimki">Филиал «Ракетно-космическая техника» в г. Химки</item>
+    </string-array>
+    <string-array name="activity">
+        <item name="a1">Дни открытых дверей</item>
+        <item name="a1">День науки в МАИ</item>
+        <item name="a1">Университетские субботы</item>
+    </string-array>
+    <string-array name="dosug">
+        <item name="d1">Коллективы ДКиТ МАИ</item>
+        <item name="d2">Базы отдыха</item>
+    </string-array>
+    <string-array name="school_centers">
+        <item name="ss1">Центр технологической поддержки образования МАИ</item>
+        <item name="ss2">Центр авиамодельного творчества учащихся</item>
+    </string-array>
+    <string-array name="pod1">
+        <item name="p1">Курсы ФДП</item>
+        <item name="p1">МАИНО</item>
+        <item name="p1">ИНПО</item>
+        <item name="p1">ЭНТОС</item>
+        <item name="p1">Абитуриент</item>
+    </string-array>
+    <string-array name="pod5">
+        <item name="s">Кадетская школа-интернат № 1 «Первый Московский кадетский корпус"</item>
+        <item name="s">Школа № 81</item>
+        <item name="s">Школа № 1240 (96)</item>
+        <item name="s">Школа № 152</item>
+        <item name="s">Школа № 185</item>
+        <item name="s">Школа № 224</item>
+        <item name="s">Школа № 362</item>
+        <item name="s">Школа №368 «Лосиный Остров"</item>
+        <item name="s">Школа № 426</item>
+        <item name="s">Школа № 842</item>
+        <item name="s">Школа № 879</item>
+        <item name="s">Школа № 887</item>
+        <item name="s">Школа № 1056</item>
+        <item name="s">Школа № 1056</item>
+        <item name="s">Школа № 1114</item>
+        <item name="s">Школа № 1287</item>
+        <item name="s">Школа № 1298</item>
+        <item name="s">Школа № 1384 им.А.А.Леманского</item>
+        <item name="s">Школа № 1387</item>
+        <item name="s">Школа № 1451</item>
+        <item name="s">Школа № 1485 </item>
+        <item name="s">Школа № 1531</item>
+        <item name="s">Лицей № 1550</item>
+        <item name="s">Гимназия № 1551</item>
+        <item name="s">Лицей № 1574</item>
+        <item name="s">Школа № 1576</item>
+        <item name="s">Школа № 1590</item>
+        <item name="s">Школа № 1413 (1682)</item>
+        <item name="s">Школа № 1995</item>
+        <item name="s">Школа № 2048</item>
+        <item name="s">Школа № 2086</item>
+        <item name="s">Школа № 2097</item>
+        <item name="s">Лицей «Физико-техническая школа"</item>
+        <item name="s">Московский технический колледж</item>
+        <item name="s">Московский авиационный техникум им. Н.Н. Годовикова</item>
+        <item name="s">Московский городской Дворец детского (юношеского) творчества</item>
+        <item name="s">Колледж МИД РФ</item>
+        <item name="s">Политехнический колледж им Н.Н.ГодовиковаКолледж МИД РФ</item>
+        <item name="s">Политехнический техникум имени П.А.Овчинникова</item>
+        <item name="s">Колледж связи № 54</item>
+        <item name="s">Колледж связи № 42</item>
+    </string-array>
+    <string-array name="way1o">
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Управление качеством</item>
+        <item name="a">Сервис</item>
+        <item name="a">Системный анализ и управление</item>
+        <item name="a">Самолето- и вертолетостроение</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Специальные организационно-технические системы</item>
+    </string-array>
+    <string-array name="way1z">
+        <item name="a">Сервис</item>
+    </string-array>
+    <string-array name="way1oz">
+        <item name="a">Авиастроение</item>
+        <item name="a">Самолето- и вертолетостроение</item>
+        <item name="a">Авиастроение</item>
+    </string-array>
+    <string-array name="way2o">
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Проектирование авиационных и ракетных двигателей</item>
+        <item name="a">Стандартизация и метрология</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Техносферная безопасность</item>
+    </string-array>
+    <string-array name="way2oz">
+        <item name="a">Двигатели летательных аппаратов</item>
+    </string-array>
+    <string-array name="way3o">
+        <item name="a">Информационные системы и технологии</item>
+        <item name="a">Прикладаная информатика</item>
+        <item name="a">Программная инженерия</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Электроэнергетика и электротехника</item>
+        <item name="a">Системы управления движением и навигация</item>
+        <item name="a">Управление в технических системах</item>
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Программная инженерия</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">управление в технических системах</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way3z">
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way4o">
+        <item name="a">Информационная безопасность</item>
+        <item name="a">Радиотехника</item>
+        <item name="a">Инфокоммуникационные технологии и системы связи</item>
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Безопасность информационных технологий в правоохранительной сфере</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Радиотехника</item>
+        <item name="a">Инфокоммуникационные технологии и системы связи</item>
+    </string-array>
+    <string-array name="way4oz">
+        <item name="a">Радиотехника</item>
+    </string-array>
+    <string-array name="way5o">
+        <item name="a">Управление персоналом</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Экология и природопользование</item>
+        <item name="a">Экономика</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way5z">
+        <item name="a">Экономика</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Управление персоналом</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way5oz">
+        <item name="a">Экономика</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way6o">
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Ракетные комплексы и космонавтика</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Специальные организационно-технические системы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Системный анализ и управление</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Ракетные комплексы, и космонавтика</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Экология и природопользование</item>
+    </string-array>
+    <string-array name="way7o">
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+    </string-array>
+    <string-array name="way7oz">
+        <item name="a">Интегрированные системы летательных аппаратов</item>
+    </string-array>
+    <string-array name="way8o">
+        <item name="a">Прикладная математика и информатика</item>
+        <item name="a">Прикладная математика</item>
+        <item name="a">Прикладная математика</item>
+    </string-array>
+    <string-array name="way8oz">
+        <item name="a">Прикладная математика</item>
+    </string-array>
+    <string-array name="way9o">
+        <item name="a">Авиастроение</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Прикладная механика</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way9oz">
+        <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way10o">
+        <item name="a">Менеджмент</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way11o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Конструирование</item>
+    </string-array>
+    <string-array name="way11z">
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Радиотехника</item>
+    </string-array>
+    <string-array name="way12o">
+        <item name="a">Лингвистика</item>
+        <item name="a">Реклама и связи с общественностью</item>
+        <item name="a">Авиастроение</item>
+    </string-array>
+    <string-array name="way12z">
+        <item name="a">Реклама и связи с общественностью</item>
+    </string-array>
+    <string-array name="way12oz">
+        <item name="a">Лингвистика</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Реклама и связи с общественностью</item>
+    </string-array>
+    <string-array name="way13o">
+        <item name="a">Менеджмент</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way13z">
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way13oz">
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way14o">
+        <item name="a">Прикладная математика</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way14oz">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way15o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Баллистика и гидроаэродинамика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Системы управления летательными аппаратами</item>
+        <item name="a">Самолёто- и вертолётостроение</item>
+    </string-array>
+    <string-array name="way15z">
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way15oz">
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way16o">
+        <item name="a">Специальные машины и устройства</item>
+        <item name="a">Автоматические системы управления</item>
+        <item name="a">Компьютерные системы и комплексы</item>
+        <item name="a">Программирование в компьютерных системах</item>
+        <item name="a">Экономика и бухгалтерский учёт</item>
+    </string-array>
+    <string-array name="presentations">
+        <item>О государственной политике в сфере подготовки инженерно-технических кадров в Российской Федерации — выступление в Совете Федерации</item>
+        <item>Подготовка высококвалифицированных кадров для оборонно-промышленного комплекса в России в МАИ</item>
+        <item>Выступление Геращенко А.Н. на круглом столе с Рогозиным Д.О. (сокращенное)</item>
+        <item>Выступление Геращенко А.Н. на круглом столе с Рогозиным Д.О. (полное)</item>
+        <item>Презентация МАИ для школьников и абитуриентов (PDF)</item>
+    </string-array>
+    <string-array name="sched_facs">
+        <item name="sf">№1 «Авиационная техника»</item>
+        <item name="sf">№2 «Двигатели летательных аппаратов»</item>
+        <item name="sf">№3 «Системы управления, информатика и электроэнергетика»</item>
+        <item name="sf">№4 «Радиоэлектроника летательных аппаратов»</item>
+        <item name="sf">№6 «Аэрокосмический»</item>
+        <item name="sf">№7 «Робототехнические и интеллектуальные системы»</item>
+        <item name="sf">№8 «Прикладная математика и физика»</item>
+        <item name="sf">№9 «Прикладная механика»</item>
+        <item name="sf">№10 «Социальный инжиниринг»</item>
+        <item name="sf">Иностранных языков</item>
+    </string-array>
+    <string-array name="sched_insts">
+        <item name="si">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
+    </string-array>
+    <string-array name="sch1">
+        <item>1О-101С, 1О-102С, 1О-103С, 1О-104С, 1О-110С, 1О-111С, 1О-112С</item>
+        <item>1О-105С, 1О-106С, 1О-107С, 1О-108С, 1О-109С</item>
+        <item>1О-101Б, 1О-103Б, 1О-104Б, 1О-105Бки, 1О-106Б, 1О-107Б</item>
+        <item>1О-201Б, 1О-203Б, 1О-204Б, 1О-205Бки, 1О-206Б, 1О-207Б</item>
+        <item>1О-205С, 1О-206С, 1О-207С, 1О-208С, 1О-209С</item>
+        <item>1О-201С, 1О-202С, 1О-203С, 1О-204С, 1О-210С, 1О-211С, 1О-212С</item>
+        <item>1О-305С, 1О-306С, 1О-307С, 1О-308С, 1О-309С</item>
+        <item>1О-301С, 1О-302С, 1О-303С, 1О-304С, 1О-310С, 1О-311С, 1О-312С</item>
+        <item>1О-401Б, 1О-103Б, 1О-405С, 1О-406С, 1О-407С, 1О-408С, 1О-409С</item>
+        <item>1О-401С, 1О-402С, 1О-303С, 1О-404С, 1О-104Б, 1О-410С</item>
+        <item>1О-505С, 1О-506С, 1О-507С, 1О-509С</item>
+        <item>1О-501С, 1О-502С, 1О-503С, 1О-504С, 1О-510С</item>
+    </string-array>
+    <string-array name="sch2">
+        <item>2О-101М, 2О-102М, 2О-103М, 2О-109М</item>
+        <item>2О-101С, 2О-109С, 2О-110С, 2О-104С, 2О-106С, 2О-107С</item>
+        <item>2О-101Б, 2О-102Б, 2О-104Б, 2О-105Б, 2О-106Б</item>
+        <item>2О-201М, 2О-202М, 2О-203М</item>
+        <item>2О-201С, 2О-209С, 2О-210С, 2О-204С, 2О-206С, 2О-207С</item>
+        <item>2О-201Б, 2О-204Б, 2О-205Б, 2О-207Б, 2О-206Б, 2О-211Бки</item>
+        <item>2О-301Б, 2О-302Б, 2О-304Б, 2О-305Б, 2О-306Б, 2О-311Бки, 2О-312Бки</item>
+    </string-array>
+    <string-array name="sch3">
+        <item>3О-102М, 2О-103М, 3О-104М, 3О-107М, 3О-202М, 3О-203М, 3О-204М</item>
+        <item>3О-107Б, 3О-109Б, 3О-110Б, 3О-111Б, 3О-112Б, 3О-121Б, 3О-114Б, 3О-115Б</item>
+        <item>3О-101Б, 3О-102Б, 3О-103Б, 3О-104Б, 3О-105Б, 3О-106Б, 3О-119Б, 3О-115Б</item>
+        <item>3О-207Б, 3О-209Б, 3О-210Б, 3О-211Б, 3О-212Б, 3О-221Б, 3О-214Б</item>
+        <item>3О-201Б, 3О-202Б, 3О-220Бки, 3О-203Б, 3О-204Б, 3О-205Б, 3О-206Б</item>
+        <item>3О-215Б, 3О-216Б, 3О-217Бк</item>
+        <item>3О-312Б, 3О-321Б, 3О-314Б, 3О-315Б, 3О-316Б, 3О-317Бк, 3О-114Б, 3О-115Б</item>
+        <item>3О-307Б, 3О-308Б, 3О-309Б, 3О-119Бки, 3О-110Б, 3О-311Б, 3О-323Б</item>
+        <item>3О-301Б, 3О-302Б, 3О-320Бки, 3О-303Б, 3О-304Б, 3О-305Б, 3О-306Б, 3О-322Б</item>
+        <item>7О-510С, 3О-501С, 3О-502С, 3О-503С, 3О-504С, 3О-505С, 3О-506С</item>
+    </string-array>
+    <string-array name="sch4">
+        <item>4О-101М, 4О-103М, 4О-104М, 4О-107М, 4О-202М, 4О-203М, 3О-204М</item>
+        <item>4О-110Б, 4О-111Б, 4О-114Б</item>
+        <item>4О-101Б, 4О-103Б, 4О-106Б, 4О-107Б, 4О-109Б</item>
+        <item>4О-101С, 4О-102С, 4О-103С, 4О-105С, 4О-106С, 4О-107С, 4О-104С</item>
+        <item>4О-210Б, 4О-211Б, 4О-214Б</item>
+        <item>4О-201Б, 4О-203Б, 4О-206Б, 4О-207Б, 4О-209Б</item>
+        <item>4О-301Б, 4О-302Б, 4О-303Б, 4О-304Б, 4О-306Б, 4О-307Б</item>
+        <item>4О-408Б, 4О-409Б, 4О-410Б, 4О-411Б</item>
+        <item>4О-401С, 4О-402С, 4О-403С, 4О-405С, 4О-406С, 4О-407С, 4О-404С</item>
+    </string-array>
+    <string-array name="sch5">
+        <item>5В-101Бк, 5В-102Бк, 5В-103Бк, 5В-104Бк, 5В-105Бк</item>
+        <item>5В-201Бк, 5В-202Бк, 5В-203Бк, 5В-205Бк</item>
+        <item>5В-301Бк, 5В-302Бк, 5В-303Бк, 5В-305Бк, 5В-401Бк, 5В-402Бк, 5В-403Бк</item>
+        <item>5В-501Бк, 5В-502Бк, 5В-503Бк</item>
+    </string-array>
+    <string-array name="sch6">
+        <item>6О-101С, 6О-102С, 6О-103С, 6О-105С, 6О-106С, 6О-111С</item>
+        <item>6О-105Б, 6О-106Б, 6О-107Б, 6О-109Б, 6О-108Б, 6О-101Б</item>
+        <item>6О-203М, 6О-205М, 6О-207Мки, 6О-208Мки</item>
+        <item>6О-215Ски, 6О-202С, 6О-203С, 6О-205С, 6О-205С, 6О-204Б</item>
+        <item>6О-207С, 6О-210С, 6О-213С, 6О-211С, 6О-201С, 6О-201Б</item>
+        <item>6О-205Б, 6О-206Б, 6О-210Б, 6О-213Бки, 6О-207Б, 6О-209Б, 6О-208Б</item>
+        <item>6О-301С, 6О-302С, 6О-303С, 6О-304С, 6О-305С, 6О-306С</item>
+        <item>6О-305Б, 6О-306Б, 6О-310Б, 6О-313Б, 6О-307Б, 6О-309Б, 6О-308Б</item>
+        <item>6О-301Б, 6О-314Б, 6О-304Б</item>
+        <item>6О-407С, 6О-408С, 6О-410С, 6О-412С, 6О-409С</item>
+        <item>6О-401С, 6О-402С, 6О-403С, 6О-404С, 6О-405С, 6О-406С, 6О-411С</item>
+        <item>6О-401Б, 6О-414Б, 6О-404Б</item>
+        <item>6О-405Б, 6О-406Б, 6О-412Б, 6О-407Бки, 6О-409Б, 6О-408Б, 6О-402Б</item>
+        <item>6О-507С, 6О-512С, 6О-508С, 6О-509С, 6О-510С, 6О-511С</item>
+        <item>6О-501С, 6О-502С, 6О-503С, 6О-504С, 6О-505С, 6О-506С</item>
+    </string-array>
+    <string-array name="sch7">
+        <item>7О-101С, 7О-102С, 7О-103С, 7О-104С</item>
+        <item>7О-106С, 7О-107С, 7О-108С, 7О-109С, 7О-110С, 3О-106С</item>
+        <item>7О-201С, 7О-202С, 7О-203С, 7О-204С</item>
+        <item>7О-206С, 7О-207С, 7О-208С, 7О-209С, 7О-210С, 3О-206СС</item>
+        <item>7О-301С, 7О-302С, 7О-303С, 7О-304С</item>
+        <item>7О-306С, 7О-307С, 7О-308С, 7О-309С, 7О-310С, 3О-306С</item>
+        <item>7О-406С, 7О-407С, 7О-408С, 7О-410С, 3О-406С</item>
+        <item>7О-401С, 7О-402С, 7О-403С, 7О-404С</item>
+        <item>7О-501С, 7О-502,6С, 7О-503С, 7О-504,5С, 7О-508,9С, 7О-510С, 3О-506С</item>
+    </string-array>
+    <string-array name="sch8">
+        <item>8О-101Б, 8О-107Б, 8О-106Б, 8О-108Б, 8О-102Б, 8О-103Б, 8О-104Б, 8О-105Б</item>
+        <item>8О-201Б, 8О-207Б, 8О-206Б, 8О-208Б, 8О-202Б, 8О-203Б, 8О-204Б, 8О-205Б</item>
+        <item>8О-301Б, 8О-307Б, 8О-306Б, 8О-308Б, 8О-302Б, 8О-303Б, 8О-304Б, 8О-305Б</item>
+        <item>8О-401Б, 8О-407Б, 8О-406Б, 8О-408Б, 8О-402Б, 8О-403Б, 8О-404Б, 8О-405Б</item>
+    </string-array>
+    <string-array name="sch9">
+        <item>9О-101С, 9О-102С, 9О-101Б, 9О-102Б, 9О-104Б, 9О-106Б</item>
+        <item>9О-301С, 9О-302С, 9О-301Б, 9О-302Б, 9О-304Б, 9О-306Б</item>
+        <item>9О-401С, 9О-402С, 9О-401Б, 9О-402Б, 9О-404Б</item>
+        <item>9О-501С, 9О-502С</item>
+    </string-array>
+    <string-array name="sch10">
+        <item>ГО-101Б, ГО-102Б, ГО-103Бк</item>
+        <item>ГО-201Б, ГО-202Б, ГО-203Бк, ГО-204Бк</item>
+        <item>ГО-301Б, ГО-302Б, ГО-303Бк, ГО-304Бк</item>
+        <item>ГО-401Б, ГО-402Б, ГО-403Бк, ГО-404Бк</item>
+        <item>ГВ-401Б, ГВ-501Б</item>
+        <item>ГО-101м, ГО-201м</item>
+    </string-array>
+    <string-array name="sch11">11">
+        <item>ИО-101Бк, ИО-102Бк, ИО-103Бк, ИО-104Бк</item>
+        <item>ИО-201Бк, ИО-202Бк, ИО-203Бк</item>
+        <item>ИО-301Бк, ИО-302Бк, ИО-303Бк</item>
+        <item>ИО-401Бк, ИО-402Бк</item>
+        <item>ИО-105Бк, ИО-106Бк, ИО-107Бк, ИО-204Бк, ИО-205Бк, ИО-304Бк, ИО-305Бк, ИО-403Бк, ИО-404Бк</item>
+        <item>ИО-105Бк, ИО-106Бк, ИО-107Бк, ИО-204Бк, ИО-205Бк, ИО-304Бк, ИО-305Бк, ИО-403Бк, ИО-404Бк</item>
+        <item>ИО-101М, ИО-102М, ИД-105М, ИО-201М, ИО-204М</item>
+    </string-array>
+
+</resources>

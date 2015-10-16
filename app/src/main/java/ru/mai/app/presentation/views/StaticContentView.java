@@ -156,7 +156,7 @@ public class StaticContentView extends NestedScrollView {
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        textView.setText(text);
+        textView.setText(Html.fromHtml(text));
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
