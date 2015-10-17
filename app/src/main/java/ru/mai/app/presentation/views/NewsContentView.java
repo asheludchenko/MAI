@@ -21,6 +21,7 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -116,8 +117,9 @@ public class NewsContentView extends NestedScrollView {
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
         textView.setText(text);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
@@ -130,8 +132,9 @@ public class NewsContentView extends NestedScrollView {
 
     private View getTextView(Spanned text) {
         TextView textView = new TextView(getContext());
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
         textView.setText(text);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16

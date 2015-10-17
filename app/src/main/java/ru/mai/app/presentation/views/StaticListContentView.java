@@ -139,8 +139,8 @@ public class StaticListContentView extends NestedScrollView {
 
     private View getTextView(String text) {
         TextView textView = new TextView(getContext());
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setText(Html.fromHtml(text));
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setTextColor(getResources().getColor(android.R.color.black));
         int padding = Math.round(
                 getResources().getDisplayMetrics().density * 16
@@ -154,7 +154,7 @@ public class StaticListContentView extends NestedScrollView {
     private View getTitleView(String text) {
         TextView textView = new TextView(getContext());
         textView.setText(text);
-        textView.setAutoLinkMask(Linkify.ALL);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
         Typeface tf = textView.getTypeface();
         textView.setTypeface(tf, 1);
         textView.setTextColor(getResources().getColor(android.R.color.black));
