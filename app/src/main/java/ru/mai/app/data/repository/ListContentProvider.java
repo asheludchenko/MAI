@@ -250,17 +250,23 @@ public class ListContentProvider {
             })
                     .cache();
         } else if (specification.specified(ACADEMIC_MOBILITY)) {
-            final List<ListContent> am = Stream.of(context.getResources().getStringArray(R.array.acad_mob))
-                    .map(new Function<String, ListContent>() {
+            ListContent title = new ListContent.Builder()
+                    .setFacTitle(ACADEMIC_MOBILITY)
+                    .build();
+            final List<ListContent> am = Observable.from(context.getResources().getStringArray(R.array.acad_mob))
+                    .map(new Func1<String, ListContent>() {
                         @Override
-                        public ListContent apply(String value) {
+                        public ListContent call(String s) {
                             return new ListContent.Builder()
-                                    .setText(value)
+                                    .setText(s)
                                     .setClickable()
                                     .build();
                         }
                     })
-                    .collect(Collectors.<ListContent>toList());
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
             return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
                 @Override
                 public void call(Subscriber<? super List<ListContent>> subscriber) {

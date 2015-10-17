@@ -8,12 +8,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,6 +52,10 @@ public class ListContentView extends RelativeLayout {
     TextView hint;
     @Bind(R.id.pb)
     ProgressBar progressBar;
+    @Bind(R.id.title)
+    TextView title;
+    @Bind(R.id.del)
+    View del;
 
     private Adapter adapter;
     private boolean canLoadMore = true;
@@ -78,7 +81,7 @@ public class ListContentView extends RelativeLayout {
         list.setAdapter(adapter);
         if (presenter.getParameter().equals(Router.NEWS) ||
                 presenter.getParameter().equals(Router.PHOTO)) {
-            list.addOnScrollListener(new RecyclerView.OnScrollListener(){
+            list.addOnScrollListener(new RecyclerView.OnScrollListener() {
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     visibleItemCount = layoutManager.getChildCount();
@@ -117,7 +120,14 @@ public class ListContentView extends RelativeLayout {
     public void showItems(List<ListContent> contents) {
         progressBar.setVisibility(GONE);
         list.setVisibility(VISIBLE);
-        adapter.setContents(contents);
+        if (!contents.isEmpty() && !TextUtils.isEmpty(contents.get(0).getFacTitle())) {
+            title.setVisibility(VISIBLE);
+            del.setVisibility(VISIBLE);
+            title.setText(contents.get(0).getFacTitle());
+            adapter.setContents(new ArrayList<ListContent>(contents.subList(1, contents.size())));
+        } else {
+            adapter.setContents(contents);
+        }
         adapter.notifyDataSetChanged();
         canLoadMore = true;
     }

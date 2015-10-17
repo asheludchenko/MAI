@@ -25,6 +25,7 @@ public class ListContent {
     private String link;
     private Spanned albumTitle;
     private List<Photo> photos;
+    private String facTitle;
 
     public ListContent() {
     }
@@ -85,6 +86,10 @@ public class ListContent {
         return photos;
     }
 
+    public String getFacTitle() {
+        return facTitle;
+    }
+
     @Override
     public String toString() {
         return "ListContent{" +
@@ -102,6 +107,7 @@ public class ListContent {
                 ", link='" + link + '\'' +
                 ", albumTitle=" + albumTitle +
                 ", photos=" + photos +
+                ", facTitle='" + facTitle + '\'' +
                 '}';
     }
 
@@ -179,6 +185,11 @@ public class ListContent {
 
         public Builder setPhotos(List<Photo> photos) {
             content.photos = photos;
+            return this;
+        }
+
+        public Builder setFacTitle(String title) {
+            content.facTitle = title;
             return this;
         }
 

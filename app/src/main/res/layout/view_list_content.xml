@@ -14,11 +14,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/mai_blue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/del"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:background="@android:color/darker_gray"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="invisible"
+        android:layout_below="@+id/del"
         android:layout_above="@id/hint_view"/>
 
     <ProgressBar

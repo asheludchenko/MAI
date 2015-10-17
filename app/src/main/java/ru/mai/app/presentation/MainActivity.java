@@ -10,7 +10,6 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,11 +22,8 @@ import com.parse.ParseException;
 import com.squareup.otto.Subscribe;
 import com.wnafee.vector.compat.ResourcesCompat;
 
-import org.w3c.dom.Text;
-
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Deque;
 import java.util.HashSet;
@@ -262,7 +258,8 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             } else {
                 header.setText("Нижняя неделя");
             }
-            if (null != headerref && headerref.get() != null) menu.removeHeaderView(headerref.get());
+            if (null != headerref && headerref.get() != null)
+                menu.removeHeaderView(headerref.get());
             headerref = new WeakReference<View>(header);
             menu.addHeaderView(header);
         }
@@ -374,21 +371,67 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         if (delimCount == 1 && !title.startsWith(Router.SCHEDULE) || title.equals(Router.PHOTO) || title.equals(Router.PRESENTATIONS)) {
             titleHistory.push(toolbar.getTitle().toString());
             String[] parts = title.split(Router.DELIM);
-            toolbar.setTitle(parts[0]);
-        }
-        else {
-            String[] parts = title.split(Router.DELIM);
-            if (parts.length > 1) {
-                if (title.startsWith(Router.SCHEDULE)) {
-                    String titleToSet = parts[1].split(" ")[0];
-                    toolbar.setTitle(titleToSet);
+            if (parts.length == 1) {
+                 if (parts[0].equals(Router.COURSES)) {
+                    toolbar.setTitle(Router.COURSES);
                 } else {
                     toolbar.setTitle(parts[0]);
                 }
-                titleHistory.push(title);
             } else {
-                titleHistory.push(title);
+                if (parts[0].equals(Router.ACADEMIC_MOBILITY)) {
+                    if (parts[1].equals(Router.ACAD01)) {
+                        toolbar.setTitle(Router.ACAD01);
+                    } else {
+                        toolbar.setTitle(Router.ACAD02);
+                    }
+                } else if (parts[0].equals(Router.SCHOOL_ACTIVITY)) {
+                    toolbar.setTitle("Мероприятия");
+                } else if (parts[0].equals(Router.SCHOOL_CENTERS)) {
+                    toolbar.setTitle("Центры обучения");
+                } else if (parts[0].equals(Router.PODGOTOVKA)) {
+                    toolbar.setTitle("Подготовка");
+                } else if (parts[1].equals(Router.PODGOTOVKA)) {
+                    toolbar.setTitle("Подготовка");
+                } else if (parts[0].equals(Router.DOSAAF)) {
+                    toolbar.setTitle("ДОСААФ");
+                } else if (parts[0].equals(Router.DK)) {
+                    toolbar.setTitle("ДКиТ МАИ");
+                } else if (parts[0].equals(Router.SECONDARY_EDUCATION)) {
+                    toolbar.setTitle("Второе высшее");
+                } else if (parts[1].equals(Router.F5) || parts[1].equals(Router.MILIT_INST)) {
+                    toolbar.setTitle("Институты");
+                } else if (parts[0].equals(Router.MAGISTRACY)) {
+                    toolbar.setTitle(Router.MAGISTRACY);
+                } else if (parts[1].equals(Router.BAYC) || parts[1].equals(Router.AHTUBA) || parts[1].equals(Router.STRELA) || parts[1].equals(Router.KHIMKI)) {
+                    toolbar.setTitle("Филиалы");
+                } else if (parts[1].equals(Router.MILIT_01)) {
+                    toolbar.setTitle("УВЦ");
+                } else if (parts[1].equals(Router.MILIT_02)) {
+                    toolbar.setTitle(Router.MILIT_02);
+                } else {
+                    toolbar.setTitle(parts[0]);
+                }
+            }
+        } else {
+            String[] parts = title.split(Router.DELIM);
+            if (parts.length > 1) {
+                if (parts[0].equals(Router.PODGOTOVKA)) {
+                    toolbar.setTitle("Подготовка");
+                } else if (parts[0].equals(Router.WAYS)) {
+                    toolbar.setTitle("Направления");
+                    titleHistory.push("Направления");
+                } else if (title.startsWith(Router.SCHEDULE)) {
+                    String titleToSet = parts[1].split(" ")[0];
+                    toolbar.setTitle(titleToSet);
+                    titleHistory.push(title);
+                } else {
+                    toolbar.setTitle(parts[0]);
+                    titleHistory.push(title);
+                }
+
+            } else {
                 toolbar.setTitle(title);
+                titleHistory.push(title);
             }
         }
     }
@@ -401,16 +444,52 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             App.resetNewsPage();
     }
 
-    private void startNewHistory(String s) {
-        resetCounters(s);
+    private void startNewHistory(String title) {
+        resetCounters(title);
         titleHistory.clear();
         if (!isStudent) {
             titleHistory.push(getString(R.string.toolbar_title_abitur));
         } else {
             titleHistory.push(getString(R.string.toolbar_title_student));
         }
-        toolbar.setTitle(s);
-        Path newScreen = router.getScreen(s);
+        if (title.equals(Router.ACADEMIC_MOBILITY)) {
+            toolbar.setTitle("");
+        } else if (title.equals(Router.SCHOOL_CENTERS)) {
+            toolbar.setTitle("Центры обучения");
+        } else if (title.equals(Router.SCHOOL_ACTIVITY)) {
+            toolbar.setTitle("Мероприятия");
+        } else if (title.equals(Router.WAYS)) {
+            toolbar.setTitle("Направления");
+        } else if (title.equals(Router.SECONDARY_EDUCATION)) {
+            toolbar.setTitle("Второе высшее");
+        } else if (title.equals(Router.MAGISTRACY)) {
+            toolbar.setTitle(Router.MAGISTRACY);
+        } else if (title.equals(Router.DK)) {
+            toolbar.setTitle("ДКиТ МАИ");
+        } else if (title.equals(Router.SCIENCE)) {
+            toolbar.setTitle("Наука");
+        } else if (title.equals(Router.SANATORIUM)) {
+            toolbar.setTitle("Санаторий");
+        } else if (title.equals(Router.DOSAAF)) {
+            toolbar.setTitle("ДОСААФ");
+        } else if (title.equals(Router.PROFKOM)) {
+            toolbar.setTitle("Профком");
+        } else if (title.equals(Router.PRESS)) {
+            toolbar.setTitle("СМИ и интернет");
+        } else if (title.equals(Router.MAISKY_VZLET)) {
+            toolbar.setTitle("Майский взлёт");
+        } else if (title.equals(Router.EMPLOYMENT_CENTER)) {
+            toolbar.setTitle("Центр трудоустройства");
+        } else if (title.equals(Router.DOTATIONS)) {
+            toolbar.setTitle("Дотации");
+        } else if (title.equals(Router.PODGOTOVKA)) {
+            toolbar.setTitle("Подготовка");
+        } else if (title.equals(Router.DOCS)) {
+            toolbar.setTitle("Документы");
+        } else {
+            toolbar.setTitle(title);
+        }
+        Path newScreen = router.getScreen(title);
         Flow.get(this).setHistory(
                 History.emptyBuilder()
                         .push(new MainScreen())
@@ -427,8 +506,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
             if (delimCount == 1 && !titleFromHistory.startsWith(Router.SCHEDULE)) {
                 String[] parts = titleFromHistory.split(Router.DELIM);
                 toolbar.setTitle(parts[0]);
-            }
-            else {
+            } else {
                 String[] parts = titleFromHistory.split(Router.DELIM);
                 if (parts.length > 1) {
                     toolbar.setTitle(parts[0]);
