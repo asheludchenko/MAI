@@ -79,6 +79,9 @@ public class StaticContentProvider {
             })
                     .cache();
         } else if (specification.specified(EMPLOYMENT_CENTER)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(EMPLOYMENT_CENTER)
+                    .build();
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.employ))
                     .build();
@@ -92,6 +95,7 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(image)
+                    .startWith(title)
                     .toList()
                     .toBlocking()
                     .single();
@@ -1643,6 +1647,9 @@ public class StaticContentProvider {
             })
                     .cache();
         } else if (specification.specified(ACADEMIC_MOBILITY + DELIM + ACAD01)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(ACAD01)
+                    .build();
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.globaleducation))
                     .build();
@@ -1656,6 +1663,7 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(image)
+                    .startWith(title)
                     .toList()
                     .toBlocking()
                     .single();
@@ -1668,6 +1676,9 @@ public class StaticContentProvider {
             })
                     .cache();
         } else if (specification.specified(ACADEMIC_MOBILITY + DELIM + ACAD02)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(ACAD02)
+                    .build();
             StaticContent image = new StaticContent.Builder()
                     .setImage(String.valueOf(R.drawable.obmen))
                     .build();
@@ -1681,6 +1692,7 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(image)
+                    .startWith(title)
                     .toList()
                     .toBlocking()
                     .single();

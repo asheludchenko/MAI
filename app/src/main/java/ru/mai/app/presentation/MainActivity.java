@@ -379,11 +379,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                 }
             } else {
                 if (parts[0].equals(Router.ACADEMIC_MOBILITY)) {
-                    if (parts[1].equals(Router.ACAD01)) {
-                        toolbar.setTitle(Router.ACAD01);
-                    } else {
-                        toolbar.setTitle(Router.ACAD02);
-                    }
+                    toolbar.setTitle("");
                 } else if (parts[0].equals(Router.SCHOOL_ACTIVITY)) {
                     toolbar.setTitle("Мероприятия");
                 } else if (parts[0].equals(Router.SCHOOL_CENTERS)) {
@@ -479,7 +475,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         } else if (title.equals(Router.MAISKY_VZLET)) {
             toolbar.setTitle("Майский взлёт");
         } else if (title.equals(Router.EMPLOYMENT_CENTER)) {
-            toolbar.setTitle("Центр трудоустройства");
+            toolbar.setTitle("");
         } else if (title.equals(Router.DOTATIONS)) {
             toolbar.setTitle("Дотации");
         } else if (title.equals(Router.PODGOTOVKA)) {

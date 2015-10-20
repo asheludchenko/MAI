@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <WebView
+        android:id="@+id/zoom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <ProgressBar
+        android:id="@+id/progress"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"/>
-
-    <ru.mai.app.presentation.utils.ScaleImageView
-        android:id="@+id/zoom"
-        android:scaleType="centerCrop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </ru.mai.app.presentation.views.MapView>

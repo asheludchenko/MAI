@@ -53,47 +53,22 @@ public class MapScreen extends Path {
     public static class Presenter extends MaiPresenter<MapView, Bitmap> {
         @Inject
         Interactor<StaticContentSpecification, Bitmap> interactor;
-        private Handler handler;
 
         private Subscriber<Bitmap> subscriber = Subscribers.empty();
 
         public Presenter() {
-            handler = new Handler();
         }
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
-            subscriber = new Subscriber<Bitmap>() {
-                @Override
-                public void onCompleted() {
-                    subscriber.unsubscribe();
-                }
-
-                @Override
-                public void onError(Throwable e) {
-                    Timber.e(e.getMessage());
-                }
-
-                @Override
-                public void onNext(Bitmap bitmap) {
-                    if (!hasView()) return;
-                    getView().showMap(bitmap);
-                }
-            };
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    interactor.execute(subscriber);
-                }
-            }, 800);
+            getView().showMap();
         }
 
         @Override
         protected void unsubscribe() {
             if (!interactor.isUnSubscribed()) interactor.unsubscribe();
-            handler.removeCallbacksAndMessages(null);
         }
     }
 }

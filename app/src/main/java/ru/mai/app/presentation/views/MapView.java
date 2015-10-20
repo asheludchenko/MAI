@@ -3,7 +3,10 @@ package ru.mai.app.presentation.views;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
 import javax.inject.Inject;
 
@@ -22,7 +25,9 @@ public class MapView extends FrameLayout {
     MapScreen.Presenter presenter;
 
     @Bind(R.id.zoom)
-    ScaleImageView zoom;
+    WebView zoom;
+    @Bind(R.id.progress)
+    ProgressBar progressBar;
 
     public MapView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -33,6 +38,11 @@ public class MapView extends FrameLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.bind(this);
+        WebSettings settings = zoom.getSettings();
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setDisplayZoomControls(true);
     }
 
     @Override
@@ -53,7 +63,8 @@ public class MapView extends FrameLayout {
         presenter.visibilityChanged(visibility == VISIBLE);
     }
 
-    public void showMap(Bitmap bitmap) {
-        zoom.setImageBitmap(bitmap);
+    public void showMap() {
+        progressBar.setVisibility(GONE);
+        zoom.loadUrl("file:///android_asset/map.html");
     }
 }
