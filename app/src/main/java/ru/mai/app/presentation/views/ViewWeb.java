@@ -59,6 +59,7 @@ public class ViewWeb extends FrameLayout{
         settings.setJavaScriptEnabled(true);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
+        settings.setBuiltInZoomControls(true);
         settings.setDisplayZoomControls(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override
