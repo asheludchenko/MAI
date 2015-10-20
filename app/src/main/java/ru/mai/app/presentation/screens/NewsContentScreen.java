@@ -107,6 +107,14 @@ public class NewsContentScreen extends Path {
         }
 
         @Override
+        public void visibilityChanged(boolean visible) {
+            super.visibilityChanged(visible);
+            if (!visible) {
+                handler.removeCallbacksAndMessages(null);
+            }
+        }
+
+        @Override
         protected void unsubscribe() {
             if (!interactor.isUnSubscribed()) interactor.unsubscribe();
         }

@@ -20,6 +20,7 @@ public abstract class MaiPresenter<V extends View, T> extends ViewPresenter<V> {
     public void visibilityChanged(boolean visible) {
         if (!visible) {
             unsubscribe();
+            subscriber = null;
         }
     }
 

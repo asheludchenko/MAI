@@ -132,5 +132,13 @@ public class PhotoScreen extends Path {
                 }
             }, 700);
         }
+
+        @Override
+        public void visibilityChanged(boolean visible) {
+            super.visibilityChanged(visible);
+            if (!visible) {
+                handler.removeCallbacksAndMessages(null);
+            }
+        }
     }
 }
