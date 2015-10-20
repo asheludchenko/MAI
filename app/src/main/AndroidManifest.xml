@@ -29,7 +29,8 @@
             android:name=".presentation.MainActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".presentation.PhotoActivity"/>
+        <activity android:name=".presentation.PhotoActivity"
+            android:configChanges="orientation"/>
 
         <activity
             android:name=".presentation.MaiChannelActivity"
