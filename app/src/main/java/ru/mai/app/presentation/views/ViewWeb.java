@@ -56,6 +56,8 @@ public class ViewWeb extends FrameLayout{
 
     public void loadContent(String url) {
         WebSettings settings = webView.getSettings();
+        settings.setLoadsImagesAutomatically(true);
+        settings.setSupportZoom(true);
         settings.setJavaScriptEnabled(true);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
