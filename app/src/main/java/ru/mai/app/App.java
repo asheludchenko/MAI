@@ -2,26 +2,21 @@ package ru.mai.app;
 
 import android.app.Application;
 import android.content.Context;
-import android.os.Handler;
 
 import com.crashlytics.android.Crashlytics;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.parse.ConfigCallback;
 import com.parse.Parse;
-import com.parse.ParseConfig;
-import com.parse.ParseException;
-import com.squareup.leakcanary.LeakCanary;
 import com.squareup.otto.Bus;
 
-import io.fabric.sdk.android.Fabric;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.ObjectGraph;
 import dagger.Provides;
 import flow.StateParceler;
+import io.fabric.sdk.android.Fabric;
 import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.data.DataModule;
@@ -45,7 +40,6 @@ public class App extends Application {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
         Fresco.initialize(this);
-        LeakCanary.install(this);
         Parse.initialize(this, ConstantsKt.getAPP_ID(), ConstantsKt.getCLIENT());
         bus = new Bus();
     }
