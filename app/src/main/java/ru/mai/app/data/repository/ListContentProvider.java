@@ -75,6 +75,10 @@ import static ru.mai.app.Router.SCH8;
 import static ru.mai.app.Router.SCH9;
 import static ru.mai.app.Router.SCH10;
 import static ru.mai.app.Router.SCH11;
+import static ru.mai.app.Router.SCH12;
+import static ru.mai.app.Router.SCH13;
+import static ru.mai.app.Router.SCH14;
+import static ru.mai.app.Router.SCH15;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -109,7 +113,11 @@ public class ListContentProvider {
     );
 
     List<Integer> schedInstImages = Arrays.asList(
-            R.drawable.fac_ing
+            R.drawable.fac_ing,
+            R.drawable.logo_m,
+            R.drawable.logo_m,
+            R.drawable.logo_m,
+            R.drawable.logo_m
     );
 
 
@@ -1438,6 +1446,62 @@ public class ListContentProvider {
                 @Override
                 public Observable<List<ListContent>> call() {
                     return Observable.from(context.getResources().getStringArray(R.array.sch11))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH12)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch12))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH13)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch13))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH14)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch14))
+                            .map(new Func1<String, ListContent>() {
+                                @Override
+                                public ListContent call(String s) {
+                                    return new ListContent.Builder().setText(s).setClickable().build();
+                                }
+                            })
+                            .toList();
+                }
+            });
+        } else if (specification.specified(SCHEDULE + DELIM + SCH15)) {
+            return Observable.defer(new Func0<Observable<List<ListContent>>>() {
+                @Override
+                public Observable<List<ListContent>> call() {
+                    return Observable.from(context.getResources().getStringArray(R.array.sch15))
                             .map(new Func1<String, ListContent>() {
                                 @Override
                                 public ListContent call(String s) {

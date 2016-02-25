@@ -349,13 +349,19 @@ public class Router {
     public static final String SCH2 = "№2 «Двигатели летательных аппаратов»";
     public static final String SCH3 = "№3 «Системы управления, информатика и электроэнергетика»";
     public static final String SCH4 = "№4 «Радиоэлектроника летательных аппаратов»";
-    public static final String SCH5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String SCH6 = "№6 «Аэрокосмический»";
     public static final String SCH7 = "№7 «Робототехнические и интеллектуальные системы»";
     public static final String SCH8 = "№8 «Прикладная математика и физика»";
     public static final String SCH9 = "№9 «Прикладная механика»";
     public static final String SCH10 = "№10 «Социальный инжиниринг»";
-    public static final String SCH11 = "Иностранных языков";
-    public static final String SCH6 = "№6 «Аэрокосмический»";
+    public static final String SCH11 = "«Иностранных языков»";
+
+    public static final String SCH5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
+    public static final String SCH12 = "Институт материаловедения и технологий материалов";
+    public static final String SCH13 = "Институт аэрокосмических конструкций, технологий и систем управления";
+    public static final String SCH14 = "Институт информационных систем и технологий";
+    public static final String SCH15 = "Институт менеджмента, экономики и социальных технологий";
+
 
 
     public Path getScreen(String item) {
@@ -606,6 +612,10 @@ public class Router {
             case SCHEDULE + DELIM + SCH9:
             case SCHEDULE + DELIM + SCH10:
             case SCHEDULE + DELIM + SCH11:
+            case SCHEDULE + DELIM + SCH12:
+            case SCHEDULE + DELIM + SCH13:
+            case SCHEDULE + DELIM + SCH14:
+            case SCHEDULE + DELIM + SCH15:
                 return new SubListScreen(item);
             default:
                 return new MainScreen();
