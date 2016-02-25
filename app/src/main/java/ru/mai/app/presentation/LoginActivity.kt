@@ -4,8 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import kotlinx.android.synthetic.activity_login.btn_abitur
-import kotlinx.android.synthetic.activity_login.btn_student
+import kotlinx.android.synthetic.main.activity_login.*
 import ru.mai.app.IS_STUDENT_KEY
 import ru.mai.app.R
 import ru.mai.app.SP_KEY

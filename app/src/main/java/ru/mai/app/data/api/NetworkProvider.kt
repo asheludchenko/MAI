@@ -42,7 +42,7 @@ public class NetworkProvider() {
                 reader.isLenient = true
                 val itemsMapType = object : TypeToken<Map<Int, NewsHeadersResponse>>() {}.type
                 val headers = gson.fromJson<Map<Int, NewsHeadersResponse>>(reader, itemsMapType)
-                return Observable.from(headers.values())
+                return Observable.from(headers.values)
                         .map { header ->
                             ListContent.Builder()
                                     .setLink(header.id).setImage(header.photo).setText(header.header).build()
@@ -64,7 +64,7 @@ public class NetworkProvider() {
                 val title: StaticContent = StaticContent.Builder().setFacTitile(singleNews?.header).build()
                 val text: StaticContent = StaticContent.Builder()
                         .setNewsText(
-                                Html.fromHtml(singleNews?.body?.replaceAll("\t", ""))
+                                Html.fromHtml(singleNews?.body?.replace("\t", ""))
                         ).build()
                 val image: StaticContent = StaticContent.Builder().setImage(singleNews?.photo).build()
                 val date: StaticContent = StaticContent.Builder().setText(singleNews?.date).build()
@@ -88,7 +88,7 @@ public class NetworkProvider() {
                 reader.isLenient = true
                 val itemsMapType = object : TypeToken<Map<Int, PhotosListResponse>>() {}.type
                 val albums = gson.fromJson<Map<Int, PhotosListResponse>>(reader, itemsMapType)
-                return Observable.from(albums.values())
+                return Observable.from(albums.values)
                         .map { photoAlbum ->
                             ListContent.Builder()
                                     .setAlbumTitle(Html.fromHtml(photoAlbum.name))
@@ -111,7 +111,7 @@ public class NetworkProvider() {
         val itemsMapType = object : TypeToken<Map<Int, Photo>>() {}.type
         var photos: List<Photo>? = null
         try {
-            photos = ArrayList<Photo>(gson.fromJson<Map<Int, Photo>>(reader, itemsMapType).values())
+            photos = ArrayList<Photo>(gson.fromJson<Map<Int, Photo>>(reader, itemsMapType).values)
         } catch (e: Exception) {
             photos = Collections.emptyList()
         }
@@ -129,12 +129,12 @@ public class NetworkProvider() {
         } else {
             s = String(bytes, StandardCharsets.UTF_8)
         }
-        val endPos = s.length() - 1
+        val endPos = s.length - 1
         return s.substring(1, endPos)
     }
 
     private fun trimJson(json: String): String {
         val trimmedJson = json.split("count")[0]
-        return trimmedJson.substring(0, trimmedJson.length() - 2) + "}"
+        return trimmedJson.substring(0, trimmedJson.length - 2) + "}"
     }
 }
