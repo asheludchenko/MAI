@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.nimbledroid.profiler'
 
 android {
     compileSdkVersion 23
@@ -13,6 +14,14 @@ android {
         targetSdkVersion 23
         versionCode 2
         versionName "1.0.1"
+    }
+    signingConfigs {
+        release {
+            storeFile file(maiKeystore)
+            storePassword maiKeystorePass
+            keyAlias maiAlias
+            keyPassword maiKeyPass
+        }
     }
     buildTypes {
         release {
@@ -65,15 +74,25 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
         classpath 'io.fabric.tools:gradle:1.+'
+        classpath "gradle.plugin.com.nimbledroid:gradle-profiler:1.0.7"
 
     }
 }
 repositories {
     mavenCentral()
     maven { url 'https://maven.fabric.io/public' }
+    maven { url "https://jitpack.io" }
+}
+
+nimbledroid {
+    apiKey 'd24b924b3bc0dc593404a82caf5db078'
+    variant "release"
 }
