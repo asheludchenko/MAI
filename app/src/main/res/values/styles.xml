@@ -12,5 +12,9 @@
         <item name="android:background">?colorPrimary</item>
     </style>
 
+    <style name="FlatButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/mai_dark_blue</item>
+    </style>
+
 
 </resources>
