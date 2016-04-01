@@ -9,7 +9,6 @@ import dagger.Provides;
 import flow.path.Path;
 import ru.mai.app.App;
 import ru.mai.app.R;
-import ru.mai.app.Router;
 import ru.mai.app.presentation.MaiPresenter;
 import ru.mai.app.presentation.mf_boilerplate.Layout;
 import ru.mai.app.presentation.mf_boilerplate.WithModule;
@@ -20,8 +19,13 @@ import static ru.mai.app.Router.DELIM;
 import static ru.mai.app.Router.PRESENTATIONS;
 import static ru.mai.app.Router.PRIEM;
 import static ru.mai.app.Router.PRIEM_SCHEDULE;
-import static ru.mai.app.Router.SCHEDULE;
 import static ru.mai.app.Router.SCH1;
+import static ru.mai.app.Router.SCH10;
+import static ru.mai.app.Router.SCH11;
+import static ru.mai.app.Router.SCH12;
+import static ru.mai.app.Router.SCH13;
+import static ru.mai.app.Router.SCH14;
+import static ru.mai.app.Router.SCH15;
 import static ru.mai.app.Router.SCH2;
 import static ru.mai.app.Router.SCH3;
 import static ru.mai.app.Router.SCH4;
@@ -30,12 +34,7 @@ import static ru.mai.app.Router.SCH6;
 import static ru.mai.app.Router.SCH7;
 import static ru.mai.app.Router.SCH8;
 import static ru.mai.app.Router.SCH9;
-import static ru.mai.app.Router.SCH10;
-import static ru.mai.app.Router.SCH11;
-import static ru.mai.app.Router.SCH12;
-import static ru.mai.app.Router.SCH13;
-import static ru.mai.app.Router.SCH14;
-import static ru.mai.app.Router.SCH15;
+import static ru.mai.app.Router.SCHEDULE;
 
 /**
  * Created by olegosipenko on 25.09.15.
@@ -283,6 +282,7 @@ public class WebViewScreen extends Path {
         }
 
         public String getUrl() {
+            if (sTitle == null) return "http://mai.ru";
             if (sTitle.equals(PRESENTATIONS + DELIM + items[0])) {
                 return P01;
             } else if (sTitle.equals(PRESENTATIONS + DELIM + items[1])) {
