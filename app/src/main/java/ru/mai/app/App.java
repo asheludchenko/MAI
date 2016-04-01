@@ -8,6 +8,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.parse.Parse;
+import com.parse.ParseObject;
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -20,6 +21,7 @@ import io.fabric.sdk.android.Fabric;
 import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.data.DataModule;
+import ru.mai.app.data.dto.MainScreenDto;
 import ru.mai.app.presentation.MainActivity;
 import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
 import ru.mai.app.presentation.views.ViewWeb;
@@ -38,6 +40,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ParseObject.registerSubclass(MainScreenDto.class);
         Fabric.with(this, new Crashlytics());
         Fresco.initialize(this);
         Parse.initialize(this, ConstantsKt.getAPP_ID(), ConstantsKt.getCLIENT());

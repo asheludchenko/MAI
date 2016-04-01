@@ -13,6 +13,7 @@ import flow.path.Path;
 import mortar.ViewPresenter;
 import ru.mai.app.App;
 import ru.mai.app.R;
+import ru.mai.app.data.dto.MainScreenDto;
 import ru.mai.app.data.repository.DataRepository;
 import ru.mai.app.domain.DomainModule;
 import ru.mai.app.domain.executors.PostExecutionThread;
@@ -39,7 +40,7 @@ public class MainScreen extends Path {
     )
     public class Module {
         @Provides
-        Interactor<String, String> provideImage(
+        Interactor<Void, MainScreenDto> provideImage(
                 DataRepository repository,
                 PostExecutionThread postExecutionThread,
                 ThreadExecutor threadExecutor)  {
@@ -50,16 +51,16 @@ public class MainScreen extends Path {
     @Singleton
     public static class Presenter extends ViewPresenter<MainView> {
         @Inject
-        Interactor<String, String> interactor;
+        Interactor<Void, MainScreenDto> interactor;
 
-        private Subscriber<String> subscriber;
+        private Subscriber<MainScreenDto> subscriber;
 
         @Override
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
 
-            subscriber = new Subscriber<String>() {
+            subscriber = new Subscriber<MainScreenDto>() {
                 @Override
                 public void onCompleted() {
                     subscriber.unsubscribe();
@@ -71,9 +72,9 @@ public class MainScreen extends Path {
                 }
 
                 @Override
-                public void onNext(String image) {
+                public void onNext(MainScreenDto image) {
                     if (!hasView()) return;
-                    getView().showImage(Uri.parse(image));
+                    getView().showImage(image);
                 }
             };
             interactor.execute(subscriber);

@@ -7,6 +7,9 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -20,6 +23,7 @@ import ru.mai.app.data.api.NetworkProvider;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.dataModel.StaticListContent;
+import ru.mai.app.data.dto.MainScreenDto;
 import ru.mai.app.data.repository.specification.ListContentSpecification;
 import ru.mai.app.data.repository.specification.NewsContentSpecification;
 import ru.mai.app.data.repository.specification.StaticContentSpecification;
@@ -113,21 +117,21 @@ public class MaiRepository implements DataRepository {
     }
 
     @Override
-    public Observable<String> getImages() {
-        return Observable.defer(new Func0<Observable<String>>() {
+    public Observable<MainScreenDto> getImages() {
+        return Observable.create(new Observable.OnSubscribe<MainScreenDto>() {
             @Override
-            public Observable<String> call() {
-                ConnectivityManager cm =
-                        (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo netInfo = cm.getActiveNetworkInfo();
-                SharedPreferences sp = context.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE);
-                if (sp.contains(ConstantsKt.getIMAGES_KEY()) && netInfo != null && netInfo.isConnected()) {
-                    ArrayList<String> images = new ArrayList<>(sp.getStringSet(ConstantsKt.getIMAGES_KEY(), new HashSet<String>()));
+            public void call(Subscriber<? super MainScreenDto> subscriber) {
+                ParseQuery<MainScreenDto> query = ParseQuery.getQuery(MainScreenDto.class);
+                try {
+                    List<MainScreenDto> images = query.find();
                     Random random = new Random(System.nanoTime());
                     int randomIndex = random.nextInt(images.size());
-                    return Observable.just(images.get(randomIndex));
-                } else {
-                    return Observable.just(String.valueOf(R.drawable.adv));
+                    subscriber.onNext(images.get(randomIndex));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    subscriber.onError(e);
+                } finally {
+                    subscriber.onCompleted();
                 }
             }
         });

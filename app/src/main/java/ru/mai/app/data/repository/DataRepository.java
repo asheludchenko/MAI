@@ -8,6 +8,7 @@ import java.util.Set;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.dataModel.StaticListContent;
+import ru.mai.app.data.dto.MainScreenDto;
 import ru.mai.app.data.repository.specification.ListContentSpecification;
 import ru.mai.app.data.repository.specification.NewsContentSpecification;
 import ru.mai.app.data.repository.specification.StaticContentSpecification;
@@ -30,5 +31,5 @@ public interface DataRepository {
 
     Observable<List<ListContent>> getPhotos(NewsContentSpecification parameter);
 
-    Observable<String> getImages();
+    Observable<MainScreenDto> getImages();
 }
