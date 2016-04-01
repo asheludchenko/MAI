@@ -17,7 +17,6 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -29,7 +28,7 @@ import ru.mai.app.R;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.Photo;
 import ru.mai.app.presentation.PhotoActivity;
-import ru.mai.app.presentation.screens.PhotoScreen;
+import ru.mai.app.presentation.screens.ListPhotoScreen;
 import ru.mai.app.presentation.utils.SimpleDividerItemDecoration;
 
 /**
@@ -38,7 +37,7 @@ import ru.mai.app.presentation.utils.SimpleDividerItemDecoration;
 public class ListPhotosView extends FrameLayout {
 
     @Inject
-    PhotoScreen.Presenter presenter;
+    ListPhotoScreen.Presenter presenter;
     @Bind(R.id.list)
     RecyclerView list;
     @Bind(R.id.pb)
@@ -175,7 +174,8 @@ public class ListPhotosView extends FrameLayout {
                 @Override
                 public void onClick(View v) {
                     Intent showPhoto = new Intent(holder.itemView.getContext(), PhotoActivity.class);
-                    showPhoto.putExtra(PhotoActivity.URI, photos.get(position).getOriginal());
+                    showPhoto.putExtra(PhotoActivity.PHOTOS, (ArrayList) photos);
+                    showPhoto.putExtra(PhotoActivity.POSITION, position);
                     holder.itemView.getContext().startActivity(showPhoto);
                 }
             });

@@ -3,15 +3,15 @@ package ru.mai.app;
 
 import flow.path.Path;
 import ru.mai.app.presentation.screens.ListContentScreen;
+import ru.mai.app.presentation.screens.ListPhotoScreen;
 import ru.mai.app.presentation.screens.MainScreen;
 import ru.mai.app.presentation.screens.MapScreen;
 import ru.mai.app.presentation.screens.MediaScreen;
 import ru.mai.app.presentation.screens.NewsContentScreen;
-import ru.mai.app.presentation.screens.PhotoScreen;
-import ru.mai.app.presentation.screens.SubListScreen;
-import ru.mai.app.presentation.screens.WebViewScreen;
 import ru.mai.app.presentation.screens.StaticContentScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
+import ru.mai.app.presentation.screens.SubListScreen;
+import ru.mai.app.presentation.screens.WebViewScreen;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -370,7 +370,7 @@ public class Router {
         if (item.startsWith(SCHEDULE + DELIM) && ((item.length() - item.replace(DELIM, "").length()) == 2)) return new WebViewScreen(item);
         if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
-        if (item.equals(PHOTO)) return new PhotoScreen(item);
+        if (item.equals(PHOTO)) return new ListPhotoScreen(item);
         if (item.startsWith(PRESENTATIONS + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(COURSES + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(PRIEM + DELIM)) return new WebViewScreen(item);

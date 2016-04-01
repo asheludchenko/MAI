@@ -1,6 +1,6 @@
 ext {
     appCompatVersion = '23.1.1'
-    kotlinLibVersion = '1.0.0'
+    kotlinLibVersion = '1.0.1-2'
     ankoVersion = '0.8.2'
     rxVersion = '1.1.0'
     mortarVersion = '0.20'

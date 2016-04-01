@@ -22,17 +22,19 @@ import java.util.*
 /**
  * Created by olegosipenko on 24.09.15.
  */
-public class NetworkProvider() {
+class NetworkProvider() {
 
     private val adapter: RestAdapter
     var service: MaiService
 
     init {
-        adapter = RestAdapter.Builder().setEndpoint("http://mai.ru/").setLogLevel(RestAdapter.LogLevel.FULL).build()
+        adapter = RestAdapter.Builder().setEndpoint("http://mai.ru/")
+                //.setLogLevel(RestAdapter.LogLevel.FULL)
+                 .build()
         service = adapter.create(MaiService::class.java)
     }
 
-    public fun getNews(): Observable<List<ListContent>> {
+    fun getNews(): Observable<List<ListContent>> {
         return Observable.defer(object : Func0<Observable<List<ListContent>>> {
             override fun call(): Observable<List<ListContent>>? {
                 val response = service.getNewsList(App.getNewsPage(), 8)
@@ -53,7 +55,7 @@ public class NetworkProvider() {
         })
     }
 
-    public fun getNewsById(specification: NewsContentSpecification): Observable<List<StaticContent>> {
+    fun getNewsById(specification: NewsContentSpecification): Observable<List<StaticContent>> {
         val id = specification.getItem()
         return Observable.defer(object : Func0<Observable<List<StaticContent>>> {
             override fun call(): Observable<List<StaticContent>>? {
@@ -78,7 +80,7 @@ public class NetworkProvider() {
         })
     }
 
-    public fun getPhotoAlbums(): Observable<List<ListContent>> {
+    fun getPhotoAlbums(): Observable<List<ListContent>> {
         return Observable.defer(object : Func0<Observable<List<ListContent>>> {
             override fun call(): Observable<List<ListContent>>? {
                 val response = service.getAlbums(App.getPhotoPage(), 10)
