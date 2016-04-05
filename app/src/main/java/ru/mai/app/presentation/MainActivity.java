@@ -45,10 +45,13 @@ import ru.mai.app.ConstantsKt;
 import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
+import ru.mai.app.presentation.events.ChangeSelectedTabEvent;
+import ru.mai.app.presentation.events.SwipePageEvent;
 import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
 import ru.mai.app.presentation.mf_boilerplate.HandlesBack;
 import ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import ru.mai.app.presentation.screens.MainScreen;
+import ru.mai.app.presentation.screens.MainSliderScreen;
 
 import static mortar.bundler.BundleServiceRunner.getBundleServiceRunner;
 
@@ -519,10 +522,24 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         changeScreen(event.getTitle());
     }
 
+    @Subscribe
+    public void swipeScreen(ChangeSelectedTabEvent event) {
+        tabs.setOnTabSelectedListener(null);
+        tabs.getTabAt(event.getPosition()).select();
+        tabs.setOnTabSelectedListener(tabListener);
+    }
+
     public class TabListener implements TabLayout.OnTabSelectedListener {
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
-            if (Flow.get(MainActivity.this) != null) {
+            if (Flow.get(MainActivity.this).getHistory().top() instanceof MainSliderScreen) {
+                App.bus.post(new SwipePageEvent(tab.getPosition()));
+                if (tab.getPosition() != 0) {
+                    setArrow();
+                } else {
+                    setHamburger();
+                }
+            } else if (Flow.get(MainActivity.this) != null) {
                 String title = tab.getText().toString();
                 startNewHistory(title);
                 if (tab.getPosition() != 0) {
@@ -540,7 +557,22 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
         @Override
         public void onTabReselected(TabLayout.Tab tab) {
-
+            if (Flow.get(MainActivity.this).getHistory().top() instanceof MainSliderScreen) {
+                App.bus.post(new SwipePageEvent(tab.getPosition()));
+                if (tab.getPosition() != 0) {
+                    setArrow();
+                } else {
+                    setHamburger();
+                }
+            } else if (Flow.get(MainActivity.this) != null) {
+                String title = tab.getText().toString();
+                startNewHistory(title);
+                if (tab.getPosition() != 0) {
+                    setArrow();
+                } else {
+                    setHamburger();
+                }
+            }
         }
     }
 }

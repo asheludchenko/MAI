@@ -19,7 +19,7 @@ import ru.mai.app.presentation.views.PhotoSliderView;
 /**
  * Created by olegosipenko on 01.04.16.
  */
-@Layout(R.layout.screen_photo_slider)
+@Layout(R.layout.view_photo_slider)
 @WithModule(PhotoSliderScreen.Module.class)
 public class PhotoSliderScreen extends Path {
 
