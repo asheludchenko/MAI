@@ -1,12 +1,12 @@
 package ru.mai.app;
 
 
+import android.content.Context;
+
 import flow.path.Path;
 import ru.mai.app.presentation.screens.ListContentScreen;
 import ru.mai.app.presentation.screens.ListPhotoScreen;
-import ru.mai.app.presentation.screens.MainScreen;
-import ru.mai.app.presentation.screens.MapScreen;
-import ru.mai.app.presentation.screens.MediaScreen;
+import ru.mai.app.presentation.screens.MainSliderScreen;
 import ru.mai.app.presentation.screens.NewsContentScreen;
 import ru.mai.app.presentation.screens.StaticContentScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
@@ -248,7 +248,7 @@ public class Router {
     public static final String WW35 = "Информационная безопасность";
     public static final String WW36 = "Радиотехника";
     public static final String WW37 = "Инфокоммуникационные технологии и системы связи";
-    public static final String WW38= "Конструирование и технология электронных средств";
+    public static final String WW38 = "Конструирование и технология электронных средств";
     public static final String WW39 = "Безопасность информационных технологий в правоохранительной сфере";
     public static final String WW40 = "Радиоэлектронные системы и комплексы";
     public static final String WW41 = "Радиотехника";
@@ -362,19 +362,33 @@ public class Router {
     public static final String SCH14 = "Институт информационных систем и технологий";
     public static final String SCH15 = "Институт менеджмента, экономики и социальных технологий";
 
+    private boolean isStudent = false;
 
+    public Router(Context context) {
+        this.isStudent = context.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
+    }
 
     public Path getScreen(String item) {
-        if (item.contains(WEEK) || item.equals(MAIN)) return new MainScreen();
-        if (item.equals(MAP)) return new MapScreen();
-        if (item.startsWith(SCHEDULE + DELIM) && ((item.length() - item.replace(DELIM, "").length()) == 2)) return new WebViewScreen(item);
-        if (item.length() - item.replace(DELIM, "").length() == 3) return new StaticContentScreen(item);
+        if (item.contains(WEEK) || item.equals(MAIN)) {
+            return new MainSliderScreen(0);
+        }
+        if (item.equals(MAP)) return new MainSliderScreen(2);
+        if (item.startsWith(SCHEDULE + DELIM) && ((item.length() - item.replace(DELIM, "").length()) == 2))
+            return new WebViewScreen(item);
+        if (item.length() - item.replace(DELIM, "").length() == 3)
+            return new StaticContentScreen(item);
         if (item.startsWith(NEWS + DELIM)) return new NewsContentScreen(item);
         if (item.equals(PHOTO)) return new ListPhotoScreen(item);
         if (item.startsWith(PRESENTATIONS + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(COURSES + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(PRIEM + DELIM)) return new WebViewScreen(item);
         switch (item) {
+            case NEWS:
+                return new MainSliderScreen(1);
+            case SCHEDULE:
+                return new MainSliderScreen(3);
+            case PRIEM:
+                return new MainSliderScreen(2);
             case FACULTIES:
             case SCHOLARSHIPS:
             case LIBRARIES:
@@ -384,8 +398,6 @@ public class Router {
             case SPORT_SECTIONS:
             case LIFE:
             case HELP:
-            case NEWS:
-            case SCHEDULE:
             case WAYS:
             case SCHOOL_ACTIVITY:
             case DOSUG:
@@ -402,7 +414,6 @@ public class Router {
             case DK:
             case DOSAAF:
             case PODGOTOVKA:
-            case PRIEM:
             case DOSUG + DELIM + DOSUG2:
                 return new StaticListContentScreen(item);
             case PRACTICS:
@@ -552,7 +563,7 @@ public class Router {
             case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
                 return new StaticContentScreen(item);
             case MEDIA:
-                return new MediaScreen(item);
+                return new MainSliderScreen(3);
             case WAYS + DELIM + WAY1 + DELIM + OCH:
             case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY1 + DELIM + OZ:
@@ -618,7 +629,7 @@ public class Router {
             case SCHEDULE + DELIM + SCH15:
                 return new SubListScreen(item);
             default:
-                return new MainScreen();
+                return new MainSliderScreen(0);
         }
     }
 

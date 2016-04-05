@@ -128,7 +128,7 @@ public class App extends Application {
         @Provides
         @Singleton
         Router providesRouter() {
-            return new Router();
+            return new Router(context);
         }
     }
 }
