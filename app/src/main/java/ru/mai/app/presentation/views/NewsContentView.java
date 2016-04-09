@@ -6,7 +6,6 @@ import android.support.v4.widget.NestedScrollView;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,7 +20,6 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -86,6 +84,8 @@ public class NewsContentView extends NestedScrollView {
                 view = getFacTitleView(content.getFacTitle());
             } else if (content.getText() != null) {
                 view = getTextView(content.getText());
+            } else if (content.getAuthor() != null) {
+                view = getTextView(content.getAuthor());
             }
             root.addView(view);
         }
