@@ -2,6 +2,9 @@ package ru.mai.app.data.dataModel;
 
 import android.text.Spanned;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Created by olegosipenko on 13.09.15.
  */
@@ -14,6 +17,7 @@ public class StaticContent {
     private String facText;
     private Spanned newsText;
     private String map;
+    private Spanned author;
 
     public StaticContent() {
     }
@@ -50,6 +54,10 @@ public class StaticContent {
         return map;
     }
 
+    public Spanned getAuthor() {
+        return author;
+    }
+
     @Override
     public String toString() {
         return "StaticContent{" +
@@ -61,6 +69,7 @@ public class StaticContent {
                 ", facText='" + facText + '\'' +
                 ", newsText=" + newsText +
                 ", map='" + map + '\'' +
+                ", author=" + author +
                 '}';
     }
 
@@ -113,6 +122,12 @@ public class StaticContent {
 
         public StaticContent build() {
             return staticContent;
+        }
+
+        @NotNull
+        public Builder setAuthor(@Nullable Spanned author) {
+            staticContent.author = author;
+            return this;
         }
     }
 }
