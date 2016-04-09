@@ -10,7 +10,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"/>
 
-    <com.facebook.drawee.view.SimpleDraweeView xmlns:android="http://schemas.android.com/apk/res/android"
+    <samples.zoomable.ZoomableDraweeView
         android:id="@+id/photo"
         fresco:actualImageScaleType="fitCenter"
         android:layout_width="match_parent"
