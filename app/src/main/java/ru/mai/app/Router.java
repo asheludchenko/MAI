@@ -7,6 +7,7 @@ import flow.path.Path;
 import ru.mai.app.presentation.screens.ListContentScreen;
 import ru.mai.app.presentation.screens.ListPhotoScreen;
 import ru.mai.app.presentation.screens.MainSliderScreen;
+import ru.mai.app.presentation.screens.MediaScreen;
 import ru.mai.app.presentation.screens.NewsContentScreen;
 import ru.mai.app.presentation.screens.StaticContentScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
@@ -563,7 +564,8 @@ public class Router {
             case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
                 return new StaticContentScreen(item);
             case MEDIA:
-                return new MainSliderScreen(3);
+                if (isStudent) return new MediaScreen(item);
+                else return new MainSliderScreen(3);
             case WAYS + DELIM + WAY1 + DELIM + OCH:
             case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY1 + DELIM + OZ:

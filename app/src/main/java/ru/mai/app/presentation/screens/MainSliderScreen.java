@@ -32,7 +32,7 @@ public class MainSliderScreen extends Path {
             injects = MainSliderView.class,
             addsTo = App.AppModule.class
     )
-    class Module {
+    public class Module {
         public Module() {
         }
     }
@@ -57,7 +57,7 @@ public class MainSliderScreen extends Path {
         }
 
         @Subscribe
-        public void swipPage(SwipePageEvent event) {
+        public void swipePage(SwipePageEvent event) {
             if (!hasView()) return;
             getView().swipePage(event.getPosition());
         }
