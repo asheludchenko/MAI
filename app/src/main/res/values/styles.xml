@@ -16,5 +16,16 @@
         <item name="colorControlHighlight">@color/mai_dark_blue</item>
     </style>
 
+    <style name="Tabs" parent="Widget.Design.TabLayout">
+        <item name="android:textAppearance">@style/TabTextAppearance</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabMode">scrollable</item>
+        <item name="android:background">@color/mai_blue</item>
+    </style>
+    
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/mai_dark_blue</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 
 </resources>

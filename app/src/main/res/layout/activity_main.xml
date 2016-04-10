@@ -20,10 +20,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable"
-            android:background="@color/mai_blue"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabTextColor="@color/mai_dark_blue" />
+            style="@style/Tabs"/>
 
         <ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame
             android:id="@+id/container"
