@@ -18,11 +18,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
         android:textColor="@android:color/white"
-        android:background="?attr/colorPrimary"
+        android:background="@color/mai_blue"
         android:layout_marginBottom="80dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:theme="@style/FlatButton"/>
+        style="@style/Widget.AppCompat.Button.Borderless"/>
 
 </ru.mai.app.presentation.views.MainView>

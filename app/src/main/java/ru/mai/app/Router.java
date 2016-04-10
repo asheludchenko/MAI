@@ -51,6 +51,11 @@ public class Router {
     public static final String MAIN = "Главная";
     public static final String NEWS = "Новости";
     public static final String MAP = "Карта";
+    public static final String TAB_MAP = "КАРТА";
+    public static final String TAB_NEWS = "НОВОСТИ";
+    public static final String TAB_SCHEDULE = "РАСПИСАНИЕ";
+    public static final String TAB_PRIEM = "ПРИЁМНАЯ КОМИССИЯ";
+    public static final String TAB_MEDIA = "МЕДИА";
     public static final String SCHEDULE = "Расписание";
     public static final String WAYS = "Направления подготовки";
     public static final String DORMITORIES = "Общежития";
@@ -373,7 +378,7 @@ public class Router {
         if (item.contains(WEEK) || item.equals(MAIN)) {
             return new MainSliderScreen(0);
         }
-        if (item.equals(MAP)) return new MainSliderScreen(2);
+        if (item.equals(TAB_MAP)) return new MainSliderScreen(2);
         if (item.startsWith(SCHEDULE + DELIM) && ((item.length() - item.replace(DELIM, "").length()) == 2))
             return new WebViewScreen(item);
         if (item.length() - item.replace(DELIM, "").length() == 3)
@@ -384,11 +389,11 @@ public class Router {
         if (item.startsWith(COURSES + DELIM)) return new WebViewScreen(item);
         if (item.startsWith(PRIEM + DELIM)) return new WebViewScreen(item);
         switch (item) {
-            case NEWS:
+            case TAB_NEWS:
                 return new MainSliderScreen(1);
-            case SCHEDULE:
+            case TAB_SCHEDULE:
                 return new MainSliderScreen(3);
-            case PRIEM:
+            case TAB_PRIEM:
                 return new MainSliderScreen(2);
             case FACULTIES:
             case SCHOLARSHIPS:
@@ -564,8 +569,9 @@ public class Router {
             case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
                 return new StaticContentScreen(item);
             case MEDIA:
-                if (isStudent) return new MediaScreen(item);
-                else return new MainSliderScreen(3);
+                return new MediaScreen(item);
+            case TAB_MEDIA:
+                return new MainSliderScreen(3);
             case WAYS + DELIM + WAY1 + DELIM + OCH:
             case WAYS + DELIM + WAY1 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY1 + DELIM + OZ:
