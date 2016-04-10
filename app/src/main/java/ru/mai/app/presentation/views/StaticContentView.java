@@ -1,6 +1,8 @@
 package ru.mai.app.presentation.views;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
 import android.text.Html;
@@ -151,6 +153,22 @@ public class StaticContentView extends NestedScrollView {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 height
         ));
+        imageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri yaUri = Uri.parse("yandexmaps://maps.yandex.ru/?pt=37.499577,55.810698&z=18&l=map&pt=37.499577,55.810698");
+                Intent yaIntent = new Intent(Intent.ACTION_VIEW, yaUri);
+                PackageManager pm = getContext().getPackageManager();
+                if (yaIntent.resolveActivity(pm) != null) {
+                    getContext().startActivity(yaIntent);
+                } else {
+                    Uri gmUri = Uri.parse("geo:55.810981, 37.499077?z=18"+"&q=55.810981, 37.499077(" + Uri.encode("Московский авиационный институт") + ")");
+                    Intent gmIntent = new Intent(Intent.ACTION_VIEW, gmUri);
+                    gmIntent.setPackage("com.google.android.apps.maps");
+                    if (gmIntent.resolveActivity(pm) != null) getContext().startActivity(gmIntent);
+                }
+            }
+        });
         return imageView;
     }
 

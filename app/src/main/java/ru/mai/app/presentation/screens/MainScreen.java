@@ -1,9 +1,6 @@
 package ru.mai.app.presentation.screens;
 
-import android.net.Uri;
 import android.os.Bundle;
-
-import java.util.Set;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -39,6 +36,9 @@ public class MainScreen extends Path {
             includes = DomainModule.class
     )
     public class Module {
+        public Module() {
+        }
+
         @Provides
         Interactor<Void, MainScreenDto> provideImage(
                 DataRepository repository,
