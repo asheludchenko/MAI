@@ -1,26 +1,20 @@
 package ru.mai.app.data.repository;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
-import ru.mai.app.ConstantsKt;
 import ru.mai.app.R;
-import ru.mai.app.Router;
 import ru.mai.app.data.api.NetworkProvider;
 import ru.mai.app.data.dataModel.ListContent;
+import ru.mai.app.data.dataModel.NewsHeadersContent;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.dataModel.StaticListContent;
 import ru.mai.app.data.dto.MainScreenDto;
@@ -59,17 +53,19 @@ public class MaiRepository implements DataRepository {
 
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
-        if (specification.specified(Router.NEWS)) {
-            return networkProvider.getNews()
-                    .flatMap(new Func1<List<? extends ListContent>, Observable<List<ListContent>>>() {
-                        @Override
-                        public Observable<List<ListContent>> call(List<? extends ListContent> listContents) {
-                            List<ListContent> ks = new ArrayList<ListContent>(listContents);
-                            return Observable.just(ks);
-                        }
-                    });
-        }
         return listContentProvider.getListContent(specification);
+    }
+
+    @Override
+    public Observable<List<NewsHeadersContent>> getNews() {
+        return networkProvider.getNews()
+                .flatMap(new Func1<List<? extends NewsHeadersContent>, Observable<List<NewsHeadersContent>>>() {
+                    @Override
+                    public Observable<List<NewsHeadersContent>> call(List<? extends NewsHeadersContent> headersContents) {
+                        List<NewsHeadersContent> ks = new ArrayList<NewsHeadersContent>(headersContents);
+                        return Observable.just(ks);
+                    }
+                });
     }
 
     @Override

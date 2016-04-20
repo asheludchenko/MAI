@@ -3,11 +3,12 @@ package ru.mai.app.data.api
 /**
  * Created by olegosipenko on 24.09.15.
  */
-public class NewsHeadersResponse {
+class NewsHeadersResponse {
 
-    public val id: String? = null
-    public val header: String? = null
-    public val photo: String? = null
-    public val date: String? = null
+    val id: String? = null
+    val header: String? = null
+    val detail_photo: String? = null
+    val photo: String? = null
+    val date: String? = null
 
 }

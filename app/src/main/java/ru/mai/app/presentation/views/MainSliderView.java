@@ -24,6 +24,7 @@ import ru.mai.app.presentation.screens.MainScreen;
 import ru.mai.app.presentation.screens.MainSliderScreen;
 import ru.mai.app.presentation.screens.MapScreen;
 import ru.mai.app.presentation.screens.MediaScreen;
+import ru.mai.app.presentation.screens.NewsHeadersScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
 
 /**
@@ -63,9 +64,9 @@ public class MainSliderView extends LinearLayout {
         boolean isStudent = getContext().getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
         List<Path> mainScreens;
         if (isStudent) {
-            mainScreens = Arrays.asList(new MainScreen(), new ListContentScreen(Router.NEWS), new MapScreen(), new ListContentScreen(Router.SCHEDULE));
+            mainScreens = Arrays.asList(new MainScreen(), new NewsHeadersScreen(), new MapScreen(), new ListContentScreen(Router.SCHEDULE));
         } else {
-            mainScreens = Arrays.asList(new MainScreen(), new ListContentScreen(Router.NEWS), new StaticListContentScreen(Router.PRIEM), new MediaScreen(Router.MEDIA));
+            mainScreens = Arrays.asList(new MainScreen(), new NewsHeadersScreen(), new StaticListContentScreen(Router.PRIEM), new MediaScreen(Router.MEDIA));
         }
         SlidePagerAdapter<Path> adapter = new SlidePagerAdapter<>(getContext(), mainScreens);
         pager.setAdapter(adapter);

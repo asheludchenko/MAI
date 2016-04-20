@@ -28,4 +28,8 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="CircularProgress" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/mai_blue</item>
+    </style>
+
 </resources>
