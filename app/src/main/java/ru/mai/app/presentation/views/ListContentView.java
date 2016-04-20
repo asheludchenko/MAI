@@ -164,11 +164,7 @@ public class ListContentView extends RelativeLayout {
                 }
             };
             screenName = parameter;
-            if (parameter.startsWith(Router.FACULTIES)) {
-                isRound = false;
-            } else {
-                isRound = true;
-            }
+            isRound = !parameter.startsWith(Router.FACULTIES);
         }
 
         public void setContents(List<ListContent> items) {

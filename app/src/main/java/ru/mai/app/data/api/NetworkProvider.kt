@@ -9,6 +9,7 @@ import retrofit.RestAdapter
 import retrofit.client.Response
 import ru.mai.app.App
 import ru.mai.app.data.dataModel.ListContent
+import ru.mai.app.data.dataModel.NewsHeadersContent
 import ru.mai.app.data.dataModel.Photo
 import ru.mai.app.data.dataModel.StaticContent
 import ru.mai.app.data.repository.specification.NewsContentSpecification
@@ -34,9 +35,9 @@ class NetworkProvider() {
         service = adapter.create(MaiService::class.java)
     }
 
-    fun getNews(): Observable<List<ListContent>> {
-        return Observable.defer(object : Func0<Observable<List<ListContent>>> {
-            override fun call(): Observable<List<ListContent>>? {
+    fun getNews(): Observable<List<NewsHeadersContent>> {
+        return Observable.defer(object : Func0<Observable<List<NewsHeadersContent>>> {
+            override fun call(): Observable<List<NewsHeadersContent>>? {
                 val response = service.getNewsList(App.getNewsPage(), 8)
                 val json = trimJson(trimResponse(response))
                 val gson = Gson()
@@ -45,10 +46,7 @@ class NetworkProvider() {
                 val itemsMapType = object : TypeToken<Map<Int, NewsHeadersResponse>>() {}.type
                 val headers = gson.fromJson<Map<Int, NewsHeadersResponse>>(reader, itemsMapType)
                 return Observable.from(headers.values)
-                        .map { header ->
-                            ListContent.Builder()
-                                    .setLink(header.id).setImage(header.photo).setText(header.header).build()
-                        }
+                        .map { header -> NewsHeadersContent(header.header, header.detail_photo, header.id)}
                         .toList()
                         .cache()
             }
