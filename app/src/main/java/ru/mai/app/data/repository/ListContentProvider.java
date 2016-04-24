@@ -162,7 +162,7 @@ public class ListContentProvider {
                     .setSections(sectionsArray)
                     .setWithSections(true)
                     .build();
-            final List<ListContent> contents =  Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
+            final List<ListContent> contents = Observable.zip(unitedStrings, unitedImages, new Func2<String, Integer, ListContent>() {
                 @Override
                 public ListContent call(String s, Integer integer) {
                     return new ListContent.Builder()
@@ -205,22 +205,40 @@ public class ListContentProvider {
                 }
             });
         } else if (specification.specified(LIBRARIES)) {
-            return Observable.zip(
+            final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[4];
+            sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Научно-техническая библиотека");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(11, "Берниковская наб., д. 14");
+            sectionsArray[2] = new SimpleSectionListAdapter.Section(18, "Оршанская ул., д. 3");
+            sectionsArray[3] = new SimpleSectionListAdapter.Section(20, "Фестивальная ул., д. 4, корп. 3");
+
+            final List<ListContent> contents = Observable.zip(
                     Observable.from(context.getResources().getStringArray(R.array.libraries_names)),
                     Observable.from(context.getResources().getStringArray(R.array.libraries_rooms)),
-                    Observable.from(context.getResources().getStringArray(R.array.libraries_phones)),
-                    new Func3<String, String, String, ListContent>() {
+                    new Func2<String, String, ListContent>() {
                         @Override
-                        public ListContent call(String name, String address, String phone) {
+                        public ListContent call(String name, String room) {
                             return new ListContent.Builder()
                                     .setTitle(name)
-                                    .setSub2(address)
-                                    .setSub3(phone)
-                                    .build();
+                                    .setSub2(room).build();
                         }
                     }
             )
                     .toList()
+                    .toBlocking()
+                    .single();
+            ListContent sectionBlock = new ListContent.Builder()
+                    .setSections(sectionsArray)
+                    .setWithSections(true)
+                    .build();
+
+            contents.add(sectionBlock);
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(contents);
+                    subscriber.onCompleted();
+                }
+            })
                     .cache();
         } else if (specification.specified(CANTEENS)) {
 

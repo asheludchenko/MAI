@@ -57,6 +57,17 @@
         <item name="l9">Отдел нормативно-технической\nдокументации</item>
         <item name="l10">Отдел научно-технической\nинформации и библиографии</item>
         <item name="l11">Зал читательских каталогов</item>
+        <item name="l11">Абонемент технической литературы</item>
+        <item name="l11">Абонемент художественной литературы</item>
+        <item name="l11">Читальный зал</item>
+        <item name="l11">Отдел комплектования</item>
+        <item name="l11">Отдел научной обработки книг\nи организации каталогов</item>
+        <item name="l11">Отдел учета и технической\nобработки книг</item>
+        <item name="l11">Научно-библиографической отдел</item>
+        <item name="l11">Абонемент технической литературы</item>
+        <item name="l11">Читальный зал</item>
+        <item name="l11">Абонемент технической литературы</item>
+        <item name="l11">Читальный зал</item>
     </string-array>
     <string-array name="libraries_rooms">
         <item name="l1">Комната: 326 (7)</item>
@@ -70,6 +81,17 @@
         <item name="l9">Комната: 327 (7)</item>
         <item name="l10">Комната: 223 (7)</item>
         <item name="l11">Комната: 218 (7)</item>
+        <item name="l11">Комната: 423</item>
+        <item name="l11">Комната: 422</item>
+        <item name="l11">Комната: 420</item>
+        <item name="l11">Комната: 424</item>
+        <item name="l11">Комната: 424</item>
+        <item name="l11">Комната: 424</item>
+        <item name="l11">Комната: 424</item>
+        <item name="l11">Комната: 305(A)</item>
+        <item name="l11">Комната: 308(A)</item>
+        <item name="l11"></item>
+        <item name="l11"></item>
     </string-array>
     <string-array name="libraries_phones">
         <item name="l1">+7–499–158–45–20</item>
