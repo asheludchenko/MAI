@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/header_image"
-        tools:background="@drawable/contacts"
+        tools:background="@drawable/contacts_dubosek"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="240dp"/>

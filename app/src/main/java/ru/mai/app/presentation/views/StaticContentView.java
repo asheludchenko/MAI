@@ -32,6 +32,7 @@ import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.R;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.presentation.screens.StaticContentScreen;
+import ru.mai.app.presentation.utils.Map;
 
 /**
  * Created by olegosipenko on 13.09.15.
@@ -140,11 +141,11 @@ public class StaticContentView extends NestedScrollView {
         return imageView;
     }
 
-    private View getMapImageView(String image) {
+    private View getMapImageView(final Map image) {
         SimpleDraweeView imageView = new SimpleDraweeView(getContext());
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
-                .path(image)
+                .path(String.valueOf(image.getMapImage()))
                 .build();
         imageView.setImageURI(uri);
         imageView.setAdjustViewBounds(true);
@@ -156,14 +157,12 @@ public class StaticContentView extends NestedScrollView {
         imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri yaUri = Uri.parse("yandexmaps://maps.yandex.ru/?pt=37.499577,55.810698&z=18&l=map&pt=37.499577,55.810698");
-                Intent yaIntent = new Intent(Intent.ACTION_VIEW, yaUri);
+                Intent yaIntent = new Intent(Intent.ACTION_VIEW, image.getYandexUri());
                 PackageManager pm = getContext().getPackageManager();
                 if (yaIntent.resolveActivity(pm) != null) {
                     getContext().startActivity(yaIntent);
                 } else {
-                    Uri gmUri = Uri.parse("geo:55.810981, 37.499077?z=18"+"&q=55.810981, 37.499077(" + Uri.encode("Московский авиационный институт") + ")");
-                    Intent gmIntent = new Intent(Intent.ACTION_VIEW, gmUri);
+                    Intent gmIntent = new Intent(Intent.ACTION_VIEW, image.getGmUri());
                     gmIntent.setPackage("com.google.android.apps.maps");
                     if (gmIntent.resolveActivity(pm) != null) getContext().startActivity(gmIntent);
                 }
