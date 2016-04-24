@@ -6,7 +6,6 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Function;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +16,6 @@ import ru.mai.app.data.repository.specification.ListContentSpecification;
 import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
-import rx.functions.Action1;
 import rx.functions.Func0;
 import rx.functions.Func1;
 import rx.functions.Func2;
@@ -33,38 +31,19 @@ import static ru.mai.app.Router.HELP;
 import static ru.mai.app.Router.LIBRARIES;
 import static ru.mai.app.Router.LIFE;
 import static ru.mai.app.Router.MEDIA;
-import static ru.mai.app.Router.PRESENTATIONS;
-import static ru.mai.app.Router.S1;
-import static ru.mai.app.Router.SCH1;
-import static ru.mai.app.Router.SCHOLARSHIPS;
-import static ru.mai.app.Router.SCHOOL_ACTIVITY;
-import static ru.mai.app.Router.SCHOOL_CENTERS;
-import static ru.mai.app.Router.SPORT_SECTIONS;
-import static ru.mai.app.Router.WAYS;
-import static ru.mai.app.Router.PODGOTOVKA;
+import static ru.mai.app.Router.OCH;
+import static ru.mai.app.Router.OZ;
 import static ru.mai.app.Router.POD1;
 import static ru.mai.app.Router.POD5;
-import static ru.mai.app.Router.OCH;
-import static ru.mai.app.Router.ZAOCH;
-import static ru.mai.app.Router.OZ;
-import static ru.mai.app.Router.WAY1;
-import static ru.mai.app.Router.WAY2;
-import static ru.mai.app.Router.WAY3;
-import static ru.mai.app.Router.WAY4;
-import static ru.mai.app.Router.WAY5;
-import static ru.mai.app.Router.WAY6;
-import static ru.mai.app.Router.WAY7;
-import static ru.mai.app.Router.WAY8;
-import static ru.mai.app.Router.WAY9;
-import static ru.mai.app.Router.WAY10;
-import static ru.mai.app.Router.WAY11;
-import static ru.mai.app.Router.WAY12;
-import static ru.mai.app.Router.WAY13;
-import static ru.mai.app.Router.WAY14;
-import static ru.mai.app.Router.WAY15;
-import static ru.mai.app.Router.WAY16;
-import static ru.mai.app.Router.SCHEDULE;
+import static ru.mai.app.Router.PODGOTOVKA;
+import static ru.mai.app.Router.PRESENTATIONS;
 import static ru.mai.app.Router.SCH1;
+import static ru.mai.app.Router.SCH10;
+import static ru.mai.app.Router.SCH11;
+import static ru.mai.app.Router.SCH12;
+import static ru.mai.app.Router.SCH13;
+import static ru.mai.app.Router.SCH14;
+import static ru.mai.app.Router.SCH15;
 import static ru.mai.app.Router.SCH2;
 import static ru.mai.app.Router.SCH3;
 import static ru.mai.app.Router.SCH4;
@@ -73,12 +52,29 @@ import static ru.mai.app.Router.SCH6;
 import static ru.mai.app.Router.SCH7;
 import static ru.mai.app.Router.SCH8;
 import static ru.mai.app.Router.SCH9;
-import static ru.mai.app.Router.SCH10;
-import static ru.mai.app.Router.SCH11;
-import static ru.mai.app.Router.SCH12;
-import static ru.mai.app.Router.SCH13;
-import static ru.mai.app.Router.SCH14;
-import static ru.mai.app.Router.SCH15;
+import static ru.mai.app.Router.SCHEDULE;
+import static ru.mai.app.Router.SCHOLARSHIPS;
+import static ru.mai.app.Router.SCHOOL_ACTIVITY;
+import static ru.mai.app.Router.SCHOOL_CENTERS;
+import static ru.mai.app.Router.SPORT_SECTIONS;
+import static ru.mai.app.Router.WAY1;
+import static ru.mai.app.Router.WAY10;
+import static ru.mai.app.Router.WAY11;
+import static ru.mai.app.Router.WAY12;
+import static ru.mai.app.Router.WAY13;
+import static ru.mai.app.Router.WAY14;
+import static ru.mai.app.Router.WAY15;
+import static ru.mai.app.Router.WAY16;
+import static ru.mai.app.Router.WAY2;
+import static ru.mai.app.Router.WAY3;
+import static ru.mai.app.Router.WAY4;
+import static ru.mai.app.Router.WAY5;
+import static ru.mai.app.Router.WAY6;
+import static ru.mai.app.Router.WAY7;
+import static ru.mai.app.Router.WAY8;
+import static ru.mai.app.Router.WAY9;
+import static ru.mai.app.Router.WAYS;
+import static ru.mai.app.Router.ZAOCH;
 
 /**
  * Created by olegosipenko on 20.09.15.
@@ -96,7 +92,8 @@ public class ListContentProvider {
             R.drawable.fac_9,
             R.drawable.fac_10,
             R.drawable.fac_inyaz,
-            R.drawable.fac_radiovtuz
+            R.drawable.fac_radiovtuz,
+            R.drawable.logo
     );
 
     List<Integer> schedFacImages = Arrays.asList(
@@ -123,10 +120,17 @@ public class ListContentProvider {
 
     List<Integer> instImages = Arrays.asList(
             R.drawable.fac_ing,
-            R.drawable.fac_voen
+            R.drawable.fac_voen,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo
     );
 
     List<Integer> filImages = Arrays.asList(
+            R.drawable.logo,
             R.drawable.logo,
             R.drawable.logo,
             R.drawable.logo,
@@ -144,8 +148,8 @@ public class ListContentProvider {
 
             final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[3];
             sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
-            sectionsArray[1] = new SimpleSectionListAdapter.Section(11, "Институты");
-            sectionsArray[2] = new SimpleSectionListAdapter.Section(13, "Филиалы");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(12, "Институты");
+            sectionsArray[2] = new SimpleSectionListAdapter.Section(20, "Филиалы");
 
             Observable<String> unitedStrings = Observable.from(context.getResources().getStringArray(R.array.faculties))
                     .concatWith(Observable.from(context.getResources().getStringArray(R.array.institutes)))

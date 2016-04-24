@@ -79,13 +79,21 @@ public class Router {
     public static final String F8 = "№8 «Прикладная математика и физика»";
     public static final String F9 = "№9 «Прикладная механика»";
     public static final String F10 = "№10 «Социальный инжиниринг»";
+    public static final String F11 = "Факультет довузовской подготовки";
     public static final String RADIOVTUZ = "«РадиоВТУЗ МАИ»";
     public static final String INLANG = "«Иностранных языков»";
     public static final String BAYC = "«Восход» МАИ в г. Байконур";
     public static final String AHTUBA = "«Взлёт» МАИ в г. Ахтубинске";
     public static final String STRELA = "«Стрела» МАИ в г. Жуковском";
     public static final String KHIMKI = "«Ракетно-космическая техника» в г. Химки";
+    public static final String STUPINO = "Ступинский филиал МАИ";
     public static final String MILIT_INST = "Военный институт МАИ";
+    public static final String IN3 = "Институт материаловедения и технологий материалов";
+    public static final String IN4 = "Институт аэрокосмических конструкций, технологий и систем управления";
+    public static final String IN5 = "Институт информационных систем и технологий";
+    public static final String IN6 = "Институт менеджмента, экономики и социальных технологий";
+    public static final String IN7 = "Институт военной подготовки";
+    public static final String IN8 = "Институт заочного обучения";
     public static final String SESSION_ZACHET = "Зачётная сессия";
     public static final String SESSION_EXAM = "Экзаменационная сессия";
     public static final String SESSION_OTCH = "Отчисление студентов";
@@ -449,13 +457,21 @@ public class Router {
             case FACULTIES + DELIM + F8:
             case FACULTIES + DELIM + F9:
             case FACULTIES + DELIM + F10:
+            case FACULTIES + DELIM + F11:
             case FACULTIES + DELIM + RADIOVTUZ:
             case FACULTIES + DELIM + INLANG:
             case FACULTIES + DELIM + MILIT_INST:
+            case FACULTIES + DELIM + IN8:
+            case FACULTIES + DELIM + IN7:
+            case FACULTIES + DELIM + IN3:
+            case FACULTIES + DELIM + IN4:
+            case FACULTIES + DELIM + IN5:
+            case FACULTIES + DELIM + IN6:
             case FACULTIES + DELIM + BAYC:
             case FACULTIES + DELIM + AHTUBA:
             case FACULTIES + DELIM + STRELA:
             case FACULTIES + DELIM + KHIMKI:
+            case FACULTIES + DELIM + STUPINO:
             case SESSION + DELIM + SESSION_ZACHET:
             case SESSION + DELIM + SESSION_EXAM:
             case SESSION + DELIM + SESSION_OTCH:

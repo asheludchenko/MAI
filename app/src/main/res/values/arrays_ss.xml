@@ -284,6 +284,10 @@
         <item name="s01"><![CDATA[Светлана Ивановна Мавроди<br>(декан)]]></item>
         <item name="s03"><![CDATA[<b>Контакты</b><br>526, корп. ГУК, зона «А»<br>+7-499-158-65-00<br>+7-499-158-45-50<br>http://mai.ru/unit/social/]]></item>
     </string-array>
+    <string-array name="fac11">
+        <item name="s01"><![CDATA[Александр Георгиевич Гетманов<br>(декан)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>зона «А», 4 этаж, комн. 414, 403<br>+7-499-158-46-91<br>+7-499-158-44-03<br>+7-499-158-02-85<br>+7-499-158-43-54<br>http://mai.ru/education/fdp/]]></item>
+    </string-array>
     <string-array name="fac_inlang">
         <item name="s01"><![CDATA[Александр Константинович Каллиопин<br>(декан)]]></item>
         <item name="s03"><![CDATA[<b>Контакты</b><br>411 «А», корп. ГАК<br>+7-495-221-58-86<br>+7-495-221-58-99<br>http://mai.ru/unit/foreign/]]></item>
@@ -291,6 +295,30 @@
     <string-array name="fac_milit">
         <item name="s01"><![CDATA[Владимир Иванович Гончаренко<br>(директор института)]]></item>
         <item name="s03"><![CDATA[<b>Контакты</b><br>208, корп. 6<br>+7-499-158-17-01<br>http://mai.ru/unit/military/]]></item>
+    </string-array>
+    <string-array name="in3">
+        <item name="s01"><![CDATA[Александр Владимирович Беспалов<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, ул. Оршанская, д. 3<br>+7-495-417-38-81<br>+7-499-141-94-58<br>http://mati.ru/index.php/instituty/institut-materialovedeniya-i-tekhnologij-materialov/]]></item>
+    </string-array>
+    <string-array name="in4">
+        <item name="s01"><![CDATA[Павел Андреевич Иосифов<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, Берниковская наб., д. 14<br>+7-495-915-78-63<br>http://mati.ru/index.php/instituty/institut-aerokosmicheskikh-konstruktsij-tekhnologij-i-sistem-upravleniya/]]></item>
+    </string-array>
+    <string-array name="in5">
+        <item name="s01"><![CDATA[Юрий Александрович Костиков<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, ул. Оршанская, д. 3<br>Берниковская наб., д. 14<br>+7-499-141-95-09<br>+7-499-141-94-47<br>+7-499-141-95-63<br>http://mati.ru/index.php/instituty/institut-informatsionnykh-sistem-i-tekhnologij/]]></item>
+    </string-array>
+    <string-array name="in6">
+        <item name="s01"><![CDATA[Роман Сергеевич Голов<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, ул. Оршанская, д. 3<br>+7-495-417-87-36<br>+7-499-141-94-85<br>+7-499-141-73-36<br>http://mati.ru/index.php/instituty/institut-menedzhmenta-ekonomiki-i-sotsialnykh-tekhnologij/]]></item>
+    </string-array>
+    <string-array name="in7">
+        <item name="s01"><![CDATA[Анатолий Иванович Сагула<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, ул. Полбина, д.45, кор.2.<br>+7-495-354-33-83<br>+7-495-354-02-98<br>http://mati.ru/index.php/instituty/institut-voennogo-obucheniya/]]></item>
+    </string-array>
+    <string-array name="in8">
+        <item name="s01"><![CDATA[Леонид Леонидович Хорошко<br>(директор института)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>г. Москва, ул. Оршанская, д. 3, ауд. 509 «В»<br>+7-495-788-32-70<br>http://mati.ru/index.php/instituty/institut-zaochnogo-obucheniya/]]></item>
     </string-array>
     <string-array name="fac_bayc">
         <item name="s01"><![CDATA[Анатолий Сергеевич Просочкин<br>(директор)]]></item>
@@ -303,6 +331,10 @@
     <string-array name="fac_khimki">
         <item name="s01"><![CDATA[Александр Алексеевич Мазуров<br>(директор)]]></item>
         <item name="s03"><![CDATA[<b>Контакты</b><br>Московская область,<br>г. Химки, ул. Репина, 3<br>+7-495-571-24-47<br>http://mai.ru/unit/rkt/]]></item>
+    </string-array>
+    <string-array name="fac_stupino">
+        <item name="s01"><![CDATA[Виктор Николаевич Уваров<br>(директор)]]></item>
+        <item name="s03"><![CDATA[<b>Контакты</b><br>Московская область,<br>г. Ступино, ул. Пристанционная, д.4<br>+7-496-644-11-60<br>http://sfmai.ru/]]></item>
     </string-array>
     <string-array name="fac_strela">
         <item name="s01"><![CDATA[Владислав Сергеевич Максимов<br>(директор)]]></item>

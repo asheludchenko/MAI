@@ -12,11 +12,18 @@
         <item name="10th">№10 «Социальный инжиниринг»</item>
         <item name="languages">«Иностранных языков»</item>
         <item name="radioVtuz">«РадиоВТУЗ МАИ»</item>
+        <item name="dovuz">Факультет довузовской подготовки</item>
     </string-array>
 
     <string-array name="institutes">
         <item name="engineering">Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)</item>
         <item name="military">Военный институт МАИ</item>
+        <item name="inst">Институт материаловедения и технологий материалов</item>
+        <item name="inst">Институт аэрокосмических конструкций, технологий и систем управления</item>
+        <item name="inst">Институт информационных систем и технологий</item>
+        <item name="inst">"Институт менеджмента, экономики и социальных технологий</item>
+        <item name="inst">Институт военной подготовки</item>
+        <item name="inst">Институт заочного обучения</item>
     </string-array>
 
     <string-array name="filials">
@@ -24,6 +31,7 @@
         <item name="ahtuba">«Взлёт» МАИ в г. Ахтубинске</item>
         <item name="zhuk">«Стрела» МАИ в г. Жуковском</item>
         <item name="khimki">«Ракетно-космическая техника» в г. Химки</item>
+        <item name="stupino">Ступинский филиал МАИ</item>
     </string-array>
     <string-array name="scholarships">
         <item name="s01">Государственная академическая стипендия</item>
