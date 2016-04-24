@@ -121,14 +121,18 @@ public class SimpleSectionListAdapter extends RecyclerView.Adapter<RecyclerView.
     public void setSections(Section[] sections) {
         mSections.clear();
 
-        Arrays.sort(sections, new Comparator<Section>() {
-            @Override
-            public int compare(Section o, Section o1) {
-                return (o.firstPosition == o1.firstPosition)
-                        ? 0
-                        : ((o.firstPosition < o1.firstPosition) ? -1 : 1);
-            }
-        });
+        try {
+            Arrays.sort(sections, new Comparator<Section>() {
+                @Override
+                public int compare(Section o, Section o1) {
+                    return (o.firstPosition == o1.firstPosition)
+                            ? 0
+                            : ((o.firstPosition < o1.firstPosition) ? -1 : 1);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         int offset = 0; // offset positions for the headers we're adding
         for (Section section : sections) {
