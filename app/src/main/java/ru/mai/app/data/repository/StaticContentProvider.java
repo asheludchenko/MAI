@@ -755,6 +755,31 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
+        } else if (specification.specified(FACULTIES + DELIM + F11)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(F11)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.fac11))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         } else if (specification.specified(FACULTIES + DELIM + INLANG)) {
             StaticContent title = new StaticContent.Builder()
                     .setFacTitile(INLANG)
@@ -801,6 +826,156 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(portrait)
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN3)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN3)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN4)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN4)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in4))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN5)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN5)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in5))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN6)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN6)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in6))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN7)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN7)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in7))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + IN8)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(IN8)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.in8))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
                     .startWith(title)
                     .toList()
                     .toBlocking()
@@ -917,6 +1092,31 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(portrait)
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(FACULTIES + DELIM + STUPINO)) {
+            StaticContent title = new StaticContent.Builder()
+                    .setFacTitile(STUPINO)
+                    .build();
+            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.fac_stupino))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setFacText(s)
+                                    .build();
+                        }
+                    })
                     .startWith(title)
                     .toList()
                     .toBlocking()
