@@ -1,6 +1,7 @@
 package ru.mai.app.data.repository;
 
 import android.content.Context;
+import android.net.Uri;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -13,6 +14,7 @@ import java.util.List;
 import ru.mai.app.R;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.repository.specification.StaticContentSpecification;
+import ru.mai.app.presentation.utils.Map;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
@@ -453,10 +455,21 @@ public class StaticContentProvider {
             StaticContent site = new StaticContent.Builder()
                     .setFacText(context.getString(R.string.site))
                     .build();
-            StaticContent map = new StaticContent.Builder()
-                    .setMap(String.valueOf(R.drawable.contacts))
+            StaticContent map1 = new StaticContent.Builder()
+                    .setMap(new Map(
+                            R.drawable.contacts_dubosek,
+                            Uri.parse("yandexmaps://maps.yandex.ru/?pt=37.499577,55.810698&z=18&l=map&pt=37.499577,55.810698"),
+                            Uri.parse("geo:55.810981, 37.499077?z=18"+"&q=55.810981, 37.499077(" + Uri.encode("Московский авиационный институт") + ")")
+                    ))
                     .build();
-            final List<StaticContent> cs = Arrays.asList(address, phone, email, site, map);
+            StaticContent map2 = new StaticContent.Builder()
+                    .setMap(new Map(
+                            R.drawable.contacts_orsh,
+                            Uri.parse("yandexmaps://maps.yandex.ru/?pt=37.4067311,55.7394787&z=18&l=map&pt=37.4067311,55.7394787"),
+                            Uri.parse("geo:55.739672,37.4079005?z=18"+"&q=55.739672,37.4079005(" + Uri.encode("Московский авиационный институт") + ")")
+                    ))
+                    .build();
+            final List<StaticContent> cs = Arrays.asList(address, phone, email, site, map1, map2);
             return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
                 @Override
                 public void call(Subscriber<? super List<StaticContent>> subscriber) {

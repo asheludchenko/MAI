@@ -5,6 +5,8 @@ import android.text.Spanned;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import ru.mai.app.presentation.utils.Map;
+
 /**
  * Created by olegosipenko on 13.09.15.
  */
@@ -16,7 +18,7 @@ public class StaticContent {
     private String facPhoto;
     private String facText;
     private Spanned newsText;
-    private String map;
+    private Map map;
     private Spanned author;
 
     public StaticContent() {
@@ -50,7 +52,7 @@ public class StaticContent {
         return newsText;
     }
 
-    public String getMap() {
+    public Map getMap() {
         return map;
     }
 
@@ -115,7 +117,7 @@ public class StaticContent {
             return this;
         }
 
-        public Builder setMap(String map) {
+        public Builder setMap(Map map) {
             staticContent.map = map;
             return this;
         }
