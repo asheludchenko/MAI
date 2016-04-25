@@ -87,8 +87,11 @@ public class WebViewScreen extends Path {
         public static final String P04 = "https://docs.google.com/viewer?url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_rector_(full).pdf";
         public static final String P05 = "https://docs.google.com/viewer?url=http://files.mai.ru/site/life/brand/presentation/presentation_mai_school.pdf";
         public static final String C01 = "http://inter.mai.ru/";
-        public static final String C02 = "http://klc103.mai.ru/";
+        public static final String C02 = "http://avia.mai.ru/";
         public static final String C03 = "http://klc103.mai.ru/";
+        public static final String C04 = "http://www.c-courses.ru/";
+        public static final String C05 = "http://mai.ru/education/control/k304_cisco/";
+        public static final String C06 = "http://distance.mai.ru/";
         public static final String PS = "http://priem.mai.ru/index.php";
         public static final String S01_1 = "1 курс — очное";
         public static final String S01_2 = "2 курс — очное";
@@ -273,8 +276,11 @@ public class WebViewScreen extends Path {
                 "Выступление Геращенко А.Н. на круглом столе с Рогозиным Д.О. (полное)",
                 "Презентация МАИ для школьников и абитуриентов (PDF)",
                 "Курсы иностранных языков",
-                "Курсы КЛЦ-103",
-                "Курсы C-COURSES"
+                "Авиационный английский язык",
+                "Компьютерные курсы КЛЦ-103",
+                "Компьютерные курсы C-COURSES",
+                "Академия Cisco",
+                "Cистема дистанционного обучения математическим дисциплинам"
         };
 
         @Inject
@@ -299,6 +305,12 @@ public class WebViewScreen extends Path {
                 return C02;
             } else if (sTitle.equals(COURSES + DELIM + items[7])) {
                 return C03;
+            } else if (sTitle.equals(COURSES + DELIM + items[8])) {
+                return C04;
+            } else if (sTitle.equals(COURSES + DELIM + items[9])) {
+                return C05;
+            } else if (sTitle.equals(COURSES + DELIM + items[10])) {
+                return C06;
             } else if ((sTitle.equals(PRIEM + DELIM + PRIEM_SCHEDULE))) {
                 return PS;
             } else if ((sTitle.equals(SCHEDULE + DELIM + SCH1 + DELIM + S01_1))) {
