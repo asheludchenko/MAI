@@ -10,7 +10,7 @@ import com.parse.ParseObject
 class MainScreenDto: ParseObject() {
 
     fun getImageUrl(): String {
-        return getString("imageUrl")
+        return getParseFile("image").url
     }
 
     fun getLinkUrl(): String {

@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import javax.inject.Inject;
@@ -68,6 +69,17 @@ public class MainView extends FrameLayout {
     public void showImage(MainScreenDto image) {
         this.link = image.getLinkUrl();
         bkg.setImageURI(Uri.parse(image.getImageUrl()));
-        screenButton.setText(image.getButtonText());
+        if (!TextUtils.isEmpty(image.getButtonText())) {
+            screenButton.setVisibility(VISIBLE);
+            screenButton.setText(image.getButtonText());
+        } else {
+            screenButton.setVisibility(GONE);
+        }
+
+    }
+
+    public void showPlaceholder() {
+        bkg.setImageURI(Uri.parse("res://placeholder"));
+        bkg.getHierarchy().setActualImageScaleType(ScalingUtils.ScaleType.CENTER_CROP);
     }
 }

@@ -125,7 +125,6 @@ public class MaiRepository implements DataRepository {
                     subscriber.onNext(images.get(randomIndex));
                 } catch (ParseException e) {
                     e.printStackTrace();
-                    subscriber.onError(e);
                 } finally {
                     subscriber.onCompleted();
                 }

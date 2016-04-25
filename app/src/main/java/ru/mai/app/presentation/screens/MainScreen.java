@@ -69,6 +69,7 @@ public class MainScreen extends Path {
                 @Override
                 public void onError(Throwable e) {
                     Timber.e(e.getMessage());
+                    getView().showPlaceholder();
                 }
 
                 @Override
