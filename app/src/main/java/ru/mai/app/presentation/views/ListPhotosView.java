@@ -14,7 +14,12 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.backends.pipeline.PipelineDraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -169,7 +174,15 @@ public class ListPhotosView extends FrameLayout {
 
         @Override
         public void onBindViewHolder(final PhotosVH holder, final int position) {
-            holder.photo.setImageURI(Uri.parse(photos.get(position).getOriginal()));
+            Uri uri = Uri.parse(photos.get(position).getOriginal());
+            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+                    .setResizeOptions(new ResizeOptions(140, 140))
+                    .build();
+            PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
+                    .setOldController(holder.photo.getController())
+                    .setImageRequest(request)
+                    .build();
+            holder.photo.setController(controller);
             holder.itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
