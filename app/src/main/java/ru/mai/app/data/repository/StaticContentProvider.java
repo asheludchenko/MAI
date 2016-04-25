@@ -110,19 +110,15 @@ public class StaticContentProvider {
             })
                     .cache();
         } else if (specification.specified(SCIENCE)) {
-            StaticContent portrait = new StaticContent.Builder()
-                    .setFacPhoto(String.valueOf(R.drawable.polyanski))
-                    .build();
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.science))
                     .map(new Func1<String, StaticContent>() {
                         @Override
                         public StaticContent call(String s) {
                             return new StaticContent.Builder()
-                                    .setFacText(s)
+                                    .setText(s)
                                     .build();
                         }
                     })
-                    .startWith(portrait)
                     .toList()
                     .toBlocking()
                     .single();
