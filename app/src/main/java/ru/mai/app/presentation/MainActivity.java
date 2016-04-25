@@ -46,6 +46,8 @@ import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
 import ru.mai.app.presentation.events.ChangeSelectedTabEvent;
+import ru.mai.app.presentation.events.OpenCourseScheduleEvent;
+import ru.mai.app.presentation.events.OpenScheduleEvent;
 import ru.mai.app.presentation.events.SwipePageEvent;
 import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
 import ru.mai.app.presentation.mf_boilerplate.HandlesBack;
@@ -355,8 +357,6 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void changeScreen(String title) {
-        resetCounters(title);
-        setToolbarTitle(title);
         if (title.equals(Router.VIDEO)) {
             Intent showYoutube = new Intent(this, MaiChannelActivity.class);
             startActivity(showYoutube);
@@ -519,7 +519,16 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
 
     @Subscribe
     public void itemClicked(ChangeScreenEvent event) {
+        resetCounters(event.getTitle());
+        setToolbarTitle(event.getTitle());
         changeScreen(event.getTitle());
+    }
+
+    @Subscribe
+    public void schedItemClicked(OpenCourseScheduleEvent event) {
+        resetCounters(event.getTitle());
+        setToolbarTitle(event.getTitle());
+        changeScreen(event.getName());
     }
 
     @Subscribe
@@ -527,6 +536,13 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         tabs.setOnTabSelectedListener(null);
         tabs.getTabAt(event.getPosition()).select();
         tabs.setOnTabSelectedListener(tabListener);
+    }
+
+    @Subscribe
+    public void openSchedule(OpenScheduleEvent event) {
+        resetCounters(event.getTitle());
+        setToolbarTitle(event.getTitle());
+        changeScreen(event.getUrl());
     }
 
     public class TabListener implements TabLayout.OnTabSelectedListener {

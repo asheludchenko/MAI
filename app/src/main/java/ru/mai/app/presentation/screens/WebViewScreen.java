@@ -485,6 +485,8 @@ public class WebViewScreen extends Path {
                 return SCH15_8;
             } else if ((sTitle.equals(SCHEDULE + DELIM + SCH15 + DELIM + S15_9))) {
                 return SCH15_9;
+            } else if (sTitle.contains("http")) {
+                return sTitle;
             } else {
                 return "http://mai.ru";
             }

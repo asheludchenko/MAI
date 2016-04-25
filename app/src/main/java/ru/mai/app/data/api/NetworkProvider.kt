@@ -5,6 +5,7 @@ import android.text.Html
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
+import com.parse.ParseQuery
 import retrofit.RestAdapter
 import retrofit.client.Response
 import ru.mai.app.App
@@ -12,6 +13,8 @@ import ru.mai.app.data.dataModel.ListContent
 import ru.mai.app.data.dataModel.NewsHeadersContent
 import ru.mai.app.data.dataModel.Photo
 import ru.mai.app.data.dataModel.StaticContent
+import ru.mai.app.data.dto.ScheduleCourses
+import ru.mai.app.data.dto.ScheduleFaculties
 import ru.mai.app.data.repository.specification.NewsContentSpecification
 import rx.Observable
 import rx.functions.Func0
@@ -26,19 +29,19 @@ import java.util.*
 class NetworkProvider() {
 
     private val adapter: RestAdapter
-    var service: MaiService
+    private lateinit var maiService: MaiService
 
     init {
         adapter = RestAdapter.Builder().setEndpoint("http://mai.ru/")
                 //.setLogLevel(RestAdapter.LogLevel.FULL)
                  .build()
-        service = adapter.create(MaiService::class.java)
+        maiService = adapter.create(MaiService::class.java)
     }
 
     fun getNews(): Observable<List<NewsHeadersContent>> {
         return Observable.defer(object : Func0<Observable<List<NewsHeadersContent>>> {
             override fun call(): Observable<List<NewsHeadersContent>>? {
-                val response = service.getNewsList(App.getNewsPage(), 8)
+                val response = maiService.getNewsList(App.getNewsPage(), 8)
                 val json = trimJson(trimResponse(response))
                 val gson = Gson()
                 val reader = JsonReader(StringReader(json))
@@ -57,7 +60,7 @@ class NetworkProvider() {
         val id = specification.getItem()
         return Observable.defer(object : Func0<Observable<List<StaticContent>>> {
             override fun call(): Observable<List<StaticContent>>? {
-                val response = service.getNewsById(id)
+                val response = maiService.getNewsById(id)
                 val json = trimResponse(response)
                 val gson = Gson()
                 val singleNews = gson.fromJson(json, SingleNews::class.java)
@@ -83,7 +86,7 @@ class NetworkProvider() {
     fun getPhotoAlbums(): Observable<List<ListContent>> {
         return Observable.defer(object : Func0<Observable<List<ListContent>>> {
             override fun call(): Observable<List<ListContent>>? {
-                val response = service.getAlbums(App.getPhotoPage(), 10)
+                val response = maiService.getAlbums(App.getPhotoPage(), 10)
                 val json = trimJson(trimResponse(response))
                 val gson = Gson()
                 val reader = JsonReader(StringReader(json))
@@ -105,7 +108,7 @@ class NetworkProvider() {
     }
 
     private fun getPhotos(id: String?): List<Photo>? {
-        var response: Response = service.getPhotos(id)
+        var response: Response = maiService.getPhotos(id)
         var json: String = trimJson(trimResponse(response))
         val gson = Gson()
         val reader = JsonReader(StringReader(json))
@@ -138,5 +141,17 @@ class NetworkProvider() {
     private fun trimJson(json: String): String {
         val trimmedJson = json.split("count")[0]
         return trimmedJson.substring(0, trimmedJson.length - 2) + "}"
+    }
+
+    fun getSchedFaculties() : List<ScheduleFaculties> {
+        val facultiesQuery : ParseQuery<ScheduleFaculties> = ParseQuery.getQuery("Schedule_faculties")
+        val faculties = facultiesQuery.find()
+        return faculties
+    }
+
+    fun getScheduleCourses(facultyId: String): List<ScheduleCourses> {
+        val coursesQuery: ParseQuery<ScheduleCourses> = ParseQuery.getQuery("Shedule_courses")
+        coursesQuery.whereEqualTo("facultyId", facultyId)
+        return coursesQuery.find()
     }
 }

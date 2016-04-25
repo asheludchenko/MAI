@@ -27,6 +27,8 @@ import mortar.MortarScope;
 import mortar.dagger1support.ObjectGraphService;
 import ru.mai.app.data.DataModule;
 import ru.mai.app.data.dto.MainScreenDto;
+import ru.mai.app.data.dto.ScheduleCourses;
+import ru.mai.app.data.dto.ScheduleFaculties;
 import ru.mai.app.presentation.MainActivity;
 import ru.mai.app.presentation.PhotoActivity;
 import ru.mai.app.presentation.mf_boilerplate.GsonParceler;
@@ -47,6 +49,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         ParseObject.registerSubclass(MainScreenDto.class);
+        ParseObject.registerSubclass(ScheduleFaculties.class);
+        ParseObject.registerSubclass(ScheduleCourses.class);
         if (!BuildConfig.DEBUG) Fabric.with(this, new Crashlytics());
         HashSet<RequestListener> requestListeners = new HashSet<>();
         requestListeners.add(new RequestLoggingListener());

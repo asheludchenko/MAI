@@ -12,16 +12,20 @@ import java.util.List;
 import java.util.Random;
 
 import ru.mai.app.R;
+import ru.mai.app.Router;
 import ru.mai.app.data.api.NetworkProvider;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.data.dataModel.NewsHeadersContent;
 import ru.mai.app.data.dataModel.StaticContent;
 import ru.mai.app.data.dataModel.StaticListContent;
 import ru.mai.app.data.dto.MainScreenDto;
+import ru.mai.app.data.dto.ScheduleCourses;
+import ru.mai.app.data.dto.ScheduleFaculties;
 import ru.mai.app.data.repository.specification.ListContentSpecification;
 import ru.mai.app.data.repository.specification.NewsContentSpecification;
 import ru.mai.app.data.repository.specification.StaticContentSpecification;
 import ru.mai.app.data.repository.specification.StaticListContentSpecification;
+import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func0;
@@ -53,7 +57,85 @@ public class MaiRepository implements DataRepository {
 
     @Override
     public Observable<List<ListContent>> getListContent(ListContentSpecification specification) {
-        return listContentProvider.getListContent(specification);
+        if (specification.specified(Router.SCHEDULE)) {
+            List<ScheduleFaculties> all = networkProvider.getSchedFaculties();
+            List<ScheduleFaculties> faculties = Observable.from(all).filter(new Func1<ScheduleFaculties, Boolean>() {
+                @Override
+                public Boolean call(ScheduleFaculties scheduleFaculties) {
+                    return scheduleFaculties.isFaculty();
+                }
+            }).toList().toBlocking().single();
+            final SimpleSectionListAdapter.Section[] sectionsArray = new SimpleSectionListAdapter.Section[2];
+            sectionsArray[0] = new SimpleSectionListAdapter.Section(0, "Факультеты");
+            sectionsArray[1] = new SimpleSectionListAdapter.Section(faculties.size(), "Институты");
+            ListContent sectionBlock = new ListContent.Builder()
+                    .setSections(sectionsArray)
+                    .setWithSections(true)
+                    .build();
+            final List<ListContent> contents = Observable.from(all)
+                    .map(new Func1<ScheduleFaculties, ListContent>() {
+                        @Override
+                        public ListContent call(ScheduleFaculties scheduleFaculties) {
+                            return new ListContent.Builder()
+                                    .setText(scheduleFaculties.getFacultyName())
+                                    .setLink(scheduleFaculties.getName())
+                                    .setImage(scheduleFaculties.logo())
+                                    .setWithImage(true)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .onErrorReturn(new Func1<Throwable, List<ListContent>>() {
+                        @Override
+                        public List<ListContent> call(Throwable throwable) {
+                            return new ArrayList<ListContent>();
+                        }
+                    })
+                    .toBlocking()
+                    .single();
+            contents.add(sectionBlock);
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(contents);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.getItem().contains(Router.SCHEDULE + Router.DELIM)) {
+            String facultyId = specification.getItem().split(Router.DELIM)[1];
+            List<ScheduleCourses> courses = networkProvider.getScheduleCourses(facultyId);
+            final List<ListContent> contents = Observable.from(courses)
+                    .map(new Func1<ScheduleCourses, ListContent>() {
+                        @Override
+                        public ListContent call(ScheduleCourses scheduleCourse) {
+                            return new ListContent.Builder()
+                                    .setText(scheduleCourse.getName())
+                                    .setClickable()
+                                    .setLink(scheduleCourse.getUrl())
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .onErrorReturn(new Func1<Throwable, List<ListContent>>() {
+                        @Override
+                        public List<ListContent> call(Throwable throwable) {
+                            return new ArrayList<ListContent>();
+                        }
+                    })
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(contents);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else {
+            return listContentProvider.getListContent(specification);
+        }
     }
 
     @Override
