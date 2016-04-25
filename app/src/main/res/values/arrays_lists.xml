@@ -177,8 +177,11 @@
     </string-array>
     <string-array name="courses">
         <item name="c01">Курсы иностранных языков</item>
-        <item name="c02">Курсы КЛЦ-103</item>
-        <item name="c03">Курсы C-COURSES</item>
+        <item name="c01">Авиационный английский язык</item>
+        <item name="c01">Компьютерные курсы КЛЦ-103</item>
+        <item name="c01">Компьютерные курсы C-COURSES</item>
+        <item name="c01">Академия Cisco</item>
+        <item name="c01">Cистема дистанционного обучения математическим дисциплинам</item>
     </string-array>
     <string-array name="acad_mob">
         <item name="a01">Глобальное образование</item>
