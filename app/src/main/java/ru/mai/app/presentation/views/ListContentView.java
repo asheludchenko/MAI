@@ -35,6 +35,7 @@ import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
+import ru.mai.app.presentation.events.OpenCourseScheduleEvent;
 import ru.mai.app.presentation.screens.ListContentScreen;
 import ru.mai.app.presentation.utils.SimpleDividerItemDecoration;
 import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
@@ -162,6 +163,11 @@ public class ListContentView extends RelativeLayout {
                         App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
                     }
                 }
+
+                @Override
+                public void schedItemClicked(String title, String name) {
+                    App.bus.post(new OpenCourseScheduleEvent(screenName + "#" + name, title));
+                }
             };
             screenName = parameter;
             isRound = !parameter.startsWith(Router.FACULTIES);
@@ -215,10 +221,15 @@ public class ListContentView extends RelativeLayout {
                 holder.image.setImageURI(uri);
             }
             if (item.getImage() != null && item.isWithImage()) {
-                Uri uri = new Uri.Builder()
-                        .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
-                        .path(item.getImage())
-                        .build();
+                Uri uri;
+                if (item.getImage().contains("http")) {
+                    uri = Uri.parse(item.getImage());
+                } else {
+                    uri = new Uri.Builder()
+                            .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                            .path(item.getImage())
+                            .build();
+                }
                 holder.image.setImageURI(uri);
             }
             /*if (item.getImage() == null && item.isWithImage()) {
@@ -253,11 +264,18 @@ public class ListContentView extends RelativeLayout {
                     }
                 });
             }
-            if (item.getLink() != null) {
+            if (item.getLink() != null && !screenName.equals(Router.SCHEDULE)) {
                 holder.itemView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         listener.itemClicked(item.getLink(), position);
+                    }
+                });
+            } else if (item.getLink() != null && screenName.equals(Router.SCHEDULE)) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listener.schedItemClicked(item.getText(), item.getLink());
                     }
                 });
             }
@@ -294,5 +312,6 @@ public class ListContentView extends RelativeLayout {
 
     public interface ClickListener {
         void itemClicked(String value, int pos);
+        void schedItemClicked(String title, String name);
     }
 }

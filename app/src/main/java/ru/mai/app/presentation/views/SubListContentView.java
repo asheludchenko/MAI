@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,7 +34,7 @@ import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.data.dataModel.ListContent;
 import ru.mai.app.presentation.events.ChangeScreenEvent;
-import ru.mai.app.presentation.screens.ListContentScreen;
+import ru.mai.app.presentation.events.OpenScheduleEvent;
 import ru.mai.app.presentation.screens.SubListScreen;
 import ru.mai.app.presentation.utils.SimpleDividerItemDecoration;
 import ru.mai.app.presentation.utils.SimpleSectionListAdapter;
@@ -153,6 +151,11 @@ public class SubListContentView extends RelativeLayout {
                         App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
                     }
                 }
+
+                @Override
+                public void schedItemClicked(String url, String title) {
+                    App.bus.post(new OpenScheduleEvent(url, title));
+                }
             };
             screenName = parameter;
             if (parameter.startsWith(Router.FACULTIES)) {
@@ -224,11 +227,18 @@ public class SubListContentView extends RelativeLayout {
             if (item.getSub2() != null) holder.sub2.setText(item.getSub2());
             if (item.getSub3() != null) holder.sub3.setText(item.getSub3());
             if (item.getSub4() != null) holder.sub4.setText(item.getSub4());
-            if (item.isClickable()) {
+            if (item.isClickable() && !screenName.contains(Router.SCHEDULE)) {
                 holder.itemView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         listener.itemClicked(item.getText(), position);
+                    }
+                });
+            } else if (item.isClickable() && screenName.contains(Router.SCHEDULE)) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        listener.schedItemClicked(item.getLink(), item.getText());
                     }
                 });
             }
@@ -248,11 +258,18 @@ public class SubListContentView extends RelativeLayout {
                     }
                 });
             }
-            if (item.getLink() != null) {
+            if (item.getLink() != null && !screenName.contains(Router.SCHEDULE)) {
                 holder.itemView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         listener.itemClicked(item.getLink(), position);
+                    }
+                });
+            } else if (item.getLink() != null && screenName.contains(Router.SCHEDULE)) {
+                holder.itemView.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        listener.schedItemClicked(item.getLink(), item.getText());
                     }
                 });
             }
@@ -289,5 +306,6 @@ public class SubListContentView extends RelativeLayout {
 
     public interface ClickListener {
         void itemClicked(String value, int pos);
+        void schedItemClicked(String url, String title);
     }
 }

@@ -359,22 +359,22 @@ public class Router {
     public static final String PHOTO = "Фото";
     public static final String PRESENTATIONS = "Презентации";
     public static final String PRIEM_SCHEDULE = "Расписание работы Приёмной комиссии МАИ";
-    public static final String SCH1 = "№1 «Авиационная техника»";
-    public static final String SCH2 = "№2 «Двигатели летательных аппаратов»";
-    public static final String SCH3 = "№3 «Системы управления, информатика и электроэнергетика»";
-    public static final String SCH4 = "№4 «Радиоэлектроника летательных аппаратов»";
-    public static final String SCH6 = "№6 «Аэрокосмический»";
-    public static final String SCH7 = "№7 «Робототехнические и интеллектуальные системы»";
-    public static final String SCH8 = "№8 «Прикладная математика и физика»";
-    public static final String SCH9 = "№9 «Прикладная механика»";
-    public static final String SCH10 = "№10 «Социальный инжиниринг»";
-    public static final String SCH11 = "«Иностранных языков»";
+    public static final String SCH1 = "SCH01";
+    public static final String SCH2 = "SCH02";
+    public static final String SCH3 = "SCH03";
+    public static final String SCH4 = "SCH04";
+    public static final String SCH6 = "SCH06";
+    public static final String SCH7 = "SCH07";
+    public static final String SCH8 = "SCH08";
+    public static final String SCH9 = "SCH09";
+    public static final String SCH10 = "SCH10";
+    public static final String SCH11 = "SCH11";
 
-    public static final String SCH5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
-    public static final String SCH12 = "Институт материаловедения и технологий материалов";
-    public static final String SCH13 = "Институт аэрокосмических конструкций, технологий и систем управления";
-    public static final String SCH14 = "Институт информационных систем и технологий";
-    public static final String SCH15 = "Институт менеджмента, экономики и социальных технологий";
+    public static final String SCH5 = "SCH05";
+    public static final String SCH12 = "SCH12";
+    public static final String SCH13 = "SCH13";
+    public static final String SCH14 = "SCH14";
+    public static final String SCH15 = "SCH15";
 
     private boolean isStudent = false;
 
@@ -383,6 +383,7 @@ public class Router {
     }
 
     public Path getScreen(String item) {
+        if (item.contains("http")) return new WebViewScreen(item);
         if (item.contains(WEEK) || item.equals(MAIN)) {
             return new MainSliderScreen(0);
         }

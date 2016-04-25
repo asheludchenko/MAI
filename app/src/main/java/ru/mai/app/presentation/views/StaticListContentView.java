@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.support.v4.widget.NestedScrollView;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -56,6 +55,11 @@ public class StaticListContentView extends NestedScrollView {
             @Override
             public void itemClicked(String value, int pos) {
                 App.bus.post(new ChangeScreenEvent(screenName + "#" + value));
+            }
+
+            @Override
+            public void schedItemClicked(String title, String name) {
+
             }
         };
     }
