@@ -121,7 +121,13 @@
         <item name="c12">Кафе*</item>
         <item name="c13">Кафе*</item>
         <item name="c14">Столовая</item>
-        <item name="c15">Кофейня «Ёлочка"*</item>
+        <item name="c15">Кофейня «Ёлочка»*</item>
+        <item name="c15">Столовая*</item>
+        <item name="c15">З столовые</item>
+        <item name="c15">Столовая</item>
+        <item name="c15">Столовая</item>
+        <item name="c15">Столовая</item>
+        <item name="c15">Столовая</item>
     </string-array>
     <string-array name="canteen_times">
         <item name="c1">11:00 – 17:00</item>
@@ -139,6 +145,12 @@
         <item name="c13">11:00 – 17:00</item>
         <item name="c14">11:00 – 17:00</item>
         <item name="c15">10:00 – 17:00</item>
+        <item name="c15">9:00 – 17:30</item>
+        <item name="c15">10:00 – 18:00</item>
+        <item name="c15">10:00 – 18:00</item>
+        <item name="c15">10:00 – 18:00</item>
+        <item name="c15">10:00 – 18:00</item>
+        <item name="c15">10:00 – 18:00</item>
     </string-array>
     <string-array name="canteen_addresses">
         <item name="c1">ул. К. Царёва, д. 16 («Ледокол»)</item>
@@ -156,6 +168,12 @@
         <item name="c13">Корпус № 24, 1-й этаж</item>
         <item name="c14">Корпус № 24, 4-й этаж</item>
         <item name="c15">около 3-го корпуса</item>
+        <item name="c15">Корпус № 3, 1-й этаж</item>
+        <item name="c15">ул. Оршанская, д. 3</item>
+        <item name="c15">ул. Николоямская, д. 13/14, стр. 6</item>
+        <item name="c15">ул. Николоямская, д. 13/14, стр. 7</item>
+        <item name="c15">ул. Полбина, д. 45</item>
+        <item name="c15">ул. Фестивальная, д. 4, к. 3</item>
     </string-array>
     <string-array name="courses">
         <item name="c01">Курсы иностранных языков</item>
