@@ -2113,77 +2113,6 @@ public class StaticContentProvider {
                 }
             })
                     .cache();
-        } else if (specification.specified(LIFE + DELIM + LIF01)) {
-            StaticContent title = new StaticContent.Builder()
-                    .setFacTitile("Маёвская рекламная\n(\"Только в МАИ\")")
-                    .build();
-            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif1))
-                    .map(new Func1<String, StaticContent>() {
-                        @Override
-                        public StaticContent call(String s) {
-                            return new StaticContent.Builder()
-                                    .setText(s)
-                                    .build();
-                        }
-                    })
-                    .startWith(title)
-                    .toList()
-                    .toBlocking()
-                    .single();
-            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
-                @Override
-                public void call(Subscriber<? super List<StaticContent>> subscriber) {
-                    subscriber.onNext(ss);
-                    subscriber.onCompleted();
-                }
-            })
-                    .cache();
-        } else if (specification.specified(LIFE + DELIM + LIF02)) {
-            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif2))
-                    .map(new Func1<String, StaticContent>() {
-                        @Override
-                        public StaticContent call(String s) {
-                            return new StaticContent.Builder()
-                                    .setText(s)
-                                    .build();
-                        }
-                    })
-                    .toList()
-                    .toBlocking()
-                    .single();
-            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
-                @Override
-                public void call(Subscriber<? super List<StaticContent>> subscriber) {
-                    subscriber.onNext(ss);
-                    subscriber.onCompleted();
-                }
-            })
-                    .cache();
-        } else if (specification.specified(LIFE + DELIM + LIF03)) {
-            StaticContent title = new StaticContent.Builder()
-                    .setFacTitile("Маёвский тост")
-                    .build();
-            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif3))
-                    .map(new Func1<String, StaticContent>() {
-                        @Override
-                        public StaticContent call(String s) {
-                            return new StaticContent.Builder()
-                                    .setText(s)
-                                    .build();
-                        }
-                    })
-                    .startWith(title)
-                    .toList()
-                    .toBlocking()
-                    .single();
-            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
-                @Override
-                public void call(Subscriber<? super List<StaticContent>> subscriber) {
-                    subscriber.onNext(ss);
-                    subscriber.onCompleted();
-                }
-            })
-                    .cache();
         } else if (specification.specified(HELP + DELIM + HELP1)) {
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.help1))
                     .map(new Func1<String, StaticContent>() {
@@ -4032,6 +3961,640 @@ public class StaticContentProvider {
                 @Override
                 public void call(Subscriber<? super List<StaticContent>> subscriber) {
                     subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF01 + DELIM + SONG1)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile("Маёвская рекламная\n(«Только в МАИ»)").build();
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.song1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF01 + DELIM + SONG2)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile("Маёвская застольная").build();
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.song2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF01 + DELIM + SONG3)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile("Маёвская прощальная").build();
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.song3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF01 + DELIM + SONG4)) {
+            StaticContent title = new StaticContent.Builder().setFacTitile("«Авиамарш» — гимн МАИ").build();
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.song4))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+                    .startWith(title)
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL01)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl01))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL02)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl02))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL03)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl03))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL04)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl04))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL05)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl05))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL06)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl06))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL07)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl07))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL08)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl08))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL09)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl09))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL10)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl10))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL11)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl11))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL12)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl12))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL13)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl13))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL14)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl14))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL15)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl15))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL16)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl16))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL17)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl17))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL18)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl18))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL19)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl19))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL20)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl20))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL21)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl21))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02 + DELIM + SL22)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.sl22))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03 + DELIM + T1)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.t1))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03 + DELIM + T2)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.t2))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03 + DELIM + T3)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.t3))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
+                    subscriber.onCompleted();
+                }
+            }).cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03 + DELIM + T4)) {
+            final List<StaticContent> c = Observable.from(context.getResources().getStringArray(R.array.t4))
+                    .map(new Func1<String, StaticContent>() {
+                        @Override
+                        public StaticContent call(String s) {
+                            return new StaticContent.Builder()
+                                    .setText(s)
+                                    .build();
+                        }
+                    })
+
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
+                @Override
+                public void call(Subscriber<? super List<StaticContent>> subscriber) {
+                    subscriber.onNext(c);
                     subscriber.onCompleted();
                 }
             }).cache();
