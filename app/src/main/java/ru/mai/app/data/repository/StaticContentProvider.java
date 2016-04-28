@@ -492,6 +492,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/avia/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -521,6 +524,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/engines/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -550,6 +556,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/control/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -579,6 +588,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://www.mai.ru/education/frela/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -608,6 +620,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/ingekin/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -637,6 +652,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/space/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -666,6 +684,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/robotic/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -695,6 +716,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/fpmf/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -724,6 +748,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/mechanics/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -753,6 +780,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/social/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -778,6 +808,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/fdp/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -807,6 +840,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/foreign/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -836,6 +872,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/military/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -861,6 +900,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-materialovedeniya-i-tekhnologij-materialov")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -886,6 +928,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-aerokosmicheskikh-konstruktsij-tekhnologij-i-sistem-upravleniya")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -911,6 +956,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-informatsionnykh-sistem-i-tekhnologij")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -936,6 +984,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-menedzhmenta-ekonomiki-i-sotsialnykh-tekhnologij")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -961,6 +1012,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-voennogo-obucheniya")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -986,6 +1040,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mati.ru/index.php/instituty/institut-zaochnogo-obucheniya")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -1015,6 +1072,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/voshod/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -1044,6 +1104,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/strela/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -1073,6 +1136,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/vzlet/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -1102,6 +1168,9 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/rkt/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();
@@ -1127,6 +1196,9 @@ public class StaticContentProvider {
                         }
                     })
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder()
+                            .setButton("http://mai.ru/education/stupino/")
+                            .build()))
                     .toList()
                     .toBlocking()
                     .single();

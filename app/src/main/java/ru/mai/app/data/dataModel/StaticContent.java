@@ -20,6 +20,7 @@ public class StaticContent {
     private Spanned newsText;
     private Map map;
     private Spanned author;
+    private String button;
 
     public StaticContent() {
     }
@@ -60,6 +61,10 @@ public class StaticContent {
         return author;
     }
 
+    public String getButton() {
+        return button;
+    }
+
     @Override
     public String toString() {
         return "StaticContent{" +
@@ -70,8 +75,9 @@ public class StaticContent {
                 ", facPhoto='" + facPhoto + '\'' +
                 ", facText='" + facText + '\'' +
                 ", newsText=" + newsText +
-                ", map='" + map + '\'' +
+                ", map=" + map +
                 ", author=" + author +
+                ", button='" + button + '\'' +
                 '}';
     }
 
@@ -119,6 +125,11 @@ public class StaticContent {
 
         public Builder setMap(Map map) {
             staticContent.map = map;
+            return this;
+        }
+
+        public Builder setButton(String url) {
+            staticContent.button = url;
             return this;
         }
 

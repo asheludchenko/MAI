@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -91,6 +92,9 @@ public class StaticContentView extends NestedScrollView {
                 ((TextView) view).setGravity(Gravity.LEFT);
             } else if (content.getMap() != null) {
                 view = getMapImageView(content.getMap());
+            } else if (content.getButton() != null) {
+                view = getButton(content.getButton());
+                //view.getLayoutParams().width = DrawerLayout.LayoutParams.WRAP_CONTENT;
             }
             root.addView(view);
         }
@@ -183,6 +187,18 @@ public class StaticContentView extends NestedScrollView {
         textView.setPadding(padding, padding / 2, padding, padding / 2);
         setParams(textView);
         return textView;
+    }
+
+    private Button getButton(final String url) {
+        Button button = (Button) LayoutInflater.from(getContext()).inflate(R.layout.description_button, null, false);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                getContext().startActivity(intent);
+            }
+        });
+        return button;
     }
 
     private void setParams(View view) {
