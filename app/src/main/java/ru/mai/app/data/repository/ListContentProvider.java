@@ -29,6 +29,9 @@ import static ru.mai.app.Router.DOSUG;
 import static ru.mai.app.Router.FACULTIES;
 import static ru.mai.app.Router.HELP;
 import static ru.mai.app.Router.LIBRARIES;
+import static ru.mai.app.Router.LIF01;
+import static ru.mai.app.Router.LIF02;
+import static ru.mai.app.Router.LIF03;
 import static ru.mai.app.Router.LIFE;
 import static ru.mai.app.Router.MEDIA;
 import static ru.mai.app.Router.OCH;
@@ -1533,6 +1536,72 @@ public class ListContentProvider {
                             .toList();
                 }
             });
+        } else if (specification.specified(LIFE + DELIM + LIF01)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif1))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(LIFE + DELIM + LIF02)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif2))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
+        } else if (specification.specified(LIFE + DELIM + LIF03)) {
+            final List<ListContent> ss = Observable.from(context.getResources().getStringArray(R.array.lif3))
+                    .map(new Func1<String, ListContent>() {
+                        @Override
+                        public ListContent call(String s) {
+                            return new ListContent.Builder()
+                                    .setText(s)
+                                    .setClickable()
+                                    .build();
+                        }
+                    })
+                    .toList()
+                    .toBlocking()
+                    .single();
+            return Observable.create(new Observable.OnSubscribe<List<ListContent>>() {
+                @Override
+                public void call(Subscriber<? super List<ListContent>> subscriber) {
+                    subscriber.onNext(ss);
+                    subscriber.onCompleted();
+                }
+            })
+                    .cache();
         }
         return Observable.from(Collections.EMPTY_LIST);
     }

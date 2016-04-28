@@ -375,6 +375,36 @@ public class Router {
     public static final String SCH13 = "SCH13";
     public static final String SCH14 = "SCH14";
     public static final String SCH15 = "SCH15";
+    public static final String SONG1 = "Маёвская рекламная\n(«Только в МАИ»)";
+    public static final String SONG2 = "Маёвская застольная";
+    public static final String SONG3 = "Маёвская прощальная";
+    public static final String SONG4 = "«Авиамарш» — гимн МАИ";
+    public static final String SL01 = "ГАК";
+    public static final String SL02 = "ГУК";
+    public static final String SL03 = "Дубы";
+    public static final String SL04 = "Ёлочка";
+    public static final String SL05 = "Икар";
+    public static final String SL06 = "Козерог";
+    public static final String SL07 = "Коробка";
+    public static final String SL08 = "Космос";
+    public static final String SL09 = "Ледокол";
+    public static final String SL10 = "Магазин Миши Квакина";
+    public static final String SL11 = "Маёвец";
+    public static final String SL12 = "Малая земля";
+    public static final String SL13 = "Морг";
+    public static final String SL14 = "Пищага";
+    public static final String SL15 = "Поплавок";
+    public static final String SL16 = "Простыня";
+    public static final String SL17 = "Профилак";
+    public static final String SL18 = "Ритуальная площадь";
+    public static final String SL19 = "Сачкодром";
+    public static final String SL20 = "Царёвка";
+    public static final String SL21 = "Черемпаха";
+    public static final String SL22 = "Шаха";
+    public static final String T1 = "Маёвский тост";
+    public static final String T2 = "Эминем";
+    public static final String T3 = "Если водку";
+    public static final String T4 = "Трактор";
 
     private boolean isStudent = false;
 
@@ -511,9 +541,6 @@ public class Router {
             case DOSAAF + DELIM + DOS04:
             case DOSAAF + DELIM + DOS05:
             case DOSAAF + DELIM + DOS06:
-            case LIFE + DELIM + LIF01:
-            case LIFE + DELIM + LIF02:
-            case LIFE + DELIM + LIF03:
             case HELP + DELIM + HELP1:
             case HELP + DELIM + HELP2:
             case HELP + DELIM + HELP3:
@@ -584,6 +611,36 @@ public class Router {
             case DOSUG + DELIM + DOSUG1:
             case DOSUG + DELIM + DOSUG2 + DELIM + REC1:
             case DOSUG + DELIM + DOSUG2 + DELIM + REC2:
+            case LIFE + DELIM + LIF01 + DELIM + SONG1:
+            case LIFE + DELIM + LIF01 + DELIM + SONG2:
+            case LIFE + DELIM + LIF01 + DELIM + SONG3:
+            case LIFE + DELIM + LIF01 + DELIM + SONG4:
+            case LIFE + DELIM + LIF02 + DELIM + SL01:
+            case LIFE + DELIM + LIF02 + DELIM + SL02:
+            case LIFE + DELIM + LIF02 + DELIM + SL03:
+            case LIFE + DELIM + LIF02 + DELIM + SL04:
+            case LIFE + DELIM + LIF02 + DELIM + SL05:
+            case LIFE + DELIM + LIF02 + DELIM + SL06:
+            case LIFE + DELIM + LIF02 + DELIM + SL07:
+            case LIFE + DELIM + LIF02 + DELIM + SL08:
+            case LIFE + DELIM + LIF02 + DELIM + SL09:
+            case LIFE + DELIM + LIF02 + DELIM + SL10:
+            case LIFE + DELIM + LIF02 + DELIM + SL11:
+            case LIFE + DELIM + LIF02 + DELIM + SL12:
+            case LIFE + DELIM + LIF02 + DELIM + SL13:
+            case LIFE + DELIM + LIF02 + DELIM + SL14:
+            case LIFE + DELIM + LIF02 + DELIM + SL15:
+            case LIFE + DELIM + LIF02 + DELIM + SL16:
+            case LIFE + DELIM + LIF02 + DELIM + SL17:
+            case LIFE + DELIM + LIF02 + DELIM + SL18:
+            case LIFE + DELIM + LIF02 + DELIM + SL19:
+            case LIFE + DELIM + LIF02 + DELIM + SL20:
+            case LIFE + DELIM + LIF02 + DELIM + SL21:
+            case LIFE + DELIM + LIF02 + DELIM + SL22:
+            case LIFE + DELIM + LIF03 + DELIM + T1:
+            case LIFE + DELIM + LIF03 + DELIM + T2:
+            case LIFE + DELIM + LIF03 + DELIM + T3:
+            case LIFE + DELIM + LIF03 + DELIM + T4:
                 return new StaticContentScreen(item);
             case MEDIA:
                 if (isStudent) return new MediaScreen(item);
@@ -651,6 +708,9 @@ public class Router {
             case SCHEDULE + DELIM + SCH13:
             case SCHEDULE + DELIM + SCH14:
             case SCHEDULE + DELIM + SCH15:
+            case LIFE + DELIM + LIF01:
+            case LIFE + DELIM + LIF02:
+            case LIFE + DELIM + LIF03:
                 return new SubListScreen(item);
             default:
                 return new MainSliderScreen(0);
