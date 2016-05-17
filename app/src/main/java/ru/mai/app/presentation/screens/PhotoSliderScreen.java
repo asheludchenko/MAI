@@ -36,7 +36,7 @@ public class PhotoSliderScreen extends Path {
             injects = PhotoSliderView.class,
             addsTo = App.AppModule.class
     )
-    class Module {
+    public class Module {
         public Module() {
         }
     }
