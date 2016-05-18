@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -142,7 +143,7 @@ public class NewsHeadersView extends FrameLayout {
 
             final NewsHeadersContent header = headersContents.get(position);
             Picasso.with(holder.itemView.getContext()).load(header.getImage()).into(holder.image);
-            holder.header.setText(header.getHeader());
+            holder.header.setText(Html.fromHtml(header.getHeader()));
             holder.itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
