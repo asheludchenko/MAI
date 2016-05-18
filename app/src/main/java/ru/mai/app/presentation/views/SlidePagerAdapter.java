@@ -2,6 +2,7 @@ package ru.mai.app.presentation.views;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class SlidePagerAdapter<I extends Path> extends PagerAdapter {
         Context screenContext = screenScope.createContext(context);
 
         Layout layout = screen.getClass().getAnnotation(Layout.class);
+        Log.d("MAI", screen.getClass().toString());
         if (layout == null) {
             throw new IllegalStateException("@Layout annotation is missing on screen");
         }
