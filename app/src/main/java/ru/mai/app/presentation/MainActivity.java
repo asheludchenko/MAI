@@ -436,10 +436,10 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void resetCounters(String title) {
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO))
+        //if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO))
             App.resetPhotoPage();
-        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
-                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM)))
+       // if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
+         //       (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM)))
             App.resetNewsPage();
     }
 

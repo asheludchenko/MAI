@@ -2,6 +2,7 @@ package ru.mai.app.data.api
 
 import android.os.Build
 import android.text.Html
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
@@ -89,7 +90,14 @@ class NetworkProvider() {
                 if (response != null) {
                     val json = trimResponse(response)
                     val gson = Gson()
-                    val singleNews = gson.fromJson(json, SingleNews::class.java)
+                    var singleNews: SingleNews? = null
+                    try {
+                        val reader = JsonReader(StringReader(json))
+                        reader.isLenient = true
+                        singleNews = gson.fromJson(reader, SingleNews::class.java)
+                    } catch(e: Exception) {
+                        Log.e("MAI", e.toString())
+                    }
                     val title: StaticContent = StaticContent.Builder().setFacTitile(singleNews?.header).build()
                     val text: StaticContent = StaticContent.Builder()
                             .setNewsText(
@@ -97,7 +105,7 @@ class NetworkProvider() {
                             ).build()
                     val image: StaticContent = StaticContent.Builder().setImage(singleNews?.photo).build()
                     val date: StaticContent = StaticContent.Builder().setText(singleNews?.date).build()
-                    val author: StaticContent = StaticContent.Builder().setAuthor(Html.fromHtml("<b>Автор:</b> ${singleNews.author}")).build()
+                    val author: StaticContent = StaticContent.Builder().setAuthor(Html.fromHtml("<b>Автор:</b> ${singleNews?.author}")).build()
                     return Observable.just(title)
                             .mergeWith(Observable.just(image))
                             .mergeWith(Observable.just(date))
