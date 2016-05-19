@@ -30,7 +30,7 @@ public class PhotoScreen extends Path {
             injects = PhotoView.class,
             addsTo = App.AppModule.class
     )
-    class Module {
+    public class Module {
         public Module() {
         }
         @Provides

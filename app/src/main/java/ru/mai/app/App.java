@@ -51,7 +51,8 @@ public class App extends Application {
         ParseObject.registerSubclass(MainScreenDto.class);
         ParseObject.registerSubclass(ScheduleFaculties.class);
         ParseObject.registerSubclass(ScheduleCourses.class);
-        if (!BuildConfig.DEBUG) Fabric.with(this, new Crashlytics());
+        //if (!BuildConfig.DEBUG)
+            Fabric.with(this, new Crashlytics());
         HashSet<RequestListener> requestListeners = new HashSet<>();
         requestListeners.add(new RequestLoggingListener());
         ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
