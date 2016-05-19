@@ -50,6 +50,10 @@ public class NewsContentScreen extends Path {
             includes = DomainModule.class
     )
     public class Module {
+
+        public Module() {
+        }
+
         @Provides
         Interactor<NewsContentSpecification, List<StaticContent>> providesNewsContentInteractor(
                 DataRepository repository,

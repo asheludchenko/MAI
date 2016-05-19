@@ -6,7 +6,7 @@ apply plugin: 'com.nimbledroid.profiler'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "oleg.osipenko.mai"
@@ -73,11 +73,12 @@ dependencies {
     }
     compile appDeps.card
     compile appDeps.picasso
+    compile appDeps.ok
 }
 
 
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.0.2'
     repositories {
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }

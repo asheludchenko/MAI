@@ -6,7 +6,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.parse.ParseQuery
+import com.squareup.okhttp.OkHttpClient
 import retrofit.RestAdapter
+import retrofit.client.OkClient
 import retrofit.client.Response
 import ru.mai.app.App
 import ru.mai.app.BuildConfig
@@ -34,8 +36,12 @@ class NetworkProvider() {
     private lateinit var maiService: MaiService
 
     init {
+        val okClient = OkHttpClient()
+        okClient.setConnectTimeout(1, TimeUnit.MINUTES)
+        okClient.setReadTimeout(1, TimeUnit.MINUTES)
         val builder = RestAdapter.Builder()
                 .setEndpoint("http://mai.ru/")
+                .setClient(OkClient(okClient))
         if (BuildConfig.DEBUG) {
             builder.setLogLevel(RestAdapter.LogLevel.FULL)
         }
