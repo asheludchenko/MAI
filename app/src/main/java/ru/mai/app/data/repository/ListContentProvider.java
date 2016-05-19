@@ -114,10 +114,10 @@ public class ListContentProvider {
 
     List<Integer> schedInstImages = Arrays.asList(
             R.drawable.fac_ing,
-            R.drawable.logo_m,
-            R.drawable.logo_m,
-            R.drawable.logo_m,
-            R.drawable.logo_m
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo
     );
 
 
