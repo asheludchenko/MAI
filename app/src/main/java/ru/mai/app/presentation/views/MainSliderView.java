@@ -22,9 +22,9 @@ import ru.mai.app.presentation.events.ChangeSelectedTabEvent;
 import ru.mai.app.presentation.screens.ListContentScreen;
 import ru.mai.app.presentation.screens.MainScreen;
 import ru.mai.app.presentation.screens.MainSliderScreen;
-import ru.mai.app.presentation.screens.MapScreen;
 import ru.mai.app.presentation.screens.MediaScreen;
 import ru.mai.app.presentation.screens.NewsHeadersScreen;
+import ru.mai.app.presentation.screens.PhotoScreen;
 import ru.mai.app.presentation.screens.StaticListContentScreen;
 
 /**
@@ -64,7 +64,7 @@ public class MainSliderView extends LinearLayout {
         boolean isStudent = getContext().getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
         List<Path> mainScreens;
         if (isStudent) {
-            mainScreens = Arrays.asList(new MainScreen(), new NewsHeadersScreen(), new MapScreen(), new ListContentScreen(Router.SCHEDULE));
+            mainScreens = Arrays.asList(new MainScreen(), new NewsHeadersScreen(), new PhotoScreen(String.valueOf(R.drawable.mai_plan_big_color)), new ListContentScreen(Router.SCHEDULE));
         } else {
             mainScreens = Arrays.asList(new MainScreen(), new NewsHeadersScreen(), new StaticListContentScreen(Router.PRIEM), new MediaScreen(Router.MEDIA));
         }

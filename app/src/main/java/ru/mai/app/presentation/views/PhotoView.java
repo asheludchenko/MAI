@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
+import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.drawable.ProgressBarDrawable;
 import com.facebook.drawee.drawable.ScalingUtils;
@@ -66,8 +67,17 @@ public class PhotoView extends FrameLayout {
     }
 
     public void loadImage(String image) {
+        Uri uri;
+        if (image.contains("http")) {
+            uri = Uri.parse(image);
+        } else {
+            uri = new Uri.Builder()
+                    .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
+                    .path(image)
+                    .build();
+        }
         DraweeController controller = Fresco.newDraweeControllerBuilder()
-                .setUri(Uri.parse(image))
+                .setUri(uri)
                 .setTapToRetryEnabled(true)
                 .build();
         GenericDraweeHierarchy hierarchy = new GenericDraweeHierarchyBuilder(getResources())
