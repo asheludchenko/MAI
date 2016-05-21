@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import ru.mai.app.App;
 import ru.mai.app.R;
 import ru.mai.app.Router;
 import ru.mai.app.data.api.NetworkProvider;
@@ -199,15 +200,23 @@ public class MaiRepository implements DataRepository {
         return Observable.create(new Observable.OnSubscribe<MainScreenDto>() {
             @Override
             public void call(Subscriber<? super MainScreenDto> subscriber) {
-                ParseQuery<MainScreenDto> query = ParseQuery.getQuery(MainScreenDto.class);
-                try {
-                    List<MainScreenDto> images = query.find();
+                if (App.getScreenDtos().isEmpty()) {
+                    ParseQuery<MainScreenDto> query = ParseQuery.getQuery(MainScreenDto.class);
+                    try {
+                        List<MainScreenDto> images = query.find();
+                        App.setScreenDtos(images);
+                        Random random = new Random(System.nanoTime());
+                        int randomIndex = random.nextInt(images.size());
+                        subscriber.onNext(images.get(randomIndex));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    } finally {
+                        subscriber.onCompleted();
+                    }
+                } else {
                     Random random = new Random(System.nanoTime());
-                    int randomIndex = random.nextInt(images.size());
-                    subscriber.onNext(images.get(randomIndex));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                } finally {
+                    int randomIndex = random.nextInt(App.getScreenDtos().size());
+                    subscriber.onNext(App.getScreenDtos().get(randomIndex));
                     subscriber.onCompleted();
                 }
             }

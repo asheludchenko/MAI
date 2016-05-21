@@ -14,7 +14,9 @@ import com.parse.Parse;
 import com.parse.ParseObject;
 import com.squareup.otto.Bus;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.inject.Singleton;
 
@@ -42,6 +44,9 @@ public class App extends Application {
     public static Bus bus;
     private static int newsPage = 1;
     private static int photoPage = 1;
+    private static List<MainScreenDto> screenDtos;
+    private static List<ScheduleFaculties> faculties;
+    private static List<ScheduleCourses> courses;
 
     private MortarScope rootScope;
 
@@ -61,6 +66,9 @@ public class App extends Application {
         Fresco.initialize(this, config);
         Parse.initialize(this, ConstantsKt.getAPP_ID(), ConstantsKt.getCLIENT());
         bus = new Bus();
+        screenDtos = new ArrayList<>();
+        faculties = new ArrayList<>();
+        courses = new ArrayList<>();
     }
 
     @Override
@@ -95,6 +103,29 @@ public class App extends Application {
         photoPage = 1;
     }
 
+    public static List<MainScreenDto> getScreenDtos() {
+        return screenDtos;
+    }
+
+    public static void setScreenDtos(List<MainScreenDto> screenDtos) {
+        App.screenDtos.addAll(screenDtos);
+    }
+
+    public static List<ScheduleFaculties> getFaculties() {
+        return faculties;
+    }
+
+    public static void setFaculties(List<ScheduleFaculties> faculties) {
+        App.faculties.addAll(faculties);
+    }
+
+    public static List<ScheduleCourses> getCourses() {
+        return courses;
+    }
+
+    public static void setCourses(List<ScheduleCourses> courses) {
+        App.courses.addAll(courses);
+    }
 
     @Module(
             injects = {
