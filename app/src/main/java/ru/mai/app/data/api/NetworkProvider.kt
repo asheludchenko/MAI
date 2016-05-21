@@ -104,7 +104,7 @@ class NetworkProvider() {
                                     Html.fromHtml(singleNews?.body?.replace("\t", ""))
                             ).build()
                     val image: StaticContent = StaticContent.Builder().setImage(singleNews?.photo).build()
-                    val date: StaticContent = StaticContent.Builder().setText(singleNews?.date).build()
+                    val date: StaticContent = StaticContent.Builder().setText(singleNews?.date?.split(" ")?.get(0)).build()
                     val author: StaticContent = StaticContent.Builder().setAuthor(Html.fromHtml("<b>Автор:</b> ${singleNews?.author}")).build()
                     return Observable.just(title)
                             .mergeWith(Observable.just(image))
