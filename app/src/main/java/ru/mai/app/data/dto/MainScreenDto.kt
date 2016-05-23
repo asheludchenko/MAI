@@ -20,4 +20,8 @@ class MainScreenDto: ParseObject() {
     fun getButtonText(): String? {
         return getString("buttonText")
     }
+
+    fun isStudent(): Boolean? {
+        return getBoolean("student")
+    }
 }

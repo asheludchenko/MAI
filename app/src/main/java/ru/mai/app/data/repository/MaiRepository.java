@@ -206,8 +206,33 @@ public class MaiRepository implements DataRepository {
                         List<MainScreenDto> images = query.find();
                         App.setScreenDtos(images);
                         Random random = new Random(System.nanoTime());
-                        int randomIndex = random.nextInt(images.size());
-                        subscriber.onNext(images.get(randomIndex));
+                        List<MainScreenDto> filtered;
+                        if (Router.isStudent) {
+                            filtered = Observable.from(App.getScreenDtos())
+                                    .filter(new Func1<MainScreenDto, Boolean>() {
+                                        @Override
+                                        public Boolean call(MainScreenDto mainScreenDto) {
+                                            return mainScreenDto.isStudent();
+                                        }
+                                    })
+                                    .toList()
+                                    .toBlocking()
+                                    .single();
+                        } else {
+                            filtered = Observable.from(App.getScreenDtos())
+                                    .filter(new Func1<MainScreenDto, Boolean>() {
+                                        @Override
+                                        public Boolean call(MainScreenDto mainScreenDto) {
+                                            return !mainScreenDto.isStudent();
+                                        }
+                                    })
+                                    .toList()
+                                    .toBlocking()
+                                    .single();
+                        }
+                        int randomIndex = random.nextInt(filtered.size());
+                        subscriber.onNext(filtered.get(randomIndex));
+                        subscriber.onCompleted();
                     } catch (ParseException e) {
                         e.printStackTrace();
                     } finally {
@@ -215,8 +240,32 @@ public class MaiRepository implements DataRepository {
                     }
                 } else {
                     Random random = new Random(System.nanoTime());
-                    int randomIndex = random.nextInt(App.getScreenDtos().size());
-                    subscriber.onNext(App.getScreenDtos().get(randomIndex));
+                    List<MainScreenDto> filtered;
+                    if (Router.isStudent) {
+                        filtered = Observable.from(App.getScreenDtos())
+                                .filter(new Func1<MainScreenDto, Boolean>() {
+                                    @Override
+                                    public Boolean call(MainScreenDto mainScreenDto) {
+                                        return mainScreenDto.isStudent();
+                                    }
+                                })
+                                .toList()
+                                .toBlocking()
+                                .single();
+                    } else {
+                        filtered = Observable.from(App.getScreenDtos())
+                                .filter(new Func1<MainScreenDto, Boolean>() {
+                                    @Override
+                                    public Boolean call(MainScreenDto mainScreenDto) {
+                                        return !mainScreenDto.isStudent();
+                                    }
+                                })
+                                .toList()
+                                .toBlocking()
+                                .single();
+                    }
+                    int randomIndex = random.nextInt(filtered.size());
+                    subscriber.onNext(filtered.get(randomIndex));
                     subscriber.onCompleted();
                 }
             }

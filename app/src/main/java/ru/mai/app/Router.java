@@ -406,7 +406,7 @@ public class Router {
     public static final String T3 = "Если водку";
     public static final String T4 = "Трактор";
 
-    private boolean isStudent = false;
+    public static boolean isStudent = false;
 
     public Router(Context context) {
         this.isStudent = context.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
