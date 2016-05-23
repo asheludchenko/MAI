@@ -9,15 +9,15 @@ import com.parse.ParseObject
 @ParseClassName("MainScreen")
 class MainScreenDto: ParseObject() {
 
-    fun getImageUrl(): String {
+    fun getImageUrl(): String? {
         return getParseFile("image").url
     }
 
-    fun getLinkUrl(): String {
+    fun getLinkUrl(): String? {
         return getString("linkUrl")
     }
 
-    fun getButtonText(): String {
+    fun getButtonText(): String? {
         return getString("buttonText")
     }
 }

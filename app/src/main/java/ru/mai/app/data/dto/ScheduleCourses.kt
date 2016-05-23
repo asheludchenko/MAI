@@ -8,8 +8,8 @@ import com.parse.ParseObject
  */
 @ParseClassName("Shedule_courses")
 class ScheduleCourses: ParseObject() {
-    fun getFacultyId() = getString("facultyId")
-    fun getCourseId() = getString("courseId")
-    fun getUrl() = getString("url")
-    fun getName() = getString("name")
+    fun getFacultyId(): String? = getString("facultyId")
+    fun getCourseId(): String? = getString("courseId")
+    fun getUrl(): String? = getString("url")
+    fun getName(): String? = getString("name")
 }

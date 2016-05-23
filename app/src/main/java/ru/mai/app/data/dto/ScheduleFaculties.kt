@@ -8,11 +8,11 @@ import com.parse.ParseObject
  */
 @ParseClassName("Schedule_faculties")
 class ScheduleFaculties : ParseObject() {
-    fun getFacultyName(): String = getString("facultyName")
+    fun getFacultyName(): String? = getString("facultyName")
 
-    fun getName(): String = getString("name")
+    fun getName(): String? = getString("name")
 
-    fun logo(): String = getParseFile("facultyLogo").url
+    fun logo(): String? = getParseFile("facultyLogo").url
 
-    fun isFaculty(): Boolean = getBoolean("isFaculty")
+    fun isFaculty(): Boolean? = getBoolean("isFaculty")
 }
