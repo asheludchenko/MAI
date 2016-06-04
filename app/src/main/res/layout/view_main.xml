@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.mai.app.presentation.views.MainView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<oleg.osipenko.mai.presentation.views.MainView xmlns:android="http://schemas.android.com/apk/res/android"
+                                               android:layout_width="match_parent"
+                                               android:layout_height="match_parent"
+                                               xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/bkg"
@@ -25,4 +25,4 @@
         android:visibility="gone"
         style="@style/Widget.AppCompat.Button.Borderless"/>
 
-</ru.mai.app.presentation.views.MainView>
+</oleg.osipenko.mai.presentation.views.MainView>

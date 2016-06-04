@@ -40,8 +40,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     def appDeps = rootProject.ext.appDeps
     compile appDeps.appcompat
     compile appDeps.kotlinLib
@@ -67,13 +66,14 @@ dependencies {
     compile appDeps.designBinding
     compile appDeps.streams
     compile appDeps.otto
-    compile appDeps.parse
     compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
         transitive = true;
     }
     compile appDeps.card
     compile appDeps.picasso
     compile appDeps.ok
+    compile files('libs/Parse-1.10.0.jar')
+    compile files('libs/PPNS-1.10.0.jar')
 }
 
 

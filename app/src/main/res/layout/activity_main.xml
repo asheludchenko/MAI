@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             style="@style/Tabs"/>
 
-        <ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame
+        <oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
