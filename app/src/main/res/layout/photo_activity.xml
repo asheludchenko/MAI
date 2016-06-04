@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ru.mai.app.presentation.mf_boilerplate.MortarScreenSwitcherFrame
+    <oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
