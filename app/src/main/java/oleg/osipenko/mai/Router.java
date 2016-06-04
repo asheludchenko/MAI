@@ -399,7 +399,7 @@ public class Router {
     public static final String SL18 = "Ритуальная площадь";
     public static final String SL19 = "Сачкодром";
     public static final String SL20 = "Царёвка";
-    public static final String SL21 = "Черемпаха";
+    public static final String SL21 = "Черепаха";
     public static final String SL22 = "Шаха";
     public static final String T1 = "Маёвский тост";
     public static final String T2 = "Эминем";
