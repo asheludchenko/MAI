@@ -10,9 +10,12 @@ import com.facebook.imagepipeline.listener.RequestListener;
 import com.facebook.imagepipeline.listener.RequestLoggingListener;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.parse.FindCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.squareup.otto.Bus;
 
 import java.util.ArrayList;
@@ -72,6 +75,15 @@ public class App extends Application {
         screenDtos = new ArrayList<>();
         faculties = new ArrayList<>();
         courses = new ArrayList<>();
+        ParseQuery<ScheduleFaculties> facultiesQuery = ParseQuery.getQuery("Schedule_faculties");
+        facultiesQuery.findInBackground(new FindCallback<ScheduleFaculties>() {
+            @Override
+            public void done(List<ScheduleFaculties> list, ParseException e) {
+                if (e == null) {
+                    setFaculties(list);
+                }
+            }
+        });
     }
 
     @Override
