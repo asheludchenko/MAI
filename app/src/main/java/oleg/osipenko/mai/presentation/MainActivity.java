@@ -546,6 +546,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     public void swipeScreen(ChangeSelectedTabEvent event) {
         tabs.setOnTabSelectedListener(null);
         tabs.getTabAt(event.getPosition()).select();
+        setToolbarTitle(tabs.getTabAt(event.getPosition()).getText().toString());
         tabs.setOnTabSelectedListener(tabListener);
     }
 
