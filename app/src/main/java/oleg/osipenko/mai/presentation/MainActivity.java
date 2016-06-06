@@ -142,7 +142,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                     getIntent(),
                     savedInstanceState,
                     parceler,
-                    History.single(new MainScreen()),
+                    History.single(new MainSliderScreen(0)),
                     this);
         }
 
