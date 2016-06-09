@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -107,6 +108,13 @@ public class NewsHeadersView extends FrameLayout {
         canLoadMore = true;
     }
 
+    public void showError(Throwable e) {
+        progressBar.setVisibility(GONE);
+
+        if (e != null && e.getMessage() != null) {
+            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
 
     public static class Adapter extends RecyclerView.Adapter<HeaderVH> {
         private List<NewsHeadersContent> headersContents;

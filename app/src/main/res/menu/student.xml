@@ -32,9 +32,6 @@
             android:id="@+id/menu_military"
             android:title="@string/military_institute"/>
         <item
-            android:id="@+id/menu_secondary_education"
-            android:title="@string/secondary_education"/>
-        <item
             android:id="@+id/menu_magistracy"
             android:title="@string/magistracy"/>
         <item

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.drawee.drawable.ScalingUtils;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
@@ -89,6 +90,12 @@ public class NewsContentView extends NestedScrollView {
             }
             root.addView(view);
         }
+    }
+
+    public void showError(Throwable e) {
+        progressBar.setVisibility(GONE);
+        if (e != null && e.getMessage() != null) Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+
     }
 
     private View getFacTitleView(String facTitle) {

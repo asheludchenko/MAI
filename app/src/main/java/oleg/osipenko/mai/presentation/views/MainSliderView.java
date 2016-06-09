@@ -19,6 +19,8 @@ import oleg.osipenko.mai.ConstantsKt;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.presentation.events.ChangeSelectedTabEvent;
+import oleg.osipenko.mai.presentation.events.HamburgerEvent;
+import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.MainScreen;
 import oleg.osipenko.mai.presentation.screens.MainSliderScreen;
@@ -30,7 +32,7 @@ import oleg.osipenko.mai.presentation.screens.StaticListContentScreen;
 /**
  * Created by olegosipenko on 05.04.16.
  */
-public class MainSliderView extends LinearLayout {
+public class MainSliderView extends LinearLayout implements HandlesBack {
 
     @Inject
     MainSliderScreen.Presenter presenter;
@@ -60,6 +62,13 @@ public class MainSliderView extends LinearLayout {
         presenter.dropView(this);
     }
 
+    @Override
+    public boolean onBackPressed() {
+        pager.setCurrentItem(0);
+        App.bus.post(new HamburgerEvent());
+        return true;
+    }
+
     public void showScreens(int startPosition) {
         boolean isStudent = getContext().getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
         List<Path> mainScreens;
@@ -80,6 +89,7 @@ public class MainSliderView extends LinearLayout {
             @Override
             public void onPageSelected(int position) {
                 App.bus.post(new ChangeSelectedTabEvent(position));
+                presenter.pageSwipe(position);
             }
 
             @Override

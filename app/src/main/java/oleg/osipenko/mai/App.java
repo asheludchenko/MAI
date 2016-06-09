@@ -51,12 +51,14 @@ public class App extends Application {
     private static List<MainScreenDto> screenDtos;
     private static List<ScheduleFaculties> faculties;
     private static List<ScheduleCourses> courses;
+    private static Context sContext;
 
     private MortarScope rootScope;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        sContext = this;
         ParseObject.registerSubclass(MainScreenDto.class);
         ParseObject.registerSubclass(ScheduleFaculties.class);
         ParseObject.registerSubclass(ScheduleCourses.class);
@@ -142,6 +144,10 @@ public class App extends Application {
         App.courses.addAll(courses);
     }
 
+    public static boolean isStudent() {
+        return sContext.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
+    }
+
     @Module(
             injects = {
                     MainActivity.class,
@@ -179,7 +185,7 @@ public class App extends Application {
         @Provides
         @Singleton
         Router providesRouter() {
-            return new Router(context);
+            return new Router();
         }
     }
 }

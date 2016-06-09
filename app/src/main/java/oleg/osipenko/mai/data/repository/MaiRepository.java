@@ -3,6 +3,7 @@ package oleg.osipenko.mai.data.repository;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -207,7 +208,7 @@ public class MaiRepository implements oleg.osipenko.mai.data.repository.DataRepo
                         App.setScreenDtos(images);
                         Random random = new Random(System.nanoTime());
                         List<MainScreenDto> filtered;
-                        if (Router.isStudent) {
+                        if (App.isStudent()) {
                             filtered = Observable.from(App.getScreenDtos())
                                     .filter(new Func1<MainScreenDto, Boolean>() {
                                         @Override
@@ -241,7 +242,7 @@ public class MaiRepository implements oleg.osipenko.mai.data.repository.DataRepo
                 } else {
                     Random random = new Random(System.nanoTime());
                     List<MainScreenDto> filtered;
-                    if (Router.isStudent) {
+                    if (App.isStudent()) {
                         filtered = Observable.from(App.getScreenDtos())
                                 .filter(new Func1<MainScreenDto, Boolean>() {
                                     @Override

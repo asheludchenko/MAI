@@ -23,7 +23,7 @@ class MaiPushReceiver : ParsePushBroadcastReceiver() {
         var data: JSONObject
         try {
             data = JSONObject(intent?.extras?.getString("com.parse.Data"))
-            val id = data.getInt("id")
+            val id = data.getString("id")
             val text = data.getString("text")
             val i = Intent(context, MainActivity::class.java)
             i.putExtra(EXTRA_ID, id)
@@ -44,5 +44,9 @@ class MaiPushReceiver : ParsePushBroadcastReceiver() {
         } catch (e: Exception) {
             Log.e("MAI", e.toString())
         }
+    }
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+        super.onReceive(context, intent)
     }
 }

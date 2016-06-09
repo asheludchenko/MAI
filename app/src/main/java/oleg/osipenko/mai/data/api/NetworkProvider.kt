@@ -24,7 +24,6 @@ import java.io.StringReader
 import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 /**
  * Created by olegosipenko on 24.09.15.
@@ -36,8 +35,6 @@ class NetworkProvider() {
 
     init {
         val okClient = OkHttpClient()
-        okClient.setConnectTimeout(1, TimeUnit.MINUTES)
-        okClient.setReadTimeout(1, TimeUnit.MINUTES)
         val builder = RestAdapter.Builder()
                 .setEndpoint("http://mai.ru/")
                 .setClient(OkClient(okClient))
@@ -52,8 +49,6 @@ class NetworkProvider() {
         return Observable.defer {
             val response: Response? = maiService.getNewsList(App.getNewsPage(), 8)
                     .retry(3)
-                    .timeout(60, TimeUnit.SECONDS, Observable.error(Exception("TimeOut")))
-                    .onErrorReturn { e -> null }
                     .toBlocking()
                     .single()
             if (response != null) {
@@ -68,7 +63,7 @@ class NetworkProvider() {
                         .toList()
                         .cache()
             } else {
-                Observable.empty()
+                Observable.error(Exception("Error loading news"))
             }
         }
     }
@@ -78,8 +73,6 @@ class NetworkProvider() {
         return Observable.defer {
             val response: Response? = maiService.getNewsById(id)
                     .retry(3)
-                    .timeout(60, TimeUnit.SECONDS, Observable.error(Exception("TimeOut")))
-                    .onErrorReturn { e -> null }
                     .toBlocking()
                     .single()
             if (response != null) {
@@ -109,7 +102,7 @@ class NetworkProvider() {
                         .toList()
                         .cache()
             } else {
-                Observable.empty()
+                Observable.error(Exception("Error loading news"))
             }
         }
     }
@@ -118,8 +111,6 @@ class NetworkProvider() {
         return Observable.defer {
             val response: Response? = maiService.getAlbums(App.getPhotoPage(), 10)
                     .retry(3)
-                    .timeout(60, TimeUnit.SECONDS, Observable.error(Exception("TimeOut")))
-                    .onErrorReturn { e -> null }
                     .toBlocking()
                     .single()
             if (response != null) {
@@ -147,8 +138,6 @@ class NetworkProvider() {
     private fun getPhotos(id: String?): List<Photo>? {
         val response: Response? = maiService.getPhotos(id)
                 .retry(3)
-                .timeout(60, TimeUnit.SECONDS, Observable.error(Exception("TimeOut")))
-                .onErrorReturn { e -> null }
                 .toBlocking()
                 .single()
         if (response != null) {

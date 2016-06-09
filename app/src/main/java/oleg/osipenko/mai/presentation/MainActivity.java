@@ -46,6 +46,7 @@ import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.presentation.events.ChangeScreenEvent;
 import oleg.osipenko.mai.presentation.events.ChangeSelectedTabEvent;
+import oleg.osipenko.mai.presentation.events.HamburgerEvent;
 import oleg.osipenko.mai.presentation.events.OpenCourseScheduleEvent;
 import oleg.osipenko.mai.presentation.events.OpenScheduleEvent;
 import oleg.osipenko.mai.presentation.events.SwipePageEvent;
@@ -134,8 +135,12 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
                     getIntent(),
                     savedInstanceState,
                     parceler,
-                    History.single(new NewsContentScreen(getIntent().getExtras().get(ConstantsKt.EXTRA_ID).toString())),
+                    History.single(new NewsContentScreen(getIntent().getStringExtra(ConstantsKt.EXTRA_ID))),
                     this);
+            setToolbarTitle("Новости");
+            tabs.setOnTabSelectedListener(null);
+            tabs.getTabAt(1).select();
+            tabs.setOnTabSelectedListener(tabListener);
         } else {
             flowDelegate = FlowDelegate.onCreate(
                     nonConfig,
@@ -294,6 +299,11 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
         flowDelegate.onResume();
     }
 
+    @Subscribe
+    public void hamburger(HamburgerEvent event) {
+        setHamburger();
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -447,10 +457,10 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     }
 
     private void resetCounters(String title) {
-        //if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO))
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.PHOTO))
             App.resetPhotoPage();
-       // if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
-         //       (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM)))
+        if (!titleHistory.isEmpty() && titleHistory.peek().equals(Router.NEWS) ||
+                (!titleHistory.isEmpty() && title.startsWith(Router.NEWS + Router.DELIM)))
             App.resetNewsPage();
     }
 

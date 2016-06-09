@@ -94,6 +94,7 @@ public class NewsContentScreen extends Path {
                 @Override
                 public void onError(Throwable e) {
                     Timber.e(e.getMessage());
+                    if (hasView()) getView().showError(e);
                     subscriber = Subscribers.empty();
                 }
 
@@ -106,6 +107,7 @@ public class NewsContentScreen extends Path {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
                     interactor.execute(subscriber);
                 }
             }, 700);

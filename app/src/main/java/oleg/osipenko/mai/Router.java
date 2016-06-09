@@ -406,12 +406,6 @@ public class Router {
     public static final String T3 = "Если водку";
     public static final String T4 = "Трактор";
 
-    public static boolean isStudent = false;
-
-    public Router(Context context) {
-        this.isStudent = context.getSharedPreferences(ConstantsKt.getSP_KEY(), Context.MODE_PRIVATE).getBoolean(ConstantsKt.getIS_STUDENT_KEY(), true);
-    }
-
     public Path getScreen(String item) {
         if (item.contains("http")) return new WebViewScreen(item);
         if (item.contains(WEEK) || item.equals(MAIN)) {
@@ -643,7 +637,7 @@ public class Router {
             case LIFE + DELIM + LIF03 + DELIM + T4:
                 return new StaticContentScreen(item);
             case MEDIA:
-                if (isStudent) return new MediaScreen(item);
+                if (App.isStudent()) return new MediaScreen(item);
                 else return new MainSliderScreen(3);
             case WAYS + DELIM + WAY1 + DELIM + OCH:
             case WAYS + DELIM + WAY1 + DELIM + ZAOCH:

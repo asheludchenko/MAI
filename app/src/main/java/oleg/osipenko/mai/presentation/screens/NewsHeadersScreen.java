@@ -89,6 +89,7 @@ public class NewsHeadersScreen extends Path {
 
                 @Override
                 public void onError(Throwable e) {
+                    if (hasView()) getView().showError(e);
                     Timber.e(e.getMessage());
                 }
 

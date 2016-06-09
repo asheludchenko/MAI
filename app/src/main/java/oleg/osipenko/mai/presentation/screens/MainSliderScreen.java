@@ -61,5 +61,9 @@ public class MainSliderScreen extends Path {
             if (!hasView()) return;
             getView().swipePage(event.getPosition());
         }
+
+        public void pageSwipe(int position) {
+            startPosition = position;
+        }
     }
 }

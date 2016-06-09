@@ -21,7 +21,6 @@ import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.data.dataModel.Photo;
 import oleg.osipenko.mai.presentation.mf_boilerplate.GsonParceler;
-import oleg.osipenko.mai.presentation.mf_boilerplate.HandlesBack;
 import oleg.osipenko.mai.presentation.mf_boilerplate.MortarScreenSwitcherFrame;
 import oleg.osipenko.mai.presentation.screens.PhotoSliderScreen;
 
@@ -36,7 +35,6 @@ public class PhotoActivity extends Activity implements Flow.Dispatcher {
     public static final String PHOTOS = "photos";
 
     private MortarScope activityScope;
-    private HandlesBack containerAsHandlesBack;
     private FlowDelegate flowDelegate;
 
     @Bind(R.id.container)
@@ -58,7 +56,6 @@ public class PhotoActivity extends Activity implements Flow.Dispatcher {
         int position = getIntent().getIntExtra(POSITION, 0);
         List<Photo> photos = getIntent().getParcelableArrayListExtra(PHOTOS);
 
-        containerAsHandlesBack = (HandlesBack) container;
         flowDelegate = FlowDelegate.onCreate(
                 nonConfig,
                 getIntent(),
