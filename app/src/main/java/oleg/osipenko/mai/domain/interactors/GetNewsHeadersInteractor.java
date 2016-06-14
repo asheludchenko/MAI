@@ -13,7 +13,7 @@ import rx.Observable;
 /**
  * Created by olegosipenko on 20.04.16.
  */
-public class GetNewsHeadersInteractor extends Interactor<Void, List<NewsHeadersContent>> {
+public class GetNewsHeadersInteractor extends Interactor<Integer, List<NewsHeadersContent>> {
     @Inject
     public GetNewsHeadersInteractor(DataRepository repository, PostExecutionThread postExecutionThread, ThreadExecutor threadExecutor) {
         super(repository, postExecutionThread, threadExecutor);
@@ -21,6 +21,6 @@ public class GetNewsHeadersInteractor extends Interactor<Void, List<NewsHeadersC
 
     @Override
     protected Observable<List<NewsHeadersContent>> buildObservable() {
-        return repository.getNews();
+        return repository.getNews(parameter);
     }
 }

@@ -45,9 +45,9 @@ class NetworkProvider() {
         maiService = adapter.create(MaiService::class.java)
     }
 
-    fun getNews(): Observable<List<NewsHeadersContent>> {
+    fun getNews(page: Int): Observable<List<NewsHeadersContent>> {
         return Observable.defer {
-            val response: Response? = maiService.getNewsList(App.getNewsPage(), 8)
+            val response: Response? = maiService.getNewsList(page, 30)
                     .retry(3)
                     .toBlocking()
                     .single()

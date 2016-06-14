@@ -1,6 +1,7 @@
 package oleg.osipenko.mai.data.repository;
 
 import android.graphics.Bitmap;
+import android.support.annotation.Nullable;
 
 import java.util.List;
 
@@ -33,5 +34,5 @@ public interface DataRepository {
 
     Observable<MainScreenDto> getImages();
 
-    Observable<List<NewsHeadersContent>> getNews();
+    Observable<List<NewsHeadersContent>> getNews(@Nullable int page);
 }

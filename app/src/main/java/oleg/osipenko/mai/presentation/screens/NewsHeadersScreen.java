@@ -46,7 +46,7 @@ public class NewsHeadersScreen extends Path {
         }
 
         @Provides
-        Interactor<Void, List<NewsHeadersContent>> provideNewsHeadersInteractor(
+        Interactor<Integer, List<NewsHeadersContent>> provideNewsHeadersInteractor(
                 DataRepository repository,
                 PostExecutionThread postExecutionThread,
                 ThreadExecutor threadExecutor) {
@@ -58,7 +58,7 @@ public class NewsHeadersScreen extends Path {
     public static class Presenter extends MaiPresenter<NewsHeadersView, List<NewsHeadersContent>> {
 
         @Inject
-        Interactor<Void, List<NewsHeadersContent>> newsHeadersInteractor;
+        Interactor<Integer, List<NewsHeadersContent>> newsHeadersInteractor;
 
         public Presenter() {
         }
@@ -68,7 +68,7 @@ public class NewsHeadersScreen extends Path {
         protected void onLoad(Bundle savedInstanceState) {
             super.onLoad(savedInstanceState);
             if (!hasView()) return;
-            executeLoad();
+            executeLoad(1);
         }
 
         @Override
@@ -76,11 +76,12 @@ public class NewsHeadersScreen extends Path {
             newsHeadersInteractor.unsubscribe();
         }
 
-        public void loadMore() {
-            executeLoad();
+        public void loadMore(int page) {
+            executeLoad(page);
         }
 
-        public void executeLoad() {
+        public void executeLoad(Integer page) {
+            newsHeadersInteractor.updateParameter(page);
             newsHeadersInteractor.execute(new Subscriber<List<NewsHeadersContent>>() {
                 @Override
                 public void onCompleted() {

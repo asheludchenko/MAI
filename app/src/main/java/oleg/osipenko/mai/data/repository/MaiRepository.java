@@ -3,6 +3,7 @@ package oleg.osipenko.mai.data.repository;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.parse.ParseException;
@@ -141,8 +142,8 @@ public class MaiRepository implements oleg.osipenko.mai.data.repository.DataRepo
     }
 
     @Override
-    public Observable<List<NewsHeadersContent>> getNews() {
-        return networkProvider.getNews()
+    public Observable<List<NewsHeadersContent>> getNews(@Nullable int page) {
+        return networkProvider.getNews(page)
                 .flatMap(new Func1<List<? extends NewsHeadersContent>, Observable<List<NewsHeadersContent>>>() {
                     @Override
                     public Observable<List<NewsHeadersContent>> call(List<? extends NewsHeadersContent> headersContents) {

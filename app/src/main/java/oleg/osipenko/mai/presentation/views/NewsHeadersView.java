@@ -75,7 +75,7 @@ public class NewsHeadersView extends FrameLayout {
                 if (canLoadMore) {
                     if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                         canLoadMore = false;
-                        presenter.loadMore();
+                        presenter.loadMore(adapter.getItemCount() / 30 + 1);
                     }
                 }
             }
