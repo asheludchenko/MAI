@@ -21,6 +21,7 @@ public class StaticContent {
     private Map map;
     private Spanned author;
     private String button;
+    private boolean ruler = false;
 
     public StaticContent() {
     }
@@ -63,6 +64,10 @@ public class StaticContent {
 
     public String getButton() {
         return button;
+    }
+
+    public boolean isRuler() {
+        return ruler;
     }
 
     @Override
@@ -130,6 +135,11 @@ public class StaticContent {
 
         public Builder setButton(String url) {
             staticContent.button = url;
+            return this;
+        }
+
+        public Builder setRuler() {
+            staticContent.ruler = true;
             return this;
         }
 

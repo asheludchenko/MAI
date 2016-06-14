@@ -95,6 +95,8 @@ public class StaticContentView extends NestedScrollView {
             } else if (content.getButton() != null) {
                 view = getButton(content.getButton());
                 //view.getLayoutParams().width = DrawerLayout.LayoutParams.WRAP_CONTENT;
+            } else if (content.isRuler()) {
+                view = getRuler();
             }
             root.addView(view);
         }
@@ -199,6 +201,12 @@ public class StaticContentView extends NestedScrollView {
             }
         });
         return button;
+    }
+
+    private View getRuler() {
+        View ruler = LayoutInflater.from(getContext()).inflate(R.layout.divider, null, false);
+        ruler.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 10));
+        return ruler;
     }
 
     private void setParams(View view) {
