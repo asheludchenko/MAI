@@ -1228,6 +1228,7 @@ public class StaticContentProvider {
                     })
                     .startWith(portrait)
                     .startWith(title)
+                    .concatWith(Observable.just(new StaticContent.Builder().setRuler().build()))
                     .concatWith(Observable.just(new StaticContent.Builder()
                             .setText(context.getResources().getText(R.string.radiovtuz).toString())
                             .build()))
