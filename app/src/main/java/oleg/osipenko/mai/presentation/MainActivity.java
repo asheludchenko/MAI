@@ -302,6 +302,7 @@ public class MainActivity extends Activity implements Flow.Dispatcher {
     @Subscribe
     public void hamburger(HamburgerEvent event) {
         setHamburger();
+        titleHistory.clear();
     }
 
     @Override
