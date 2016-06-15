@@ -26,6 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mortar.dagger1support.ObjectGraphService;
 import oleg.osipenko.mai.App;
+import oleg.osipenko.mai.ConstantsKt;
 import oleg.osipenko.mai.R;
 import oleg.osipenko.mai.Router;
 import oleg.osipenko.mai.data.dataModel.NewsHeadersContent;
@@ -75,7 +76,7 @@ public class NewsHeadersView extends FrameLayout {
                 if (canLoadMore) {
                     if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
                         canLoadMore = false;
-                        presenter.loadMore(adapter.getItemCount() / 30 + 1);
+                        presenter.loadMore(adapter.getItemCount() / ConstantsKt.PAGE_LIM + 1);
                     }
                 }
             }

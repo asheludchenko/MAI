@@ -10,6 +10,7 @@ import com.parse.ParseQuery
 import com.squareup.okhttp.OkHttpClient
 import oleg.osipenko.mai.App
 import oleg.osipenko.mai.BuildConfig
+import oleg.osipenko.mai.PAGE_LIM
 import oleg.osipenko.mai.data.dataModel.ListContent
 import oleg.osipenko.mai.data.dataModel.NewsHeadersContent
 import oleg.osipenko.mai.data.dataModel.Photo
@@ -47,7 +48,7 @@ class NetworkProvider() {
 
     fun getNews(page: Int): Observable<List<NewsHeadersContent>> {
         return Observable.defer {
-            val response: Response? = maiService.getNewsList(page, 30)
+            val response: Response? = maiService.getNewsList(page, PAGE_LIM)
                     .retry(3)
                     .toBlocking()
                     .single()

@@ -14,3 +14,4 @@ val IMAGES_KEY = "images"
 val STUDENT_IMAGES = "StudentImages"
 val ABITUR_IMAGES = "AbiturImages"
 const val EXTRA_ID = "id"
+const val PAGE_LIM = 10
