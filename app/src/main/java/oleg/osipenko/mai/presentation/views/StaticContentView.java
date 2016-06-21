@@ -160,6 +160,7 @@ public class StaticContentView extends NestedScrollView {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 height
         ));
+        ((LinearLayout.LayoutParams) imageView.getLayoutParams()).bottomMargin = 30;
         imageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
