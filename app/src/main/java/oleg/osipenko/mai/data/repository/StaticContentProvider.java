@@ -3604,26 +3604,6 @@ public class StaticContentProvider {
                     subscriber.onCompleted();
                 }
             }).cache();
-        } else if (specification.specified(PODGOTOVKA + DELIM + POD1 + DELIM + COU4)) {
-            final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.cou4))
-                    .map(new Func1<String, StaticContent>() {
-                        @Override
-                        public StaticContent call(String s) {
-                            return new StaticContent.Builder()
-                                    .setText(s)
-                                    .build();
-                        }
-                    })
-                    .toList()
-                    .toBlocking()
-                    .single();
-            return Observable.create(new Observable.OnSubscribe<List<StaticContent>>() {
-                @Override
-                public void call(Subscriber<? super List<StaticContent>> subscriber) {
-                    subscriber.onNext(ss);
-                    subscriber.onCompleted();
-                }
-            }).cache();
         } else if (specification.specified(PODGOTOVKA + DELIM + POD1 + DELIM + COU5)) {
             final List<StaticContent> ss = Observable.from(context.getResources().getStringArray(R.array.cou5))
                     .map(new Func1<String, StaticContent>() {
