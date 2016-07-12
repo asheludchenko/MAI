@@ -21,7 +21,7 @@
         <item name="inst">Институт материаловедения и технологий материалов</item>
         <item name="inst">Институт аэрокосмических конструкций, технологий и систем управления</item>
         <item name="inst">Институт информационных систем и технологий</item>
-        <item name="inst">"Институт менеджмента, экономики и социальных технологий</item>
+        <item name="inst">Институт менеджмента, экономики и социальных технологий</item>
         <item name="inst">Институт военной подготовки</item>
         <item name="inst">Институт заочного обучения</item>
     </string-array>
@@ -249,13 +249,13 @@
         <item name="inst">Институт материаловедения и технологий материалов</item>
         <item name="inst">Институт аэрокосмических конструкций, технологий и систем управления</item>
         <item name="inst">Институт информационных систем и технологий</item>
-        <item name="inst">"Институт менеджмента, экономики и социальных технологий</item>
+        <item name="inst">Институт менеджмента, экономики и социальных технологий</item>
         <item name="radioVtuz">Факультет «РадиоВТУЗ МАИ»</item>
         <item name="languages">Факультет Иностранных языков</item>
         <item name="ahtuba">Филиал «Взлёт» МАИ в г. Ахтубинске</item>
         <item name="bayconoor">Филиал «Восход» МАИ в г. Байконур</item>
         <item name="zhuk">Филиал «Стрела» МАИ в г. Жуковском</item>
-        <item name="khimki">Филиал «Ракетно-космическая техника» в г. Химки</item>
+        <item name="stup">Ступинский филиал МАИ</item>
     </string-array>
     <string-array name="activity">
         <item name="a1">Дни открытых дверей</item>
@@ -326,8 +326,6 @@
         <item name="a">Сервис</item>
         <item name="a">Системный анализ и управление</item>
         <item name="a">Самолето- и вертолетостроение</item>
-        <item name="a">Авиастроение</item>
-        <item name="a">Баллистика и гидроаэродинамика</item>
         <item name="a">Специальные организационно-технические системы</item>
     </string-array>
     <string-array name="way1z">
@@ -335,14 +333,14 @@
     </string-array>
     <string-array name="way1oz">
         <item name="a">Авиастроение</item>
-        <item name="a">Самолето- и вертолетостроение</item>
-        <item name="a">Авиастроение</item>
     </string-array>
     <string-array name="way2o">
         <item name="a">Двигатели летательных аппаратов</item>
         <item name="a">Проектирование авиационных и ракетных двигателей</item>
         <item name="a">Стандартизация и метрология</item>
-        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Техносферная безопасность</item>
+    </string-array>
+    <string-array name="way2z">
         <item name="a">Техносферная безопасность</item>
     </string-array>
     <string-array name="way2oz">
@@ -359,26 +357,30 @@
         <item name="a">Интегрированные системы летательных аппаратов</item>
         <item name="a">Системы управления летательными аппаратами</item>
         <item name="a">Информатика и вычислительная техника</item>
-        <item name="a">Программная инженерия</item>
-        <item name="a">Авиастроение</item>
-        <item name="a">управление в технических системах</item>
-        <item name="a">Информатика и вычислительная техника</item>
     </string-array>
     <string-array name="way3z">
+        <item name="a">Информатика и вычислительная техника</item>
         <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way3oz">
+        <item name="a">Прикладаная информатика</item>
+        <item name="a">Интегрированные системы летательных аппаратов</item>
     </string-array>
     <string-array name="way4o">
         <item name="a">Информационная безопасность</item>
         <item name="a">Радиотехника</item>
         <item name="a">Инфокоммуникационные технологии и системы связи</item>
         <item name="a">Конструирование и технология электронных средств</item>
-        <item name="a">Безопасность информационных технологий в правоохранительной сфере</item>
+        <item name="a">Информационная безопасность телекоммуникационных систем</item>
         <item name="a">Радиоэлектронные системы и комплексы</item>
+    </string-array>
+    <string-array name="way4z">
         <item name="a">Радиотехника</item>
-        <item name="a">Инфокоммуникационные технологии и системы связи</item>
+        <item name="a">Конструирование и технология электронных средств</item>
     </string-array>
     <string-array name="way4oz">
         <item name="a">Радиотехника</item>
+        <item name="a">Конструирование и технология электронных средств</item>
     </string-array>
     <string-array name="way5o">
         <item name="a">Управление персоналом</item>
@@ -388,22 +390,20 @@
         <item name="a">Экология и природопользование</item>
         <item name="a">Экономика</item>
         <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
-        <item name="a">Менеджмент</item>
-        <item name="a">Информатика и вычислительная техника</item>
     </string-array>
     <string-array name="way5z">
         <item name="a">Экономика</item>
         <item name="a">Прикладная информатика</item>
         <item name="a">Менеджмент</item>
         <item name="a">Управление персоналом</item>
-        <item name="a">Менеджмент</item>
+        <item name="a">Информатика и вычислительная техника</item>
     </string-array>
     <string-array name="way5oz">
         <item name="a">Экономика</item>
         <item name="a">Прикладная информатика</item>
         <item name="a">Менеджмент</item>
-        <item name="a">Информатика и вычислительная техника</item>
-        <item name="a">Менеджмент</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
+        <item name="a">Управление персоналом</item>
     </string-array>
     <string-array name="way6o">
         <item name="a">Баллистика и гидроаэродинамика</item>
@@ -413,11 +413,12 @@
         <item name="a">Испытание летательных аппаратов</item>
         <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
         <item name="a">Системный анализ и управление</item>
-        <item name="a">Баллистика и гидроаэродинамика</item>
-        <item name="a">Ракетные комплексы, и космонавтика</item>
         <item name="a">Биотехнические системы и технологии</item>
-        <item name="a">Информатика и вычислительная техника</item>
         <item name="a">Экология и природопользование</item>
+    </string-array>
+    <string-array name="way6oz">
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
     </string-array>
     <string-array name="way7o">
         <item name="a">Интегрированные системы летательных аппаратов</item>
@@ -429,73 +430,137 @@
     <string-array name="way8o">
         <item name="a">Прикладная математика и информатика</item>
         <item name="a">Прикладная математика</item>
-        <item name="a">Прикладная математика</item>
-    </string-array>
-    <string-array name="way8oz">
-        <item name="a">Прикладная математика</item>
     </string-array>
     <string-array name="way9o">
         <item name="a">Авиастроение</item>
         <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
-        <item name="a">Авиастроение</item>
         <item name="a">Прикладная механика</item>
         <item name="a">Биотехнические системы и технологии</item>
         <item name="a">Прикладная информатика</item>
     </string-array>
-    <string-array name="way9oz">
+    <string-array name="way9z">
         <item name="a">Прикладная информатика</item>
+    </string-array>
+    <string-array name="way9oz">
+        <item name="a">Авиастроение</item>
+        <item name="a">Прикладная информатика</item>
+        <item name="a">Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов</item>
     </string-array>
     <string-array name="way10o">
         <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way10z">
+        <item name="a">Менеджмент</item>
+    </string-array>
+    <string-array name="way10oz">
         <item name="a">Менеджмент</item>
     </string-array>
     <string-array name="way11o">
-        <item name="a">Информатика и вычислительная техника</item>
-        <item name="a">Радиоэлектронные системы и комплексы</item>
-        <item name="a">Информатика и вычислительная техника</item>
-        <item name="a">Конструирование</item>
+        <item name="a">Биотехнические системы и технологии</item>
+        <item name="a">Автоматизация технологических процессов и производств</item>
+        <item name="a">Техносферная безопасность</item>
+        <item name="a">Материаловедение и технологии материалов</item>
+        <item name="a">Металлургия</item>
+        <item name="a">Управление качеством</item>
+        <item name="a">Нанотехнологии и микросиситемная техника</item>
+    </string-array>
+    <string-array name="way11oz">
+        <item name="a">Материаловедение и технологии материалов</item>
+        <item name="a">Металлургия</item>
     </string-array>
     <string-array name="way11z">
+        <item name="a">Техносферная безопасность</item>
+    </string-array>
+    <string-array name="way12o">
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Приборостроение</item>
+        <item name="a">Лазерная техника и лазерные технологии</item>
+        <item name="a">Ракетные комплексы и космонавтика</item>
+        <item name="a">Авиастроение</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Системный анализ и управление</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way12oz">
+        <item name="a">Авиастроение</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way13o">
+        <item name="a">Прикладная математика и информатика</item>
+        <item name="a">Фундаментальная информатика и информационные технологии</item>
+        <item name="a">Физика</item>
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Стандартизация и метрология</item>
+        <item name="a">Инноватика</item>
+    </string-array>
+    <string-array name="way14o">
+        <item name="a">Экономика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Управление персоналом</item>
+        <item name="a">Государственное муниципальное управление</item>
+        <item name="a">Бизнес-информатика</item>
+        <item name="a">Организация работы с молодёжью</item>
+    </string-array>
+    <string-array name="way14z">
+        <item name="a">Экономика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Управление персоналом</item>
+    </string-array>
+    <string-array name="way14oz">
+        <item name="a">Экономика</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Управление персоналом</item>
+        <item name="a">Государственное муниципальное управление</item>
+    </string-array>
+    <string-array name="way15o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Радиоэлектронные системы и комплексы</item>
         <item name="a">Конструирование и технология электронных средств</item>
         <item name="a">Радиотехника</item>
     </string-array>
-    <string-array name="way12o">
+    <string-array name="way15z">
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Радиотехника</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way15oz">
+        <item name="a">Конструирование и технология электронных средств</item>
+        <item name="a">Радиотехника</item>
+    </string-array>
+    <string-array name="way16o">
         <item name="a">Лингвистика</item>
         <item name="a">Реклама и связи с общественностью</item>
-        <item name="a">Авиастроение</item>
     </string-array>
-    <string-array name="way12z">
-        <item name="a">Реклама и связи с общественностью</item>
-    </string-array>
-    <string-array name="way12oz">
+    <string-array name="way16oz">
         <item name="a">Лингвистика</item>
-        <item name="a">Авиастроение</item>
         <item name="a">Реклама и связи с общественностью</item>
     </string-array>
-    <string-array name="way13o">
-        <item name="a">Менеджмент</item>
-        <item name="a">Радиоэлектронные системы и комплексы</item>
-        <item name="a">Испытание летательных аппаратов</item>
-    </string-array>
-    <string-array name="way13z">
-        <item name="a">Менеджмент</item>
-    </string-array>
-    <string-array name="way13oz">
-        <item name="a">Радиоэлектронные системы и комплексы</item>
+    <string-array name="way17o">
         <item name="a">Менеджмент</item>
         <item name="a">Испытание летательных аппаратов</item>
-    </string-array>
-    <string-array name="way14o">
         <item name="a">Прикладная математика</item>
         <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way17oz">
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+        <item name="a">Информатика и вычислительная техника</item>
+    </string-array>
+    <string-array name="way18o">
+        <item name="a">Радиоэлектронные системы и комплексы</item>
         <item name="a">Менеджмент</item>
         <item name="a">Испытание летательных аппаратов</item>
     </string-array>
-    <string-array name="way14oz">
-        <item name="a">Информатика и вычислительная техника</item>
+    <string-array name="way18z">
         <item name="a">Менеджмент</item>
     </string-array>
-    <string-array name="way15o">
+    <string-array name="way18oz">
+        <item name="a">Радиоэлектронные системы и комплексы</item>
+        <item name="a">Менеджмент</item>
+        <item name="a">Испытание летательных аппаратов</item>
+    </string-array>
+    <string-array name="way19o">
         <item name="a">Информатика и вычислительная техника</item>
         <item name="a">Баллистика и гидроаэродинамика</item>
         <item name="a">Менеджмент</item>
@@ -504,18 +569,19 @@
         <item name="a">Системы управления летательными аппаратами</item>
         <item name="a">Самолёто- и вертолётостроение</item>
     </string-array>
-    <string-array name="way15z">
+    <string-array name="way19z">
         <item name="a">Менеджмент</item>
     </string-array>
-    <string-array name="way15oz">
-        <item name="a">Испытание летательных аппаратов</item>
+    <string-array name="way20o">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Материаловедение и технологии материалов</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Менеджмент</item>
     </string-array>
-    <string-array name="way16o">
-        <item name="a">Специальные машины и устройства</item>
-        <item name="a">Автоматические системы управления</item>
-        <item name="a">Компьютерные системы и комплексы</item>
-        <item name="a">Программирование в компьютерных системах</item>
-        <item name="a">Экономика и бухгалтерский учёт</item>
+    <string-array name="way20z">
+        <item name="a">Информатика и вычислительная техника</item>
+        <item name="a">Двигатели летательных аппаратов</item>
+        <item name="a">Менеджмент</item>
     </string-array>
     <string-array name="presentations">
         <item>О государственной политике в сфере подготовки инженерно-технических кадров в Российской Федерации — выступление в Совете Федерации</item>

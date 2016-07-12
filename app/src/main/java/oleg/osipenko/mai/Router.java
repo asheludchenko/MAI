@@ -1,8 +1,6 @@
 package oleg.osipenko.mai;
 
 
-import android.content.Context;
-
 import flow.path.Path;
 import oleg.osipenko.mai.presentation.screens.ListContentScreen;
 import oleg.osipenko.mai.presentation.screens.ListPhotoScreen;
@@ -216,145 +214,235 @@ public class Router {
     public static final String WAY8 = "Факультет №8 — «Прикладная математика и физика»";
     public static final String WAY9 = "Факультет №9 — «Прикладная механика»";
     public static final String WAY10 = "Факультет №10 — «Социальный инжиниринг»";
-    public static final String WAY11 = "Факультет «РадиоВТУЗ МАИ»";
-    public static final String WAY12 = "Факультет Иностранных языков";
-    public static final String WAY14 = "Филиал «Восход» МАИ в г. Байконур";
-    public static final String WAY13 = "Филиал «Взлёт» МАИ в г. Ахтубинске";
-    public static final String WAY15 = "Филиал «Стрела» МАИ в г. Жуковском";
-    public static final String WAY16 = "Филиал «Ракетно-космическая техника» в г. Химки";
+    public static final String WAY11 = "Институт материаловедения и технологий материалов";
+    public static final String WAY12 = "Институт аэрокосмических конструкций, технологий и систем управления";
+    public static final String WAY13 = "Институт информационных систем и технологий";
+    public static final String WAY14 = "Институт менеджмента, экономики и социальных технологий";
+    public static final String WAY15 = "Факультет «РадиоВТУЗ МАИ»";
+    public static final String WAY16 = "Факультет Иностранных языков";
+    public static final String WAY17 = "Филиал «Восход» МАИ в г. Байконур";
+    public static final String WAY18 = "Филиал «Взлёт» МАИ в г. Ахтубинске";
+    public static final String WAY19 = "Филиал «Стрела» МАИ в г. Жуковском";
+    public static final String WAY20 = "Ступинский филиал МАИ";
     public static final String OCH = "Очная";
     public static final String ZAOCH = "Заочная";
     public static final String OZ = "Очно-Заочная";
+    
     public static final String WW1 = "Баллистика и гидроаэродинамика";
     public static final String WW2 = "Авиастроение";
     public static final String WW3 = "Управление качеством";
     public static final String WW4 = "Сервис";
     public static final String WW5 = "Системный анализ и управление";
     public static final String WW6 = "Самолето- и вертолетостроение";
-    public static final String WW7 = "Авиастроение";
-    public static final String WW8 = "Баллистика и гидроаэродинамика";
-    public static final String WW9 = "Специальные организационно-технические системы";
-    public static final String WW10 = "Сервис";
-    public static final String WW11 = "Авиастроение";
-    public static final String WW12 = "Самолето- и вертолетостроение";
-    public static final String WW13 = "Авиастроение";
-    public static final String WW14 = "Двигатели летательных аппаратов";
-    public static final String WW15 = "Проектирование авиационных и ракетных двигателей";
-    public static final String WW16 = "Стандартизация и метрология";
-    public static final String WW17 = "Двигатели летательных аппаратов";
-    public static final String WW18 = "Техносферная безопасность";
-    public static final String WW19 = "Двигатели летательных аппаратов";
-    public static final String WW20 = "Информационные системы и технологии";
-    public static final String WW21 = "Прикладаная информатика";
-    public static final String WW22 = "Программная инженерия";
-    public static final String WW23 = "Биотехнические системы и технологии";
-    public static final String WW24 = "Электроэнергетика и электротехника";
-    public static final String WW25 = "Системы управления движением и навигация";
-    public static final String WW26 = "Управление в технических системах";
-    public static final String WW27 = "Интегрированные системы летательных аппаратов";
-    public static final String WW28 = "Системы управления летательными аппаратами";
-    public static final String WW29 = "Информатика и вычислительная техника";
-    public static final String WW30 = "Программная инженерия";
-    public static final String WW31 = "Авиастроение";
-    public static final String WW32 = "управление в технических системах";
-    public static final String WW33 = "Информатика и вычислительная техника";
-    public static final String WW34 = "Прикладная информатика";
-    public static final String WW35 = "Информационная безопасность";
+    public static final String WW7 = "Специальные организационно-технические системы";
+
+    public static final String WW8 = "Сервис";
+
+    public static final String WW9 = "Авиастроение";
+
+    public static final String WW10 = "Двигатели летательных аппаратов";
+    public static final String WW11 = "Проектирование авиационных и ракетных двигателей";
+    public static final String WW12 = "Стандартизация и метрология";
+    public static final String WW13 = "Техносферная безопасность";
+
+    public static final String WW14 = "Техносферная безопасность";
+
+    public static final String WW15 = "Двигатели летательных аппаратов";
+
+    public static final String WW16 = "Информационные системы и технологии";
+    public static final String WW17 = "Прикладаная информатика";
+    public static final String WW18 = "Программная инженерия";
+    public static final String WW19 = "Биотехнические системы и технологии";
+    public static final String WW20 = "Электроэнергетика и электротехника";
+    public static final String WW21 = "Системы управления движением и навигация";
+    public static final String WW22 = "Управление в технических системах";
+    public static final String WW23 = "Интегрированные системы летательных аппаратов";
+    public static final String WW24 = "Системы управления летательными аппаратами";
+    public static final String WW25 = "Информатика и вычислительная техника";
+
+    public static final String WW26 = "Информатика и вычислительная техника";
+    public static final String WW27 = "Прикладная информатика";
+
+    public static final String WW28 = "Прикладаная информатика";
+    public static final String WW29 = "Интегрированные системы летательных аппаратов";
+
+    public static final String WW30 = "Информационная безопасность";
+    public static final String WW31 = "Радиотехника";
+    public static final String WW32 = "Инфокоммуникационные технологии и системы связи";
+    public static final String WW33 = "Конструирование и технология электронных средств";
+    public static final String WW34 = "Информационная безопасность телекоммуникационных систем";
+    public static final String WW35 = "Радиоэлектронные системы и комплексы";
+
     public static final String WW36 = "Радиотехника";
-    public static final String WW37 = "Инфокоммуникационные технологии и системы связи";
-    public static final String WW38 = "Конструирование и технология электронных средств";
-    public static final String WW39 = "Безопасность информационных технологий в правоохранительной сфере";
-    public static final String WW40 = "Радиоэлектронные системы и комплексы";
-    public static final String WW41 = "Радиотехника";
-    public static final String WW42 = "Инфокоммуникационные технологии и системы связи";
-    public static final String WW43 = "Радиотехника";
-    public static final String WW44 = "Управление персоналом";
-    public static final String WW45 = "Менеджмент";
-    public static final String WW46 = "Информатика и вычислительная техника";
-    public static final String WW47 = "Прикладная информатика";
-    public static final String WW48 = "Экология и природопользование";
-    public static final String WW49 = "Экономика";
-    public static final String WW50 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
-    public static final String WW51 = "Менеджмент";
-    public static final String WW52 = "Информатика и вычислительная техника";
-    public static final String WW53 = "Экономика";
-    public static final String WW54 = "Прикладная информатика";
-    public static final String WW55 = "Менеджмент";
+    public static final String WW37 = "Конструирование и технология электронных средств";
+
+    public static final String WW38 = "Радиотехника";
+    public static final String WW39 = "Конструирование и технология электронных средств";
+
+    public static final String WW40 = "Управление персоналом";
+    public static final String WW41 = "Менеджмент";
+    public static final String WW42 = "Информатика и вычислительная техника";
+    public static final String WW43 = "Прикладная информатика";
+    public static final String WW44 = "Экология и природопользование";
+    public static final String WW45 = "Экономика";
+    public static final String WW46 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
+
+    public static final String WW47 = "Экономика";
+    public static final String WW48 = "Прикладная информатика";
+    public static final String WW49 = "Менеджмент";
+    public static final String WW50 = "Управление персоналом";
+    public static final String WW51 = "Информатика и вычислительная техника";
+
+    public static final String WW52 = "Экономика";
+    public static final String WW53 = "Прикладная информатика";
+    public static final String WW54 = "Менеджмент";
+    public static final String WW55 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
     public static final String WW56 = "Управление персоналом";
-    public static final String WW57 = "Менеджмент";
-    public static final String WW58 = "Экономика";
-    public static final String WW59 = "Прикладная информатика";
-    public static final String WW60 = "Менеджмент";
-    public static final String WW61 = "Информатика и вычислительная техника";
-    public static final String WW62 = "Менеджмент";
-    public static final String WW63 = "Баллистика и гидроаэродинамика";
-    public static final String WW64 = "Ракетные комплексы и космонавтика";
-    public static final String WW65 = "Информатика и вычислительная техника";
-    public static final String WW66 = "Специальные организационно-технические системы";
-    public static final String WW67 = "Испытание летательных аппаратов";
-    public static final String WW68 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
-    public static final String WW69 = "Системный анализ и управление";
-    public static final String WW70 = "Баллистика и гидроаэродинамика";
-    public static final String WW71 = "Ракетные комплексы, и космонавтика";
-    public static final String WW72 = "Биотехнические системы и технологии";
-    public static final String WW73 = "Информатика и вычислительная техника";
-    public static final String WW74 = "Экология и природопользование";
-    public static final String WW75 = "Интегрированные системы летательных аппаратов";
-    public static final String WW76 = "Системы управления летательными аппаратами";
-    public static final String WW77 = "Интегрированные системы летательных аппаратов";
-    public static final String WW78 = "Прикладная математика и информатика";
-    public static final String WW79 = "Прикладная математика";
-    public static final String WW80 = "Прикладная математика";
-    public static final String WW81 = "Прикладная математика";
-    public static final String WW82 = "Авиастроение";
-    public static final String WW83 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
-    public static final String WW84 = "Авиастроение";
-    public static final String WW85 = "Прикладная механика";
-    public static final String WW86 = "Биотехнические системы и технологии";
-    public static final String WW87 = "Прикладная информатика";
-    public static final String WW88 = "Прикладная информатика";
-    public static final String WW89 = "Менеджмент";
-    public static final String WW90 = "Менеджмент";
-    public static final String WW91 = "Информатика и вычислительная техника";
-    public static final String WW92 = "Радиоэлектронные системы и комплексы";
-    public static final String WW93 = "Информатика и вычислительная техника";
-    public static final String WW94 = "Конструирование";
+
+    public static final String WW57 = "Баллистика и гидроаэродинамика";
+    public static final String WW58 = "Ракетные комплексы и космонавтика";
+    public static final String WW59 = "Информатика и вычислительная техника";
+    public static final String WW60 = "Специальные организационно-технические системы";
+    public static final String WW61 = "Испытание летательных аппаратов";
+    public static final String WW62 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
+    public static final String WW63 = "Системный анализ и управление";
+    public static final String WW64 = "Биотехнические системы и технологии";
+    public static final String WW65 = "Экология и природопользование";
+
+    public static final String WW66 = "Испытание летательных аппаратов";
+    public static final String WW67 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
+
+    public static final String WW68 = "Интегрированные системы летательных аппаратов";
+    public static final String WW69 = "Системы управления летательными аппаратами";
+
+    public static final String WW70 = "Интегрированные системы летательных аппаратов";
+
+    public static final String WW71 = "Прикладная математика и информатика";
+    public static final String WW72 = "Прикладная математика";
+
+    public static final String WW73 = "Авиастроение";
+    public static final String WW74 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
+    public static final String WW75 = "Прикладная механика";
+    public static final String WW76 = "Биотехнические системы и технологии";
+    public static final String WW77 = "Прикладная информатика";
+
+    public static final String WW78 = "Прикладная информатика";
+
+    public static final String WW79 = "Авиастроение";
+    public static final String WW80 = "Прикладная информатика";
+    public static final String WW81 = "Проектирование, производство и эксплуатация ракет и ракетно-космических комплексов";
+
+    public static final String WW82 = "Менеджмент";
+
+    public static final String WW83 = "Менеджмент";
+
+    public static final String WW84 = "Менеджмент";
+
+    public static final String WW85 = "Биотехнические системы и технологии";
+    public static final String WW86 = "Автоматизация технологических процессов и производств";
+    public static final String WW87 = "Техносферная безопасность";
+    public static final String WW88 = "Материаловедение и технологии материалов";
+    public static final String WW89 = "Металлургия";
+    public static final String WW90 = "Управление качеством";
+    public static final String WW91 = "Нанотехнологии и микросиситемная техника";
+
+    public static final String WW92 = "Материаловедение и технологии материалов";
+    public static final String WW93 = "Металлургия";
+
+    public static final String WW94 = "Техносферная безопасность";
+
     public static final String WW95 = "Конструирование и технология электронных средств";
-    public static final String WW96 = "Радиотехника";
-    public static final String WW97 = "Лингвистика";
-    public static final String WW98 = "Реклама и связи с общественностью";
+    public static final String WW96 = "Приборостроение";
+    public static final String WW97 = "Лазерная техника и лазерные технологии";
+    public static final String WW98 = "Ракетные комплексы и космонавтика";
     public static final String WW99 = "Авиастроение";
-    public static final String WW100 = "Реклама и связи с общественностью";
-    public static final String WW101 = "Лингвистика";
-    public static final String WW102 = "Авиастроение";
-    public static final String WW103 = "Реклама и связи с общественностью";
-    public static final String WW104 = "Менеджмент";
-    public static final String WW105 = "Радиоэлектронные системы и комплексы";
-    public static final String WW106 = "Испытание летательных аппаратов";
-    public static final String WW107 = "Менеджмент";
-    public static final String WW108 = "Радиоэлектронные системы и комплексы";
-    public static final String WW109 = "Менеджмент";
-    public static final String WW110 = "Испытание летательных аппаратов";
-    public static final String WW111 = "Прикладная математика";
-    public static final String WW112 = "Информатика и вычислительная техника";
+    public static final String WW100 = "Двигатели летательных аппаратов";
+    public static final String WW101 = "Системный анализ и управление";
+    public static final String WW102 = "Испытание летательных аппаратов";
+
+    public static final String WW103 = "Авиастроение";
+    public static final String WW104 = "Двигатели летательных аппаратов";
+    public static final String WW105 = "Испытание летательных аппаратов";
+
+    public static final String WW106 = "Прикладная математика и информатика";
+    public static final String WW107 = "Фундаментальная информатика и информационные технологии";
+    public static final String WW108 = "Физика";
+    public static final String WW109 = "Информатика и вычислительная техника";
+    public static final String WW110 = "Стандартизация и метрология";
+    public static final String WW111 = "Инноватика";
+
+    public static final String WW112 = "Экономика";
     public static final String WW113 = "Менеджмент";
-    public static final String WW114 = "Испытание летательных аппаратов";
-    public static final String WW115 = "Информатика и вычислительная техника";
-    public static final String WW116 = "Менеджмент";
-    public static final String WW117 = "Информатика и вычислительная техника";
-    public static final String WW118 = "Баллистика и гидроаэродинамика";
+    public static final String WW114 = "Управление персоналом";
+    public static final String WW115 = "Государственное муниципальное управление";
+    public static final String WW116 = "Бизнес-информатика";
+    public static final String WW117 = "Организация работы с молодёжью";
+
+    public static final String WW118 = "Экономика";
     public static final String WW119 = "Менеджмент";
-    public static final String WW120 = "Радиоэлектронные системы и комплексы";
-    public static final String WW121 = "Испытание летательных аппаратов";
-    public static final String WW122 = "Системы управления летательными аппаратами";
-    public static final String WW123 = "Самолёто- и вертолётостроение";
-    public static final String WW124 = "Менеджмент";
-    public static final String WW125 = "Испытание летательных аппаратов";
-    public static final String WW126 = "Специальные машины и устройства";
-    public static final String WW127 = "Автоматические системы управления";
-    public static final String WW128 = "Компьютерные системы и комплексы";
-    public static final String WW129 = "Программирование в компьютерных системах";
-    public static final String WW130 = "Экономика и бухгалтерский учёт";
+    public static final String WW120 = "Управление персоналом";
+
+    public static final String WW121 = "Экономика";
+    public static final String WW122 = "Менеджмент";
+    public static final String WW123 = "Управление персоналом";
+    public static final String WW124 = "Государственное муниципальное управление";
+
+    public static final String WW125 = "Информатика и вычислительная техника";
+    public static final String WW126 = "Радиоэлектронные системы и комплексы";
+    public static final String WW127 = "Конструирование и технология электронных средств";
+    public static final String WW128 = "Радиотехника";
+
+    public static final String WW129 = "Конструирование и технология электронных средств";
+    public static final String WW130 = "Радиотехника";
+    public static final String WW131 = "Информатика и вычислительная техника";
+
+    public static final String WW132 = "Конструирование и технология электронных средств";
+    public static final String WW133 = "Радиотехника";
+
+    public static final String WW134 = "Лингвистика";
+    public static final String WW135 = "Реклама и связи с общественностью";
+
+    public static final String WW136 = "Лингвистика";
+    public static final String WW137 = "Реклама и связи с общественностью";
+
+    public static final String WW138 = "Менеджмент";
+    public static final String WW139 = "Испытание летательных аппаратов";
+    public static final String WW140 = "Прикладная математика";
+    public static final String WW141 = "Информатика и вычислительная техника";
+
+    public static final String WW142 = "Менеджмент";
+    public static final String WW143 = "Испытание летательных аппаратов";
+    public static final String WW144 = "Информатика и вычислительная техника";
+
+    public static final String WW145 = "Радиоэлектронные системы и комплексы";
+    public static final String WW146 = "Менеджмент";
+    public static final String WW147 = "Испытание летательных аппаратов";
+
+    public static final String WW148 = "Менеджмент";
+
+    public static final String WW149 = "Радиоэлектронные системы и комплексы";
+    public static final String WW150 = "Менеджмент";
+    public static final String WW151 = "Испытание летательных аппаратов";
+
+    public static final String WW152 = "Информатика и вычислительная техника";
+    public static final String WW153 = "Баллистика и гидроаэродинамика";
+    public static final String WW154 = "Менеджмент";
+    public static final String WW155 = "Радиоэлектронные системы и комплексы";
+    public static final String WW156 = "Испытание летательных аппаратов";
+    public static final String WW157 = "Системы управления летательными аппаратами";
+    public static final String WW158 = "Самолёто- и вертолётостроение";
+
+    public static final String WW159 = "Менеджмент";
+
+    public static final String WW160 = "Информатика и вычислительная техника";
+    public static final String WW161 = "Материаловедение и технологии материалов";
+    public static final String WW162 = "Двигатели летательных аппаратов";
+    public static final String WW163 = "Менеджмент";
+
+    public static final String WW164 = "Информатика и вычислительная техника";
+    public static final String WW165 = "Двигатели летательных аппаратов";
+    public static final String WW166 = "Менеджмент";
+    
     public static final String VIDEO = "Видео";
     public static final String PHOTO = "Фото";
     public static final String PRESENTATIONS = "Презентации";
@@ -669,24 +757,24 @@ public class Router {
             case WAYS + DELIM + WAY10 + DELIM + OCH:
             case WAYS + DELIM + WAY10 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY10 + DELIM + OZ:
-            case WAYS + DELIM + WAY11 + DELIM + OCH:
-            case WAYS + DELIM + WAY11 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY11 + DELIM + OZ:
-            case WAYS + DELIM + WAY12 + DELIM + OCH:
-            case WAYS + DELIM + WAY12 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY12 + DELIM + OZ:
-            case WAYS + DELIM + WAY13 + DELIM + OCH:
-            case WAYS + DELIM + WAY13 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY13 + DELIM + OZ:
-            case WAYS + DELIM + WAY14 + DELIM + OCH:
-            case WAYS + DELIM + WAY14 + DELIM + ZAOCH:
-            case WAYS + DELIM + WAY14 + DELIM + OZ:
             case WAYS + DELIM + WAY15 + DELIM + OCH:
             case WAYS + DELIM + WAY15 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY15 + DELIM + OZ:
             case WAYS + DELIM + WAY16 + DELIM + OCH:
             case WAYS + DELIM + WAY16 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY16 + DELIM + OZ:
+            case WAYS + DELIM + WAY17 + DELIM + OCH:
+            case WAYS + DELIM + WAY17 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY17 + DELIM + OZ:
+            case WAYS + DELIM + WAY18 + DELIM + OCH:
+            case WAYS + DELIM + WAY18 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY18 + DELIM + OZ:
+            case WAYS + DELIM + WAY19 + DELIM + OCH:
+            case WAYS + DELIM + WAY19 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY19 + DELIM + OZ:
+            case WAYS + DELIM + WAY20 + DELIM + OCH:
+            case WAYS + DELIM + WAY20 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY20 + DELIM + OZ:
             case SCHEDULE + DELIM + SCH1:
             case SCHEDULE + DELIM + SCH2:
             case SCHEDULE + DELIM + SCH3:
@@ -717,19 +805,17 @@ public class Router {
         CharSequence[] ochZaoch = {OCH, ZAOCH};
         CharSequence[] och = {OCH};
         switch (text) {
-            case WAY2:
-            case WAY4:
-            case WAY7:
-            case WAY8:
-            case WAY9:
-            case WAY14:
-                return ochOz;
-            case WAY3:
-            case WAY11:
-                return ochZaoch;
             case WAY6:
-            case WAY10:
+            case WAY7:
+            case WAY12:
             case WAY16:
+            case WAY17:
+                return ochOz;
+            case WAY19:
+            case WAY20:
+                return ochZaoch;
+            case WAY8:
+            case WAY13:
                 return och;
             default:
                 return all;
