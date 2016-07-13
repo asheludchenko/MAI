@@ -3751,252 +3751,324 @@ public class StaticContentProvider {
                 res = R.array.WW6;
             } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW7 + 6)) {
                 res = R.array.WW7;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW8 + 7)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + ZAOCH + DELIM + WW8 + 0)) {
                 res = R.array.WW8;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OCH + DELIM + WW9 + 8)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OZ + DELIM + WW9 + 0)) {
                 res = R.array.WW9;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + ZAOCH + DELIM + WW10 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW10 + 0)) {
                 res = R.array.WW10;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OZ + DELIM + WW11 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW11 + 1)) {
                 res = R.array.WW11;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY1 + DELIM + OZ + DELIM + WW12 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW12 + 2)) {
                 res = R.array.WW12;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OZ + DELIM + WW13 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW13 + 3)) {
                 res = R.array.WW13;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW14 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + ZAOCH + DELIM + WW14 + 0)) {
                 res = R.array.WW14;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW15 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OZ + DELIM + WW15 + 0)) {
                 res = R.array.WW15;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW16 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW16 + 0)) {
                 res = R.array.WW16;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW17 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW17 + 1)) {
                 res = R.array.WW17;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OCH + DELIM + WW18 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW18 + 2)) {
                 res = R.array.WW18;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY2 + DELIM + OZ + DELIM + WW19 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW19 + 3)) {
                 res = R.array.WW19;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW20 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW20 + 4)) {
                 res = R.array.WW20;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW21 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW21 + 5)) {
                 res = R.array.WW21;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW22 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW22 + 6)) {
                 res = R.array.WW22;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW23 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW23 + 7)) {
                 res = R.array.WW23;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW24 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW24 + 8)) {
                 res = R.array.WW24;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW25 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW25 + 9)) {
                 res = R.array.WW25;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW26 + 6)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + ZAOCH + DELIM + WW26 + 0)) {
                 res = R.array.WW26;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW27 + 7)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + ZAOCH + DELIM + WW27 + 1)) {
                 res = R.array.WW27;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW28 + 8)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OZ + DELIM + WW28 + 0)) {
                 res = R.array.WW28;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW29 + 9)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OZ + DELIM + WW29 + 1)) {
                 res = R.array.WW29;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW30 + 10)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW30 + 0)) {
                 res = R.array.WW30;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW31 + 11)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW31 + 1)) {
                 res = R.array.WW31;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW32 + 12)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW32 + 2)) {
                 res = R.array.WW32;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + OCH + DELIM + WW33 + 13)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW33 + 3)) {
                 res = R.array.WW33;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY3 + DELIM + ZAOCH + DELIM + WW34 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW34 + 4)) {
                 res = R.array.WW34;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW35 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW35 + 5)) {
                 res = R.array.WW35;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW36 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + ZAOCH + DELIM + WW36 + 0)) {
                 res = R.array.WW36;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW37 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + ZAOCH + DELIM + WW37 + 1)) {
                 res = R.array.WW37;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW38 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OZ + DELIM + WW38 + 0)) {
                 res = R.array.WW38;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW39 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OZ + DELIM + WW39 + 1)) {
                 res = R.array.WW39;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW40 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW40 + 0)) {
                 res = R.array.WW40;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW41 + 6)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW41 + 1)) {
                 res = R.array.WW41;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OCH + DELIM + WW42 + 7)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW42 + 2)) {
                 res = R.array.WW42;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY4 + DELIM + OZ + DELIM + WW43 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW43 + 3)) {
                 res = R.array.WW43;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW44 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW44 + 4)) {
                 res = R.array.WW44;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW45 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW45 + 5)) {
                 res = R.array.WW45;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW46 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW46 + 6)) {
                 res = R.array.WW46;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW47 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW47 + 0)) {
                 res = R.array.WW47;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW48 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW48 + 1)) {
                 res = R.array.WW48;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW49 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW49 + 2)) {
                 res = R.array.WW49;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW50 + 6)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW50 + 3)) {
                 res = R.array.WW50;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW51 + 7)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW51 + 4)) {
                 res = R.array.WW51;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OCH + DELIM + WW52 + 8)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW52 + 0)) {
                 res = R.array.WW52;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW53 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW53 + 1)) {
                 res = R.array.WW53;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW54 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW54 + 2)) {
                 res = R.array.WW54;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW55 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW55 + 3)) {
                 res = R.array.WW55;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW56 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW56 + 4)) {
                 res = R.array.WW56;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + ZAOCH + DELIM + WW57 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW57 + 0)) {
                 res = R.array.WW57;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW58 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW58 + 1)) {
                 res = R.array.WW58;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW59 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW59 + 2)) {
                 res = R.array.WW59;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW60 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW60 + 3)) {
                 res = R.array.WW60;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW61 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW61 + 4)) {
                 res = R.array.WW61;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY5 + DELIM + OZ + DELIM + WW62 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW62 + 5)) {
                 res = R.array.WW62;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW63 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW63 + 6)) {
                 res = R.array.WW63;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW64 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW64 + 7)) {
                 res = R.array.WW64;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW65 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW65 + 8)) {
                 res = R.array.WW65;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW66 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OZ + DELIM + WW66 + 0)) {
                 res = R.array.WW66;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW67 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OZ + DELIM + WW67 + 1)) {
                 res = R.array.WW67;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW68 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OCH + DELIM + WW68 + 0)) {
                 res = R.array.WW68;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW69 + 6)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OCH + DELIM + WW69 + 1)) {
                 res = R.array.WW69;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW70 + 7)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OZ + DELIM + WW70 + 0)) {
                 res = R.array.WW70;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW71 + 8)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OCH + DELIM + WW71 + 0)) {
                 res = R.array.WW71;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW72 + 9)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OCH + DELIM + WW72 + 1)) {
                 res = R.array.WW72;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW73 + 10)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW73 + 0)) {
                 res = R.array.WW73;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY6 + DELIM + OCH + DELIM + WW74 + 11)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW74 + 1)) {
                 res = R.array.WW74;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OCH + DELIM + WW75 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW75 + 2)) {
                 res = R.array.WW75;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OCH + DELIM + WW76 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW76 + 3)) {
                 res = R.array.WW76;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY7 + DELIM + OZ + DELIM + WW77 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW77 + 4)) {
                 res = R.array.WW77;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OCH + DELIM + WW78 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + ZAOCH + DELIM + WW78 + 0)) {
                 res = R.array.WW78;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OCH + DELIM + WW79 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OZ + DELIM + WW79 + 0)) {
                 res = R.array.WW79;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OCH + DELIM + WW80 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OZ + DELIM + WW80 + 1)) {
                 res = R.array.WW80;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY8 + DELIM + OZ + DELIM + WW81 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OZ + DELIM + WW81 + 2)) {
                 res = R.array.WW81;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW82 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY10 + DELIM + OCH + DELIM + WW82 + 0)) {
+                res = R.array.WW82;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY10 + DELIM + ZAOCH + DELIM + WW83 + 0)) {
                 res = R.array.WW83;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW83 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY10 + DELIM + OZ + DELIM + WW84 + 0)) {
                 res = R.array.WW84;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW84 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW85 + 0)) {
                 res = R.array.WW85;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW85 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW86 + 1)) {
                 res = R.array.WW86;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW86 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW87 + 2)) {
                 res = R.array.WW87;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OCH + DELIM + WW87 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW88 + 3)) {
                 res = R.array.WW88;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY9 + DELIM + OZ + DELIM + WW88 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW89 + 4)) {
                 res = R.array.WW89;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY10 + DELIM + OCH + DELIM + WW89 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW90 + 5)) {
                 res = R.array.WW90;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY10 + DELIM + OCH + DELIM + WW90 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW91 + 6)) {
                 res = R.array.WW91;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW91 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OZ + DELIM + WW92 + 0)) {
                 res = R.array.WW92;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW92 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OZ + DELIM + WW93 + 1)) {
                 res = R.array.WW93;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW93 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + ZAOCH + DELIM + WW94 + 0)) {
                 res = R.array.WW94;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + OCH + DELIM + WW94 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW95 + 0)) {
                 res = R.array.WW95;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + ZAOCH + DELIM + WW95 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW96 + 1)) {
                 res = R.array.WW96;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY11 + DELIM + ZAOCH + DELIM + WW96 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW97 + 2)) {
                 res = R.array.WW97;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW97 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW98 + 3)) {
                 res = R.array.WW98;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW98 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW99 + 4)) {
                 res = R.array.WW99;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW99 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW100 + 5)) {
                 res = R.array.WW100;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + ZAOCH + DELIM + WW100 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW101 + 6)) {
                 res = R.array.WW101;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW101 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OCH + DELIM + WW102 + 7)) {
                 res = R.array.WW102;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW102 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW103 + 0)) {
                 res = R.array.WW103;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW103 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW104 + 0)) {
                 res = R.array.WW104;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW104 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY12 + DELIM + OZ + DELIM + WW105 + 0)) {
                 res = R.array.WW105;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW105 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW106 + 0)) {
                 res = R.array.WW106;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW106 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW107 + 1)) {
                 res = R.array.WW107;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + ZAOCH + DELIM + WW107 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW108 + 2)) {
                 res = R.array.WW108;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OZ + DELIM + WW108 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW109 + 3)) {
                 res = R.array.WW109;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OZ + DELIM + WW109 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW110 + 4)) {
                 res = R.array.WW110;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OZ + DELIM + WW110 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY13 + DELIM + OCH + DELIM + WW111 + 5)) {
                 res = R.array.WW111;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW111 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW112 + 0)) {
                 res = R.array.WW112;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW112 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW113 + 1)) {
                 res = R.array.WW113;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW113 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW114 + 2)) {
                 res = R.array.WW114;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW114 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW115 + 3)) {
                 res = R.array.WW115;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW115 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW116 + 4)) {
                 res = R.array.WW116;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW116 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OCH + DELIM + WW117 + 5)) {
                 res = R.array.WW117;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW117 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + ZAOCH + DELIM + WW118 + 0)) {
                 res = R.array.WW118;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW118 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + ZAOCH + DELIM + WW119 + 1)) {
                 res = R.array.WW119;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW119 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + ZAOCH + DELIM + WW120 + 2)) {
                 res = R.array.WW120;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW120 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW121 + 0)) {
                 res = R.array.WW121;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW121 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW122 + 1)) {
                 res = R.array.WW122;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW122 + 5)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW123 + 2)) {
                 res = R.array.WW123;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW123 + 6)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY14 + DELIM + OZ + DELIM + WW124 + 3)) {
                 res = R.array.WW124;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + ZAOCH + DELIM + WW124 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW125 + 0)) {
                 res = R.array.WW125;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OZ + DELIM + WW125 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW126 + 1)) {
                 res = R.array.WW126;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW126 + 0)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW127 + 2)) {
                 res = R.array.WW127;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW127 + 1)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OCH + DELIM + WW128 + 3)) {
                 res = R.array.WW128;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW128 + 2)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + ZAOCH + DELIM + WW129 + 0)) {
                 res = R.array.WW129;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW129 + 3)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + ZAOCH + DELIM + WW130 + 1)) {
                 res = R.array.WW130;
-            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW130 + 4)) {
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + ZAOCH + DELIM + WW131 + 2)) {
                 res = R.array.WW131;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OZ + DELIM + WW132 + 0)) {
+                res = R.array.WW132;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY15 + DELIM + OZ + DELIM + WW133 + 1)) {
+                res = R.array.WW133;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW134 + 0)) {
+                res = R.array.WW134;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OCH + DELIM + WW135 + 1)) {
+                res = R.array.WW135;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OZ + DELIM + WW136 + 0)) {
+                res = R.array.WW136;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY16 + DELIM + OZ + DELIM + WW137 + 1)) {
+                res = R.array.WW137;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OCH + DELIM + WW138 + 0)) {
+                res = R.array.WW138;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OCH + DELIM + WW139 + 1)) {
+                res = R.array.WW139;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OCH + DELIM + WW140 + 2)) {
+                res = R.array.WW140;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OCH + DELIM + WW141 + 3)) {
+                res = R.array.WW141;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OZ + DELIM + WW142 + 0)) {
+                res = R.array.WW142;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OZ + DELIM + WW143 + 1)) {
+                res = R.array.WW143;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY17 + DELIM + OZ + DELIM + WW144 + 2)) {
+                res = R.array.WW144;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OCH + DELIM + WW145 + 0)) {
+                res = R.array.WW145;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OCH + DELIM + WW146 + 1)) {
+                res = R.array.WW146;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OCH + DELIM + WW147 + 2)) {
+                res = R.array.WW147;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + ZAOCH + DELIM + WW148 + 0)) {
+                res = R.array.WW148;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OZ + DELIM + WW149 + 0)) {
+                res = R.array.WW149;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OZ + DELIM + WW150 + 1)) {
+                res = R.array.WW150;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY18 + DELIM + OZ + DELIM + WW151 + 2)) {
+                res = R.array.WW151;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW152 + 0)) {
+                res = R.array.WW152;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW153 + 1)) {
+                res = R.array.WW153;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW154 + 2)) {
+                res = R.array.WW154;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW155 + 3)) {
+                res = R.array.WW155;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW156 + 4)) {
+                res = R.array.WW156;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW157 + 5)) {
+                res = R.array.WW157;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + OCH + DELIM + WW158 + 6)) {
+                res = R.array.WW158;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY19 + DELIM + ZAOCH + DELIM + WW159 + 0)) {
+                res = R.array.WW159;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + OCH + DELIM + WW160 + 0)) {
+                res = R.array.WW160;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + OCH + DELIM + WW161 + 1)) {
+                res = R.array.WW161;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + OCH + DELIM + WW162 + 2)) {
+                res = R.array.WW162;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + OCH + DELIM + WW163 + 3)) {
+                res = R.array.WW163;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + ZAOCH + DELIM + WW164 + 0)) {
+                res = R.array.WW164;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + ZAOCH + DELIM + WW165 + 1)) {
+                res = R.array.WW165;
+            } else if (specification.getItem().equals(WAYS + DELIM + WAY20 + DELIM + ZAOCH + DELIM + WW166 + 2)) {
+                res = R.array.WW166;
             }
             String screenTitle = a[3].substring(0, a[3].length() - 1);
             StaticContent title = new StaticContent.Builder().setFacTitile(screenTitle).build();

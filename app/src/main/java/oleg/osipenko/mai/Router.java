@@ -206,7 +206,7 @@ public class Router {
     public static final String DOSUG2 = "Базы отдыха";
     public static final String WAY1 = "Факультет №1 — «Авиационная техника»";
     public static final String WAY2 = "Факультет №2 — «Двигатели летательных аппаратов»";
-    public static final String WAY3 = "Факультет №3 — «Системы управления, информатика и электроэнергетика";
+    public static final String WAY3 = "Факультет №3 — «Системы управления, информатика и электроэнергетика»";
     public static final String WAY4 = "Факультет №4 — «Радиоэлектроника летательных аппаратов»";
     public static final String WAY5 = "Инженерно-экономический институт МАИ (ИНЖЭКИН МАИ)";
     public static final String WAY6 = "Факультет №6 — «Аэрокосмический»";
@@ -238,7 +238,7 @@ public class Router {
 
     public static final String WW8 = "Сервис";
 
-    public static final String WW9 = "Авиастроение";
+    public static final String WW9 = "Самолето- и вертолетостроение";
 
     public static final String WW10 = "Двигатели летательных аппаратов";
     public static final String WW11 = "Проектирование авиационных и ракетных двигателей";
@@ -263,7 +263,7 @@ public class Router {
     public static final String WW26 = "Информатика и вычислительная техника";
     public static final String WW27 = "Прикладная информатика";
 
-    public static final String WW28 = "Прикладаная информатика";
+    public static final String WW28 = "Прикладная информатика";
     public static final String WW29 = "Интегрированные системы летательных аппаратов";
 
     public static final String WW30 = "Информационная безопасность";
@@ -346,10 +346,12 @@ public class Router {
     public static final String WW90 = "Управление качеством";
     public static final String WW91 = "Нанотехнологии и микросиситемная техника";
 
+    public static final String WW94 = "Техносферная безопасность";
+
     public static final String WW92 = "Материаловедение и технологии материалов";
     public static final String WW93 = "Металлургия";
 
-    public static final String WW94 = "Техносферная безопасность";
+
 
     public static final String WW95 = "Конструирование и технология электронных средств";
     public static final String WW96 = "Приборостроение";
@@ -757,6 +759,15 @@ public class Router {
             case WAYS + DELIM + WAY10 + DELIM + OCH:
             case WAYS + DELIM + WAY10 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY10 + DELIM + OZ:
+            case WAYS + DELIM + WAY11 + DELIM + OCH:
+            case WAYS + DELIM + WAY11 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY11 + DELIM + OZ:
+            case WAYS + DELIM + WAY12 + DELIM + OCH:
+            case WAYS + DELIM + WAY12 + DELIM + OZ:
+            case WAYS + DELIM + WAY13 + DELIM + OCH:
+            case WAYS + DELIM + WAY14 + DELIM + OCH:
+            case WAYS + DELIM + WAY14 + DELIM + ZAOCH:
+            case WAYS + DELIM + WAY14 + DELIM + OZ:
             case WAYS + DELIM + WAY15 + DELIM + OCH:
             case WAYS + DELIM + WAY15 + DELIM + ZAOCH:
             case WAYS + DELIM + WAY15 + DELIM + OZ:

@@ -252,8 +252,8 @@
         <item name="inst">Институт менеджмента, экономики и социальных технологий</item>
         <item name="radioVtuz">Факультет «РадиоВТУЗ МАИ»</item>
         <item name="languages">Факультет Иностранных языков</item>
-        <item name="ahtuba">Филиал «Взлёт» МАИ в г. Ахтубинске</item>
         <item name="bayconoor">Филиал «Восход» МАИ в г. Байконур</item>
+        <item name="ahtuba">Филиал «Взлёт» МАИ в г. Ахтубинске</item>
         <item name="zhuk">Филиал «Стрела» МАИ в г. Жуковском</item>
         <item name="stup">Ступинский филиал МАИ</item>
     </string-array>
@@ -332,7 +332,7 @@
         <item name="a">Сервис</item>
     </string-array>
     <string-array name="way1oz">
-        <item name="a">Авиастроение</item>
+        <item name="a">Самолето- и вертолетостроение</item>
     </string-array>
     <string-array name="way2o">
         <item name="a">Двигатели летательных аппаратов</item>
@@ -363,7 +363,7 @@
         <item name="a">Прикладная информатика</item>
     </string-array>
     <string-array name="way3oz">
-        <item name="a">Прикладаная информатика</item>
+        <item name="a">Прикладная информатика</item>
         <item name="a">Интегрированные системы летательных аппаратов</item>
     </string-array>
     <string-array name="way4o">
@@ -464,12 +464,12 @@
         <item name="a">Управление качеством</item>
         <item name="a">Нанотехнологии и микросиситемная техника</item>
     </string-array>
+    <string-array name="way11z">
+        <item name="a">Техносферная безопасность</item>
+    </string-array>
     <string-array name="way11oz">
         <item name="a">Материаловедение и технологии материалов</item>
         <item name="a">Металлургия</item>
-    </string-array>
-    <string-array name="way11z">
-        <item name="a">Техносферная безопасность</item>
     </string-array>
     <string-array name="way12o">
         <item name="a">Конструирование и технология электронных средств</item>
