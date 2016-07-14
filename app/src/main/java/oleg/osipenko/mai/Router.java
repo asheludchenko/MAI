@@ -29,7 +29,7 @@ public class Router {
     public static final String MAGISTRACY = "Магистратура";
     public static final String COURSES = "Курсы";
     public static final String ACADEMIC_MOBILITY = "Академическая мобильность";
-    public static final String EMPLOYMENT_CENTER = "Центр трудоустройства МАИ";
+    public static final String EMPLOYMENT_CENTER = "Отдел практик и трудоустройства";
     public static final String SCIENCE = "Научная деятельность";
     public static final String STUDGORODOK = "Студгородок";
     public static final String SANATORIUM = "Санаторий-профилакторий";

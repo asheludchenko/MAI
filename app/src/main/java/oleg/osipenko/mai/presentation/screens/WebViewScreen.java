@@ -17,6 +17,8 @@ import oleg.osipenko.mai.presentation.views.ViewWeb;
 import static oleg.osipenko.mai.Router.COURSES;
 import static oleg.osipenko.mai.Router.DELIM;
 import static oleg.osipenko.mai.Router.PRESENTATIONS;
+import static oleg.osipenko.mai.Router.PRIEM;
+import static oleg.osipenko.mai.Router.PRIEM_SCHEDULE;
 import static oleg.osipenko.mai.Router.SCH1;
 import static oleg.osipenko.mai.Router.SCH10;
 import static oleg.osipenko.mai.Router.SCH11;
@@ -87,7 +89,7 @@ public class WebViewScreen extends Path {
         public static final String C01 = "http://inter.mai.ru/";
         public static final String C02 = "http://klc103.mai.ru/";
         public static final String C03 = "http://www.c-courses.ru/";
-        public static final String PS = "http://priem.mai.ru/index.php";
+        public static final String PS = "http://www.mai.ru/priem/";
         public static final String S01_1 = "1 курс — очное";
         public static final String S01_2 = "2 курс — очное";
         public static final String S01_3 = "3 курс — очное";
@@ -469,6 +471,8 @@ public class WebViewScreen extends Path {
                 return SCH15_8;
             } else if ((sTitle.equals(SCHEDULE + DELIM + SCH15 + DELIM + S15_9))) {
                 return SCH15_9;
+            } else if (sTitle.equals(PRIEM + DELIM + PRIEM_SCHEDULE)) {
+                return PS;
             } else if (sTitle.contains("http")) {
                 return sTitle;
             } else {
